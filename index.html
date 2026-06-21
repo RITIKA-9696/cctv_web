@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Techno Eye - Leading IT Solutions Provider</title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+</head>
+
+<style>
+    .instrument-serif-regular {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+
+    .instrument-serif-regular-italic {
+        font-family: "Instrument Serif", serif;
+        font-weight: 400;
+        font-style: italic;
+    }
+
+    /* Carousel Animations */
+    @keyframes fadeInUp {
+        from {
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes pulseGlow {
+
+        0%,
+        100% {
+            opacity: 0.7;
+            transform: scale(1);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.05);
+        }
+    }
+
+    @keyframes slideUp {
+        from {
+            opacity: 0;
+            transform: translateY(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-fade-in-up {
+        animation: fadeInUp 0.8s ease-out forwards;
+        opacity: 0;
+    }
+
+    .animation-delay-200 {
+        animation-delay: 0.2s;
+    }
+
+    .animation-delay-400 {
+        animation-delay: 0.4s;
+    }
+
+    .animation-delay-600 {
+        animation-delay: 0.6s;
+    }
+
+    .animation-delay-800 {
+        animation-delay: 0.8s;
+    }
+
+    .hero-title {
+        animation: slideUp 1s ease-out forwards;
+        opacity: 0;
+    }
+
+    .hero-subtitle {
+        animation: slideUp 1s ease-out 0.3s forwards;
+        opacity: 0;
+    }
+
+    .hero-tag {
+        animation: slideUp 1s ease-out 0.6s forwards;
+        opacity: 0;
+    }
+
+    .pulse-icon {
+        animation: pulseGlow 2s ease-in-out infinite;
+    }
+
+    .carousel-slide {
+        transition: opacity 1s ease-in-out;
+    }
+
+    .active-dot {
+        background-color: #0073e6 !important;
+        width: 16px !important;
+        border-radius: 8px !important;
+    }
+
+    @media (max-width: 640px) {
+        .carousel-container {
+            height: 450px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .carousel-container {
+            height: 400px;
+        }
+    }
+
+    .service-card {
+        opacity: 0;
+        transform: translateY(40px);
+        transition: all 0.6s ease;
+    }
+
+    .service-card.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .service-card:hover {
+        transform: translateY(-10px) scale(1.03);
+    }
+
+    .service-card i {
+        transition: all 0.4s ease;
+    }
+
+    .service-card:hover i {
+        transform: scale(1.15) rotate(5deg);
+    }
+
+    .active-nav {
+        position: relative;
+        color: white !important;
+    }
+
+    .active-nav::after {
+        content: '';
+        position: absolute;
+        bottom: -4px;
+        left: 0;
+        right: 0;
+        height: 2px;
+        background: #A04747;
+        border-radius: 2px;
+    }
+
+    /* Mobile active nav */
+    .mobile-active {
+        background: #A04747 !important;
+        color: white !important;
+        border-radius: 8px;
+        padding: 8px 16px;
+    }
+
+    /* core carousel */
+    #coreScrollTrack::-webkit-scrollbar {
+        display: none;
+    }
+
+    .core-card {
+        flex: 0 0 280px;
+        scroll-snap-align: start;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .core-card:hover {
+        transform: translateY(-6px);
+        box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+    }
+
+    .core-card .card-img-wrap {
+        transition: transform 0.4s ease;
+    }
+
+    .core-card:hover .card-img-wrap {
+        transform: scale(1.04);
+    }
+
+    @keyframes marquee {
+        0% {
+            transform: translateX(0);
+        }
+
+        100% {
+            transform: translateX(-100%);
+        }
+    }
+
+    .animate-marquee {
+        animation: marquee 20s linear infinite;
+    }
+
+    .overflow-hidden:hover .animate-marquee {
+        animation-play-state: paused;
+    }
+
+    #scrollToTop {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        width: 50px;
+        height: 50px;
+        background: #954C2E;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-size: 20px;
+        cursor: pointer;
+        box-shadow: 0 4px 15px rgba(149, 76, 46, 0.4);
+        transition: all 0.3s ease;
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(20px);
+        z-index: 999;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #scrollToTop:hover {
+        background: #b85a3a;
+        transform: translateY(-3px) scale(1.05);
+        box-shadow: 0 8px 25px rgba(149, 76, 46, 0.5);
+    }
+
+    #scrollToTop.show {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+    }
+
+    #scrollToTop i {
+        animation: bounceUp 2s ease-in-out infinite;
+    }
+
+    @keyframes bounceUp {
+
+        0%,
+        100% {
+            transform: translateY(0);
+        }
+
+        50% {
+            transform: translateY(-4px);
+        }
+    }
+
+    @media (max-width: 640px) {
+        #scrollToTop {
+            bottom: 20px;
+            right: 20px;
+            width: 44px;
+            height: 44px;
+            font-size: 16px;
+        }
+    }
+
+    /* Responsive fixes */
+    .banner-content {
+        padding: 1.5rem;
+    }
+
+    @media (max-width: 768px) {
+        .banner-content h2 {
+            font-size: 1.75rem;
+        }
+
+        .banner-content .point-text {
+            font-size: 0.875rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .banner-content h2 {
+            font-size: 1.5rem;
+        }
+
+        .banner-content .icon-wrap {
+            width: 2.5rem;
+            height: 2.5rem;
+        }
+
+        .banner-content .icon-wrap i {
+            font-size: 0.875rem;
+        }
+    }
+</style>
+
+<body>
+    <!-- Header -->
+    <header class="absolute top-4 md:top-10 left-0 right-0 z-50" id="mainHeader">
+        <div class="container mx-auto px-4">
+            <div
+                class="bg-white/5 backdrop-blur-sm rounded-full shadow-lg px-4 md:px-6 py-3 md:py-4 flex justify-between items-center gap-3 md:gap-5">
+                <div class="flex-shrink-0">
+                    <a href="index.html">
+                        <h1 class="text-xl md:text-2xl font-bold text-[#954C2E]">Techno <span
+                                class="text-white">Eye</span></h1>
+                    </a>
+                </div>
+                <nav class="flex-1 flex justify-center">
+                    <ul class="hidden md:flex gap-6 lg:gap-8 items-center">
+                        <li><a href="index.html"
+                                class="font-semibold text-white active-nav transition bg-[#A04747] p-2 px-4 rounded-xl">Home</a>
+                        </li>
+                        <li><a href="about.html"
+                                class="font-semibold text-white hover:text-[#A04747] transition">About</a></li>
+                        <li><a href="services.html"
+                                class="font-semibold text-white hover:text-[#A04747] transition">Services</a></li>
+                        <li><a href="solutions.html"
+                                class="font-semibold text-white hover:text-[#A04747] transition">Solutions</a></li>
+                    </ul>
+                </nav>
+                <div class="hidden md:block flex-shrink-0">
+                    <a href="contact.html"
+                        class="bg-[#37353E] text-white px-4 md:px-5 py-2 rounded-md font-semibold text-sm hover:bg-[#005bb5] transition hover:-translate-y-0.5 hover:shadow-lg">Contact
+                        Us</a>
+                </div>
+                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+                    <span class="w-6 h-0.5 bg-white transition"></span>
+                    <span class="w-6 h-0.5 bg-white transition"></span>
+                    <span class="w-6 h-0.5 bg-white transition"></span>
+                </div>
+            </div>
+        </div>
+        <div class="md:hidden hidden px-4 mt-2" id="mobileNav">
+            <div class="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg px-6 py-4">
+                <ul class="flex flex-col gap-3 text-center">
+                    <li><a href="index.html" class="mobile-active font-semibold block py-2 transition">Home</a></li>
+                    <li><a href="about.html"
+                            class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">About</a>
+                    </li>
+                    <li><a href="services.html"
+                            class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Services</a>
+                    </li>
+                    <li><a href="solutions.html"
+                            class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Solutions</a>
+                    </li>
+                    <li><a href="contact.html"
+                            class="bg-[#0073e6] text-white px-5 py-2 rounded-md font-semibold block hover:bg-[#005bb5] transition">Contact
+                            Us</a></li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section with Image Background -->
+    <section class="hero-carousel relative text-white overflow-hidden">
+        <div class="carousel-container relative h-[450px] sm:h-[500px] md:h-[550px] lg:h-[700px] overflow-hidden">
+            <img src="/assets/cctv-slider-1.jpg" alt="CCTV Surveillance"
+                class="absolute inset-0 w-full h-full object-cover z-10" />
+            <div class="absolute inset-0 bg-black/50 z-20"></div>
+            <div class="absolute inset-0 z-30 flex flex-col items-center justify-center text-center px-4 sm:px-6">
+                <h1 class="hero-title text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 leading-tight">
+                    <span class="text-white">Advanced</span>
+                    <span class="text-[#B8CFCE]">CCTV</span>
+                    <span class="text-white">Surveillance Solutions</span>
+                </h1>
+                <p class="hero-subtitle text-sm sm:text-base md:text-lg max-w-2xl text-gray-200 mb-6 px-2">
+                    Protect your business with <span class="text-[#83B4FF] font-semibold">24/7</span> AI-powered
+                    security monitoring,
+                    <span class="text-[#83B4FF] font-semibold">HD</span> video clarity, and
+                    <span class="text-[#83B4FF] font-semibold">smart</span> threat detection.
+                </p>
+                <div class="hero-tag mt-4 flex flex-wrap gap-3 sm:gap-4 justify-center">
+                    <a href="services.html"
+                        class="bg-[#7F8CAA] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-semibold hover:bg-[#005bb5] transition hover:-translate-y-1 hover:shadow-lg text-sm sm:text-base">
+                        Explore Solutions
+                    </a>
+                    <a href="contact.html"
+                        class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-semibold hover:bg-white/20 transition hover:-translate-y-1 text-sm sm:text-base">
+                        <i class="fas fa-play-circle mr-2"></i> Contact Us
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Partners -->
+    <section class="py-6 md:py-8 bg-gradient-to-b from-[#F5F2F0] to-[#EAE5E2] overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-6 md:mb-8">
+                <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-[#1a2a3a]">
+                    Trusted By <span class="text-[#954C2E]">Leading Brands</span>
+                </h2>
+            </div>
+            <div
+                class="relative overflow-hidden bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl shadow-xl border border-white/50 py-2 sm:py-3">
+                <div
+                    class="absolute left-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-r from-white/90 via-white/50 to-transparent z-10 rounded-l-3xl">
+                </div>
+                <div
+                    class="absolute right-0 top-0 bottom-0 w-16 sm:w-24 bg-gradient-to-l from-white/90 via-white/50 to-transparent z-10 rounded-r-3xl">
+                </div>
+                <div class="flex overflow-hidden">
+                    <div
+                        class="flex animate-marquee flex-shrink-0 gap-10 sm:gap-16 lg:gap-20 items-center py-2 sm:py-3 px-2 sm:px-4">
+                        <!-- Brands -->
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#83B4FF]/10 to-[#83B4FF]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-building text-xl sm:text-2xl text-[#83B4FF]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">TechCorp</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#954C2E]/10 to-[#954C2E]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-shield-alt text-xl sm:text-2xl text-[#954C2E]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">SecureBiz</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#0073e6]/10 to-[#0073e6]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-lightbulb text-xl sm:text-2xl text-[#0073e6]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">Innovate</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#1B3C53]/10 to-[#1B3C53]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-globe text-xl sm:text-2xl text-[#1B3C53]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">GlobalConnect</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#7F8CAA]/10 to-[#7F8CAA]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-database text-xl sm:text-2xl text-[#7F8CAA]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">DataVault</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#D4C9BE]/10 to-[#D4C9BE]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-network-wired text-xl sm:text-2xl text-[#D4C9BE]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">NetSecure</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#83B4FF]/10 to-[#83B4FF]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-cloud text-xl sm:text-2xl text-[#83B4FF]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">CloudMasters</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#954C2E]/10 to-[#954C2E]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-microchip text-xl sm:text-2xl text-[#954C2E]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">SmartTech</span>
+                        </div>
+                    </div>
+                    <!-- Duplicate -->
+                    <div
+                        class="flex animate-marquee flex-shrink-0 gap-10 sm:gap-16 lg:gap-20 items-center py-2 sm:py-3 px-2 sm:px-4">
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#83B4FF]/10 to-[#83B4FF]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-building text-xl sm:text-2xl text-[#83B4FF]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">TechCorp</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#954C2E]/10 to-[#954C2E]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-shield-alt text-xl sm:text-2xl text-[#954C2E]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">SecureBiz</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#0073e6]/10 to-[#0073e6]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-lightbulb text-xl sm:text-2xl text-[#0073e6]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">Innovate</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#1B3C53]/10 to-[#1B3C53]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-globe text-xl sm:text-2xl text-[#1B3C53]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">GlobalConnect</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#7F8CAA]/10 to-[#7F8CAA]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-database text-xl sm:text-2xl text-[#7F8CAA]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">DataVault</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#D4C9BE]/10 to-[#D4C9BE]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-network-wired text-xl sm:text-2xl text-[#D4C9BE]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">NetSecure</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#83B4FF]/10 to-[#83B4FF]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-cloud text-xl sm:text-2xl text-[#83B4FF]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">CloudMasters</span>
+                        </div>
+                        <div class="flex flex-col items-center group cursor-pointer">
+                            <div
+                                class="w-12 h-12 sm:w-14 sm:h-14 md:w-16 md:h-16 rounded-2xl bg-gradient-to-br from-[#954C2E]/10 to-[#954C2E]/5 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                                <i class="fas fa-microchip text-xl sm:text-2xl text-[#954C2E]"></i>
+                            </div>
+                            <span
+                                class="text-xs sm:text-sm font-semibold text-[#1a2a3a] mt-1 sm:mt-2 opacity-70 group-hover:opacity-100 transition-opacity">SmartTech</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ABOUT US -->
+    <section class="py-12 sm:py-16 md:py-20 bg-white overflow-hidden">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+                <div data-aos="fade-right" data-aos-duration="1000">
+                    <span
+                        class="inline-block px-4 py-2 bg-[#EFE4D2] text-[#254D70] rounded-full text-sm font-semibold mb-4">About
+                        Techno Eye</span>
+                    <h2 class="text-2xl sm:text-3xl font-bold text-[#1a2a3a] leading-tight mb-6">
+                        Your Trusted Partner For
+                        <span class="text-[#954C2E]">Complete IT Solutions</span>
+                    </h2>
+                    <p class="text-gray-600 mb-6 leading-relaxed border-l-4 border-[#954C2E] pl-4 text-sm sm:text-base">
+                        Since 2016, Techno Eye has been delivering innovative IT infrastructure,
+                        networking, surveillance, and security solutions to businesses across India.
+                        We help organizations build secure, scalable, and future-ready technology
+                        environments.
+                    </p>
+                    <div class="grid grid-cols-2 gap-3 sm:gap-4 mb-8">
+                        <div class="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm"><i
+                                class="fas fa-check-circle text-[#954C2E]"></i><span>Data Center Solutions</span></div>
+                        <div class="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm"><i
+                                class="fas fa-check-circle text-[#954C2E]"></i><span>CCTV Surveillance</span></div>
+                        <div class="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm"><i
+                                class="fas fa-check-circle text-[#954C2E]"></i><span>Structured Cabling</span></div>
+                        <div class="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm"><i
+                                class="fas fa-check-circle text-[#954C2E]"></i><span>Wi-Fi Solutions</span></div>
+                        <div class="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm"><i
+                                class="fas fa-check-circle text-[#954C2E]"></i><span>EPBX Systems</span></div>
+                        <div class="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm"><i
+                                class="fas fa-check-circle text-[#954C2E]"></i><span>Server & Backup</span></div>
+                    </div>
+                    <a href="about.html"
+                        class="inline-flex items-center gap-2 bg-[#EAEFEF] text-[#1B3C53] px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-[#B8CFCE] hover:text-[#1B3C53] transition-all duration-300 hover:-translate-y-1 text-sm sm:text-base">
+                        Learn More <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+                <div class="relative mt-6 lg:mt-0" data-aos="fade-left" data-aos-duration="1000">
+                    <img src="assets/about_us.jpg" alt="IT Solutions" class="rounded-2xl shadow-2xl w-full">
+                    <div
+                        class="absolute -left-3 sm:-left-6 top-6 sm:top-8 bg-white p-3 sm:p-4 rounded-xl shadow-lg animate-bounce py-1.5 sm:py-2">
+                        <h4 class="text-lg sm:text-xl font-bold text-[#954C2E]">500+</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Projects Completed</p>
+                    </div>
+                    <div
+                        class="absolute -right-2 bottom-4 sm:bottom-6 bg-white p-3 sm:p-4 rounded-xl shadow-lg animate-pulse">
+                        <h4 class="text-lg sm:text-xl font-bold text-[#954C2E]">100+</h4>
+                        <p class="text-xs sm:text-sm text-gray-600">Happy Clients</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Core Solutions -->
+    <section class="py-12 sm:py-16 md:py-20 bg-[#EEEEEE]">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-8 md:mb-12">
+                <h2 class="text-2xl md:text-3xl font-bold text-[#954C2E]">Our Core Solutions</h2>
+                <p class="text-[#9B3922] mt-2 md:mt-3">Smart IT infrastructure for modern businesses.</p>
+            </div>
+            <div class="relative">
+                <button id="coreScrollLeft"
+                    class="scroll-arrow absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-3 z-10 shadow-xl bg-white/80 backdrop-blur-sm w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:bg-white transition border-none cursor-pointer text-[#1a2a3a] text-sm sm:text-base">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <div id="coreScrollTrack"
+                    class="flex gap-4 sm:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-4"
+                    style="scrollbar-width: none; -ms-overflow-style: none;">
+                    <!-- Card 1 -->
+                    <div class="core-card bg-[#F1EFEC] p-3 sm:p-4 rounded-xl text-center">
+                        <div
+                            class="card-img-wrap overflow-hidden rounded-b-[150px] sm:rounded-b-[170px] bg-[#83B4FF] flex items-center justify-center mx-auto w-48 sm:w-56 md:w-64 h-44 sm:h-48 md:h-56">
+                            <img src="assets/cctv-cate-1.png" alt="Data Center" class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-gray-600 mb-3 sm:mb-4 mt-2 sm:mt-3 text-sm sm:text-base">Secure and scalable data
+                            solutions.</p>
+                        <a href="services.html"
+                            class="text-[#1B3C53] font-semibold bg-[#D4C9BE] hover:bg-[#B8CFCE] transition px-3 py-1.5 sm:py-2 rounded-md inline-block text-sm sm:text-base">Learn
+                            More →</a>
+                    </div>
+                    <!-- Card 2 -->
+                    <div class="core-card bg-[#F1EFEC] p-3 sm:p-4 rounded-xl text-center">
+                        <div
+                            class="card-img-wrap overflow-hidden rounded-b-[150px] sm:rounded-b-[170px] bg-[#83B4FF] flex items-center justify-center mx-auto w-48 sm:w-56 md:w-64 h-44 sm:h-48 md:h-56">
+                            <img src="assets/cctv-cate-2.png" alt="CCTV Surveillance"
+                                class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-gray-600 mb-3 sm:mb-4 mt-2 sm:mt-3 text-sm sm:text-base">24/7 intelligent
+                            security monitoring.</p>
+                        <a href="services.html"
+                            class="text-[#1B3C53] font-semibold bg-[#D4C9BE] hover:bg-[#B8CFCE] transition px-3 py-1.5 sm:py-2 rounded-md inline-block text-sm sm:text-base">Learn
+                            More →</a>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="core-card bg-[#F1EFEC] p-3 sm:p-4 rounded-xl text-center">
+                        <div
+                            class="card-img-wrap overflow-hidden rounded-b-[150px] sm:rounded-b-[170px] bg-[#83B4FF] flex items-center justify-center mx-auto w-48 sm:w-56 md:w-64 h-44 sm:h-48 md:h-56">
+                            <img src="assets/cctv-cate-3.png" alt="Structured Cabling"
+                                class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-gray-600 mb-3 sm:mb-4 mt-2 sm:mt-3 text-sm sm:text-base">Reliable network
+                            infrastructure setup.</p>
+                        <a href="services.html"
+                            class="text-[#1B3C53] font-semibold bg-[#D4C9BE] hover:bg-[#B8CFCE] transition px-3 py-1.5 sm:py-2 rounded-md inline-block text-sm sm:text-base">Learn
+                            More →</a>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="core-card bg-[#F1EFEC] p-3 sm:p-4 rounded-xl text-center">
+                        <div
+                            class="card-img-wrap overflow-hidden rounded-b-[150px] sm:rounded-b-[170px] bg-[#83B4FF] flex items-center justify-center mx-auto w-48 sm:w-56 md:w-64 h-44 sm:h-48 md:h-56">
+                            <img src="assets/cctv-cate-4.png" alt="EPBX Systems" class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-gray-600 mb-3 sm:mb-4 mt-2 sm:mt-3 text-sm sm:text-base">Seamless business
+                            communication systems.</p>
+                        <a href="services.html"
+                            class="text-[#1B3C53] font-semibold bg-[#D4C9BE] hover:bg-[#B8CFCE] transition px-3 py-1.5 sm:py-2 rounded-md inline-block text-sm sm:text-base">Learn
+                            More →</a>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="core-card bg-[#F1EFEC] p-3 sm:p-4 rounded-xl text-center">
+                        <div
+                            class="card-img-wrap overflow-hidden rounded-b-[150px] sm:rounded-b-[170px] bg-[#83B4FF] flex items-center justify-center mx-auto w-48 sm:w-56 md:w-64 h-44 sm:h-48 md:h-56">
+                            <img src="assets/cctv-cate-5.png" alt="Wi-Fi Solutions"
+                                class="w-full h-full object-contain">
+                        </div>
+                        <p class="text-gray-600 mb-3 sm:mb-4 mt-2 sm:mt-3 text-sm sm:text-base">Fast and secure wireless
+                            connectivity.</p>
+                        <a href="services.html"
+                            class="text-[#1B3C53] font-semibold bg-[#D4C9BE] hover:bg-[#B8CFCE] transition px-3 py-1.5 sm:py-2 rounded-md inline-block text-sm sm:text-base">Learn
+                            More →</a>
+                    </div>
+                </div>
+                <button id="coreScrollRight"
+                    class="scroll-arrow absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-3 z-10 shadow-xl bg-white/80 backdrop-blur-sm w-8 h-8 sm:w-10 sm:h-10 rounded-full flex items-center justify-center hover:bg-white transition border-none cursor-pointer text-[#1a2a3a] text-sm sm:text-base">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Banner Section -->
+    <!-- Banner Section - Fully Responsive -->
+    <section class="relative w-full overflow-hidden">
+        <div
+            class="relative w-full min-h-[350px] xs:min-h-[400px] sm:min-h-[450px] md:min-h-[500px] lg:min-h-[600px] xl:min-h-[700px]">
+            <img src="assets/features-image.png" alt="Banner"
+                class="absolute inset-0 w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
+
+            <div class="absolute inset-0 flex items-center">
+                <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
+                    <div class="max-w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
+                        <!-- Heading -->
+                        <h2
+                            class="text-white text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight mb-3 sm:mb-4 md:mb-5 lg:mb-6">
+                            360° View, <span class="text-[#83B4FF]">zero blind spots</span>
+                        </h2>
+
+                        <!-- Point 1 -->
+                        <div class="flex items-start gap-2 xs:gap-3 sm:gap-4 mb-3 sm:mb-4 md:mb-5">
+                            <div
+                                class="w-7 h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-[#83B4FF]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i
+                                    class="fas fa-camera text-[#83B4FF] text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-sm xs:text-base sm:text-lg md:text-xl">3K 5MP
+                                    camera view</h3>
+                                <p
+                                    class="text-gray-300 text-xs xs:text-sm sm:text-base leading-relaxed max-w-md lg:max-w-lg">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            </div>
+                        </div>
+
+                        <!-- Point 2 -->
+                        <div class="flex items-start gap-2 xs:gap-3 sm:gap-4 mb-3 sm:mb-4 md:mb-5">
+                            <div
+                                class="w-7 h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-[#83B4FF]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i
+                                    class="fas fa-robot text-[#83B4FF] text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-sm xs:text-base sm:text-lg md:text-xl">Smart AI
+                                    detections</h3>
+                                <p
+                                    class="text-gray-300 text-xs xs:text-sm sm:text-base leading-relaxed max-w-md lg:max-w-lg">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            </div>
+                        </div>
+
+                        <!-- Point 3 -->
+                        <div class="flex items-start gap-2 xs:gap-3 sm:gap-4 mb-4 sm:mb-5 md:mb-6 lg:mb-8">
+                            <div
+                                class="w-7 h-7 xs:w-8 xs:h-8 sm:w-10 sm:h-10 md:w-11 md:h-11 rounded-full bg-[#83B4FF]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
+                                <i
+                                    class="fas fa-database text-[#83B4FF] text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-white font-semibold text-sm xs:text-base sm:text-lg md:text-xl">Flexible
+                                    storage choices</h3>
+                                <p
+                                    class="text-gray-300 text-xs xs:text-sm sm:text-base leading-relaxed max-w-md lg:max-w-lg">
+                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
+                            </div>
+                        </div>
+
+                        <!-- Brand Tag -->
+                        <div
+                            class="inline-block bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-3 xs:px-4 sm:px-5 md:px-6 py-1 xs:py-1.5 sm:py-2">
+                            <span
+                                class="text-white font-bold text-xs xs:text-sm sm:text-base tracking-wider">tapo</span>
+                            <span
+                                class="text-[#83B4FF] font-semibold text-xs xs:text-sm sm:text-base ml-1 sm:ml-2">Super
+                                Clear 3K 5.5MP</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA STRIP -->
+    <section class="relative py-12 sm:py-16 md:py-20 overflow-hidden">
+        <div class="absolute inset-0 bg-white"></div>
+        <div
+            class="absolute top-0 right-0 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-[#954C2E]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-56 sm:w-72 md:w-80 h-56 sm:h-72 md:h-80 bg-[#83B4FF]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4">
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div
+                class="max-w-4xl mx-auto bg-[#E8EDF2] backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-6 sm:p-8 md:p-12 text-center">
+                <span
+                    class="inline-block px-4 py-1.5 bg-[#EFE4D2] text-[#254D70] rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                    <i class="fas fa-rocket mr-2"></i> Let's Get Started
+                </span>
+                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#954C2E] mb-4 leading-tight">
+                    Ready to Transform Your
+                    <span class="text-[#1a2a3a]">IT Infrastructure</span>?
+                </h2>
+                <p class="text-sm sm:text-base md:text-lg text-gray-500 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed">
+                    Let's build a secure, scalable technology environment that keeps your
+                    <span class="text-blue-400 font-semibold">business moving forward</span>
+                    with confidence and reliability.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                    <a href="contact.html"
+                        class="bg-[#954C2E] text-white px-6 sm:px-8 py-2 sm:py-2.5 rounded-lg font-semibold hover:bg-[#b85a3a] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fas fa-paper-plane"></i> Get Started
+                    </a>
+                    <a href="services.html"
+                        class="bg-[#D4C9BE] backdrop-blur-sm border border-white/30 text-black px-6 sm:px-8 py-2 sm:py-2.5 rounded-lg font-semibold hover:bg-white/20 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fas fa-arrow-right"></i> Explore Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-[#1a2a3a] text-white pt-10 sm:pt-12 pb-4">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Techno <span class="text-[#0073e6]">Eye</span></h3>
+                    <p class="text-gray-400 text-sm mb-4">Leading IT solutions provider delivering cutting-edge
+                        technology and infrastructure services to businesses across India.</p>
+                    <div class="flex gap-3">
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i
+                                class="fab fa-twitter"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i
+                                class="fab fa-linkedin-in"></i></a>
+                        <a href="#"
+                            class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i
+                                class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Quick Links</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="index.html" class="hover:text-[#0073e6] transition">Home</a></li>
+                        <li><a href="about.html" class="hover:text-[#0073e6] transition">About</a></li>
+                        <li><a href="services.html" class="hover:text-[#0073e6] transition">Services</a></li>
+                        <li><a href="solutions.html" class="hover:text-[#0073e6] transition">Solutions</a></li>
+                        <li><a href="contact.html" class="hover:text-[#0073e6] transition">Contact</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><a href="services.html" class="hover:text-[#0073e6] transition">Data Center Solutions</a>
+                        </li>
+                        <li><a href="services.html" class="hover:text-[#0073e6] transition">CCTV Surveillance</a></li>
+                        <li><a href="services.html" class="hover:text-[#0073e6] transition">Structured Cabling</a></li>
+                        <li><a href="services.html" class="hover:text-[#0073e6] transition">Wi-Fi Solutions</a></li>
+                        <li><a href="services.html" class="hover:text-[#0073e6] transition">Server & Backup</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="font-semibold mb-4">Contact Info</h4>
+                    <ul class="space-y-2 text-gray-400 text-sm">
+                        <li><i class="fas fa-phone w-5 text-[#0073e6]"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope w-5 text-[#0073e6]"></i> info@technoeyenet.com</li>
+                        <li><i class="fas fa-map-marker-alt w-5 text-[#0073e6]"></i> India</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-white/10 pt-4 text-center text-gray-500 text-sm">
+                <p>&copy; 2026 Techno Eye. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top Button -->
+    <button id="scrollToTop" aria-label="Scroll to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- ===== SINGLE SCRIPT TAG ===== -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+
+            // ---- AOS Init ----
+            AOS.init({
+                once: true,
+                offset: 20
+            });
+
+            // ---- Mobile Nav Toggle ----
+            const hamburger = document.getElementById('hamburger');
+            const mobileNav = document.getElementById('mobileNav');
+            if (hamburger && mobileNav) {
+                hamburger.addEventListener('click', function () {
+                    mobileNav.classList.toggle('hidden');
+                });
+            }
+
+            // ---- Service Cards Observer ----
+            const cards = document.querySelectorAll('.service-card');
+            const serviceObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('show');
+                    }
+                });
+            }, { threshold: 0.15 });
+            cards.forEach(function (card) {
+                serviceObserver.observe(card);
+            });
+
+            // ---- Counter Animation (stat numbers) ----
+            const counters = document.querySelectorAll('.stat-number');
+            const speed = 120;
+            const animateCounter = function (el) {
+                const target = parseInt(el.getAttribute('data-target'));
+                let current = 0;
+                const increment = Math.ceil(target / 40);
+                const updateCounter = function () {
+                    current += increment;
+                    if (current >= target) {
+                        el.textContent = target;
+                        return;
+                    }
+                    el.textContent = current;
+                    setTimeout(updateCounter, 20);
+                };
+                updateCounter();
+            };
+            const counterObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        if (el.textContent === '0' || el.textContent === '') {
+                            animateCounter(el);
+                        }
+                    }
+                });
+            }, { threshold: 0.3 });
+            counters.forEach(function (c) {
+                counterObserver.observe(c);
+            });
+
+            // ---- Core Solutions Carousel ----
+            (function () {
+                const track = document.getElementById('coreScrollTrack');
+                const leftBtn = document.getElementById('coreScrollLeft');
+                const rightBtn = document.getElementById('coreScrollRight');
+                if (!track || !leftBtn || !rightBtn) return;
+
+                function getScrollAmount() {
+                    const card = track.querySelector('.core-card');
+                    if (!card) return 280;
+                    const gap = 24;
+                    return card.offsetWidth + gap;
+                }
+
+                function scrollLeft() {
+                    track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+                }
+
+                function scrollRight() {
+                    track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+                }
+
+                leftBtn.addEventListener('click', scrollLeft);
+                rightBtn.addEventListener('click', scrollRight);
+
+                let autoInterval = setInterval(scrollRight, 4000);
+
+                function pauseAuto() { clearInterval(autoInterval); }
+
+                function resumeAuto() {
+                    clearInterval(autoInterval);
+                    autoInterval = setInterval(scrollRight, 4000);
+                }
+
+                track.addEventListener('mouseenter', pauseAuto);
+                track.addEventListener('mouseleave', resumeAuto);
+                leftBtn.addEventListener('mouseenter', pauseAuto);
+                leftBtn.addEventListener('mouseleave', resumeAuto);
+                rightBtn.addEventListener('mouseenter', pauseAuto);
+                rightBtn.addEventListener('mouseleave', resumeAuto);
+
+                function updateArrows() {
+                    const maxScroll = track.scrollWidth - track.clientWidth;
+                    leftBtn.disabled = track.scrollLeft <= 2;
+                    rightBtn.disabled = track.scrollLeft >= maxScroll - 2;
+                    leftBtn.style.opacity = leftBtn.disabled ? '0.3' : '1';
+                    rightBtn.style.opacity = rightBtn.disabled ? '0.3' : '1';
+                }
+
+                track.addEventListener('scroll', updateArrows);
+                window.addEventListener('resize', updateArrows);
+                setTimeout(updateArrows, 100);
+            })();
+
+            // ---- Scroll to Top Button ----
+            const scrollBtn = document.getElementById('scrollToTop');
+            if (scrollBtn) {
+                window.addEventListener('scroll', function () {
+                    if (window.scrollY > 300) {
+                        scrollBtn.classList.add('show');
+                    } else {
+                        scrollBtn.classList.remove('show');
+                    }
+                });
+
+                scrollBtn.addEventListener('click', function () {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                });
+            }
+
+        }); // end DOMContentLoaded
+    </script>
+
+</body>
+
+</html>

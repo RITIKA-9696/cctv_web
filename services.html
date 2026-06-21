@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Services · Techno Eye</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
+  <style>
+    .instrument-serif { font-family: "Instrument Serif", serif; }
+
+    /* horizontal scroll track – hide scrollbar, keep smooth */
+    .scroll-track {
+      display: flex;
+      gap: 1rem;
+      overflow-x: auto;
+      scroll-snap-type: x mandatory;
+      -webkit-overflow-scrolling: touch;
+      padding: 0.5rem 0.25rem 1.2rem 0.25rem;
+      cursor: grab;
+      scroll-behavior: smooth;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+    .scroll-track::-webkit-scrollbar {
+      display: none;
+    }
+    .scroll-track:active { cursor: grabbing; }
+
+    /* card – full image cover + overlay */
+    .svc-card {
+      position: relative;
+      flex: 0 0 240px;
+      height: 280px;
+      border-radius: 1.25rem;
+      overflow: hidden;
+      scroll-snap-align: start;
+      box-shadow: 0 12px 28px rgba(0,0,0,0.18);
+      transition: transform 0.2s ease, box-shadow 0.3s ease;
+      background: #f0ede8;
+    }
+    .svc-card:hover {
+      transform: scale(1.01);
+      box-shadow: 0 18px 36px rgba(0,0,0,0.25);
+    }
+
+    .svc-card .card-img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    .svc-card:hover .card-img { transform: scale(1.07); }
+
+    .svc-card .gradient-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(10, 18, 30, 0.85) 0%, rgba(10, 18, 30, 0.25) 55%, transparent 85%);
+      transition: opacity 0.35s ease;
+    }
+    .svc-card .hover-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(8, 16, 28, 0.92) 0%, rgba(8, 16, 28, 0.45) 100%);
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+    .svc-card:hover .hover-overlay { opacity: 1; }
+
+    .svc-card .card-name {
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      padding: 1rem 1rem 1.4rem;
+      z-index: 5;
+    }
+    .svc-card .card-name h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: -0.01em;
+      text-shadow: 0 2px 6px rgba(0,0,0,0.5);
+      transition: transform 0.3s ease;
+      text-align: center;
+    }
+    .svc-card:hover .card-name h3 { transform: translateY(-3px); }
+
+    .svc-card .explore-hint {
+      display: block;
+      font-size: 0.6rem;
+      font-weight: 600;
+      color: #9bc0ff;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      opacity: 0;
+      transform: translateY(6px);
+      transition: opacity 0.3s ease 0.05s, transform 0.3s ease 0.05s;
+      margin-top: 0.25rem;
+      text-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    }
+    .svc-card:hover .explore-hint { opacity: 1; transform: translateY(0); }
+
+    .svc-card .card-icon-badge {
+      position: absolute;
+      top: 0.75rem; left: 0.75rem;
+      z-index: 6;
+      width: 2.2rem; height: 2.2rem;
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(5px);
+      border-radius: 0.6rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.3s ease, transform 0.2s;
+    }
+    .svc-card:hover .card-icon-badge { background: #0073e6; transform: scale(1.05); }
+    .svc-card .card-icon-badge i { color: white; font-size: 0.9rem; }
+
+    @media (min-width: 480px) {
+      .svc-card {
+        flex: 0 0 260px;
+        height: 290px;
+      }
+      .svc-card .card-name h3 {
+        font-size: 1.1rem;
+      }
+    }
+
+    @media (min-width: 640px) {
+      .svc-card {
+        flex: 0 0 280px;
+        height: 300px;
+        border-radius: 1.5rem;
+      }
+      .svc-card .card-name {
+        padding: 1.2rem 1.2rem 1.6rem;
+      }
+      .svc-card .card-name h3 {
+        font-size: 1.2rem;
+      }
+      .svc-card .explore-hint {
+        font-size: 0.7rem;
+      }
+      .svc-card .card-icon-badge {
+        top: 1rem; left: 1rem;
+        width: 2.6rem; height: 2.6rem;
+        border-radius: 0.75rem;
+      }
+      .svc-card .card-icon-badge i {
+        font-size: 1.1rem;
+      }
+      .scroll-track {
+        gap: 1.25rem;
+      }
+    }
+
+    /* arrow buttons */
+    .scroll-arrow {
+      background: rgba(255,255,255,0.75);
+      backdrop-filter: blur(6px);
+      width: 36px;
+      height: 36px;
+      border-radius: 999px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+      transition: all 0.2s ease;
+      border: none;
+      cursor: pointer;
+      color: #1a2a3a;
+      font-size: 0.9rem;
+    }
+    .scroll-arrow:hover {
+      background: #fff;
+      transform: scale(1.05);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+      color: #0073e6;
+    }
+    .scroll-arrow:disabled {
+      opacity: 0.3;
+      cursor: not-allowed;
+      transform: none !important;
+      box-shadow: none !important;
+      background: rgba(220,220,220,0.5);
+    }
+
+    @media (min-width: 640px) {
+      .scroll-arrow {
+        width: 44px;
+        height: 44px;
+        font-size: 1.1rem;
+      }
+    }
+
+    /* modal */
+    #serviceModal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 999;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    #serviceModal.open { display: flex; }
+    #modalBackdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(10, 20, 35, 0.78);
+      backdrop-filter: blur(4px);
+      animation: fadeIn 0.25s ease;
+    }
+    #modalPanel {
+      position: relative;
+      z-index: 10;
+      background: #ffffff;
+      border-radius: 1.5rem;
+      max-width: 680px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: panelIn 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes panelIn {
+      from { opacity: 0; transform: scale(0.90) translateY(28px); }
+      to   { opacity: 1; transform: scale(1) translateY(0); }
+    }
+    .modal-hero-img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 1.5rem 1.5rem 0 0;
+    }
+
+    @media (min-width: 640px) {
+      .modal-hero-img {
+        height: 260px;
+      }
+    }
+
+    .feature-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      background: #EFE4D2;
+      color: #1B3C53;
+      font-size: 0.7rem;
+      font-weight: 600;
+      padding: 0.25rem 0.8rem;
+      border-radius: 999px;
+    }
+
+    .active-nav {
+      position: relative;
+      color: white !important;
+    }
+    .active-nav::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0; right: 0;
+      height: 2px;
+      background: #A04747;
+      border-radius: 2px;
+    }
+
+    /* Mobile active nav */
+    .mobile-active {
+      background: #A04747 !important;
+      color: white !important;
+      border-radius: 8px;
+      padding: 8px 16px;
+    }
+
+    #scrollToTop {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 50px;
+      height: 50px;
+      background: #954C2E;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 20px;
+      cursor: pointer;
+      box-shadow: 0 4px 15px rgba(149, 76, 46, 0.4);
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(20px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    #scrollToTop:hover {
+      background: #b85a3a;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 8px 25px rgba(149, 76, 46, 0.5);
+    }
+
+    #scrollToTop.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
+    }
+
+    #scrollToTop i {
+      animation: bounceUp 2s ease-in-out infinite;
+    }
+
+    @keyframes bounceUp {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    @media (max-width: 640px) {
+      #scrollToTop {
+        bottom: 20px;
+        right: 20px;
+        width: 44px;
+        height: 44px;
+        font-size: 16px;
+      }
+    }
+
+    /* Hero responsive */
+    .hero-container {
+      height: 400px;
+    }
+
+    @media (min-width: 640px) {
+      .hero-container {
+        height: 500px;
+      }
+    }
+
+    @media (min-width: 768px) {
+      .hero-container {
+        height: 600px;
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .hero-container {
+        height: 680px;
+      }
+    }
+  </style>
+</head>
+<body class="bg-white text-[#1a2a3a]">
+
+<!-- HEADER -->
+<header class="absolute top-4 md:top-10 left-0 right-0 z-50" id="mainHeader">
+    <div class="container mx-auto px-4">
+        <div class="bg-white/5 backdrop-blur-sm rounded-full shadow-lg px-4 md:px-6 py-3 md:py-4 flex justify-between items-center gap-3 md:gap-5">
+            <div class="flex-shrink-0">
+                <a href="index.html">
+                    <h1 class="text-xl md:text-2xl font-bold text-[#954C2E]">Techno <span class="text-white">Eye</span></h1>
+                </a>
+            </div>
+            <nav class="flex-1 flex justify-center">
+                <ul class="hidden md:flex gap-6 lg:gap-8 items-center">
+                    <li><a href="index.html" class="font-semibold text-white hover:text-[#A04747] transition">Home</a></li>
+                    <li><a href="about.html" class="font-semibold text-white hover:text-[#A04747] transition">About</a></li>
+                    <li><a href="services.html" class="font-semibold text-white active-nav transition bg-[#A04747] p-2 px-4 rounded-xl">Services</a></li>
+                    <li><a href="solutions.html" class="font-semibold text-white hover:text-[#A04747] transition">Solutions</a></li>
+                </ul>
+            </nav>
+            <div class="hidden md:block flex-shrink-0">
+                <a href="contact.html" class="bg-[#37353E] text-white px-4 md:px-5 py-2 rounded-md font-semibold text-sm hover:bg-[#005bb5] transition hover:-translate-y-0.5 hover:shadow-lg">Contact Us</a>
+            </div>
+            <!-- Hamburger - fixed clickable -->
+            <div class="md:hidden flex flex-col gap-1.5 cursor-pointer z-50" id="hamburger">
+                <span class="w-6 h-0.5 bg-white transition"></span>
+                <span class="w-6 h-0.5 bg-white transition"></span>
+                <span class="w-6 h-0.5 bg-white transition"></span>
+            </div>
+        </div>
+    </div>
+    <!-- Mobile Navigation -->
+    <div class="md:hidden hidden px-4 mt-2" id="mobileNav">
+        <div class="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg px-6 py-4">
+            <ul class="flex flex-col gap-3 text-center">
+                <li><a href="index.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Home</a></li>
+                <li><a href="about.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">About</a></li>
+                <li><a href="services.html" class="mobile-active font-semibold block py-2 transition">Services</a></li>
+                <li><a href="solutions.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Solutions</a></li>
+                <li><a href="contact.html" class="bg-[#0073e6] text-white px-5 py-2 rounded-md font-semibold block hover:bg-[#005bb5] transition">Contact Us</a></li>
+            </ul>
+        </div>
+    </div>
+</header>
+
+<!-- HERO -->
+<section class="relative text-white overflow-hidden">
+  <div class="relative hero-container">
+    <img src="/assets/services_slider.png" alt="tech" class="absolute inset-0 w-full h-full object-cover" />
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 text-center">
+      <p class="text-xs uppercase tracking-[0.2em] text-[#B8CFCE] font-semibold">Our Services</p>
+      <h1 class="instrument-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl leading-tight max-w-3xl">Innovative <span class="text-[#83B4FF]">IT Solutions</span> for Your Business</h1>
+      <p class="text-sm text-gray-300 max-w-xl mt-2 px-2">From infrastructure to security — we deliver reliable, scalable, and future-ready technology services</p>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES – HORIZONTAL SCROLL with ARROWS & AUTO -->
+<section class="py-8 sm:py-10 bg-[#F1EFEC] relative">
+  <div class="container mx-auto px-4">
+    <div class="mb-4 sm:mb-6 flex items-center justify-between">
+      <div>
+        <span class="inline-block px-3 sm:px-4 py-1 bg-[#D4C9BE] text-[#1B3C53] rounded-full text-xs font-bold tracking-widest uppercase">services</span>
+      </div>
+    </div>
+
+    <!-- carousel wrapper with arrows -->
+    <div class="relative">
+      <!-- left arrow -->
+      <button id="scrollLeftBtn" class="scroll-arrow absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-3 z-10 shadow-xl">
+        <i class="fas fa-chevron-left"></i>
+      </button>
+
+      <!-- scroll track -->
+      <div class="scroll-track" id="scrollTrack">
+        <!-- cards -->
+        <div class="svc-card" onclick="openModal('data-center')" data-index="0">
+          <img class="card-img" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="data center" />
+          <div class="gradient-overlay"></div><div class="hover-overlay"></div>
+          <div class="card-icon-badge"><i class="fas fa-server"></i></div>
+          <div class="card-name"><h3>IT Solutions</h3><span class="explore-hint">Reliable IT support services</span></div>
+        </div>
+        <div class="svc-card" onclick="openModal('cctv')" data-index="1">
+          <img class="card-img" src="https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2070&auto=format&fit=crop" alt="cctv" />
+          <div class="gradient-overlay"></div><div class="hover-overlay"></div>
+          <div class="card-icon-badge"><i class="fas fa-video"></i></div>
+          <div class="card-name"><h3>IT Health Checkup</h3><span class="explore-hint">Comprehensive IT assessments</span></div>
+        </div>
+        <div class="svc-card" onclick="openModal('cabling')" data-index="2">
+          <img class="card-img" src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" alt="cabling" />
+          <div class="gradient-overlay"></div><div class="hover-overlay"></div>
+          <div class="card-icon-badge"><i class="fas fa-network-wired"></i></div>
+          <div class="card-name"><h3>Software Licensing</h3><span class="explore-hint">Genuine & secure licenses</span></div>
+        </div>
+        <div class="svc-card" onclick="openModal('epbx')" data-index="3">
+          <img class="card-img" src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2069&auto=format&fit=crop" alt="epbx" />
+          <div class="gradient-overlay"></div><div class="hover-overlay"></div>
+          <div class="card-icon-badge"><i class="fas fa-phone-office"></i></div>
+          <div class="card-name"><h3>Project Management</h3><span class="explore-hint">On time, within budget</span></div>
+        </div>
+        <div class="svc-card" onclick="openModal('wifi')" data-index="4">
+          <img class="card-img" src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=2070&auto=format&fit=crop" alt="wifi" />
+          <div class="gradient-overlay"></div><div class="hover-overlay"></div>
+          <div class="card-icon-badge"><i class="fas fa-wifi"></i></div>
+          <div class="card-name"><h3>Computer Sales & Support</h3><span class="explore-hint">High-performance computers</span></div>
+        </div>
+        <div class="svc-card" onclick="openModal('server')" data-index="5">
+          <img class="card-img" src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="server" />
+          <div class="gradient-overlay"></div><div class="hover-overlay"></div>
+          <div class="card-icon-badge"><i class="fas fa-database"></i></div>
+          <div class="card-name"><h3>AMC</h3><span class="explore-hint">Proactive maintenance</span></div>
+        </div>
+        <div class="svc-card" onclick="openModal('security')" data-index="6">
+          <img class="card-img" src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop" alt="security" />
+          <div class="gradient-overlay"></div><div class="hover-overlay"></div>
+          <div class="card-icon-badge"><i class="fas fa-shield-alt"></i></div>
+          <div class="card-name"><h3>Fire Alarm System</h3><span class="explore-hint">Safeguard against risks</span></div>
+        </div>
+        <div class="svc-card" onclick="openModal('cloud')" data-index="7">
+          <img class="card-img" src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop" alt="cloud" />
+          <div class="gradient-overlay"></div><div class="hover-overlay"></div>
+          <div class="card-icon-badge"><i class="fas fa-cloud"></i></div>
+          <div class="card-name"><h3>Burglar Alarm System</h3><span class="explore-hint">Prevent unauthorized access</span></div>
+        </div>
+        <div class="svc-card" onclick="openModal('health')" data-index="8">
+          <img class="card-img" src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" alt="health" />
+          <div class="gradient-overlay"></div><div class="hover-overlay"></div>
+          <div class="card-icon-badge"><i class="fas fa-heartbeat"></i></div>
+          <div class="card-name"><h3>Remote Assistant</h3><span class="explore-hint">Fast remote IT support</span></div>
+        </div>
+      </div>
+
+      <!-- right arrow -->
+      <button id="scrollRightBtn" class="scroll-arrow absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-3 z-10 shadow-xl">
+        <i class="fas fa-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="py-12 sm:py-14 md:py-16 text-center bg-white">
+    <div class="container mx-auto px-4 flex justify-center">
+        <div class="max-w-xl w-full bg-[#FFF4E0] p-4 sm:p-6 md:p-8 rounded-lg">
+            <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 text-[#B46060]">Ready to Transform Your IT Infrastructure?</h2>
+            <p class="text-sm sm:text-base text-[#FFA559] max-w-xl mx-auto mb-6 sm:mb-7 opacity-90">Let's build a secure, scalable technology environment that keeps your business moving forward.</p>
+            <a href="contact.html" class="bg-[#4D4D4D] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-semibold hover:bg-[#4D4D4D] transition hover:-translate-y-1 hover:shadow-lg inline-block text-sm sm:text-base">Get Started</a>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#1a2a3a] text-white pt-10 sm:pt-12 pb-4">
+    <div class="container mx-auto px-4">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+            <div>
+                <h3 class="text-xl font-bold mb-4">Techno <span class="text-[#0073e6]">Eye</span></h3>
+                <p class="text-gray-400 text-sm mb-4">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
+                <div class="flex gap-3">
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Quick Links</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="index.html" class="hover:text-[#0073e6] transition">Home</a></li>
+                    <li><a href="about.html" class="hover:text-[#0073e6] transition">About</a></li>
+                    <li><a href="services.html" class="hover:text-[#0073e6] transition">Services</a></li>
+                    <li><a href="solutions.html" class="hover:text-[#0073e6] transition">Solutions</a></li>
+                    <li><a href="contact.html" class="hover:text-[#0073e6] transition">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Services</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><a href="services.html" class="hover:text-[#0073e6] transition">Data Center Solutions</a></li>
+                    <li><a href="services.html" class="hover:text-[#0073e6] transition">CCTV Surveillance</a></li>
+                    <li><a href="services.html" class="hover:text-[#0073e6] transition">Structured Cabling</a></li>
+                    <li><a href="services.html" class="hover:text-[#0073e6] transition">Wi-Fi Solutions</a></li>
+                    <li><a href="services.html" class="hover:text-[#0073e6] transition">Server &amp; Backup</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-semibold mb-4">Contact Info</h4>
+                <ul class="space-y-2 text-gray-400 text-sm">
+                    <li><i class="fas fa-phone w-5 text-[#0073e6]"></i> +91 98765 43210</li>
+                    <li><i class="fas fa-envelope w-5 text-[#0073e6]"></i> info@technoeyenet.com</li>
+                    <li><i class="fas fa-map-marker-alt w-5 text-[#0073e6]"></i> India</li>
+                </ul>
+            </div>
+        </div>
+        <div class="border-t border-white/10 pt-4 text-center text-gray-500 text-sm">
+            <p>&copy; 2026 Techno Eye. All Rights Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- MODAL -->
+<div id="serviceModal">
+  <div id="modalBackdrop" onclick="closeModal()"></div>
+  <div id="modalPanel">
+    <img id="modalHeroImg" class="modal-hero-img" src="" alt="service preview" />
+    <div class="px-4 sm:px-6 pb-4 sm:pb-6 pt-2">
+      <div class="flex items-center justify-between mt-4 sm:mt-6">
+        <div class="flex items-center gap-3">
+          <div id="modalIconWrap" class="w-10 h-10 sm:w-11 sm:h-11 rounded-2xl bg-[#EFE4D2] flex items-center justify-center">
+            <i id="modalIcon" class="fas fa-server text-lg sm:text-xl text-[#954C2E]"></i>
+          </div>
+          <div>
+            <p id="modalCategory" class="text-xs font-bold tracking-widest uppercase text-[#0073e6]">Category</p>
+            <h2 id="modalTitle" class="instrument-serif text-xl sm:text-2xl text-[#1a2a3a] leading-tight">Title</h2>
+          </div>
+        </div>
+        <button onclick="closeModal()" class="w-8 h-8 rounded-full bg-gray-100 hover:bg-gray-200 flex items-center justify-center"><i class="fas fa-times text-gray-500"></i></button>
+      </div>
+      <p id="modalDesc" class="text-gray-600 text-sm leading-relaxed mt-3 sm:mt-4"></p>
+      <div class="mt-4"><h4 class="font-bold text-[#1a2a3a] text-xs uppercase tracking-wider">Features</h4><div id="modalFeatures" class="flex flex-wrap gap-2 mt-1.5"></div></div>
+      <div class="mt-4"><h4 class="font-bold text-[#1a2a3a] text-xs uppercase tracking-wider">What's included</h4><ul id="modalList" class="space-y-1.5 mt-1.5"></ul></div>
+      <a href="#" class="mt-5 w-full flex items-center justify-center gap-2 bg-[#1a2a3a] text-white py-2.5 rounded-xl font-semibold hover:bg-[#0073e6] transition text-sm"><i class="fas fa-paper-plane"></i> Get a Quote</a>
+    </div>
+  </div>
+</div>
+
+<!-- Scroll to Top Button -->
+<button id="scrollToTop" aria-label="Scroll to top">
+    <i class="fas fa-chevron-up"></i>
+</button>
+
+<script>
+  // ---- DATA ----
+  const services = {
+    'data-center': { icon: 'fa-server', category: 'Infrastructure', title: 'Data Center Solutions', accent: '#0073e6', desc: 'Scalable, secure data center infrastructure designed for maximum performance.', features: ['Scalable', 'High Availability', '24/7 Monitoring'], list: ['Server Installation', 'Storage Mgmt', 'Networking', 'Power & Cooling'], img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop' },
+    'cctv': { icon: 'fa-video', category: 'Security', title: 'CCTV Surveillance', accent: '#954C2E', desc: 'Advanced surveillance with HD cameras, remote access, and motion detection.', features: ['4K Cameras', 'Night Vision', 'Remote Access'], list: ['24/7 Monitoring', 'HD Camera Install', 'Mobile App', 'Cloud/NVR'], img: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2070&auto=format&fit=crop' },
+    'cabling': { icon: 'fa-network-wired', category: 'Network', title: 'Structured Cabling', accent: '#1B3C53', desc: 'Fiber and copper cabling solutions built to TIA/EIA standards.', features: ['Cat6/Cat6A', 'Fiber', 'Certified'], list: ['Fiber Optic', 'Copper Cabling', 'Design', 'Testing'], img: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop' },
+    'epbx': { icon: 'fa-phone-office', category: 'Communications', title: 'EPBX Solutions', accent: '#0073e6', desc: 'Efficient EPBX systems with auto attendant, call recording, and IVR.', features: ['IP PBX', 'Auto Attendant', 'Call Recording'], list: ['IP PBX Install', 'Analog/Digital', 'IVR', 'Intercom'], img: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2069&auto=format&fit=crop' },
+    'wifi': { icon: 'fa-wifi', category: 'Wireless', title: 'Wi-Fi Solutions', accent: '#0073e6', desc: 'Enterprise-grade Wi-Fi 6 with seamless roaming and centralized control.', features: ['Wi-Fi 6', 'Roaming', 'Guest Network'], list: ['Site Survey', 'Access Point Install', 'Controller', 'VLAN'], img: 'https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=2070&auto=format&fit=crop' },
+    'server': { icon: 'fa-database', category: 'Data Protection', title: 'Server & Backup', accent: '#1B3C53', desc: 'Reliable server and backup solutions ensuring business continuity.', features: ['Automated Backup', 'Recovery', 'Offsite'], list: ['Server Setup', 'Daily Backups', 'Disaster Recovery', 'Tuning'], img: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop' },
+    'security': { icon: 'fa-shield-alt', category: 'Cybersecurity', title: 'IT Security Solutions', accent: '#954C2E', desc: 'Firewall, endpoint protection, and encryption to guard against threats.', features: ['Firewall', 'Endpoint', 'Threat Monitoring'], list: ['Firewall Config', 'EDR', 'Encryption', 'Assessment'], img: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop' },
+    'cloud': { icon: 'fa-cloud', category: 'Cloud', title: 'Cloud Solutions', accent: '#0073e6', desc: 'Cloud migration, storage, and infrastructure services.', features: ['AWS/Azure', 'Hybrid', 'Cost Optimization'], list: ['Migration', 'Storage', 'IaaS', 'PaaS'], img: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop' },
+    'health': { icon: 'fa-heartbeat', category: 'IT Assessment', title: 'IT Health Checkup', accent: '#1B3C53', desc: 'Full system performance evaluation, audit, and recommendations.', features: ['Audit', 'Risk Assessment', 'Roadmap'], list: ['Network Audit', 'Performance Review', 'Security Scan', 'Report'], img: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop' }
+  };
+
+  // ---- MODAL ----
+  function openModal(key) {
+    const s = services[key];
+    if (!s) return;
+    document.getElementById('modalHeroImg').src = s.img;
+    const iconEl = document.getElementById('modalIcon');
+    iconEl.className = `fas ${s.icon} text-xl`;
+    iconEl.style.color = s.accent;
+    document.getElementById('modalCategory').textContent = s.category;
+    document.getElementById('modalCategory').style.color = s.accent;
+    document.getElementById('modalTitle').textContent = s.title;
+    document.getElementById('modalDesc').textContent = s.desc;
+    const featWrap = document.getElementById('modalFeatures');
+    featWrap.innerHTML = s.features.map(f => `<span class="feature-chip"><i class="fas fa-check-circle text-[#0073e6] text-xs"></i>${f}</span>`).join('');
+    const listEl = document.getElementById('modalList');
+    listEl.innerHTML = s.list.map(item => `<li class="flex items-start gap-2 text-sm text-gray-600"><i class="fas fa-check-circle mt-0.5 text-xs" style="color:${s.accent}"></i><span>${item}</span></li>`).join('');
+    document.getElementById('serviceModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeModal() {
+    document.getElementById('serviceModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+
+  // ---- CAROUSEL LOGIC ----
+  document.addEventListener('DOMContentLoaded', function() {
+    const track = document.getElementById('scrollTrack');
+    const leftBtn = document.getElementById('scrollLeftBtn');
+    const rightBtn = document.getElementById('scrollRightBtn');
+
+    if (!track || !leftBtn || !rightBtn) return;
+
+    // ---- HAMBURGER MENU - FIXED ----
+    const hamburger = document.getElementById('hamburger');
+    const mobileNav = document.getElementById('mobileNav');
+    if (hamburger && mobileNav) {
+      hamburger.addEventListener('click', function(e) {
+        e.stopPropagation();
+        mobileNav.classList.toggle('hidden');
+      });
+    }
+
+    function getScrollAmount() {
+      const card = track.querySelector('.svc-card');
+      if (!card) return 260;
+      const style = getComputedStyle(track);
+      const gap = parseFloat(style.gap) || 16;
+      return card.offsetWidth + gap;
+    }
+
+    function scrollLeft() {
+      track.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
+    }
+
+    function scrollRight() {
+      track.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
+    }
+
+    leftBtn.addEventListener('click', scrollLeft);
+    rightBtn.addEventListener('click', scrollRight);
+
+    let autoInterval = setInterval(scrollRight, 3500);
+
+    function pauseAuto() { clearInterval(autoInterval); }
+    function resumeAuto() {
+      clearInterval(autoInterval);
+      autoInterval = setInterval(scrollRight, 3500);
+    }
+
+    track.addEventListener('mouseenter', pauseAuto);
+    track.addEventListener('mouseleave', resumeAuto);
+    leftBtn.addEventListener('mouseenter', pauseAuto);
+    leftBtn.addEventListener('mouseleave', resumeAuto);
+    rightBtn.addEventListener('mouseenter', pauseAuto);
+    rightBtn.addEventListener('mouseleave', resumeAuto);
+
+    function updateArrowState() {
+      const maxScroll = track.scrollWidth - track.clientWidth;
+      leftBtn.disabled = track.scrollLeft <= 2;
+      rightBtn.disabled = track.scrollLeft >= maxScroll - 2;
+      leftBtn.style.opacity = leftBtn.disabled ? '0.3' : '1';
+      rightBtn.style.opacity = rightBtn.disabled ? '0.3' : '1';
+    }
+
+    track.addEventListener('scroll', updateArrowState);
+    window.addEventListener('resize', updateArrowState);
+    setTimeout(updateArrowState, 100);
+
+    // ---- Scroll to Top ----
+    const scrollBtn = document.getElementById('scrollToTop');
+    if (scrollBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 300) {
+          scrollBtn.classList.add('show');
+        } else {
+          scrollBtn.classList.remove('show');
+        }
+      });
+
+      scrollBtn.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+    }
+  });
+</script>
+</body>
+</html>

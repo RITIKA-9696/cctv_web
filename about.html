@@ -86,29 +86,102 @@
             animation: floatBadge 3s ease-in-out 1.2s infinite;
         }
 
-        /* Active nav */
-        .active-nav {
-            position: relative;
-            color: white !important;
-        }
-        .active-nav::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            right: 0;
-            height: 2px;
-            background: #A04747;
-            border-radius: 2px;
-        }
+       /* ----- HEADER ----- */
+    #mainHeader {
+      font-family: 'Inter', sans-serif;
+    }
 
-        /* Mobile active nav */
-        .mobile-active {
-            background: #A04747 !important;
-            color: white !important;
-            border-radius: 8px;
-            padding: 8px 16px;
-        }
+    .brand-name {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+    .brand-name .highlight {
+      color: #E01C08;
+    }
+    .brand-name .light {
+      color: #ffffff;
+    }
+
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+      transition: color 0.2s ease;
+      text-decoration: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 9999px;
+    }
+    .nav-link:hover {
+      color: #E01C08;
+    }
+    .nav-link.active {
+      background: #E01C08;
+      color: #fff;
+      padding: 0.4rem 1.2rem;
+    }
+    .nav-link.active:hover {
+      color: #fff;
+      background: #a51515;
+    }
+
+    .btn-contact {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      background: #37353e;
+      color: #fff;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+    }
+    .btn-contact:hover {
+      background: #E01C08;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(224,28,8,0.3);
+    }
+
+    .mobile-nav-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #1a2a3a;
+      padding: 0.6rem 0;
+      display: block;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .mobile-nav-link:hover {
+      color: #E01C08;
+    }
+    .mobile-nav-link.active-mobile {
+      background: #E01C08;
+      color: #fff;
+      border-radius: 8px;
+      padding: 0.6rem 1.2rem;
+    }
+
+    .header-inner {
+      background: rgba(43, 42, 42, 0.737);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 9999px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+
+    /* end  */
 
         /* Section fade-in */
         .reveal {
@@ -127,13 +200,13 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: #954C2E;
+            background: #B31312;
             color: white;
             border: none;
             border-radius: 50%;
             font-size: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(149, 76, 46, 0.4);
+            box-shadow: 0 4px 15px rgba(179, 19, 18, 0.4);
             transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
@@ -145,9 +218,9 @@
         }
 
         #scrollToTop:hover {
-            background: #b85a3a;
+            background: #8a0f0e;
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(149, 76, 46, 0.5);
+            box-shadow: 0 8px 25px rgba(179, 19, 18, 0.5);
         }
 
         #scrollToTop.show {
@@ -218,116 +291,136 @@
                 height: 110px;
             }
         }
+
+        /* Why Choose Us responsive */
+        @media (max-width: 1024px) {
+            .why-choose-image {
+                max-height: 400px;
+                width: auto;
+                margin-top: 0 !important;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .why-choose-image {
+                max-height: 300px;
+                width: auto;
+            }
+            .why-choose-section .border-l-4,
+            .why-choose-section .border-r-4 {
+                border-left-width: 4px !important;
+                border-right-width: 0 !important;
+            }
+        }
+
+        /* Mission Vision Motto responsive */
+        @media (max-width: 640px) {
+            .mvm-image {
+                height: 200px !important;
+            }
+        }
     </style>
 </head>
 
 <body class="bg-white text-[#1a2a3a]">
 
-    <!-- HEADER -->
-    <header class="absolute top-4 md:top-10 left-0 right-0 z-50" id="mainHeader">
-        <div class="container mx-auto px-4">
-            <div class="bg-white/5 backdrop-blur-sm rounded-full shadow-lg px-4 md:px-6 py-3 md:py-4 flex justify-between items-center gap-3 md:gap-5">
-                <div class="flex-shrink-0">
-                    <a href="index.html">
-                        <h1 class="text-xl md:text-2xl font-bold text-[#954C2E]">Techno <span class="text-white">Eye</span></h1>
-                    </a>
-                </div>
-                <nav class="flex-1 flex justify-center">
-                    <ul class="hidden md:flex gap-6 lg:gap-8 items-center">
-                        <li><a href="index.html" class="font-semibold text-white hover:text-[#A04747] transition">Home</a></li>
-                        <li><a href="about.html" class="font-semibold text-white active-nav transition bg-[#A04747] p-2 px-4 rounded-xl">About</a></li>
-                        <li><a href="services.html" class="font-semibold text-white hover:text-[#A04747] transition">Services</a></li>
-                        <li><a href="solutions.html" class="font-semibold text-white hover:text-[#A04747] transition">Solutions</a></li>
-                    </ul>
-                </nav>
-                <div class="hidden md:block flex-shrink-0">
-                    <a href="contact.html" class="bg-[#37353E] text-white px-4 md:px-5 py-2 rounded-md font-semibold text-sm hover:bg-[#005bb5] transition hover:-translate-y-0.5 hover:shadow-lg">Contact Us</a>
-                </div>
-                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
-                    <span class="w-6 h-0.5 bg-white transition"></span>
-                    <span class="w-6 h-0.5 bg-white transition"></span>
-                    <span class="w-6 h-0.5 bg-white transition"></span>
-                </div>
-            </div>
-        </div>
-        <div class="md:hidden hidden px-4 mt-2" id="mobileNav">
-            <div class="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg px-6 py-4">
-                <ul class="flex flex-col gap-3 text-center">
-                    <li><a href="index.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Home</a></li>
-                    <li><a href="about.html" class="mobile-active font-semibold block py-2 transition">About</a></li>
-                    <li><a href="services.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Services</a></li>
-                    <li><a href="solutions.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Solutions</a></li>
-                    <li><a href="contact.html" class="bg-[#0073e6] text-white px-5 py-2 rounded-md font-semibold block hover:bg-[#005bb5] transition">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+    <!-- ====== HEADER ====== -->
+<header class="fixed top-4 md:top-6 left-0 right-0 z-50" id="mainHeader">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="header-inner">
+      <div class="flex-shrink-0">
+        <a href="index.html" class="brand-name">
+          <span class="highlight">Techno</span><span class="light">Eye</span>
+        </a>
+      </div>
+      <nav class="flex-1 flex justify-center">
+        <ul class="hidden md:flex items-center gap-1 lg:gap-2">
+          <li><a href="index.html" class="nav-link ">Home</a></li>
+          <li><a href="about.html" class="nav-link active">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+        </ul>
+      </nav>
+      <div class="hidden md:block flex-shrink-0">
+        <a href="contact.html" class="btn-contact">Contact Us</a>
+      </div>
+      <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+        <span class="w-6 h-0.5 bg-white transition-all"></span>
+        <span class="w-6 h-0.5 bg-white transition-all"></span>
+        <span class="w-6 h-0.5 bg-white transition-all"></span>
+      </div>
+    </div>
+    <div class="md:hidden hidden mt-3 px-2" id="mobileNav">
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-6 py-5 border border-white/20">
+        <ul class="flex flex-col gap-2 text-center">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="about.html" class="mobile-nav-link active-mobile">About</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+          <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="background:#E01C08; border-radius:40px; padding:0.7rem;">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
 
+    
     <!-- HERO -->
-    <section class="relative text-white overflow-hidden">
-        <div class="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[680px]">
-            <img src="assets/cctv-slider-2.jpg" alt="About Techno Eye" class="absolute inset-0 w-full h-full object-cover object-center">
-            <div class="absolute inset-0 bg-black/55"></div>
-            <div class="absolute inset-0 flex flex-col justify-center sm:justify-end px-6 md:px-12 lg:px-16 pb-12 sm:pb-16 md:pb-20 max-w-3xl mx-auto sm:mx-0">
-                <p class="hero-subtitle text-xs md:text-sm uppercase tracking-[0.2em] text-[#B8CFCE] font-semibold mb-2 sm:mb-3">Who We Are</p>
-                <h1 class="hero-title instrument-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight mb-3 sm:mb-5">
-                    Trusted IT Solutions <br class="hidden sm:block">
-                    <span class="text-[#83B4FF]">For Modern Business</span>
-                </h1>
-                <p class="hero-subtitle text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mb-6 sm:mb-8 leading-relaxed">
-                    Since 2016, Techno Eye has delivered secure, scalable technology infrastructure — CCTV, networking, data centers, and more — to businesses across India.
-                </p>
-                <div class="hero-cta flex flex-wrap gap-3 sm:gap-4">
-                    <a href="services.html" class="bg-[#7F8CAA] text-white px-6 sm:px-8 py-2.5 rounded-md font-semibold hover:bg-[#0073e6] transition hover:-translate-y-1 hover:shadow-lg text-sm sm:text-base">Our Services</a>
-                    <a href="contact.html" class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-6 sm:px-8 py-2.5 rounded-md font-semibold hover:bg-white/20 transition hover:-translate-y-1 text-sm sm:text-base">Get a Quote</a>
-                </div>
+<section class="relative text-white overflow-hidden">
+    <div class="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[680px]">
+        <img src="assets/aboutBanner.jpg" alt="About Techno Eye" class="absolute inset-0 w-full h-full object-cover object-center">
+        <div class="absolute inset-0 bg-black/55"></div>
+        <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12 lg:px-16 max-w-4xl mx-auto">
+            <p class="hero-subtitle text-xs md:text-sm uppercase tracking-[0.2em] text-[#2B2A4C] font-semibold mb-2 sm:mb-3 bg-[#EEE2DE] p-1.5 sm:p-2 rounded-xl px-4 sm:px-6">Who We Are</p>
+            <h1 class="hero-title instrument-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-3 sm:mb-5 text-[#BE1A1A] font-semibold">
+                About Us
+            </h1>
+            <p class="hero-subtitle text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mb-6 sm:mb-8 leading-relaxed px-2">
+                Since 2016, Techno Eye has delivered secure, scalable technology infrastructure — CCTV, networking, data centers, and more — to businesses across India.
+            </p>
+            <div class="hero-cta flex flex-wrap justify-center gap-3 sm:gap-4">
+                <a href="services.html" class="bg-[#B31312] text-white px-5 sm:px-6 md:px-8 py-2 rounded-md font-semibold hover:bg-[#EA906C] transition hover:-translate-y-1 hover:shadow-lg text-sm sm:text-base">Our Services</a>
+                <a href="contact.html" class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-5 sm:px-6 md:px-8 py-2 rounded-md font-semibold hover:bg-white/20 transition hover:-translate-y-1 text-sm sm:text-base">Get a Quote</a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- ABOUT SPLIT -->
     <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 sm:px-6">
             <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
 
                 <!-- LEFT - Image Collage -->
                 <div class="relative reveal order-1 lg:order-1">
-                    <img src="assets/about_us.jpg" alt="Techno Eye team at work" class="collage-main w-full h-56 xs:h-64 sm:h-72 md:h-[420px] object-cover rounded-2xl shadow-2xl">
-                    <div class="collage-inset absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-28 xs:w-32 sm:w-40 md:w-48 h-20 xs:h-24 sm:h-28 md:h-36 rounded-xl overflow-hidden shadow-xl border-4 border-white">
-                        <img src="assets/cctv_banner.jpg" alt="CCTV installation" class="w-full h-full object-cover">
-                    </div>
-                    <div class="badge-float badge-pos-1 absolute -left-2 sm:-left-4 top-6 sm:top-8 bg-white rounded-xl shadow-xl px-3 sm:px-5 py-2 sm:py-3 flex flex-col items-center">
-                        <span class="text-lg sm:text-2xl font-bold text-[#954C2E]">500+</span>
-                        <span class="text-[10px] sm:text-xs text-gray-500 font-medium">Projects Done</span>
-                    </div>
-                    <div class="badge-float-delay badge-pos-2 absolute left-2 sm:left-4 bottom-28 sm:bottom-40 md:bottom-48 bg-[#1a2a3a] rounded-xl shadow-xl px-3 sm:px-5 py-2 sm:py-3 flex flex-col items-center">
-                        <span class="text-lg sm:text-2xl font-bold text-white">100+</span>
-                        <span class="text-[10px] sm:text-xs text-[#83B4FF] font-medium">Happy Clients</span>
-                    </div>
+                    <img src="assets/about1.png" alt="Techno Eye team at work" class="collage-main w-full h-56 xs:h-64 sm:h-72 md:h-[420px] object-cover rounded-xl shadow-2xl">
+                    <div class="collage-inset absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-28 xs:w-32 sm:w-40 md:w-48 h-20 xs:h-24 sm:h-28 md:h-36 rounded-xl overflow-hidden shadow-xl border-2 border-white">
+                        <img src="assets/moto.jpg" alt="CCTV installation" class="w-full h-full object-cover">
+                    </div>                    
                 </div>
 
                 <!-- RIGHT - Content -->
                 <div class="reveal order-2 lg:order-2">
-                    <span class="inline-block px-4 py-1.5 bg-[#EFE4D2] text-[#954C2E] rounded-full text-xs font-bold tracking-widest uppercase mb-4 sm:mb-5">About Us</span>
-                    <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#1a2a3a] leading-tight mb-4 sm:mb-5">
+                    <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4 sm:mb-5">About Us</span>
+                    <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#2B2A4C] leading-tight mb-4 sm:mb-5">
                         We'll Find &amp; Build The Perfect <br class="hidden sm:block">
-                        <span class="text-[#954C2E]">IT Infrastructure For You</span>
+                        <span class="text-[#B31312]">IT Infrastructure For You</span>
                     </h2>
-                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6 border-l-4 border-[#954C2E] pl-4">
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6 border-l-4 border-[#EA906C] pl-4">
                         Techno Eye is a leading IT solutions provider, offering customized infrastructure — from CCTV surveillance to structured cabling — for businesses across India. We've grown alongside the evolving IT landscape since our inception in 2016, with a team that puts client success first.
                     </p>
                     <ul class="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
                         <li class="flex items-center gap-3 text-[#1a2a3a] font-medium text-xs sm:text-sm">
-                            <i class="fas fa-check-circle text-[#954C2E]"></i> Professional project management from day one
+                            <i class="fas fa-check-circle text-[#B31312]"></i> Professional project management from day one
                         </li>
                         <li class="flex items-center gap-3 text-[#1a2a3a] font-medium text-xs sm:text-sm">
-                            <i class="fas fa-check-circle text-[#954C2E]"></i> Tailored solutions — no one-size-fits-all approach
+                            <i class="fas fa-check-circle text-[#B31312]"></i> Tailored solutions — no one-size-fits-all approach
                         </li>
                         <li class="flex items-center gap-3 text-[#1a2a3a] font-medium text-xs sm:text-sm">
-                            <i class="fas fa-check-circle text-[#954C2E]"></i> Guaranteed quality and post-installation support
+                            <i class="fas fa-check-circle text-[#B31312]"></i> Guaranteed quality and post-installation support
                         </li>
                     </ul>
-                    <a href="services.html" class="inline-flex items-center gap-2 bg-[#1a2a3a] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-[#0073e6] transition hover:-translate-y-1 hover:shadow-lg text-sm sm:text-base">
+                    <a href="services.html" class="inline-flex items-center gap-2 bg-[#B31312] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-[#8a0f0e] transition hover:-translate-y-1 hover:shadow-lg text-sm sm:text-base">
                         Explore Solutions <i class="fas fa-arrow-right text-sm"></i>
                     </a>
                 </div>
@@ -336,112 +429,139 @@
         </div>
     </section>
 
-    <!-- CORE VALUES -->
-    <section class="py-12 sm:py-16 md:py-20 bg-[#1a2a3a]">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-10 sm:mb-12 reveal">
-                <p class="text-xs uppercase tracking-[0.2em] text-[#83B4FF] font-semibold mb-2">What We Stand For</p>
-                <h2 class="instrument-serif text-2xl sm:text-3xl text-white">Our Core Values</h2>
-            </div>
-            <div class="grid grid-cols-1 xs:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 reveal">
-                <div class="value-card bg-[#162335] rounded-2xl p-5 sm:p-6 flex flex-col items-center text-center border border-white/5">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#0073e6]/10 flex items-center justify-center mb-3 sm:mb-4">
-                        <i class="fas fa-star text-xl sm:text-2xl text-[#0073e6]"></i>
-                    </div>
-                    <h3 class="font-bold text-white text-sm sm:text-base mb-1.5 sm:mb-2">Excellence</h3>
-                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">We deliver high-quality solutions that exceed expectations.</p>
-                </div>
-                <div class="value-card bg-[#162335] rounded-2xl p-5 sm:p-6 flex flex-col items-center text-center border border-white/5">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#0073e6]/10 flex items-center justify-center mb-3 sm:mb-4">
-                        <i class="fas fa-handshake text-xl sm:text-2xl text-[#0073e6]"></i>
-                    </div>
-                    <h3 class="font-bold text-white text-sm sm:text-base mb-1.5 sm:mb-2">Integrity</h3>
-                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Transparent processes and honest communication.</p>
-                </div>
-                <div class="value-card bg-[#162335] rounded-2xl p-5 sm:p-6 flex flex-col items-center text-center border border-white/5">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#0073e6]/10 flex items-center justify-center mb-3 sm:mb-4">
-                        <i class="fas fa-lightbulb text-xl sm:text-2xl text-[#0073e6]"></i>
-                    </div>
-                    <h3 class="font-bold text-white text-sm sm:text-base mb-1.5 sm:mb-2">Innovation</h3>
-                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Continuously evolving with the tech landscape.</p>
-                </div>
-                <div class="value-card bg-[#162335] rounded-2xl p-5 sm:p-6 flex flex-col items-center text-center border border-white/5">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-[#0073e6]/10 flex items-center justify-center mb-3 sm:mb-4">
-                        <i class="fas fa-users text-xl sm:text-2xl text-[#0073e6]"></i>
-                    </div>
-                    <h3 class="font-bold text-white text-sm sm:text-base mb-1.5 sm:mb-2">Client Focus</h3>
-                    <p class="text-gray-400 text-xs sm:text-sm leading-relaxed">Your goals drive every decision we make.</p>
-                </div>
-            </div>
+   <!-- ====== WHY CHOOSE US ====== -->
+<section class="py-8 sm:py-10 md:py-12 lg:py-20 bg-white overflow-hidden why-choose-section">
+    <div class="container mx-auto px-4 sm:px-6">
+        <!-- Section Heading -->
+        <div class="text-center reveal">
+            <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3">
+                <i class="fas fa-medal mr-2"></i> Why Choose Us
+            </span>
+            <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#2B2A4C] leading-tight">
+                The <span class="text-[#B31312]">Techno Eye</span> Advantage
+            </h2>
+            <p class="text-gray-500 text-sm sm:text-base mt-3 max-w-2xl mx-auto px-2">
+                What sets us apart from the competition — your trusted partner for IT excellence.
+            </p>
         </div>
-    </section>
+
+        <!-- Main Layout: 2 columns left | center image | 2 columns right -->
+        <div class="flex flex-col lg:flex-row items-center gap-4 md:gap-6 lg:gap-8 reveal mt-8 sm:mt-10">
+            
+            <!-- LEFT SIDE: 2 Sections -->
+            <div class="w-full lg:w-[30%] space-y-4 md:space-y-6">
+                <!-- Left Section 1 -->
+                <div class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#B31312]">
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#EFE4D2] flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-users text-[#B31312] text-base sm:text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">Expert Team</h3>
+                            <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Certified professionals with 10+ years of experience in IT infrastructure and security solutions.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Left Section 2 -->
+                <div class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#B31312]">
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#EFE4D2] flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-rocket text-[#B31312] text-base sm:text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">Cutting-Edge Technology</h3>
+                            <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">We deploy the latest AI-powered surveillance, cloud solutions, and enterprise-grade networking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CENTER: Image -->
+            <div class="w-full lg:w-[40%] flex justify-center items-center my-4 sm:my-6 lg:my-0">
+                <div class="relative w-full max-w-[500px]">
+                    <img src="assets/why-choose-image.png" alt="Why Choose Techno Eye" class="why-choose-image w-full h-auto max-h-[500px] sm:max-h-[600px] object-contain">
+                </div>
+            </div>
+
+            <!-- RIGHT SIDE: 2 Sections -->
+            <div class="w-full lg:w-[30%] space-y-4 md:space-y-6">
+                <!-- Right Section 1 -->
+                <div class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-r-4 border-[#B31312]">
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#EFE4D2] flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-headset text-[#B31312] text-base sm:text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">24/7 Support</h3>
+                            <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Round-the-clock technical assistance and monitoring to ensure your systems run without interruption.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Section 2 -->
+                <div class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-r-4 border-[#B31312]">
+                    <div class="flex items-start gap-3 sm:gap-4">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#EFE4D2] flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-shield-alt text-[#B31312] text-base sm:text-lg md:text-xl"></i>
+                        </div>
+                        <div>
+                            <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">Quality Assurance</h3>
+                            <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Rigorous testing and premium-grade equipment ensure reliable, long-lasting performance.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
 
     <!-- MISSION, VISION, MOTTO -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-[#F1EFEC]">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-12 sm:mb-16 reveal">
-                <span class="inline-block px-4 py-1.5 bg-[#D4C9BE] text-[#1B3C53] rounded-full text-xs font-bold tracking-widest uppercase mb-4">Who We Are</span>
+    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-[#F8F6F4]">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12 md:mb-16 reveal">
+                <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4">Who We Are</span>
                 <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#1a2a3a] leading-tight">
-                    The Principles That <span class="text-[#954C2E]">Drive Us Forward</span>
+                    The Principles That <span class="text-[#B31312]">Drive Us Forward</span>
                 </h2>
             </div>
 
             <!-- Mission -->
-            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-12 sm:mb-16 md:mb-20 reveal">
-                <div class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-1">
-                    <img src="assets/mission.jpg" alt="Our Mission" class="w-full h-full object-cover bg-[#83B4FF]">
-                    <div class="absolute inset-0 bg-[#0073e6]/20"></div>
-                    <div class="absolute bottom-3 sm:bottom-5 left-3 sm:left-5 bg-white/90 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow">
-                        <span class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-[#0073e6]">Our Mission</span>
-                    </div>
+            <div class="grid lg:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center mb-10 sm:mb-14 md:mb-20 reveal">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-1 mvm-image">
+                    <img src="assets/bannerslider1.jpg" alt="Our Mission" class="w-full h-full object-cover">
                 </div>
                 <div class="order-2 lg:order-2">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#EFE4D2] flex items-center justify-center mb-4 sm:mb-5">
-                        <i class="fas fa-bullseye text-lg sm:text-xl text-[#954C2E]"></i>
-                    </div>
-                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#1a2a3a] mb-3 sm:mb-4">Our Mission</h3>
-                    <div class="w-12 h-1 bg-[#0073e6] rounded mb-4 sm:mb-5"></div>
+                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#B31312] mb-3 sm:mb-4">Our Mission</h3>
+                    <div class="w-12 h-1 bg-[#B31312] rounded mb-4 sm:mb-5"></div>
                     <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">To empower businesses with innovative, reliable, and scalable IT solutions that enhance operational efficiency and security.</p>
-                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">We strive to build lasting partnerships, delivering exceptional service and value while helping clients navigate the ever-evolving technology landscape with confidence.</p>
+                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">We strive to build lasting partnerships by delivering exceptional service, measurable value, and cutting-edge technology solutions that help our clients confidently navigate the ever-evolving digital landscape. Our commitment is to drive sustainable growth, foster innovation, and ensure long-term success through technology excellence.</p>
                 </div>
             </div>
 
             <!-- Vision -->
-            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center mb-12 sm:mb-16 md:mb-20 reveal">
+            <div class="grid lg:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center mb-10 sm:mb-14 md:mb-20 reveal">
                 <div class="order-2 lg:order-1">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#1a2a3a] flex items-center justify-center mb-4 sm:mb-5">
-                        <i class="fas fa-eye text-lg sm:text-xl text-[#83B4FF]"></i>
-                    </div>
-                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#1a2a3a] mb-3 sm:mb-4">Our Vision</h3>
-                    <div class="w-12 h-1 bg-[#954C2E] rounded mb-4 sm:mb-5"></div>
+                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#B31312] mb-3 sm:mb-4">Our Vision</h3>
+                    <div class="w-12 h-1 bg-[#B31312] rounded mb-4 sm:mb-5"></div>
                     <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">To be recognized as a leading IT solutions provider across India — known for our commitment to quality, customer satisfaction, and technological innovation.</p>
                     <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">We aim to be the go-to partner for businesses seeking services that drive growth, enhance connectivity, and ensure data security in an increasingly digital world.</p>
                 </div>
-                <div class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-2">
-                    <img src="assets/vision.jpg" alt="Our Vision" class="w-full h-full object-cover bg-[#83B4FF]">
-                    <div class="absolute inset-0 bg-[#954C2E]/15"></div>
-                    <div class="absolute bottom-3 sm:bottom-5 left-3 sm:left-5 bg-white/90 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow">
-                        <span class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-[#954C2E]">Our Vision</span>
-                    </div>
+                <div class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-2 mvm-image">
+                    <img src="assets/bannerslider2.jpg" alt="Our Vision" class="w-full h-full object-cover">
                 </div>
             </div>
 
             <!-- Motto -->
-            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center reveal">
-                <div class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-1">
-                    <img src="assets/moto.jpg" alt="Our Motto" class="w-full h-full object-cover bg-[#83B4FF]">
-                    <div class="absolute inset-0 bg-[#1a2a3a]/25"></div>
-                    <div class="absolute bottom-3 sm:bottom-5 left-3 sm:left-5 bg-white/90 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-lg shadow">
-                        <span class="text-[10px] sm:text-xs font-bold tracking-widest uppercase text-[#1a2a3a]">Our Motto</span>
-                    </div>
+            <div class="grid lg:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center reveal">
+                <div class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-1 mvm-image">
+                    <img src="assets/bannerslider3.jpg" alt="Our Motto" class="w-full h-full object-cover">
                 </div>
                 <div class="order-2 lg:order-2">
-                    <div class="w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#EFE4D2] flex items-center justify-center mb-4 sm:mb-5">
-                        <i class="fas fa-shield-halved text-lg sm:text-xl text-[#954C2E]"></i>
-                    </div>
-                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#1a2a3a] mb-3 sm:mb-4">Our Motto</h3>
-                    <div class="w-12 h-1 bg-[#954C2E] rounded mb-4 sm:mb-5"></div>
-                    <p class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#954C2E] italic leading-snug mb-4 sm:mb-5 border-l-4 border-[#954C2E] pl-4 sm:pl-5">
+                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#B31312] mb-3 sm:mb-4">Our Motto</h3>
+                    <div class="w-12 h-1 bg-[#B31312] rounded mb-4 sm:mb-5"></div>
+                    <p class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#B31312] italic leading-snug mb-4 sm:mb-5 border-l-4 border-[#B31312] pl-4 sm:pl-5">
                         "Secure Today,<br>Future-Ready Tomorrow."
                     </p>
                     <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Every solution we design is built not just for today's challenges but for the demands of tomorrow — giving our clients a secure, scalable foundation they can always count on.</p>
@@ -450,20 +570,38 @@
         </div>
     </section>
 
-    <!-- CTA STRIP -->
-    <section class="py-12 sm:py-14 md:py-16 text-center bg-white">
-        <div class="container mx-auto px-4 flex justify-center">
-            <div class="max-w-xl w-full bg-[#FFF4E0] p-4 sm:p-6 md:p-8 rounded-lg">
-                <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 text-[#B46060]">Ready to Transform Your IT Infrastructure?</h2>
-                <p class="text-sm sm:text-base text-[#FFA559] max-w-xl mx-auto mb-6 sm:mb-7 opacity-90">Let's build a secure, scalable technology environment that keeps your business moving forward.</p>
-                <a href="contact.html" class="bg-[#4D4D4D] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-semibold hover:bg-[#4D4D4D] transition hover:-translate-y-1 hover:shadow-lg inline-block text-sm sm:text-base">Get Started</a>
+    <!-- ====== CTA ====== -->
+<section class="relative py-12 sm:py-16 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
+    <img src="/assets/contactbanner.jpg" alt="Contact Banner" class="absolute inset-0 w-full h-full object-cover object-center" />
+    <div class="absolute inset-0 bg-black/60"></div>
+    <div class="absolute top-0 right-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-[#B31312]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+    <div class="absolute bottom-0 left-0 w-48 sm:w-64 md:w-80 h-48 sm:h-64 md:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+    <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
+            <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                <i class="fas fa-rocket mr-2"></i> Let's Get Started
+            </span>
+            <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-4 leading-tight">
+                Ready to Transform Your <span class="text-white">IT Infrastructure</span>?
+            </h2>
+            <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed">
+                Let's build a secure, scalable technology environment that keeps your <span class="text-white font-semibold">business moving forward</span> with confidence and reliability.
+            </p>
+            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                <a href="contact.html" class="bg-[#B31312] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 rounded-lg font-semibold hover:bg-[#8a0f0e] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-sm sm:text-base">
+                    <i class="fas fa-paper-plane"></i> Get Started
+                </a>
+                <a href="services.html" class="bg-[#EEE2DE] backdrop-blur-sm border border-white/30 text-[#2B2A4C] px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 rounded-lg font-semibold hover:bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-sm sm:text-base">
+                    <i class="fas fa-arrow-right"></i> Explore Services
+                </a>
             </div>
         </div>
-    </section>
+    </div>
+</section>
 
     <!-- FOOTER -->
     <footer class="bg-[#1a2a3a] text-white pt-10 sm:pt-12 pb-4">
-        <div class="container mx-auto px-4">
+        <div class="container mx-auto px-4 sm:px-6">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
                 <div>
                     <h3 class="text-xl font-bold mb-4">Techno <span class="text-[#0073e6]">Eye</span></h3>

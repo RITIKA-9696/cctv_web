@@ -12,7 +12,7 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
 </head>
 
 <style>
@@ -20,60 +20,343 @@
         font-family: "Instrument Serif", serif;
     }
 
-    .active-nav {
-        position: relative;
-        color: white !important;
+    /* ----- HEADER ----- */
+    #mainHeader {
+        font-family: 'Inter', sans-serif;
     }
-    .active-nav::after {
+
+    .brand-name {
+        font-family: 'Instrument Serif', serif;
+        font-weight: 400;
+        font-size: 1.5rem;
+        letter-spacing: 0.5px;
+    }
+    .brand-name .highlight {
+        color: #E01C08;
+    }
+    .brand-name .light {
+        color: #ffffff;
+    }
+
+    .nav-link {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 0.95rem;
+        letter-spacing: 0.3px;
+        color: #ffffff;
+        transition: color 0.2s ease;
+        text-decoration: none;
+        padding: 0.4rem 0.8rem;
+        border-radius: 9999px;
+    }
+    .nav-link:hover {
+        color: #E01C08;
+    }
+    .nav-link.active {
+        background: #E01C08;
+        color: #fff;
+        padding: 0.4rem 1.2rem;
+    }
+    .nav-link.active:hover {
+        color: #fff;
+        background: #a51515;
+    }
+
+    .btn-contact {
+        font-family: 'Inter', sans-serif;
+        font-weight: 600;
+        font-size: 0.85rem;
+        background: #37353e;
+        color: #fff;
+        padding: 0.5rem 1.25rem;
+        border-radius: 8px;
+        transition: all 0.25s ease;
+        text-decoration: none;
+        letter-spacing: 0.2px;
+    }
+    .btn-contact:hover {
+        background: #E01C08;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(224,28,8,0.3);
+    }
+
+    .mobile-nav-link {
+        font-family: 'Inter', sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+        color: #1a2a3a;
+        padding: 0.6rem 0;
+        display: block;
+        transition: color 0.2s;
+        text-decoration: none;
+    }
+    .mobile-nav-link:hover {
+        color: #E01C08;
+    }
+    .mobile-nav-link.active-mobile {
+        background: #E01C08;
+        color: #fff;
+        border-radius: 8px;
+        padding: 0.6rem 1.2rem;
+    }
+
+    .header-inner {
+        background: rgba(43, 42, 42, 0.737);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border-radius: 9999px;
+        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+        border: 1px solid rgba(255, 255, 255, 0.06);
+        padding: 0.75rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    /* Section fade-in */
+    .reveal {
+        opacity: 0;
+        transform: translateY(32px);
+        transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Solution Cards */
+    .solution-card {
+        background: #fff;
+        border-radius: 20px;
+        overflow: hidden;
+        position: relative;
+        /* box-shadow: 1px #8a0f0e; */
+        transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
+                    box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        cursor: pointer;
+        border:  1px solid #8a0f0e;
+    }
+
+    .solution-card:hover {
+        transform: translateY(-12px);
+        box-shadow: 0 24px 56px rgba(0,0,0,0.14);
+    }
+
+    .solution-img-wrap {
+        position: relative;
+        overflow: hidden;
+        height: 200px;
+    }
+
+    .solution-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.7s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .solution-card:hover .solution-img-wrap img {
+        transform: scale(1.12);
+    }
+
+    .solution-overlay {
+        position: absolute;
+        inset: 0;
+        background: rgba(10,10,30,0);
+        transition: background 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+        pointer-events: none;
+    }
+
+    .solution-card:hover .solution-overlay {
+        background: rgba(10,10,30,0.25);
+    }
+
+    .solution-icon {
+        position: relative;
+        background: #B31312;
+        border-radius: 50%;
+        width: 64px;
+        height: 64px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        margin-top: -32px;
+        border: 4px solid #fff;
+        box-shadow: 0 6px 24px rgba(179,19,18,0.35);
+        transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
+                    box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
+                    background 0.4s ease;
+        z-index: 5;
+    }
+
+    .solution-icon i {
+        color: #fff;
+        font-size: 1.3rem;
+        transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+    }
+
+    .solution-card:hover .solution-icon {
+        transform: scale(1.15) rotate(4deg);
+        box-shadow: 0 12px 40px rgba(179,19,18,0.5);
+        background: #8a0f0e;
+    }
+
+    .solution-card:hover .solution-icon i {
+        transform: scale(1.1);
+    }
+
+    .solution-body {
+        padding: 16px 24px 24px;
+        text-align: center;
+        background: #fff;
+    }
+
+    .solution-title {
+        font-size: 17px;
+        font-weight: 800;
+        color: #1a1a2e;
+        margin-bottom: 6px;
+        transition: color 0.4s ease;
+    }
+
+    .solution-card:hover .solution-title {
+        color: #B31312;
+    }
+
+    .solution-desc {
+        font-size: 13px;
+        color: #777;
+        line-height: 1.7;
+        margin-bottom: 12px;
+        transition: color 0.4s ease;
+    }
+
+    .solution-card:hover .solution-desc {
+        color: #555;
+    }
+
+    .solution-features {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 4px 12px;
+        margin-bottom: 14px;
+    }
+
+    .solution-features span {
+        font-size: 11px;
+        color: #666;
+        display: flex;
+        align-items: center;
+        gap: 4px;
+    }
+
+    .solution-features span i {
+        color: #B31312;
+        font-size: 10px;
+    }
+
+    .solution-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        color: #B31312;
+        font-size: 13px;
+        font-weight: 700;
+        text-decoration: none;
+        transition: gap 0.4s cubic-bezier(0.23, 1, 0.32, 1), 
+                    color 0.3s ease,
+                    transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .solution-link:hover {
+        gap: 18px;
+        color: #8a0f0e;
+        transform: translateX(4px);
+    }
+
+    .solution-arrow {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: #B31312;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        transition: background 0.4s ease, 
+                    transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
+                    box-shadow 0.4s ease;
+        box-shadow: 0 2px 8px rgba(179,19,18,0.3);
+    }
+
+    .solution-link:hover .solution-arrow {
+        background: #8a0f0e;
+        transform: scale(1.15) rotate(-8deg);
+        box-shadow: 0 4px 16px rgba(179,19,18,0.4);
+    }
+
+    /* Image shine effect */
+    .solution-img-wrap::after {
         content: '';
         position: absolute;
-        bottom: -4px;
-        left: 0;
-        right: 0;
-        height: 2px;
-        background: #A04747;
-        border-radius: 2px;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: linear-gradient(
+            45deg,
+            transparent 30%,
+            rgba(255,255,255,0.08) 50%,
+            transparent 70%
+        );
+        transform: translateX(-100%) rotate(45deg);
+        transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+        pointer-events: none;
+        z-index: 2;
     }
 
-    /* Mobile active nav */
-    .mobile-active {
-        background: #A04747 !important;
-        color: white !important;
-        border-radius: 8px;
-        padding: 8px 16px;
+    .solution-card:hover .solution-img-wrap::after {
+        transform: translateX(100%) rotate(45deg);
     }
 
-    .solution-card {
-        transition: all 0.4s ease;
-    }
-    .solution-card:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
-    }
-    .solution-card .icon-wrap {
-        transition: all 0.4s ease;
-    }
-    .solution-card:hover .icon-wrap {
-        transform: scale(1.1) rotate(-5deg);
-        background: #954C2E;
-    }
-    .solution-card:hover .icon-wrap i {
-        color: white;
+    /* Scroll reveal */
+    .sol-reveal {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.8s cubic-bezier(0.23, 1, 0.32, 1) var(--delay, 0ms), 
+                    transform 0.8s cubic-bezier(0.23, 1, 0.32, 1) var(--delay, 0ms);
+        will-change: transform, opacity;
     }
 
+    .sol-reveal.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .sol-reveal:nth-child(1) { --delay: 0ms; }
+    .sol-reveal:nth-child(2) { --delay: 100ms; }
+    .sol-reveal:nth-child(3) { --delay: 200ms; }
+    .sol-reveal:nth-child(4) { --delay: 300ms; }
+    .sol-reveal:nth-child(5) { --delay: 400ms; }
+    .sol-reveal:nth-child(6) { --delay: 500ms; }
+
+    /* Scroll to Top */
     #scrollToTop {
         position: fixed;
         bottom: 30px;
         right: 30px;
         width: 50px;
         height: 50px;
-        background: #954C2E;
+        background: #B31312;
         color: white;
         border: none;
         border-radius: 50%;
         font-size: 20px;
         cursor: pointer;
-        box-shadow: 0 4px 15px rgba(149, 76, 46, 0.4);
+        box-shadow: 0 4px 15px rgba(179,19,18,0.4);
         transition: all 0.3s ease;
         opacity: 0;
         visibility: hidden;
@@ -85,9 +368,9 @@
     }
 
     #scrollToTop:hover {
-        background: #b85a3a;
+        background: #8a0f0e;
         transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 8px 25px rgba(149, 76, 46, 0.5);
+        box-shadow: 0 8px 25px rgba(179,19,18,0.5);
     }
 
     #scrollToTop.show {
@@ -113,6 +396,52 @@
             height: 44px;
             font-size: 16px;
         }
+        .solution-img-wrap {
+            height: 160px;
+        }
+        .solution-icon {
+            width: 54px;
+            height: 54px;
+            margin-top: -27px;
+        }
+        .solution-icon i {
+            font-size: 1.1rem;
+        }
+        .solution-body {
+            padding: 14px 16px 18px;
+        }
+        .solution-title {
+            font-size: 15px;
+        }
+        .solution-desc {
+            font-size: 12px;
+        }
+        .solution-features span {
+            font-size: 10px;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .solution-img-wrap {
+            height: 140px;
+        }
+        .solution-icon {
+            width: 48px;
+            height: 48px;
+            margin-top: -24px;
+        }
+        .solution-icon i {
+            font-size: 1rem;
+        }
+        .solution-body {
+            padding: 12px 12px 16px;
+        }
+        .solution-title {
+            font-size: 14px;
+        }
+        .solution-desc {
+            font-size: 11.5px;
+        }
     }
 
     /* Hero responsive */
@@ -137,227 +466,569 @@
             height: 600px;
         }
     }
+
+    /* Hero Parallax Reveal Animations */
+    @keyframes heroFadeUp {
+        from {
+            opacity: 0;
+            transform: translateY(60px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    @keyframes heroFadeIn {
+        from {
+            opacity: 0;
+            transform: scale(0.95);
+        }
+        to {
+            opacity: 1;
+            transform: scale(1);
+        }
+    }
+
+    .hero-badge {
+        opacity: 0;
+        animation: heroFadeIn 0.8s ease forwards;
+        animation-delay: 0.2s;
+    }
+
+    .hero-title {
+        opacity: 0;
+        animation: heroFadeUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        animation-delay: 0.5s;
+    }
+
+    .hero-subtitle {
+        opacity: 0;
+        animation: heroFadeUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        animation-delay: 0.8s;
+    }
+
+    .hero-container {
+        position: relative;
+        overflow: hidden;
+    }
+
+    .hero-container img {
+        transition: transform 0.1s ease-out;
+        will-change: transform;
+    }
+
+    /* ===== OVERLAY / MODAL ===== */
+    #solutionOverlay {
+        position: fixed;
+        inset: 0;
+        z-index: 1000;
+        background: rgba(10, 20, 35, 0.92);
+        backdrop-filter: blur(8px);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1.5rem;
+        overflow-y: auto;
+    }
+
+    #solutionOverlay.open {
+        display: flex;
+        animation: overlayFadeIn 0.4s ease forwards;
+    }
+
+    @keyframes overlayFadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+
+    .overlay-panel {
+        position: relative;
+        background: #fff;
+        border-radius: 28px;
+        max-width: 1100px;
+        width: 100%;
+        max-height: 90vh;
+        overflow-y: auto;
+        transform: scale(0.8) rotate(-3deg);
+        opacity: 0;
+        animation: panelReveal 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+        box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    }
+
+    @keyframes panelReveal {
+        0% {
+            transform: scale(0.7) rotate(-5deg);
+            opacity: 0;
+        }
+        60% {
+            transform: scale(1.02) rotate(0.5deg);
+            opacity: 1;
+        }
+        100% {
+            transform: scale(1) rotate(0deg);
+            opacity: 1;
+        }
+    }
+
+    .overlay-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        z-index: 10;
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(0,0,0,0.06);
+        border: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease;
+        font-size: 1.2rem;
+        color: #1a2a3a;
+    }
+
+    .overlay-close:hover {
+        background: #B31312;
+        color: #fff;
+        transform: rotate(90deg);
+    }
+
+    .overlay-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0;
+    }
+
+    .overlay-image {
+        height: 100%;
+        min-height: 400px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 28px 0 0 28px;
+        position: relative;
+    }
+
+    .overlay-image .image-overlay {
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(to right, rgba(10,20,35,0.2) 0%, transparent 100%);
+        border-radius: 28px 0 0 28px;
+    }
+
+    .overlay-details {
+        padding: 2.5rem 3rem 3rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .overlay-details .badge {
+        display: inline-block;
+        padding: 0.25rem 1rem;
+        background: #EEE2DE;
+        color: #2B2A4C;
+        border-radius: 999px;
+        font-size: 0.7rem;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        margin-bottom: 0.75rem;
+        align-self: flex-start;
+    }
+
+    .overlay-details h2 {
+        font-family: "Instrument Serif", serif;
+        font-size: 2.2rem;
+        color: #1a2a3a;
+        margin-bottom: 0.75rem;
+        line-height: 1.2;
+    }
+
+    .overlay-details h2 span {
+        color: #B31312;
+    }
+
+    .overlay-details p {
+        color: #666;
+        line-height: 1.8;
+        margin-bottom: 1.5rem;
+        font-size: 1rem;
+    }
+
+    .overlay-features {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+    }
+
+    .overlay-features .feature {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        font-size: 0.9rem;
+        color: #1a2a3a;
+        font-weight: 500;
+    }
+
+    .overlay-features .feature i {
+        color: #B31312;
+        font-size: 0.8rem;
+    }
+
+    .overlay-details .cta-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        background: #B31312;
+        color: #fff;
+        padding: 0.8rem 2rem;
+        border-radius: 40px;
+        font-weight: 600;
+        font-size: 0.95rem;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        align-self: flex-start;
+        border: none;
+        cursor: pointer;
+    }
+
+    .overlay-details .cta-btn:hover {
+        background: #8a0f0e;
+        transform: translateY(-2px);
+        box-shadow: 0 8px 24px rgba(179,19,18,0.3);
+    }
+
+    /* Responsive Overlay */
+    @media (max-width: 820px) {
+        .overlay-content {
+            grid-template-columns: 1fr;
+        }
+
+        .overlay-image {
+            height: 250px;
+            border-radius: 28px 28px 0 0;
+            min-height: auto;
+        }
+
+        .overlay-image .image-overlay {
+            border-radius: 28px 28px 0 0;
+        }
+
+        .overlay-details {
+            padding: 2rem 1.5rem 2.5rem;
+        }
+
+        .overlay-details h2 {
+            font-size: 1.8rem;
+        }
+
+        .overlay-features {
+            grid-template-columns: 1fr;
+            gap: 0.5rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .overlay-details {
+            padding: 1.5rem 1.25rem 2rem;
+        }
+
+        .overlay-details h2 {
+            font-size: 1.5rem;
+        }
+
+        .overlay-details p {
+            font-size: 0.9rem;
+        }
+
+        .overlay-details .cta-btn {
+            width: 100%;
+            justify-content: center;
+        }
+    }
+
+    .overlay-panel::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    .overlay-panel::-webkit-scrollbar-track {
+        background: #f1f1f1;
+        border-radius: 0 0 28px 0;
+    }
+
+    .overlay-panel::-webkit-scrollbar-thumb {
+        background: #B31312;
+        border-radius: 10px;
+    }
+
+    .overlay-panel::-webkit-scrollbar-thumb:hover {
+        background: #8a0f0e;
+    }
 </style>
 
 <body>
 
-    <!-- Header -->
-    <header class="absolute top-4 md:top-10 left-0 right-0 z-50" id="mainHeader">
-        <div class="container mx-auto px-4">
-            <div class="bg-white/5 backdrop-blur-sm rounded-full shadow-lg px-4 md:px-6 py-3 md:py-4 flex justify-between items-center gap-3 md:gap-5">
+    <!-- ====== HEADER ====== -->
+    <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
+        <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
+            <div class="header-inner">
                 <div class="flex-shrink-0">
-                    <a href="index.html">
-                        <h1 class="text-xl md:text-2xl font-bold text-[#954C2E]">Techno <span class="text-white">Eye</span></h1>
+                    <a href="index.html" class="brand-name">
+                        <span class="highlight">Techno</span><span class="light">Eye</span>
                     </a>
                 </div>
                 <nav class="flex-1 flex justify-center">
-                    <ul class="hidden md:flex gap-6 lg:gap-8 items-center">
-                        <li><a href="index.html" class="font-semibold text-white hover:text-[#A04747] transition">Home</a></li>
-                        <li><a href="about.html" class="font-semibold text-white hover:text-[#A04747] transition">About</a></li>
-                        <li><a href="services.html" class="font-semibold text-white hover:text-[#A04747] transition">Services</a></li>
-                        <li><a href="solutions.html" class="font-semibold text-white active-nav transition bg-[#A04747] p-2 px-4 rounded-xl">Solutions</a></li>
+                    <ul class="hidden md:flex items-center gap-0.5 lg:gap-1.5">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="solutions.html" class="nav-link active">Solutions</a></li>
                     </ul>
                 </nav>
                 <div class="hidden md:block flex-shrink-0">
-                    <a href="contact.html" class="bg-[#37353E] text-white px-4 md:px-5 py-2 rounded-md font-semibold text-sm hover:bg-[#005bb5] transition hover:-translate-y-0.5 hover:shadow-lg">Contact Us</a>
+                    <a href="contact.html" class="btn-contact">Contact Us</a>
                 </div>
-                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer z-50" id="hamburger">
-                    <span class="w-6 h-0.5 bg-white transition"></span>
-                    <span class="w-6 h-0.5 bg-white transition"></span>
-                    <span class="w-6 h-0.5 bg-white transition"></span>
+                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+                    <span class="w-5 h-0.5 bg-white transition-all"></span>
+                    <span class="w-5 h-0.5 bg-white transition-all"></span>
+                    <span class="w-5 h-0.5 bg-white transition-all"></span>
                 </div>
             </div>
-        </div>
-        <div class="md:hidden hidden px-4 mt-2" id="mobileNav">
-            <div class="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg px-6 py-4">
-                <ul class="flex flex-col gap-3 text-center">
-                    <li><a href="index.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Home</a></li>
-                    <li><a href="about.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">About</a></li>
-                    <li><a href="services.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Services</a></li>
-                    <li><a href="solutions.html" class="mobile-active font-semibold block py-2 transition">Solutions</a></li>
-                    <li><a href="contact.html" class="bg-[#0073e6] text-white px-5 py-2 rounded-md font-semibold block hover:bg-[#005bb5] transition">Contact Us</a></li>
-                </ul>
+            <div class="md:hidden hidden mt-2 px-2" id="mobileNav">
+                <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-5 py-4 border border-white/20">
+                    <ul class="flex flex-col gap-2 text-center">
+                        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                        <li><a href="solutions.html" class="mobile-nav-link active-mobile">Solutions</a></li>
+                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="background:#E01C08; border-radius:40px; padding:0.6rem;">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </header>
 
-    <!-- Hero -->
+    <!-- ====== HERO ====== -->
     <section class="relative text-white overflow-hidden">
         <div class="relative hero-container">
             <img src="/assets/banner_slider4.png" alt="Solutions" class="absolute inset-0 w-full h-full object-cover object-center" />
             <div class="absolute inset-0 bg-black/60"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
-                <span class="inline-block px-3 sm:px-4 py-1 bg-[#954C2E]/20 text-[#FFD4A8] rounded-full text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">Our Solutions</span>
-                <h1 class="instrument-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                    Comprehensive <span class="text-[#83B4FF]">IT Solutions</span>
+                <span class="hero-badge inline-block px-3 sm:px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
+                    Our Solutions
+                </span>
+                <h1 class="hero-title instrument-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
+                    <span class="text-[#B31312]">IT Solutions</span>
                 </h1>
-                <p class="text-gray-300 max-w-2xl mt-3 sm:mt-4 text-xs sm:text-sm md:text-base px-2">
+                <p class="hero-subtitle text-gray-300 max-w-2xl mt-3 sm:mt-4 text-xs sm:text-sm md:text-base px-2">
                     End-to-end technology solutions designed to address your unique business challenges and drive growth.
                 </p>
             </div>
         </div>
     </section>
 
-    <!-- Solutions Grid -->
-    <section class="py-12 sm:py-16 md:py-20 bg-[#F5F2F0]">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-10 sm:mb-14">
-                <span class="inline-block px-3 sm:px-4 py-1 bg-[#954C2E]/10 text-[#954C2E] rounded-full text-xs font-bold tracking-widest uppercase mb-3">What We Offer</span>
-                <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-[#1a2a3a]">
-                    Tailored <span class="text-[#954C2E]">Solutions</span> for Every Need
+    <!-- ====== SOLUTIONS GRID ====== -->
+    <section class="py-12 sm:py-16 md:py-20 bg-[#F8F6F4] overflow-hidden">
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-12 md:mb-16 reveal">
+                <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3">
+                    <i class="fas fa-cogs mr-2"></i> Our Solutions
+                </span>
+                <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#1a2a3a] leading-tight">
+                    Tailored <span class="text-[#B31312]">Solutions</span> for Every Need
                 </h2>
-                <p class="text-[#7F8CAA] text-sm sm:text-md mt-2 sm:mt-3 max-w-2xl mx-auto px-2">
+                <p class="text-gray-500 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
                     Discover our comprehensive range of IT solutions designed to transform your business
                 </p>
             </div>
 
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-                <!-- Solution 1 -->
-                <div class="solution-card bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-[#EAE5E2]" data-aos="fade-up" data-aos-duration="600">
-                    <div class="icon-wrap w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#EFE4D2] flex items-center justify-center mb-4 sm:mb-5 transition-all duration-300">
-                        <i class="fas fa-server text-xl sm:text-2xl text-[#954C2E]"></i>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7 max-w-[1200px] mx-auto">
+                <!-- Solution 1 - Data Center -->
+                <div class="solution-card sol-reveal" onclick="openOverlay('data-center')">
+                    <div class="solution-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="Data Center" />
+                        <div class="solution-overlay"></div>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-[#1a2a3a] mb-2">Data Center Solutions</h3>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Scalable, secure, and high-performance data center infrastructure designed for maximum reliability and efficiency.</p>
-                    <ul class="mt-3 sm:mt-4 space-y-1.5">
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Server Installation & Configuration</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Storage & Virtualization</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> 24/7 Monitoring & Support</li>
-                    </ul>
-                    <a href="services.html" class="inline-flex items-center gap-2 mt-4 sm:mt-5 text-[#954C2E] font-semibold hover:gap-3 transition-all duration-300 text-xs sm:text-sm">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="solution-body">
+                        <div class="solution-icon">
+                            <i class="fas fa-server"></i>
+                        </div>
+                        <h3 class="solution-title">Data Center Solutions</h3>
+                        <p class="solution-desc">Scalable, secure, and high-performance data center infrastructure designed for maximum reliability.</p>
+                        <div class="solution-features">
+                            <span><i class="fas fa-check-circle"></i> Server Installation</span>
+                            <span><i class="fas fa-check-circle"></i> Storage & Virtualization</span>
+                            <span><i class="fas fa-check-circle"></i> 24/7 Monitoring</span>
+                        </div>
+                        <a href="#" class="solution-link" onclick="event.stopPropagation(); openOverlay('data-center')">
+                            Learn More <span class="solution-arrow"><i class="fas fa-arrow-right text-white text-xs"></i></span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Solution 2 -->
-                <div class="solution-card bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-[#EAE5E2]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-                    <div class="icon-wrap w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#EFE4D2] flex items-center justify-center mb-4 sm:mb-5 transition-all duration-300">
-                        <i class="fas fa-video text-xl sm:text-2xl text-[#954C2E]"></i>
+                <!-- Solution 2 - CCTV -->
+                <div class="solution-card sol-reveal" onclick="openOverlay('cctv')">
+                    <div class="solution-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2070&auto=format&fit=crop" alt="CCTV" />
+                        <div class="solution-overlay"></div>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-[#1a2a3a] mb-2">CCTV & Surveillance</h3>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Advanced surveillance solutions with AI-powered analytics, HD clarity, and remote accessibility.</p>
-                    <ul class="mt-3 sm:mt-4 space-y-1.5">
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> 4K & HD Camera Installation</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> AI Threat Detection</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Cloud & NVR Storage</li>
-                    </ul>
-                    <a href="services.html" class="inline-flex items-center gap-2 mt-4 sm:mt-5 text-[#954C2E] font-semibold hover:gap-3 transition-all duration-300 text-xs sm:text-sm">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="solution-body">
+                        <div class="solution-icon">
+                            <i class="fas fa-video"></i>
+                        </div>
+                        <h3 class="solution-title">CCTV & Surveillance</h3>
+                        <p class="solution-desc">Advanced surveillance with AI-powered analytics, HD clarity, and remote accessibility.</p>
+                        <div class="solution-features">
+                            <span><i class="fas fa-check-circle"></i> 4K/HD Installation</span>
+                            <span><i class="fas fa-check-circle"></i> AI Detection</span>
+                            <span><i class="fas fa-check-circle"></i> Cloud/NVR Storage</span>
+                        </div>
+                        <a href="#" class="solution-link" onclick="event.stopPropagation(); openOverlay('cctv')">
+                            Learn More <span class="solution-arrow"><i class="fas fa-arrow-right text-white text-xs"></i></span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Solution 3 -->
-                <div class="solution-card bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-[#EAE5E2]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
-                    <div class="icon-wrap w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#EFE4D2] flex items-center justify-center mb-4 sm:mb-5 transition-all duration-300">
-                        <i class="fas fa-network-wired text-xl sm:text-2xl text-[#954C2E]"></i>
+                <!-- Solution 3 - Network -->
+                <div class="solution-card sol-reveal" onclick="openOverlay('network')">
+                    <div class="solution-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" alt="Network" />
+                        <div class="solution-overlay"></div>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-[#1a2a3a] mb-2">Network Infrastructure</h3>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Reliable and high-speed network solutions including structured cabling, Wi-Fi, and enterprise connectivity.</p>
-                    <ul class="mt-3 sm:mt-4 space-y-1.5">
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Structured Cabling (Cat6/Fiber)</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Wi-Fi 6 Enterprise Solutions</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Network Design & Optimization</li>
-                    </ul>
-                    <a href="services.html" class="inline-flex items-center gap-2 mt-4 sm:mt-5 text-[#954C2E] font-semibold hover:gap-3 transition-all duration-300 text-xs sm:text-sm">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="solution-body">
+                        <div class="solution-icon">
+                            <i class="fas fa-network-wired"></i>
+                        </div>
+                        <h3 class="solution-title">Network Infrastructure</h3>
+                        <p class="solution-desc">Reliable high-speed network solutions including structured cabling, Wi-Fi, and enterprise connectivity.</p>
+                        <div class="solution-features">
+                            <span><i class="fas fa-check-circle"></i> Cat6/Fiber Cabling</span>
+                            <span><i class="fas fa-check-circle"></i> Wi-Fi 6 Solutions</span>
+                            <span><i class="fas fa-check-circle"></i> Network Optimization</span>
+                        </div>
+                        <a href="#" class="solution-link" onclick="event.stopPropagation(); openOverlay('network')">
+                            Learn More <span class="solution-arrow"><i class="fas fa-arrow-right text-white text-xs"></i></span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Solution 4 -->
-                <div class="solution-card bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-[#EAE5E2]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-                    <div class="icon-wrap w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#EFE4D2] flex items-center justify-center mb-4 sm:mb-5 transition-all duration-300">
-                        <i class="fas fa-cloud text-xl sm:text-2xl text-[#954C2E]"></i>
+                <!-- Solution 4 - Cloud -->
+                <div class="solution-card sol-reveal" onclick="openOverlay('cloud')">
+                    <div class="solution-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop" alt="Cloud" />
+                        <div class="solution-overlay"></div>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-[#1a2a3a] mb-2">Cloud & Backup Solutions</h3>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Secure cloud migration, storage, and backup solutions ensuring business continuity and data protection.</p>
-                    <ul class="mt-3 sm:mt-4 space-y-1.5">
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Cloud Migration (AWS/Azure)</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Automated Backup & Recovery</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Disaster Recovery Planning</li>
-                    </ul>
-                    <a href="services.html" class="inline-flex items-center gap-2 mt-4 sm:mt-5 text-[#954C2E] font-semibold hover:gap-3 transition-all duration-300 text-xs sm:text-sm">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="solution-body">
+                        <div class="solution-icon">
+                            <i class="fas fa-cloud"></i>
+                        </div>
+                        <h3 class="solution-title">Cloud & Backup Solutions</h3>
+                        <p class="solution-desc">Secure cloud migration, storage, and backup solutions ensuring business continuity and data protection.</p>
+                        <div class="solution-features">
+                            <span><i class="fas fa-check-circle"></i> AWS/Azure Migration</span>
+                            <span><i class="fas fa-check-circle"></i> Automated Backup</span>
+                            <span><i class="fas fa-check-circle"></i> Disaster Recovery</span>
+                        </div>
+                        <a href="#" class="solution-link" onclick="event.stopPropagation(); openOverlay('cloud')">
+                            Learn More <span class="solution-arrow"><i class="fas fa-arrow-right text-white text-xs"></i></span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Solution 5 -->
-                <div class="solution-card bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-[#EAE5E2]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="400">
-                    <div class="icon-wrap w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#EFE4D2] flex items-center justify-center mb-4 sm:mb-5 transition-all duration-300">
-                        <i class="fas fa-shield-alt text-xl sm:text-2xl text-[#954C2E]"></i>
+                <!-- Solution 5 - Cybersecurity -->
+                <div class="solution-card sol-reveal" onclick="openOverlay('cybersecurity')">
+                    <div class="solution-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop" alt="Cybersecurity" />
+                        <div class="solution-overlay"></div>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-[#1a2a3a] mb-2">Cybersecurity Solutions</h3>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Comprehensive security solutions including firewall, endpoint protection, and threat monitoring.</p>
-                    <ul class="mt-3 sm:mt-4 space-y-1.5">
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Next-Gen Firewall Configuration</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Endpoint Detection & Response</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Vulnerability Assessment</li>
-                    </ul>
-                    <a href="services.html" class="inline-flex items-center gap-2 mt-4 sm:mt-5 text-[#954C2E] font-semibold hover:gap-3 transition-all duration-300 text-xs sm:text-sm">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="solution-body">
+                        <div class="solution-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3 class="solution-title">Cybersecurity Solutions</h3>
+                        <p class="solution-desc">Comprehensive security including firewall, endpoint protection, and threat monitoring.</p>
+                        <div class="solution-features">
+                            <span><i class="fas fa-check-circle"></i> Next-Gen Firewall</span>
+                            <span><i class="fas fa-check-circle"></i> Endpoint Protection</span>
+                            <span><i class="fas fa-check-circle"></i> Vulnerability Assessment</span>
+                        </div>
+                        <a href="#" class="solution-link" onclick="event.stopPropagation(); openOverlay('cybersecurity')">
+                            Learn More <span class="solution-arrow"><i class="fas fa-arrow-right text-white text-xs"></i></span>
+                        </a>
+                    </div>
                 </div>
 
-                <!-- Solution 6 -->
-                <div class="solution-card bg-white rounded-2xl p-6 sm:p-8 shadow-lg border border-[#EAE5E2]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="500">
-                    <div class="icon-wrap w-12 h-12 sm:w-14 sm:h-14 rounded-2xl bg-[#EFE4D2] flex items-center justify-center mb-4 sm:mb-5 transition-all duration-300">
-                        <i class="fas fa-headset text-xl sm:text-2xl text-[#954C2E]"></i>
+                <!-- Solution 6 - IT Support -->
+                <div class="solution-card sol-reveal" onclick="openOverlay('it-support')">
+                    <div class="solution-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" alt="IT Support" />
+                        <div class="solution-overlay"></div>
                     </div>
-                    <h3 class="text-lg sm:text-xl font-bold text-[#1a2a3a] mb-2">IT Support & AMC</h3>
-                    <p class="text-gray-600 text-xs sm:text-sm leading-relaxed">Proactive IT maintenance and support services to keep your systems running smoothly without interruption.</p>
-                    <ul class="mt-3 sm:mt-4 space-y-1.5">
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Annual Maintenance Contracts</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> Remote & Onsite Support</li>
-                        <li class="flex items-center gap-2 text-xs sm:text-sm text-gray-600"><i class="fas fa-check-circle text-[#954C2E] text-xs"></i> System Health Checkups</li>
-                    </ul>
-                    <a href="services.html" class="inline-flex items-center gap-2 mt-4 sm:mt-5 text-[#954C2E] font-semibold hover:gap-3 transition-all duration-300 text-xs sm:text-sm">
-                        Learn More <i class="fas fa-arrow-right"></i>
-                    </a>
+                    <div class="solution-body">
+                        <div class="solution-icon">
+                            <i class="fas fa-headset"></i>
+                        </div>
+                        <h3 class="solution-title">IT Support & AMC</h3>
+                        <p class="solution-desc">Proactive IT maintenance and support to keep your systems running smoothly without interruption.</p>
+                        <div class="solution-features">
+                            <span><i class="fas fa-check-circle"></i> Annual Maintenance</span>
+                            <span><i class="fas fa-check-circle"></i> Remote & Onsite Support</span>
+                            <span><i class="fas fa-check-circle"></i> System Health Checkups</span>
+                        </div>
+                        <a href="#" class="solution-link" onclick="event.stopPropagation(); openOverlay('it-support')">
+                            Learn More <span class="solution-arrow"><i class="fas fa-arrow-right text-white text-xs"></i></span>
+                        </a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Why Choose Us -->
+    <!-- ====== WHY CHOOSE US ====== -->
     <section class="py-12 sm:py-16 md:py-20 bg-white">
-        <div class="container mx-auto px-4">
-            <div class="text-center mb-10 sm:mb-14">
-                <span class="inline-block px-3 sm:px-4 py-1 bg-[#954C2E]/10 text-[#954C2E] rounded-full text-xs font-bold tracking-widest uppercase mb-3">Why Techno Eye</span>
-                <h2 class="text-xl sm:text-2xl md:text-4xl font-bold text-[#1a2a3a]">
-                    Why Choose <span class="text-[#954C2E]">Our Solutions</span>
+        <div class="container mx-auto px-4 sm:px-6">
+            <div class="text-center mb-10 sm:mb-14 reveal">
+                <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3">Why Techno Eye</span>
+                <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#1a2a3a] leading-tight">
+                    Why Choose <span class="text-[#B31312]">Our Solutions</span>
                 </h2>
-                <p class="text-[#7F8CAA] text-sm sm:text-md mt-2 sm:mt-3 max-w-2xl mx-auto px-2">
+                <p class="text-gray-500 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
                     We combine technical expertise with a commitment to excellence
                 </p>
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F5F2F0]" data-aos="fade-up" data-aos-duration="600">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#954C2E]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <i class="fas fa-check-circle text-xl sm:text-2xl text-[#954C2E]"></i>
+                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F8F6F4] hover:bg-[#EEE2DE] transition-all duration-300 border border-[#B31312]" data-aos="fade-up" data-aos-duration="600">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#B31312]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-check-circle text-xl sm:text-2xl text-[#B31312]"></i>
                     </div>
                     <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1 sm:mb-2">Proven Expertise</h4>
                     <p class="text-xs sm:text-sm text-gray-600">10+ years of experience delivering IT solutions across industries</p>
                 </div>
 
-                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F5F2F0]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#954C2E]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <i class="fas fa-users text-xl sm:text-2xl text-[#954C2E]"></i>
+                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F8F6F4] hover:bg-[#EEE2DE] transition-all duration-300 border border-[#B31312]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#B31312]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-users text-xl sm:text-2xl text-[#B31312]"></i>
                     </div>
                     <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1 sm:mb-2">Dedicated Team</h4>
                     <p class="text-xs sm:text-sm text-gray-600">Certified professionals committed to your success</p>
                 </div>
 
-                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F5F2F0]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#954C2E]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <i class="fas fa-clock text-xl sm:text-2xl text-[#954C2E]"></i>
+                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F8F6F4] hover:bg-[#EEE2DE] transition-all duration-300 border border-[#B31312]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#B31312]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-clock text-xl sm:text-2xl text-[#B31312]"></i>
                     </div>
                     <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1 sm:mb-2">24/7 Support</h4>
                     <p class="text-xs sm:text-sm text-gray-600">Round-the-clock support for business-critical systems</p>
                 </div>
 
-                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F5F2F0]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#954C2E]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <i class="fas fa-chart-line text-xl sm:text-2xl text-[#954C2E]"></i>
+                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F8F6F4] hover:bg-[#EEE2DE] transition-all duration-300 border border-[#B31312]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#B31312]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-chart-line text-xl sm:text-2xl text-[#B31312]"></i>
                     </div>
                     <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1 sm:mb-2">Scalable Solutions</h4>
                     <p class="text-xs sm:text-sm text-gray-600">Solutions that grow with your business needs</p>
@@ -366,34 +1037,80 @@
         </div>
     </section>
 
-    <!-- CTA -->
-    <section class="py-12 sm:py-16 md:py-20 text-center bg-white">
-        <div class="container mx-auto px-4 flex justify-center">
-            <div class="max-w-xl w-full bg-[#FFF4E0] p-4 sm:p-6 md:p-8 rounded-lg">
-                <h2 class="text-lg sm:text-xl md:text-2xl font-bold mb-3 text-[#B46060]">Ready to Transform Your Business?</h2>
-                <p class="text-sm sm:text-base text-[#FFA559] max-w-xl mx-auto mb-6 sm:mb-7 opacity-90">Let's discuss your requirements and build a customized solution that drives growth and efficiency.</p>
-                <a href="contact.html" class="bg-[#4D4D4D] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-md font-semibold hover:bg-[#4D4D4D] transition hover:-translate-y-1 hover:shadow-lg inline-block text-sm sm:text-base">Contact Us</a>
+    <!-- ====== OVERLAY ====== -->
+    <div id="solutionOverlay" onclick="closeOverlay(event)">
+        <div class="overlay-panel" onclick="event.stopPropagation()">
+            <button class="overlay-close" onclick="closeOverlay()">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="overlay-content">
+                <div class="overlay-image" id="overlayImage">
+                    <div class="image-overlay"></div>
+                </div>
+                <div class="overlay-details">
+                    <span class="badge" id="overlayBadge">Category</span>
+                    <h2 id="overlayTitle">Solution <span>Name</span></h2>
+                    <p id="overlayDesc">Detailed description of the solution goes here. This explains what the solution includes and how it benefits your business.</p>
+                    <div class="overlay-features" id="overlayFeatures">
+                        <div class="feature"><i class="fas fa-check-circle"></i> Feature 1</div>
+                        <div class="feature"><i class="fas fa-check-circle"></i> Feature 2</div>
+                        <div class="feature"><i class="fas fa-check-circle"></i> Feature 3</div>
+                        <div class="feature"><i class="fas fa-check-circle"></i> Feature 4</div>
+                    </div>
+                    <a href="contact.html" class="cta-btn">
+                        <i class="fas fa-paper-plane"></i> Get a Quote
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====== CTA ====== -->
+    <section class="relative py-12 sm:py-16 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
+        <img src="/assets/contactbanner.jpg" alt="Contact Banner" class="absolute inset-0 w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="absolute top-0 right-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-[#B31312]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-48 sm:w-56 md:w-72 lg:w-80 h-48 sm:h-56 md:h-72 lg:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+        <div class="container mx-auto px-3 sm:px-4 relative z-10">
+            <div class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
+                <span class="inline-block px-3 sm:px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
+                    <i class="fas fa-rocket mr-1 sm:mr-2"></i> Let's Get Started
+                </span>
+                <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-3 sm:mb-4 leading-tight">
+                    Ready to Transform Your <span class="text-white">Business</span>?
+                </h2>
+                <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-5 sm:mb-6 md:mb-8 leading-relaxed">
+                    Let's discuss your requirements and build a customized solution that drives growth and efficiency.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4">
+                    <a href="contact.html" class="bg-[#B31312] text-white px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-[#8a0f0e] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                        <i class="fas fa-paper-plane"></i> Get Started
+                    </a>
+                    <a href="services.html" class="bg-[#EEE2DE] backdrop-blur-sm border border-white/30 text-[#2B2A4C] px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                        <i class="fas fa-arrow-right"></i> Our Services
+                    </a>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#1a2a3a] text-white pt-10 sm:pt-12 pb-4">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 mb-6 sm:mb-8">
+    <!-- ====== FOOTER ====== -->
+    <footer class="bg-[#1a2a3a] text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4">
+        <div class="container mx-auto px-3 sm:px-4">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
                 <div>
-                    <h3 class="text-xl font-bold mb-4">Techno <span class="text-[#0073e6]">Eye</span></h3>
-                    <p class="text-gray-400 text-sm mb-4">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
-                    <div class="flex gap-3">
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-instagram"></i></a>
+                    <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Techno <span class="text-[#0073e6]">Eye</span></h3>
+                    <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
+                    <div class="flex gap-2 sm:gap-3">
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-facebook-f text-xs sm:text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-twitter text-xs sm:text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-linkedin-in text-xs sm:text-sm"></i></a>
+                        <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-instagram text-xs sm:text-sm"></i></a>
                     </div>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
+                    <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Quick Links</h4>
+                    <ul class="space-y-1.5 sm:space-y-2 text-gray-400 text-xs sm:text-sm">
                         <li><a href="index.html" class="hover:text-[#0073e6] transition">Home</a></li>
                         <li><a href="about.html" class="hover:text-[#0073e6] transition">About</a></li>
                         <li><a href="services.html" class="hover:text-[#0073e6] transition">Services</a></li>
@@ -402,8 +1119,8 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
+                    <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Services</h4>
+                    <ul class="space-y-1.5 sm:space-y-2 text-gray-400 text-xs sm:text-sm">
                         <li><a href="services.html" class="hover:text-[#0073e6] transition">Data Center Solutions</a></li>
                         <li><a href="services.html" class="hover:text-[#0073e6] transition">CCTV Surveillance</a></li>
                         <li><a href="services.html" class="hover:text-[#0073e6] transition">Structured Cabling</a></li>
@@ -412,34 +1129,113 @@
                     </ul>
                 </div>
                 <div>
-                    <h4 class="font-semibold mb-4">Contact Info</h4>
-                    <ul class="space-y-2 text-gray-400 text-sm">
-                        <li><i class="fas fa-phone w-5 text-[#0073e6]"></i> +91 98765 43210</li>
-                        <li><i class="fas fa-envelope w-5 text-[#0073e6]"></i> info@technoeyenet.com</li>
-                        <li><i class="fas fa-map-marker-alt w-5 text-[#0073e6]"></i> India</li>
+                    <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Contact Info</h4>
+                    <ul class="space-y-1.5 sm:space-y-2 text-gray-400 text-xs sm:text-sm">
+                        <li><i class="fas fa-phone w-4 sm:w-5 text-[#0073e6]"></i> +91 98765 43210</li>
+                        <li><i class="fas fa-envelope w-4 sm:w-5 text-[#0073e6]"></i> info@technoeyenet.com</li>
+                        <li><i class="fas fa-map-marker-alt w-4 sm:w-5 text-[#0073e6]"></i> India</li>
                     </ul>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-4 text-center text-gray-500 text-sm">
+            <div class="border-t border-white/10 pt-3 sm:pt-4 text-center text-gray-500 text-[10px] sm:text-xs md:text-sm">
                 <p>&copy; 2026 Techno Eye. All Rights Reserved.</p>
             </div>
         </div>
     </footer>
 
-    <!-- Scroll to Top Button -->
-    <button id="scrollToTop" aria-label="Scroll to top">
-        <i class="fas fa-chevron-up"></i>
-    </button>
+    <!-- ====== SCROLL TO TOP ====== -->
+    <button id="scrollToTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
 
     <script>
+        // ===== SOLUTION DATA =====
+        const solutionData = {
+            'data-center': {
+                title: 'Data Center Solutions',
+                badge: 'Infrastructure',
+                image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop',
+                desc: 'End-to-end data center solutions including server installation, storage virtualization, and 24/7 monitoring. Our scalable infrastructure ensures maximum reliability, security, and performance for your business-critical applications.',
+                features: ['Server Installation & Configuration', 'Storage & Virtualization', '24/7 Monitoring & Support', 'Scalable Infrastructure']
+            },
+            'cctv': {
+                title: 'CCTV & Surveillance',
+                badge: 'Security',
+                image: 'https://images.unsplash.com/photo-1582139329536-e7284fece509?q=80&w=2070&auto=format&fit=crop',
+                desc: 'Advanced surveillance solutions with 4K/HD camera installation, AI-powered threat detection, and flexible storage options. Protect your premises with cutting-edge security technology and remote accessibility.',
+                features: ['4K & HD Camera Installation', 'AI Threat Detection', 'Cloud & NVR Storage', 'Remote Accessibility']
+            },
+            'network': {
+                title: 'Network Infrastructure',
+                badge: 'Connectivity',
+                image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop',
+                desc: 'Reliable high-speed network solutions including structured cabling (Cat6/Fiber), enterprise Wi-Fi 6 deployment, and comprehensive network optimization. Ensure seamless connectivity across your organization.',
+                features: ['Structured Cabling (Cat6/Fiber)', 'Wi-Fi 6 Enterprise Solutions', 'Network Design & Optimization', 'High-Speed Connectivity']
+            },
+            'cloud': {
+                title: 'Cloud & Backup Solutions',
+                badge: 'Cloud',
+                image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop',
+                desc: 'Secure cloud migration, storage, and backup solutions ensuring business continuity and data protection. Leverage AWS/Azure platforms with automated backup and disaster recovery planning.',
+                features: ['Cloud Migration (AWS/Azure)', 'Automated Backup & Recovery', 'Disaster Recovery Planning', 'Business Continuity']
+            },
+            'cybersecurity': {
+                title: 'Cybersecurity Solutions',
+                badge: 'Security',
+                image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop',
+                desc: 'Comprehensive cybersecurity solutions including next-generation firewall configuration, endpoint protection, and vulnerability assessments. Protect your business from evolving cyber threats.',
+                features: ['Next-Gen Firewall Configuration', 'Endpoint Detection & Response', 'Vulnerability Assessment', 'Threat Monitoring']
+            },
+            'it-support': {
+                title: 'IT Support & AMC',
+                badge: 'Support',
+                image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop',
+                desc: 'Proactive IT maintenance and support services with annual maintenance contracts, remote and onsite support, and regular system health checkups. Keep your systems running smoothly without interruption.',
+                features: ['Annual Maintenance Contracts', 'Remote & Onsite Support', 'System Health Checkups', 'Priority Response Times']
+            }
+        };
+
+        // ===== OVERLAY FUNCTIONS =====
+        function openOverlay(key) {
+            const data = solutionData[key];
+            if (!data) return;
+
+            document.getElementById('overlayBadge').textContent = data.badge;
+            document.getElementById('overlayTitle').innerHTML = data.title + ' <span>Solutions</span>';
+            document.getElementById('overlayDesc').textContent = data.desc;
+            document.getElementById('overlayImage').style.backgroundImage = `url(${data.image})`;
+
+            const featuresContainer = document.getElementById('overlayFeatures');
+            featuresContainer.innerHTML = data.features.map(f => 
+                `<div class="feature"><i class="fas fa-check-circle"></i> ${f}</div>`
+            ).join('');
+
+            const overlay = document.getElementById('solutionOverlay');
+            overlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            const panel = overlay.querySelector('.overlay-panel');
+            panel.style.animation = 'none';
+            requestAnimationFrame(() => {
+                panel.style.animation = 'panelReveal 0.7s cubic-bezier(0.23, 1, 0.32, 1) forwards';
+            });
+        }
+
+        function closeOverlay(event) {
+            if (event && event.target !== event.currentTarget && !event.target.closest('.overlay-close')) return;
+            const overlay = document.getElementById('solutionOverlay');
+            overlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') closeOverlay();
+        });
+
+        // ===== DOM CONTENT LOADED =====
         document.addEventListener('DOMContentLoaded', function() {
             // AOS Init
-            AOS.init({
-                once: true,
-                offset: 20
-            });
+            AOS.init({ once: true, offset: 20 });
 
-            // Hamburger Menu
+            // Mobile nav
             const hamburger = document.getElementById('hamburger');
             const mobileNav = document.getElementById('mobileNav');
             if (hamburger && mobileNav) {
@@ -449,7 +1245,31 @@
                 });
             }
 
-            // Scroll to Top
+            // Scroll reveal
+            const revealEls = document.querySelectorAll('.reveal');
+            const revealObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        revealObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealEls.forEach(function(el) { revealObserver.observe(el); });
+
+            // Solutions scroll reveal
+            const solRevealEls = document.querySelectorAll('.sol-reveal');
+            const solObserver = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        solObserver.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            solRevealEls.forEach(function(el) { solObserver.observe(el); });
+
+            // Scroll to top
             const scrollBtn = document.getElementById('scrollToTop');
             if (scrollBtn) {
                 window.addEventListener('scroll', function() {
@@ -459,15 +1279,28 @@
                         scrollBtn.classList.remove('show');
                     }
                 });
-
                 scrollBtn.addEventListener('click', function() {
-                    window.scrollTo({
-                        top: 0,
-                        behavior: 'smooth'
-                    });
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
         });
+
+        // ===== PARALLAX EFFECT FOR HERO =====
+        (function() {
+            const heroSection = document.querySelector('.hero-container');
+            const heroImg = heroSection ? heroSection.querySelector('img') : null;
+            if (heroImg) {
+                window.addEventListener('scroll', function() {
+                    const rect = heroSection.getBoundingClientRect();
+                    if (rect.bottom > 0 && rect.top < window.innerHeight) {
+                        const scrollPosition = window.scrollY;
+                        const heroOffset = rect.top + scrollPosition;
+                        const yPos = (scrollPosition - heroOffset) * 0.4;
+                        heroImg.style.transform = `translateY(${yPos * 0.3}px) scale(1.02)`;
+                    }
+                }, { passive: true });
+            }
+        })();
     </script>
 
 </body>

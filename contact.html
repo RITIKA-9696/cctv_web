@@ -42,7 +42,7 @@
         right: 30px;
         width: 50px;
         height: 50px;
-        background: #954C2E;
+        background: #B31312;
         color: white;
         border: none;
         border-radius: 50%;
@@ -60,7 +60,7 @@
     }
 
     #scrollToTop:hover {
-        background: #b85a3a;
+        background: #760808;
         transform: translateY(-3px) scale(1.05);
         box-shadow: 0 8px 25px rgba(149, 76, 46, 0.5);
     }
@@ -151,49 +151,142 @@
             right: 25px;
         }
     }
+
+    /* ----- HEADER ----- */
+    #mainHeader {
+      font-family: 'Inter', sans-serif;
+    }
+
+    .brand-name {
+      font-family: 'Instrument Serif', serif;
+      font-weight: 400;
+      font-size: 1.5rem;
+      letter-spacing: 0.5px;
+    }
+    .brand-name .highlight {
+      color: #E01C08;
+    }
+    .brand-name .light {
+      color: #ffffff;
+    }
+
+    .nav-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 0.95rem;
+      letter-spacing: 0.3px;
+      color: #ffffff;
+      transition: color 0.2s ease;
+      text-decoration: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 9999px;
+    }
+    .nav-link:hover {
+      color: #E01C08;
+    }
+    .nav-link.active {
+      background: #E01C08;
+      color: #fff;
+      padding: 0.4rem 1.2rem;
+    }
+    .nav-link.active:hover {
+      color: #fff;
+      background: #a51515;
+    }
+
+    .btn-contact {
+      font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      font-size: 0.85rem;
+      background: #37353e;
+      color: #fff;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      letter-spacing: 0.2px;
+    }
+    .btn-contact:hover {
+      background: #E01C08;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(224,28,8,0.3);
+    }
+
+    .mobile-nav-link {
+      font-family: 'Inter', sans-serif;
+      font-weight: 500;
+      font-size: 1rem;
+      color: #1a2a3a;
+      padding: 0.6rem 0;
+      display: block;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .mobile-nav-link:hover {
+      color: #E01C08;
+    }
+    .mobile-nav-link.active-mobile {
+      background: #E01C08;
+      color: #fff;
+      border-radius: 8px;
+      padding: 0.6rem 1.2rem;
+    }
+
+    .header-inner {
+      background: rgba(43, 42, 42, 0.737);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-radius: 9999px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
 </style>
 
 <body>
-    <!-- Header / Navigation - Absolute with rounded-xl -->
-    <header class="absolute top-10 left-0 right-0 z-50" id="mainHeader">
-        <div class="container mx-auto px-4">
-            <div class="bg-white/5 backdrop-blur-sm rounded-full shadow-lg px-6 py-4 flex justify-between items-center gap-5">
-                <div class="flex-shrink-0">
-                    <a href="index.html">
-                        <h1 class="text-2xl font-bold text-[#954C2E]">Techno <span class="text-white">Eye</span></h1>
-                    </a>
-                </div>
-                <nav class="flex-1 flex justify-center">
-                    <ul class="hidden md:flex gap-8 items-center">
-                        <li><a href="index.html" class="font-semibold text-white hover:text-[#A04747] transition">Home</a></li>
-                        <li><a href="about.html" class="font-semibold text-white hover:text-[#A04747] transition">About</a></li>
-                        <li><a href="services.html" class="font-semibold text-white hover:text-[#A04747] transition">Services</a></li>
-                        <li><a href="solutions.html" class="font-semibold text-white hover:text-[#A04747] transition">Solutions</a></li>
-                    </ul>
-                </nav>
-                <div class="hidden md:block flex-shrink-0">
-                    <a href="contact.html" class="active-nav bg-[#A04747] p-2 px-4 rounded-xl text-white font-semibold text-sm hover:bg-[#005bb5] transition hover:-translate-y-0.5 hover:shadow-lg">Contact Us</a>
-                </div>
-                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
-                    <span class="w-6 h-0.5 bg-white transition"></span>
-                    <span class="w-6 h-0.5 bg-white transition"></span>
-                    <span class="w-6 h-0.5 bg-white transition"></span>
-                </div>
-            </div>
-        </div>
-        <!-- Mobile Navigation -->
-        <div class="md:hidden hidden px-4 mt-2" id="mobileNav">
-            <div class="bg-white/95 backdrop-blur-sm rounded-xl shadow-lg px-6 py-4">
-                <ul class="flex flex-col gap-3 text-center">
-                    <li><a href="index.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Home</a></li>
-                    <li><a href="about.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">About</a></li>
-                    <li><a href="services.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Services</a></li>
-                    <li><a href="solutions.html" class="font-semibold text-[#1a2a3a] hover:text-[#0073e6] block py-2 transition">Solutions</a></li>
-                    <li><a href="contact.html" class="mobile-active font-semibold block py-2 transition">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </header>
+     <!-- ====== HEADER ====== -->
+<header class="fixed top-4 md:top-6 left-0 right-0 z-50" id="mainHeader">
+  <div class="container mx-auto px-4 max-w-5xl">
+    <div class="header-inner">
+      <div class="flex-shrink-0">
+        <a href="index.html" class="brand-name">
+          <span class="highlight">Techno</span><span class="light">Eye</span>
+        </a>
+      </div>
+      <nav class="flex-1 flex justify-center">
+        <ul class="hidden md:flex items-center gap-1 lg:gap-2">
+          <li><a href="index.html" class="nav-link ">Home</a></li>
+          <li><a href="about.html" class="nav-link ">About</a></li>
+          <li><a href="services.html" class="nav-link">Services</a></li>
+          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+        </ul>
+      </nav>
+      <div class="hidden md:block flex-shrink-0">
+        <a href="contact.html" class="nav-link active">Contact Us</a>
+      </div>
+      <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+        <span class="w-6 h-0.5 bg-white transition-all"></span>
+        <span class="w-6 h-0.5 bg-white transition-all"></span>
+        <span class="w-6 h-0.5 bg-white transition-all"></span>
+      </div>
+    </div>
+    <div class="md:hidden hidden mt-3 px-2" id="mobileNav">
+      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-6 py-5 border border-white/20">
+        <ul class="flex flex-col gap-2 text-center">
+          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+          <li><a href="about.html" class="mobile-nav-link active-mobile">About</a></li>
+          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+          <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+          <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="background:#E01C08; border-radius:40px; padding:0.7rem;">Contact Us</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</header>
 
     <!-- Page Header with Banner Image -->
     <section class="relative text-white overflow-hidden">
@@ -201,11 +294,11 @@
             <img src="/assets/contact_us.png" alt="Contact Us" class="absolute inset-0 w-full h-full object-cover" />
             <div class="absolute inset-0 bg-black/60"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-                <span class="inline-block px-4 py-1 bg-[#954C2E]/20 text-[#FFD4A8] rounded-full text-xs font-bold tracking-widest uppercase mb-3 mt-12">
+                <span class="inline-block px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3 mt-12">
                     <i class="fas fa-envelope mr-2"></i> Get in Touch
                 </span>
                 <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold mb-3 leading-tight">
-                    Contact <span class="text-[#83B4FF]">Us</span>
+                    Contact <span class="text-[#B31312]">Us</span>
                 </h1>
                 <p class="text-base md:text-lg text-gray-300 max-w-2xl">
                     Get in touch with our team for all your IT needs
@@ -220,36 +313,36 @@
             <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
                 <!-- Contact Info -->
                 <div>
-                    <span class="inline-block px-4 py-1 bg-[#954C2E]/10 text-[#954C2E] rounded-full text-xs font-bold tracking-widest uppercase mb-3">
+                    <span class="inline-block px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3">
                         <i class="fas fa-phone mr-2"></i> Get in Touch
                     </span>
-                    <h2 class="text-2xl md:text-3xl font-bold text-[#1a2a3a] mb-4">Let's Connect</h2>
+                    <h2 class="text-2xl md:text-3xl font-bold text-[#B31312] mb-4">Let's Connect</h2>
                     <p class="text-gray-600 mb-8">Have questions or ready to transform your business with our IT solutions? Reach out to us and our team will get back to you promptly.</p>
 
                     <div class="space-y-4">
                         <div class="flex gap-4 items-start">
-                            <i class="fas fa-phone text-xl text-[#954C2E] w-8 text-center mt-1"></i>
+                            <i class="fas fa-phone text-xl text-[#B31312] w-8 text-center mt-1"></i>
                             <div>
                                 <h4 class="font-semibold text-[#1a2a3a]">Phone</h4>
                                 <p class="text-gray-600">+91 98765 43210</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-start">
-                            <i class="fas fa-envelope text-xl text-[#954C2E] w-8 text-center mt-1"></i>
+                            <i class="fas fa-envelope text-xl text-[#B31312] w-8 text-center mt-1"></i>
                             <div>
                                 <h4 class="font-semibold text-[#1a2a3a]">Email</h4>
                                 <p class="text-gray-600">info@technoeyenet.com</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-start">
-                            <i class="fas fa-map-marker-alt text-xl text-[#954C2E] w-8 text-center mt-1"></i>
+                            <i class="fas fa-map-marker-alt text-xl text-[#B31312] w-8 text-center mt-1"></i>
                             <div>
                                 <h4 class="font-semibold text-[#1a2a3a]">Location</h4>
                                 <p class="text-gray-600">India</p>
                             </div>
                         </div>
                         <div class="flex gap-4 items-start">
-                            <i class="fas fa-clock text-xl text-[#954C2E] w-8 text-center mt-1"></i>
+                            <i class="fas fa-clock text-xl text-[#B31312] w-8 text-center mt-1"></i>
                             <div>
                                 <h4 class="font-semibold text-[#1a2a3a]">Working Hours</h4>
                                 <p class="text-gray-600">Mon - Sat: 9:00 AM - 6:00 PM</p>
@@ -258,17 +351,17 @@
                     </div>
 
                     <div class="flex gap-3 mt-8 flex-wrap">
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#954C2E] hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#954C2E] hover:text-white transition"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#954C2E] hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#954C2E] hover:text-white transition"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#954C2E] hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
                     </div>
                 </div>
 
                 <!-- Contact Form - Short -->
                 <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-[#EAE5E2]">
-                    <h2 class="text-2xl font-bold text-[#1a2a3a] mb-6">Send a Message</h2>
+                    <h2 class="text-2xl font-bold text-[#B31312] mb-6">Send a Message</h2>
                     <form id="contactForm">
                         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
                             <div>
@@ -312,7 +405,7 @@
                                 required></textarea>
                         </div>
                         <button type="submit"
-                            class="w-full mt-6 bg-[#954C2E] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#b85a3a] transition hover:-translate-y-1 hover:shadow-lg">
+                            class="w-full mt-6 bg-[#B31312] text-white px-6 py-3 rounded-lg font-semibold hover:bg-[#7B2525] transition hover:-translate-y-1 hover:shadow-lg">
                             <i class="fas fa-paper-plane mr-2"></i> Send Message
                         </button>
                     </form>
@@ -321,54 +414,104 @@
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-[#1a2a3a] text-white pt-12 pb-4">
-        <div class="container mx-auto px-4">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
-                <div>
-                    <h3 class="text-xl font-bold mb-4">Techno <span class="text-[#0073e6]">Eye</span></h3>
-                    <p class="text-gray-400 text-sm mb-4">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
-                    <div class="flex gap-3">
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Quick Links</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="index.html" class="hover:text-[#0073e6] transition">Home</a></li>
-                        <li><a href="about.html" class="hover:text-[#0073e6] transition">About</a></li>
-                        <li><a href="services.html" class="hover:text-[#0073e6] transition">Services</a></li>
-                        <li><a href="solutions.html" class="hover:text-[#0073e6] transition">Solutions</a></li>
-                        <li><a href="contact.html" class="hover:text-[#0073e6] transition">Contact</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Services</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="services.html" class="hover:text-[#0073e6] transition">Data Center Solutions</a></li>
-                        <li><a href="services.html" class="hover:text-[#0073e6] transition">CCTV Surveillance</a></li>
-                        <li><a href="services.html" class="hover:text-[#0073e6] transition">Structured Cabling</a></li>
-                        <li><a href="services.html" class="hover:text-[#0073e6] transition">Wi-Fi Solutions</a></li>
-                        <li><a href="services.html" class="hover:text-[#0073e6] transition">Server & Backup</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="font-semibold mb-4">Contact Info</h4>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-phone w-5 text-[#0073e6]"></i> +91 98765 43210</li>
-                        <li><i class="fas fa-envelope w-5 text-[#0073e6]"></i> info@technoeyenet.com</li>
-                        <li><i class="fas fa-map-marker-alt w-5 text-[#0073e6]"></i> India</li>
-                    </ul>
+    <!-- ====== FOOTER ====== -->
+<footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="/assets/footerBG.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+        <!-- <div class="absolute inset-0 bg-[#1a2a3a]/92"></div> -->
+    </div>
+    
+    <div class="container mx-auto px-3 sm:px-4 relative z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
+            <!-- Brand Column -->
+            <div>
+                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
+                    <span class="text-[#E01C08]">CCTV</span>
+                </h3>
+                <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
+                <div class="flex gap-2 sm:gap-3">
+                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-facebook-f text-xs sm:text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-twitter text-xs sm:text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-linkedin-in text-xs sm:text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-instagram text-xs sm:text-sm"></i></a>
                 </div>
             </div>
-            <div class="border-t border-white/10 pt-4 text-center text-gray-500 text-sm">
-                <p>&copy; 2026 Techno Eye. All Rights Reserved.</p>
+
+            <!-- Quick Links -->
+            <div >
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+                    Quick Links
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#2B2A4C] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-1.5 sm:space-y-2">
+                    <li><a href="index.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Home</a></li>
+                    <li><a href="about.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> About</a></li>
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Services</a></li>
+                    <li><a href="solutions.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Solutions</a></li>
+                    <li><a href="contact.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div >
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+                    Services
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#2B2A4C] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-1.5 sm:space-y-2">
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Data Center Solutions</a></li>
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> CCTV Surveillance</a></li>
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Structured Cabling</a></li>
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Wi-Fi Solutions</a></li>
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Server & Backup</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div >
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+                    Contact Info
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#E01C08] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-2 sm:space-y-3">
+                    <li class="flex items-start gap-3 group">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                            <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
+                        </div>
+                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">+91 98765 43210</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                            <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
+                        </div>
+                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">info@technoeyenet.com</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                            <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
+                        </div>
+                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">India</span>
+                    </li>
+                </ul>
             </div>
         </div>
-    </footer>
+        
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p class="text-gray-600 text-[10px] sm:text-xs md:text-sm">
+                &copy; 2026 <span class="text-[#E01C08] font-semibold">CCTV</span>. All Rights Reserved.
+            </p>
+            <div class="flex items-center gap-4 text-[10px] sm:text-xs text-gray-600">
+                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Privacy Policy</a>
+                <span class="w-px h-3 bg-white/10"></span>
+                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Terms of Service</a>
+                <span class="w-px h-3 bg-white/10"></span>
+                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Sitemap</a>
+            </div>
+        </div>
+    </div>
+</footer>
 
     <!-- WhatsApp Button -->
     <a href="https://wa.me/919876543210?text=Hi%20Techno%20Eye%2C%20I%20have%20a%20query%20about%20your%20IT%20solutions." 

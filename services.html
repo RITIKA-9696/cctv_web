@@ -993,50 +993,100 @@
 </section>
 
 <!-- ====== FOOTER ====== -->
-<footer class="bg-[#1a2a3a] text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4">
-    <div class="container mx-auto px-3 sm:px-4">
+<footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="/assets/footerBG.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+        <!-- <div class="absolute inset-0 bg-[#1a2a3a]/92"></div> -->
+    </div>
+    
+    <div class="container mx-auto px-3 sm:px-4 relative z-10">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
+            <!-- Brand Column -->
             <div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">Techno <span class="text-[#0073e6]">Eye</span></h3>
-                <p class="text-gray-400 text-xs sm:text-sm mb-3 sm:mb-4">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
+                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
+                    <span class="text-[#E01C08]">CCTV</span>
+                </h3>
+                <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
                 <div class="flex gap-2 sm:gap-3">
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-facebook-f text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-twitter text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-linkedin-in text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-[#0073e6] transition"><i class="fab fa-instagram text-xs sm:text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-facebook-f text-xs sm:text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-twitter text-xs sm:text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-linkedin-in text-xs sm:text-sm"></i></a>
+                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-instagram text-xs sm:text-sm"></i></a>
                 </div>
             </div>
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Quick Links</h4>
-                <ul class="space-y-1.5 sm:space-y-2 text-gray-400 text-xs sm:text-sm">
-                    <li><a href="index.html" class="hover:text-[#0073e6] transition">Home</a></li>
-                    <li><a href="about.html" class="hover:text-[#0073e6] transition">About</a></li>
-                    <li><a href="services.html" class="hover:text-[#0073e6] transition">Services</a></li>
-                    <li><a href="solutions.html" class="hover:text-[#0073e6] transition">Solutions</a></li>
-                    <li><a href="contact.html" class="hover:text-[#0073e6] transition">Contact</a></li>
+
+            <!-- Quick Links -->
+            <div >
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+                    Quick Links
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#2B2A4C] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-1.5 sm:space-y-2">
+                    <li><a href="index.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Home</a></li>
+                    <li><a href="about.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> About</a></li>
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Services</a></li>
+                    <li><a href="solutions.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Solutions</a></li>
+                    <li><a href="contact.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Contact</a></li>
                 </ul>
             </div>
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Services</h4>
-                <ul class="space-y-1.5 sm:space-y-2 text-gray-400 text-xs sm:text-sm">
-                    <li><a href="services.html" class="hover:text-[#0073e6] transition">Data Center Solutions</a></li>
-                    <li><a href="services.html" class="hover:text-[#0073e6] transition">CCTV Surveillance</a></li>
-                    <li><a href="services.html" class="hover:text-[#0073e6] transition">Structured Cabling</a></li>
-                    <li><a href="services.html" class="hover:text-[#0073e6] transition">Wi-Fi Solutions</a></li>
-                    <li><a href="services.html" class="hover:text-[#0073e6] transition">Server &amp; Backup</a></li>
+
+            <!-- Services -->
+            <div >
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+                    Services
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#2B2A4C] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-1.5 sm:space-y-2">
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Data Center Solutions</a></li>
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> CCTV Surveillance</a></li>
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Structured Cabling</a></li>
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Wi-Fi Solutions</a></li>
+                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Server & Backup</a></li>
                 </ul>
             </div>
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4">Contact Info</h4>
-                <ul class="space-y-1.5 sm:space-y-2 text-gray-400 text-xs sm:text-sm">
-                    <li><i class="fas fa-phone w-4 sm:w-5 text-[#0073e6]"></i> +91 98765 43210</li>
-                    <li><i class="fas fa-envelope w-4 sm:w-5 text-[#0073e6]"></i> info@technoeyenet.com</li>
-                    <li><i class="fas fa-map-marker-alt w-4 sm:w-5 text-[#0073e6]"></i> India</li>
+
+            <!-- Contact Info -->
+            <div >
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+                    Contact Info
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#E01C08] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-2 sm:space-y-3">
+                    <li class="flex items-start gap-3 group">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                            <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
+                        </div>
+                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">+91 98765 43210</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                            <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
+                        </div>
+                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">info@technoeyenet.com</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                            <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
+                        </div>
+                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">India</span>
+                    </li>
                 </ul>
             </div>
         </div>
-        <div class="border-t border-white/10 pt-3 sm:pt-4 text-center text-gray-500 text-[10px] sm:text-xs md:text-sm">
-            <p>&copy; 2026 Techno Eye. All Rights Reserved.</p>
+        
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p class="text-gray-600 text-[10px] sm:text-xs md:text-sm">
+                &copy; 2026 <span class="text-[#E01C08] font-semibold">CCTV</span>. All Rights Reserved.
+            </p>
+            <div class="flex items-center gap-4 text-[10px] sm:text-xs text-gray-600">
+                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Privacy Policy</a>
+                <span class="w-px h-3 bg-white/10"></span>
+                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Terms of Service</a>
+                <span class="w-px h-3 bg-white/10"></span>
+                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Sitemap</a>
+            </div>
         </div>
     </div>
 </footer>

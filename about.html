@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -21,6 +22,7 @@
                 opacity: 0;
                 transform: translateY(50px);
             }
+
             to {
                 opacity: 1;
                 transform: translateY(0);
@@ -31,10 +33,12 @@
             animation: slideUp 1s ease-out forwards;
             opacity: 0;
         }
+
         .hero-subtitle {
             animation: slideUp 1s ease-out 0.3s forwards;
             opacity: 0;
         }
+
         .hero-cta {
             animation: slideUp 1s ease-out 0.6s forwards;
             opacity: 0;
@@ -44,10 +48,12 @@
         .value-card {
             transition: transform 0.3s ease, background 0.3s ease;
         }
+
         .value-card:hover {
             transform: translateY(-6px);
             background: #1e3a5f;
         }
+
         .value-card:hover i {
             color: #83B4FF;
         }
@@ -58,130 +64,161 @@
             overflow: hidden;
             transition: transform 0.35s ease, box-shadow 0.35s ease;
         }
+
         .svc-card:hover {
             transform: translateY(-8px);
             box-shadow: 0 24px 48px rgba(0, 0, 0, 0.18);
         }
+
         .svc-card img {
             transition: transform 0.5s ease;
         }
+
         .svc-card:hover img {
             transform: scale(1.06);
         }
 
         /* Floating stat badge */
         @keyframes floatBadge {
+
             0%,
             100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-6px);
             }
         }
+
         .badge-float {
             animation: floatBadge 3s ease-in-out infinite;
         }
+
         .badge-float-delay {
             animation: floatBadge 3s ease-in-out 1.2s infinite;
         }
 
-       /* ----- HEADER ----- */
-    #mainHeader {
-      font-family: 'Inter', sans-serif;
-    }
+        /* ----- HEADER ----- */
+        #mainHeader {
+            font-family: 'Inter', sans-serif;
+        }
+        .brand-name {
+            font-family: 'Instrument Serif', serif;
+            font-weight: 400;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        .brand-name .highlight {
+            color: #284595;
+        }
+        .brand-name .light {
+            color: #ffffff;
+        }
+        .header-logo {
+            height: 40px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
 
-    .brand-name {
-      font-family: 'Instrument Serif', serif;
-      font-weight: 400;
-      font-size: 1.5rem;
-      letter-spacing: 0.5px;
-    }
-    .brand-name .highlight {
-      color: #E01C08;
-    }
-    .brand-name .light {
-      color: #ffffff;
-    }
+        /* Nav link with underline hover effect */
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            color: #191E32;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 9999px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: #284595;
+            border-radius: 2px;
+            transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .nav-link:hover::after {
+            width: 70%;
+        }
+        .nav-link:hover {
+            color: #284595;
+        }
+        .nav-link.active {
+            background: #284595;
+            color: #fff;
+            padding: 0.4rem 1.2rem;
+        }
+        .nav-link.active::after {
+            display: none;
+        }
+        .nav-link.active:hover {
+            color: #fff;
+            background: #28AAE4;
+        }
 
-    .nav-link {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 0.95rem;
-      letter-spacing: 0.3px;
-      color: #ffffff;
-      transition: color 0.2s ease;
-      text-decoration: none;
-      padding: 0.4rem 0.8rem;
-      border-radius: 9999px;
-    }
-    .nav-link:hover {
-      color: #E01C08;
-    }
-    .nav-link.active {
-      background: #E01C08;
-      color: #fff;
-      padding: 0.4rem 1.2rem;
-    }
-    .nav-link.active:hover {
-      color: #fff;
-      background: #a51515;
-    }
-
-    .btn-contact {
-      font-family: 'Inter', sans-serif;
-      font-weight: 600;
-      font-size: 0.85rem;
-      background: #37353e;
-      color: #fff;
-      padding: 0.5rem 1.25rem;
-      border-radius: 8px;
-      transition: all 0.25s ease;
-      text-decoration: none;
-      letter-spacing: 0.2px;
-    }
-    .btn-contact:hover {
-      background: #E01C08;
-      transform: translateY(-2px);
-      box-shadow: 0 8px 20px rgba(224,28,8,0.3);
-    }
-
-    .mobile-nav-link {
-      font-family: 'Inter', sans-serif;
-      font-weight: 500;
-      font-size: 1rem;
-      color: #1a2a3a;
-      padding: 0.6rem 0;
-      display: block;
-      transition: color 0.2s;
-      text-decoration: none;
-    }
-    .mobile-nav-link:hover {
-      color: #E01C08;
-    }
-    .mobile-nav-link.active-mobile {
-      background: #E01C08;
-      color: #fff;
-      border-radius: 8px;
-      padding: 0.6rem 1.2rem;
-    }
-
-    .header-inner {
-      background: rgba(43, 42, 42, 0.737);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      border-radius: 9999px;
-      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-      border: 1px solid rgba(255, 255, 255, 0.06);
-      padding: 0.75rem 1.5rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 1rem;
-    }
+        .btn-contact {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            background: #d1dcea;
+            color: #1A328D;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            letter-spacing: 0.2px;
+        }
+        .btn-contact:hover {
+            background: #bbcee7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px #c0c0c1;
+        }
+        .mobile-nav-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #1a2a3a;
+            padding: 0.6rem 0;
+            display: block;
+            transition: color 0.2s;
+            text-decoration: none;
+            position: relative;
+        }
+        .mobile-nav-link:hover {
+            color: #284595;
+        }
+        .mobile-nav-link.active-mobile {
+            background: #284595;
+            color: #fff;
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+        }
+        .header-inner {
+            background: white;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 9999px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
 
 
-    /* end  */
+        /* end  */
 
         /* Section fade-in */
         .reveal {
@@ -189,6 +226,7 @@
             transform: translateY(32px);
             transition: opacity 0.7s ease, transform 0.7s ease;
         }
+
         .reveal.visible {
             opacity: 1;
             transform: translateY(0);
@@ -200,13 +238,13 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: #B31312;
+            background: #1A328D;
             color: white;
             border: none;
             border-radius: 50%;
             font-size: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(179, 19, 18, 0.4);
+            box-shadow: 0 4px 15px #1A328D;
             transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
@@ -218,9 +256,9 @@
         }
 
         #scrollToTop:hover {
-            background: #8a0f0e;
+            background: #1A328D;
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(179, 19, 18, 0.5);
+            box-shadow: 0 8px 25px #1A328D;
         }
 
         #scrollToTop.show {
@@ -234,10 +272,12 @@
         }
 
         @keyframes bounceUp {
+
             0%,
             100% {
                 transform: translateY(0);
             }
+
             50% {
                 transform: translateY(-4px);
             }
@@ -258,25 +298,30 @@
             .collage-main {
                 height: 250px;
             }
+
             .collage-inset {
                 width: 100px;
                 height: 80px;
                 bottom: 10px;
                 right: 10px;
             }
+
             .badge-pos-1 {
                 left: -10px;
                 top: 10px;
                 padding: 8px 12px;
             }
+
             .badge-pos-1 span {
                 font-size: 1rem;
             }
+
             .badge-pos-2 {
                 left: 10px;
                 bottom: 70px;
                 padding: 8px 12px;
             }
+
             .badge-pos-2 span {
                 font-size: 1rem;
             }
@@ -286,6 +331,7 @@
             .collage-main {
                 height: 320px;
             }
+
             .collage-inset {
                 width: 140px;
                 height: 110px;
@@ -306,6 +352,7 @@
                 max-height: 300px;
                 width: auto;
             }
+
             .why-choose-section .border-l-4,
             .why-choose-section .border-r-4 {
                 border-left-width: 4px !important;
@@ -324,67 +371,77 @@
 
 <body class="bg-white text-[#1a2a3a]">
 
-    <!-- ====== HEADER ====== -->
-<header class="fixed top-4 md:top-6 left-0 right-0 z-50" id="mainHeader">
-  <div class="container mx-auto px-4 max-w-5xl">
-    <div class="header-inner">
-      <div class="flex-shrink-0">
-        <a href="index.html" class="brand-name">
-          <span class="highlight">Techno</span><span class="light">Eye</span>
-        </a>
-      </div>
-      <nav class="flex-1 flex justify-center">
-        <ul class="hidden md:flex items-center gap-1 lg:gap-2">
-          <li><a href="index.html" class="nav-link ">Home</a></li>
-          <li><a href="about.html" class="nav-link active">About</a></li>
-          <li><a href="services.html" class="nav-link">Services</a></li>
-          <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-        </ul>
-      </nav>
-      <div class="hidden md:block flex-shrink-0">
-        <a href="contact.html" class="btn-contact">Contact Us</a>
-      </div>
-      <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
-        <span class="w-6 h-0.5 bg-white transition-all"></span>
-        <span class="w-6 h-0.5 bg-white transition-all"></span>
-        <span class="w-6 h-0.5 bg-white transition-all"></span>
-      </div>
-    </div>
-    <div class="md:hidden hidden mt-3 px-2" id="mobileNav">
-      <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-6 py-5 border border-white/20">
-        <ul class="flex flex-col gap-2 text-center">
-          <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-          <li><a href="about.html" class="mobile-nav-link active-mobile">About</a></li>
-          <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-          <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
-          <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="background:#E01C08; border-radius:40px; padding:0.7rem;">Contact Us</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</header>
-
-    
-    <!-- HERO -->
-<section class="relative text-white overflow-hidden">
-    <div class="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[680px]">
-        <img src="assets/aboutBanner.jpg" alt="About CCTV" class="absolute inset-0 w-full h-full object-cover object-center">
-        <div class="absolute inset-0 bg-black/55"></div>
-        <div class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12 lg:px-16 max-w-4xl mx-auto">
-            <p class="hero-subtitle text-xs md:text-sm uppercase tracking-[0.2em] text-[#2B2A4C] font-semibold mb-2 sm:mb-3 bg-[#EEE2DE] p-1.5 sm:p-2 rounded-xl px-4 sm:px-6">Who We Are</p>
-            <h1 class="hero-title instrument-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl leading-tight mb-3 sm:mb-5 text-[#BE1A1A] font-semibold">
-                About Us
-            </h1>
-            <p class="hero-subtitle text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mb-6 sm:mb-8 leading-relaxed px-2">
-                Since 2016, CCTV has delivered secure, scalable technology infrastructure — CCTV, networking, data centers, and more — to businesses across India.
-            </p>
-            <div class="hero-cta flex flex-wrap justify-center gap-3 sm:gap-4">
-                <a href="services.html" class="bg-[#B31312] text-white px-5 sm:px-6 md:px-8 py-2 rounded-md font-semibold hover:bg-[#EA906C] transition hover:-translate-y-1 hover:shadow-lg text-sm sm:text-base">Our Services</a>
-                <a href="contact.html" class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-5 sm:px-6 md:px-8 py-2 rounded-md font-semibold hover:bg-white/20 transition hover:-translate-y-1 text-sm sm:text-base">Get a Quote</a>
+     <!-- ====== HEADER ====== -->
+    <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
+        <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
+            <div class="header-inner">
+                <div class="flex-shrink-0">
+                    <img src="/assets/cctv-logo.jpeg" alt="CCTV Logo" class="header-logo" />
+                </div>
+                <nav class="flex-1 flex justify-center">
+                    <ul class="hidden md:flex items-center gap-0.5 lg:gap-1.5">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link active">About</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                        <li><a href="products.html" class="nav-link ">Products</a></li>
+                    </ul>
+                </nav>
+                <div class="hidden md:block flex-shrink-0">
+                    <a href="contact.html" class="btn-contact">Contact Us</a>
+                </div>
+                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                </div>
+            </div>
+            <div class="md:hidden hidden mt-2 px-2" id="mobileNav">
+                <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-5 py-4 border border-white/20">
+                    <ul class="flex flex-col gap-2 text-center">
+                        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                        <li><a href="about.html" class="mobile-nav-link active-mobile">About</a></li>
+                        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                        <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+                        <li><a href="products.html" class="mobile-nav-link">Products</a></li>
+                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="border-radius:40px; padding:0.6rem;">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </header>
+
+
+    <!-- HERO -->
+    <section class="relative text-white overflow-hidden">
+        <div class="relative h-[400px] sm:h-[500px] md:h-[600px] lg:h-[680px]">
+            <img src="assets/about-banner.png" alt="About CCTV"
+                class="absolute inset-0 w-full h-full object-cover object-center">
+            <div class="absolute inset-0 bg-black/55"></div>
+            <div
+                class="absolute inset-0 flex flex-col justify-center items-center text-center px-4 sm:px-6 md:px-12 lg:px-16 max-w-4xl mx-auto">
+                <span class="hero-badge inline-block px-4 py-1.5 bg-[#EBECEE] text-[#1aa1e1] rounded-full text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
+                Who We Are
+            </span>
+                <h1 class="hero-title instrument-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight max-w-3xl">
+                <span class="text-[#EBECEE]">About Us</span>
+            </h1>
+                <p
+                    class="hero-subtitle text-sm sm:text-base md:text-lg text-gray-300 max-w-2xl mb-6 sm:mb-8 leading-relaxed px-2">
+                    By bridging high-performance, certified hardware with meticulous engineering, we provide absolute clarity, constant vigilance,
+                     and complete peace of mind for clients nationwide.
+                </p>
+                <div class="hero-cta flex flex-wrap justify-center gap-3 sm:gap-4">
+                    <a href="services.html"
+                        class="bg-[#284595] text-white px-5 sm:px-6 md:px-8 py-2 rounded-md font-semibold hover:bg-[#28AAE4] transition hover:-translate-y-1 hover:shadow-lg text-sm sm:text-base">Our
+                        Services</a>
+                    <a href="contact.html"
+                        class="bg-white/10 backdrop-blur-sm border border-white/30 text-white px-5 sm:px-6 md:px-8 py-2 rounded-md font-semibold hover:bg-white/20 transition hover:-translate-y-1 text-sm sm:text-base">Get
+                        a Quote</a>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- ABOUT SPLIT -->
     <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-white overflow-hidden">
@@ -393,34 +450,44 @@
 
                 <!-- LEFT - Image Collage -->
                 <div class="relative reveal order-1 lg:order-1">
-                    <img src="assets/about1.png" alt="CCTV team at work" class="collage-main w-full h-56 xs:h-64 sm:h-72 md:h-[420px] object-cover rounded-xl shadow-2xl">
-                    <div class="collage-inset absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-28 xs:w-32 sm:w-40 md:w-48 h-20 xs:h-24 sm:h-28 md:h-36 rounded-xl overflow-hidden shadow-xl border-2 border-white">
+                    <img src="assets/about1.png" alt="CCTV team at work"
+                        class="collage-main w-full h-56 xs:h-64 sm:h-72 md:h-[420px] object-cover rounded-xl shadow-2xl">
+                    <div
+                        class="collage-inset absolute bottom-3 sm:bottom-4 right-3 sm:right-4 w-28 xs:w-32 sm:w-40 md:w-48 h-20 xs:h-24 sm:h-28 md:h-36 rounded-xl overflow-hidden shadow-xl border-2 border-white">
                         <img src="assets/moto.jpg" alt="CCTV installation" class="w-full h-full object-cover">
-                    </div>                    
+                    </div>
                 </div>
 
                 <!-- RIGHT - Content -->
                 <div class="reveal order-2 lg:order-2">
-                    <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4 sm:mb-5">About Us</span>
-                    <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#2B2A4C] leading-tight mb-4 sm:mb-5">
+                    <span
+                        class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4 sm:mb-5">About
+                        Us</span>
+                    <h2
+                        class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#2B2A4C] leading-tight mb-4 sm:mb-5">
                         We'll Find &amp; Build The Perfect <br class="hidden sm:block">
-                        <span class="text-[#B31312]">IT Infrastructure For You</span>
+                        <span class="text-[#284595]">IT Infrastructure For You</span>
                     </h2>
-                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6 border-l-4 border-[#EA906C] pl-4">
-                        CCTV is a leading IT solutions provider, offering customized infrastructure — from CCTV surveillance to structured cabling — for businesses across India. We've grown alongside the evolving IT landscape since our inception in 2016, with a team that puts client success first.
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-6 border-l-4 border-[#28AAE4] pl-4">
+                        Akanksha Enterprises is your trusted security infrastructure partner based in Pune.
+                        We supply Install and maintain advance CCTV Surveillance ecosystems.
                     </p>
                     <ul class="space-y-2.5 sm:space-y-3 mb-6 sm:mb-8">
                         <li class="flex items-center gap-3 text-[#1a2a3a] font-medium text-xs sm:text-sm">
-                            <i class="fas fa-check-circle text-[#B31312]"></i> Professional project management from day one
+                            <i class="fas fa-check-circle text-[#284595]"></i> Professional project management from day
+                            one
                         </li>
                         <li class="flex items-center gap-3 text-[#1a2a3a] font-medium text-xs sm:text-sm">
-                            <i class="fas fa-check-circle text-[#B31312]"></i> Tailored solutions — no one-size-fits-all approach
+                            <i class="fas fa-check-circle text-[#284595]"></i> Tailored solutions — no one-size-fits-all
+                            approach
                         </li>
                         <li class="flex items-center gap-3 text-[#1a2a3a] font-medium text-xs sm:text-sm">
-                            <i class="fas fa-check-circle text-[#B31312]"></i> Guaranteed quality and post-installation support
+                            <i class="fas fa-check-circle text-[#284595]"></i> Guaranteed quality and post-installation
+                            support
                         </li>
                     </ul>
-                    <a href="services.html" class="inline-flex items-center gap-2 bg-[#B31312] text-white px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg font-semibold hover:bg-[#8a0f0e] transition hover:-translate-y-1 hover:shadow-lg text-sm sm:text-base">
+                    <a href="services.html"
+                        class="inline-flex items-center gap-2 bg-[#284595] text-white px-6 sm:px-8 py-2 sm:py-2 rounded-lg font-semibold hover:bg-[#284595] transition hover:-translate-y-1 hover:shadow-lg text-sm sm:text-base">
                         Explore Solutions <i class="fas fa-arrow-right text-sm"></i>
                     </a>
                 </div>
@@ -429,270 +496,337 @@
         </div>
     </section>
 
-   <!-- ====== WHY CHOOSE US ====== -->
-<section class="py-8 sm:py-10 md:py-12 lg:py-20 bg-white overflow-hidden why-choose-section">
-    <div class="container mx-auto px-4 sm:px-6">
-        <!-- Section Heading -->
-        <div class="text-center reveal">
-            <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3">
-                <i class="fas fa-medal mr-2"></i> Why Choose Us
-            </span>
-            <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#2B2A4C] leading-tight">
-                The <span class="text-[#B31312]">CCTV</span> Advantage
-            </h2>
-            <p class="text-gray-500 text-sm sm:text-base mt-3 max-w-2xl mx-auto px-2">
-                What sets us apart from the competition — your trusted partner for IT excellence.
-            </p>
+    <!-- ====== WHY CHOOSE US ====== -->
+    <section class="py-8 sm:py-10 md:py-12 lg:py-20 bg-white overflow-hidden why-choose-section">
+        <div class="container mx-auto px-4 sm:px-6">
+            <!-- Section Heading -->
+            <div class="text-center reveal">
+                <span
+                    class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3">
+                    <i class="fas fa-medal mr-2"></i> Why Choose Us
+                </span>
+                <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#2B2A4C] leading-tight">
+                    The <span class="text-[#284595]">CCTV</span> Advantage
+                </h2>
+                <p class="text-gray-500 text-sm sm:text-base mt-3 max-w-2xl mx-auto px-2">
+                    What sets us apart from the competition — your trusted partner for IT excellence.
+                </p>
+            </div>
+
+            <!-- Main Layout: 2 columns left | center image | 2 columns right -->
+            <div class="flex flex-col lg:flex-row items-center gap-4 md:gap-6 lg:gap-8 reveal mt-8 sm:mt-10">
+
+                <!-- LEFT SIDE: 2 Sections -->
+                <div class="w-full lg:w-[30%] space-y-4 md:space-y-6">
+                    <!-- Left Section 1 -->
+                    <div
+                        class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#28AAE4]">
+                        <div class="flex items-start gap-3 sm:gap-4">
+                            <div
+                                class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#E7EAEE] flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-users text-[#28AAE4] text-base sm:text-lg md:text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">100% Verified</h3>
+                                <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Certified IT professionals with over 10 years of experience, ensuring your security infrastructure is in trusted, expert hands.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Left Section 2 -->
+                    <div
+                        class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#28AAE4]">
+                        <div class="flex items-start gap-3 sm:gap-4">
+                            <div
+                                class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#E7EAEE] flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-rocket text-[#28AAE4] text-base sm:text-lg md:text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">Strategic Design
+                                </h3>
+                                <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Leveraging AI-powered surveillance, cloud solutions, and enterprise-grade networking for a future-proof security ecosystem..</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- CENTER: Image -->
+                <div class="w-full lg:w-[40%] flex justify-center items-center my-4 sm:my-6 lg:my-0">
+                    <div class="relative w-full max-w-[500px]">
+                        <img src="assets/why-choose-image.png" alt="Why Choose CCTV"
+                            class="why-choose-image w-full h-auto max-h-[500px] sm:max-h-[600px] object-contain">
+                    </div>
+                </div>
+
+                <!-- RIGHT SIDE: 2 Sections -->
+                <div class="w-full lg:w-[30%] space-y-4 md:space-y-6">
+                    <!-- Right Section 1 -->
+                    <div
+                        class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-r-4 border-[#28AAE4]">
+                        <div class="flex items-start gap-3 sm:gap-4">
+                            <div
+                                class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#E7EAEE] flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-headset text-[#28AAE4] text-base sm:text-lg md:text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">Aesthetic Cabling</h3>
+                                <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Clean, concealed, and neatly routed cabling that preserves your workspace aesthetics while ensuring optimal system performance.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Section 2 -->
+                    <div
+                        class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-r-4 border-[#28AAE4]">
+                        <div class="flex items-start gap-3 sm:gap-4">
+                            <div
+                                class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#E7EAEE] flex items-center justify-center flex-shrink-0">
+                                <i class="fas fa-shield-alt text-[#28AAE4] text-base sm:text-lg md:text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">Swift Support</h3>
+                                <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Round-the-clock technical assistance and proactive monitoring to guarantee minimal downtime and quick issue resolution.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
         </div>
-
-        <!-- Main Layout: 2 columns left | center image | 2 columns right -->
-        <div class="flex flex-col lg:flex-row items-center gap-4 md:gap-6 lg:gap-8 reveal mt-8 sm:mt-10">
-            
-            <!-- LEFT SIDE: 2 Sections -->
-            <div class="w-full lg:w-[30%] space-y-4 md:space-y-6">
-                <!-- Left Section 1 -->
-                <div class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#B31312]">
-                    <div class="flex items-start gap-3 sm:gap-4">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#EFE4D2] flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-users text-[#B31312] text-base sm:text-lg md:text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">Expert Team</h3>
-                            <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Certified professionals with 10+ years of experience in IT infrastructure and security solutions.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Left Section 2 -->
-                <div class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-l-4 border-[#B31312]">
-                    <div class="flex items-start gap-3 sm:gap-4">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#EFE4D2] flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-rocket text-[#B31312] text-base sm:text-lg md:text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">Cutting-Edge Technology</h3>
-                            <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">We deploy the latest AI-powered surveillance, cloud solutions, and enterprise-grade networking.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- CENTER: Image -->
-            <div class="w-full lg:w-[40%] flex justify-center items-center my-4 sm:my-6 lg:my-0">
-                <div class="relative w-full max-w-[500px]">
-                    <img src="assets/why-choose-image.png" alt="Why Choose CCTV" class="why-choose-image w-full h-auto max-h-[500px] sm:max-h-[600px] object-contain">
-                </div>
-            </div>
-
-            <!-- RIGHT SIDE: 2 Sections -->
-            <div class="w-full lg:w-[30%] space-y-4 md:space-y-6">
-                <!-- Right Section 1 -->
-                <div class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-r-4 border-[#B31312]">
-                    <div class="flex items-start gap-3 sm:gap-4">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#EFE4D2] flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-headset text-[#B31312] text-base sm:text-lg md:text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">24/7 Support</h3>
-                            <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Round-the-clock technical assistance and monitoring to ensure your systems run without interruption.</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Right Section 2 -->
-                <div class="bg-[#F8F6F4] rounded-2xl p-4 sm:p-5 md:p-7 hover:shadow-xl transition-shadow duration-300 border-r-4 border-[#B31312]">
-                    <div class="flex items-start gap-3 sm:gap-4">
-                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-[#EFE4D2] flex items-center justify-center flex-shrink-0">
-                            <i class="fas fa-shield-alt text-[#B31312] text-base sm:text-lg md:text-xl"></i>
-                        </div>
-                        <div>
-                            <h3 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1">Quality Assurance</h3>
-                            <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Rigorous testing and premium-grade equipment ensure reliable, long-lasting performance.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </div>
-    </div>
-</section>
+    </section>
 
     <!-- MISSION, VISION, MOTTO -->
     <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-[#F8F6F4]">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-10 sm:mb-12 md:mb-16 reveal">
-                <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4">Who We Are</span>
+                <span
+                    class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4">Who
+                    We Are</span>
                 <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#1a2a3a] leading-tight">
-                    The Principles That <span class="text-[#B31312]">Drive Us Forward</span>
+                    The Principles That <span class="text-[#284595]">Drive Us Forward</span>
                 </h2>
             </div>
 
             <!-- Mission -->
             <div class="grid lg:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center mb-10 sm:mb-14 md:mb-20 reveal">
-                <div class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-1 mvm-image">
+                <div
+                    class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-1 mvm-image">
                     <img src="assets/bannerslider1.jpg" alt="Our Mission" class="w-full h-full object-cover">
                 </div>
                 <div class="order-2 lg:order-2">
-                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#B31312] mb-3 sm:mb-4">Our Mission</h3>
-                    <div class="w-12 h-1 bg-[#B31312] rounded mb-4 sm:mb-5"></div>
-                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">To empower businesses with innovative, reliable, and scalable IT solutions that enhance operational efficiency and security.</p>
-                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">We strive to build lasting partnerships by delivering exceptional service, measurable value, and cutting-edge technology solutions that help our clients confidently navigate the ever-evolving digital landscape. Our commitment is to drive sustainable growth, foster innovation, and ensure long-term success through technology excellence.</p>
+                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#284595] mb-3 sm:mb-4">Our Mission
+                    </h3>
+                    <div class="w-12 h-1 bg-[#28AAE4] rounded mb-4 sm:mb-5"></div>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">To empower businesses
+                        with innovative, reliable, and scalable IT solutions that enhance operational efficiency and
+                        security.</p>
+                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">We strive to build lasting partnerships
+                        by delivering exceptional service, measurable value, and cutting-edge technology solutions that
+                        help our clients confidently navigate the ever-evolving digital landscape. Our commitment is to
+                        drive sustainable growth, foster innovation, and ensure long-term success through technology
+                        excellence.</p>
                 </div>
             </div>
 
             <!-- Vision -->
             <div class="grid lg:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center mb-10 sm:mb-14 md:mb-20 reveal">
                 <div class="order-2 lg:order-1">
-                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#B31312] mb-3 sm:mb-4">Our Vision</h3>
-                    <div class="w-12 h-1 bg-[#B31312] rounded mb-4 sm:mb-5"></div>
-                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">To be recognized as a leading IT solutions provider across India — known for our commitment to quality, customer satisfaction, and technological innovation.</p>
-                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">We aim to be the go-to partner for businesses seeking services that drive growth, enhance connectivity, and ensure data security in an increasingly digital world.</p>
+                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#284595] mb-3 sm:mb-4">Our Vision
+                    </h3>
+                    <div class="w-12 h-1 bg-[#28AAE4] rounded mb-4 sm:mb-5"></div>
+                    <p class="text-gray-600 text-sm sm:text-base leading-relaxed mb-3 sm:mb-4">To be recognized as a
+                        leading IT solutions provider across India — known for our commitment to quality, customer
+                        satisfaction, and technological innovation.</p>
+                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">We aim to be the go-to partner for
+                        businesses seeking services that drive growth, enhance connectivity, and ensure data security in
+                        an increasingly digital world.</p>
                 </div>
-                <div class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-2 mvm-image">
+                <div
+                    class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-2 mvm-image">
                     <img src="assets/bannerslider2.jpg" alt="Our Vision" class="w-full h-full object-cover">
                 </div>
             </div>
 
             <!-- Motto -->
             <div class="grid lg:grid-cols-2 gap-6 md:gap-10 lg:gap-16 items-center reveal">
-                <div class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-1 mvm-image">
+                <div
+                    class="relative rounded-2xl overflow-hidden shadow-xl h-56 xs:h-64 sm:h-72 md:h-80 order-1 lg:order-1 mvm-image">
                     <img src="assets/bannerslider3.jpg" alt="Our Motto" class="w-full h-full object-cover">
                 </div>
                 <div class="order-2 lg:order-2">
-                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#B31312] mb-3 sm:mb-4">Our Motto</h3>
-                    <div class="w-12 h-1 bg-[#B31312] rounded mb-4 sm:mb-5"></div>
-                    <p class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#B31312] italic leading-snug mb-4 sm:mb-5 border-l-4 border-[#B31312] pl-4 sm:pl-5">
+                    <h3 class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#284595] mb-3 sm:mb-4">Our Motto
+                    </h3>
+                    <div class="w-12 h-1 bg-[#28AAE4] rounded mb-4 sm:mb-5"></div>
+                    <p
+                        class="instrument-serif text-xl sm:text-2xl md:text-3xl text-[#28AAE4] italic leading-snug mb-4 sm:mb-5 border-l-4 border-[#284595] pl-4 sm:pl-5">
                         "Secure Today,<br>Future-Ready Tomorrow."
                     </p>
-                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Every solution we design is built not just for today's challenges but for the demands of tomorrow — giving our clients a secure, scalable foundation they can always count on.</p>
+                    <p class="text-gray-500 text-xs sm:text-sm leading-relaxed">Every solution we design is built not
+                        just for today's challenges but for the demands of tomorrow — giving our clients a secure,
+                        scalable foundation they can always count on.</p>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ====== CTA ====== -->
-<section class="relative py-12 sm:py-16 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
-    <img src="/assets/contactbanner.jpg" alt="Contact Banner" class="absolute inset-0 w-full h-full object-cover object-center" />
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="absolute top-0 right-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-[#B31312]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-    <div class="absolute bottom-0 left-0 w-48 sm:w-64 md:w-80 h-48 sm:h-64 md:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
-    <div class="container mx-auto px-4 relative z-10">
-        <div class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
-            <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4">
-                <i class="fas fa-rocket mr-2"></i> Let's Get Started
-            </span>
-            <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-4 leading-tight">
-                Ready to Transform Your <span class="text-white">IT Infrastructure</span>?
-            </h2>
-            <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed">
-                Let's build a secure, scalable technology environment that keeps your <span class="text-white font-semibold">business moving forward</span> with confidence and reliability.
-            </p>
-            <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
-                <a href="contact.html" class="bg-[#B31312] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 rounded-lg font-semibold hover:bg-[#8a0f0e] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-sm sm:text-base">
-                    <i class="fas fa-paper-plane"></i> Get Started
-                </a>
-                <a href="services.html" class="bg-[#EEE2DE] backdrop-blur-sm border border-white/30 text-[#2B2A4C] px-5 sm:px-6 md:px-8 py-2 sm:py-2.5 rounded-lg font-semibold hover:bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-sm sm:text-base">
-                    <i class="fas fa-arrow-right"></i> Explore Services
-                </a>
+    <section
+        class="relative py-12 sm:py-16 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
+        <img src="/assets/contactbanner.jpg" alt="Contact Banner"
+            class="absolute inset-0 w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div
+            class="absolute top-0 right-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-[#B31312]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-48 sm:w-64 md:w-80 h-48 sm:h-64 md:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4">
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div
+                class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
+                <span
+                    class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                    <i class="fas fa-rocket mr-2"></i> Let's Get Started
+                </span>
+                <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-4 leading-tight">
+                    Ready to Transform Your <span class="text-white">IT Infrastructure</span>?
+                </h2>
+                <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed">
+                    Let's build a secure, scalable technology environment that keeps your <span
+                        class="text-white font-semibold">business moving forward</span> with confidence and reliability.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                    <a href="contact.html"
+                        class="bg-[#284595] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2 rounded-lg font-semibold hover:bg-[#28AAE4] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fas fa-paper-plane"></i> Get Started
+                    </a>
+                    <a href="services.html"
+                        class="bg-[#E7EAEE] backdrop-blur-sm border border-white/30 text-[#28AAE4] px-5 sm:px-6 md:px-8 py-2 sm:py-2 rounded-lg font-semibold hover:bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fas fa-arrow-right"></i> Explore Services
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
     <!-- ====== FOOTER ====== -->
 <footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-        <img src="/assets/footerBG.jpg" alt="Footer Background" class="w-full h-full object-cover" />
-        <!-- <div class="absolute inset-0 bg-[#1a2a3a]/92"></div> -->
+        <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
     </div>
-    
+
     <div class="container mx-auto px-3 sm:px-4 relative z-10">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
             <!-- Brand Column -->
             <div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
-                    <span class="text-[#E01C08]">CCTV</span>
-                </h3>
-                <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
+                <div class="mb-3">
+                    <img src="/assets/cctv-logo-removebg.png" alt="TechnoEye Logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+                </div>
+                <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions
+                    provider delivering cutting-edge technology and infrastructure services to businesses across
+                    India.</p>
                 <div class="flex gap-2 sm:gap-3">
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-facebook-f text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-twitter text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-linkedin-in text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-instagram text-xs sm:text-sm"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-twitter text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-instagram text-xs sm:text-sm"></i>
+                    </a>
                 </div>
             </div>
 
             <!-- Quick Links -->
-            <div >
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
                     Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#2B2A4C] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </h4>
                 <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="index.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Home</a></li>
-                    <li><a href="about.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> About</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Services</a></li>
-                    <li><a href="solutions.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Solutions</a></li>
-                    <li><a href="contact.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Contact</a></li>
+                    <li><a href="index.html"
+                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
+                    <li><a href="about.html"
+                            class="text-[#234FAA]  text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
+                   
                 </ul>
             </div>
 
             <!-- Services -->
-            <div >
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
-                    Services
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#2B2A4C] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                    Quick Links
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </h4>
                 <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Data Center Solutions</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> CCTV Surveillance</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Structured Cabling</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Wi-Fi Solutions</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Server & Backup</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
+                    
                 </ul>
             </div>
 
             <!-- Contact Info -->
-            <div >
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
                     Contact Info
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#E01C08] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </h4>
                 <ul class="space-y-2 sm:space-y-3">
                     <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
                             <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
                         </div>
-                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">+91 98765 43210</span>
+                        <span class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91 9766491858 </span>
                     </li>
                     <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
                             <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
                         </div>
-                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">info@technoeyenet.com</span>
+                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
                     </li>
                     <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
                             <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
                         </div>
-                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">India</span>
+                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop No 206, KamalRaj Parijat, Walke Nagar,
+Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
                     </li>
                 </ul>
             </div>
         </div>
-        
+
         <!-- Bottom Bar -->
         <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p class="text-gray-600 text-[10px] sm:text-xs md:text-sm">
-                &copy; 2026 <span class="text-[#E01C08] font-semibold">CCTV</span>. All Rights Reserved.
+            <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
+                &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights Reserved.
             </p>
-            <div class="flex items-center gap-4 text-[10px] sm:text-xs text-gray-600">
-                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Privacy Policy</a>
+            <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
+                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
                 <span class="w-px h-3 bg-white/10"></span>
-                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Terms of Service</a>
-                <span class="w-px h-3 bg-white/10"></span>
-                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Sitemap</a>
+                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
+                
             </div>
         </div>
     </div>
@@ -703,40 +837,40 @@
 
     <script>
         // Mobile nav
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             const hamburger = document.getElementById('hamburger');
             const mobileNav = document.getElementById('mobileNav');
             if (hamburger && mobileNav) {
-                hamburger.addEventListener('click', function() {
+                hamburger.addEventListener('click', function () {
                     mobileNav.classList.toggle('hidden');
                 });
             }
 
             // Scroll reveal
             const revealEls = document.querySelectorAll('.reveal');
-            const revealObserver = new IntersectionObserver(function(entries) {
-                entries.forEach(function(entry) {
+            const revealObserver = new IntersectionObserver(function (entries) {
+                entries.forEach(function (entry) {
                     if (entry.isIntersecting) {
                         entry.target.classList.add('visible');
                         revealObserver.unobserve(entry.target);
                     }
                 });
             }, { threshold: 0.12 });
-            revealEls.forEach(function(el) {
+            revealEls.forEach(function (el) {
                 revealObserver.observe(el);
             });
 
             // Scroll to top
             const scrollBtn = document.getElementById('scrollToTop');
             if (scrollBtn) {
-                window.addEventListener('scroll', function() {
+                window.addEventListener('scroll', function () {
                     if (window.scrollY > 300) {
                         scrollBtn.classList.add('show');
                     } else {
                         scrollBtn.classList.remove('show');
                     }
                 });
-                scrollBtn.addEventListener('click', function() {
+                scrollBtn.addEventListener('click', function () {
                     window.scrollTo({ top: 0, behavior: 'smooth' });
                 });
             }
@@ -744,4 +878,5 @@
     </script>
 
 </body>
+
 </html>

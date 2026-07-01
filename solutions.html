@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Solutions · Techno Eye</title>
+    <title>Solutions · CCTV </title>
     <script src="https://cdn.tailwindcss.com">
     </script>
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -21,98 +21,122 @@
     }
 
     /* ----- HEADER ----- */
-    #mainHeader {
-        font-family: 'Inter', sans-serif;
-    }
+        #mainHeader {
+            font-family: 'Inter', sans-serif;
+        }
+        .brand-name {
+            font-family: 'Instrument Serif', serif;
+            font-weight: 400;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        .brand-name .highlight {
+            color: #284595;
+        }
+        .brand-name .light {
+            color: #ffffff;
+        }
+        .header-logo {
+            height: 40px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
 
-    .brand-name {
-        font-family: 'Instrument Serif', serif;
-        font-weight: 400;
-        font-size: 1.5rem;
-        letter-spacing: 0.5px;
-    }
-    .brand-name .highlight {
-        color: #E01C08;
-    }
-    .brand-name .light {
-        color: #ffffff;
-    }
+        /* Nav link with underline hover effect */
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            color: #191E32;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 9999px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: #284595;
+            border-radius: 2px;
+            transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .nav-link:hover::after {
+            width: 70%;
+        }
+        .nav-link:hover {
+            color: #284595;
+        }
+        .nav-link.active {
+            background: #284595;
+            color: #fff;
+            padding: 0.4rem 1.2rem;
+        }
+        .nav-link.active::after {
+            display: none;
+        }
+        .nav-link.active:hover {
+            color: #fff;
+            background: #28AAE4;
+        }
 
-    .nav-link {
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
-        font-size: 0.95rem;
-        letter-spacing: 0.3px;
-        color: #ffffff;
-        transition: color 0.2s ease;
-        text-decoration: none;
-        padding: 0.4rem 0.8rem;
-        border-radius: 9999px;
-    }
-    .nav-link:hover {
-        color: #E01C08;
-    }
-    .nav-link.active {
-        background: #E01C08;
-        color: #fff;
-        padding: 0.4rem 1.2rem;
-    }
-    .nav-link.active:hover {
-        color: #fff;
-        background: #a51515;
-    }
-
-    .btn-contact {
-        font-family: 'Inter', sans-serif;
-        font-weight: 600;
-        font-size: 0.85rem;
-        background: #37353e;
-        color: #fff;
-        padding: 0.5rem 1.25rem;
-        border-radius: 8px;
-        transition: all 0.25s ease;
-        text-decoration: none;
-        letter-spacing: 0.2px;
-    }
-    .btn-contact:hover {
-        background: #E01C08;
-        transform: translateY(-2px);
-        box-shadow: 0 8px 20px rgba(224,28,8,0.3);
-    }
-
-    .mobile-nav-link {
-        font-family: 'Inter', sans-serif;
-        font-weight: 500;
-        font-size: 1rem;
-        color: #1a2a3a;
-        padding: 0.6rem 0;
-        display: block;
-        transition: color 0.2s;
-        text-decoration: none;
-    }
-    .mobile-nav-link:hover {
-        color: #E01C08;
-    }
-    .mobile-nav-link.active-mobile {
-        background: #E01C08;
-        color: #fff;
-        border-radius: 8px;
-        padding: 0.6rem 1.2rem;
-    }
-
-    .header-inner {
-        background: rgba(43, 42, 42, 0.737);
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
-        border-radius: 9999px;
-        box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-        border: 1px solid rgba(255, 255, 255, 0.06);
-        padding: 0.75rem 1.5rem;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        gap: 1rem;
-    }
+        .btn-contact {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            background: #d1dcea;
+            color: #1A328D;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            letter-spacing: 0.2px;
+        }
+        .btn-contact:hover {
+            background: #bbcee7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px #c0c0c1;
+        }
+        .mobile-nav-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #1a2a3a;
+            padding: 0.6rem 0;
+            display: block;
+            transition: color 0.2s;
+            text-decoration: none;
+            position: relative;
+        }
+        .mobile-nav-link:hover {
+            color: #284595;
+        }
+        .mobile-nav-link.active-mobile {
+            background: #284595;
+            color: #fff;
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+        }
+        .header-inner {
+            background: white;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 9999px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
 
     /* Section fade-in */
     .reveal {
@@ -135,7 +159,7 @@
         transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
                     box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
         cursor: pointer;
-        border:  1px solid #8a0f0e;
+        border:  1px solid #1AA1E1;
     }
 
     .solution-card:hover {
@@ -174,7 +198,7 @@
 
     .solution-icon {
         position: relative;
-        background: #B31312;
+        background: #234FAA;
         border-radius: 50%;
         width: 64px;
         height: 64px;
@@ -184,7 +208,7 @@
         margin: 0 auto;
         margin-top: -32px;
         border: 4px solid #fff;
-        box-shadow: 0 6px 24px rgba(179,19,18,0.35);
+        box-shadow: 0 6px 24px #234FAA;
         transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
                     box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
                     background 0.4s ease;
@@ -199,8 +223,8 @@
 
     .solution-card:hover .solution-icon {
         transform: scale(1.15) rotate(4deg);
-        box-shadow: 0 12px 40px rgba(179,19,18,0.5);
-        background: #8a0f0e;
+        box-shadow: 0 12px 40px #234FAA;
+        background: #234FAA;
     }
 
     .solution-card:hover .solution-icon i {
@@ -222,7 +246,7 @@
     }
 
     .solution-card:hover .solution-title {
-        color: #B31312;
+        color: #234FAA;
     }
 
     .solution-desc {
@@ -254,7 +278,7 @@
     }
 
     .solution-features span i {
-        color: #B31312;
+        color: #234FAA;
         font-size: 10px;
     }
 
@@ -262,7 +286,7 @@
         display: inline-flex;
         align-items: center;
         gap: 10px;
-        color: #B31312;
+        color: #234FAA;
         font-size: 13px;
         font-weight: 700;
         text-decoration: none;
@@ -273,7 +297,7 @@
 
     .solution-link:hover {
         gap: 18px;
-        color: #8a0f0e;
+        color: #234FAA;
         transform: translateX(4px);
     }
 
@@ -281,7 +305,7 @@
         width: 30px;
         height: 30px;
         border-radius: 50%;
-        background: #B31312;
+        background: #234FAA;
         display: flex;
         align-items: center;
         justify-content: center;
@@ -293,9 +317,9 @@
     }
 
     .solution-link:hover .solution-arrow {
-        background: #8a0f0e;
+        background: #234FAA;
         transform: scale(1.15) rotate(-8deg);
-        box-shadow: 0 4px 16px rgba(179,19,18,0.4);
+        box-shadow: 0 4px 16px #234FAA;
     }
 
     /* Image shine effect */
@@ -350,13 +374,13 @@
         right: 30px;
         width: 50px;
         height: 50px;
-        background: #B31312;
+        background: #1A328D;
         color: white;
         border: none;
         border-radius: 50%;
         font-size: 20px;
         cursor: pointer;
-        box-shadow: 0 4px 15px rgba(179,19,18,0.4);
+        box-shadow: 0 4px 15px #1A328D;
         transition: all 0.3s ease;
         opacity: 0;
         visibility: hidden;
@@ -368,9 +392,9 @@
     }
 
     #scrollToTop:hover {
-        background: #8a0f0e;
+        background: #1A328D;
         transform: translateY(-3px) scale(1.05);
-        box-shadow: 0 8px 25px rgba(179,19,18,0.5);
+        box-shadow: 0 8px 25px #1A328D;
     }
 
     #scrollToTop.show {
@@ -591,7 +615,7 @@
     }
 
     .overlay-close:hover {
-        background: #B31312;
+        background: #234FAA;
         color: #fff;
         transform: rotate(90deg);
     }
@@ -648,7 +672,7 @@
     }
 
     .overlay-details h2 span {
-        color: #B31312;
+        color: #1AA1E1;
     }
 
     .overlay-details p {
@@ -675,7 +699,7 @@
     }
 
     .overlay-features .feature i {
-        color: #B31312;
+        color: #234FAA;
         font-size: 0.8rem;
     }
 
@@ -683,7 +707,7 @@
         display: inline-flex;
         align-items: center;
         gap: 0.75rem;
-        background: #B31312;
+        background: #234FAA;
         color: #fff;
         padding: 0.8rem 2rem;
         border-radius: 40px;
@@ -697,9 +721,9 @@
     }
 
     .overlay-details .cta-btn:hover {
-        background: #8a0f0e;
+        background: #234FAA;
         transform: translateY(-2px);
-        box-shadow: 0 8px 24px rgba(179,19,18,0.3);
+        box-shadow: 0 8px 24px #234FAA;
     }
 
     /* Responsive Overlay */
@@ -761,25 +785,23 @@
     }
 
     .overlay-panel::-webkit-scrollbar-thumb {
-        background: #B31312;
+        background: #234FAA;
         border-radius: 10px;
     }
 
     .overlay-panel::-webkit-scrollbar-thumb:hover {
-        background: #8a0f0e;
+        background: #234FAA;
     }
 </style>
 
 <body>
 
-    <!-- ====== HEADER ====== -->
+     <!-- ====== HEADER ====== -->
     <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
         <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
             <div class="header-inner">
                 <div class="flex-shrink-0">
-                    <a href="index.html" class="brand-name">
-                        <span class="highlight">Techno</span><span class="light">Eye</span>
-                    </a>
+                    <img src="/assets/cctv-logo.jpeg" alt="CCTV Logo" class="header-logo" />
                 </div>
                 <nav class="flex-1 flex justify-center">
                     <ul class="hidden md:flex items-center gap-0.5 lg:gap-1.5">
@@ -787,15 +809,16 @@
                         <li><a href="about.html" class="nav-link">About</a></li>
                         <li><a href="services.html" class="nav-link">Services</a></li>
                         <li><a href="solutions.html" class="nav-link active">Solutions</a></li>
+                        <li><a href="products.html" class="nav-link">Products</a></li>
                     </ul>
                 </nav>
                 <div class="hidden md:block flex-shrink-0">
                     <a href="contact.html" class="btn-contact">Contact Us</a>
                 </div>
                 <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
-                    <span class="w-5 h-0.5 bg-white transition-all"></span>
-                    <span class="w-5 h-0.5 bg-white transition-all"></span>
-                    <span class="w-5 h-0.5 bg-white transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
                 </div>
             </div>
             <div class="md:hidden hidden mt-2 px-2" id="mobileNav">
@@ -805,7 +828,8 @@
                         <li><a href="about.html" class="mobile-nav-link">About</a></li>
                         <li><a href="services.html" class="mobile-nav-link">Services</a></li>
                         <li><a href="solutions.html" class="mobile-nav-link active-mobile">Solutions</a></li>
-                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="background:#E01C08; border-radius:40px; padding:0.6rem;">Contact Us</a></li>
+                        <li><a href="products.html" class="mobile-nav-link ">Products</a></li>
+                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="border-radius:40px; padding:0.6rem;">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -815,15 +839,13 @@
     <!-- ====== HERO ====== -->
     <section class="relative text-white overflow-hidden">
         <div class="relative hero-container">
-            <img src="/assets/aboutBanner.jpg" alt="Solutions" class="absolute inset-0 w-full h-full object-cover object-center" />
+            <img src="/assets/about-banner.png" alt="Solutions" class="absolute inset-0 w-full h-full object-cover object-center" />
             <div class="absolute inset-0 bg-black/60"></div>
             <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
-                <span class="hero-badge inline-block px-3 sm:px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
-                    Our Solutions
-                </span>
-                <h1 class="hero-title instrument-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-tight">
-                    <span class="text-[#B31312]">IT Solutions</span>
-                </h1>
+                
+                <h1 class="hero-title instrument-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight max-w-3xl">
+                <span class="text-[#EBECEE]">Our Solutions</span>
+            </h1>
                 <p class="hero-subtitle text-gray-300 max-w-2xl mt-3 sm:mt-4 text-xs sm:text-sm md:text-base px-2">
                     End-to-end technology solutions designed to address your unique business challenges and drive growth.
                 </p>
@@ -839,7 +861,7 @@
                     <i class="fas fa-cogs mr-2"></i> Our Solutions
                 </span>
                 <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#1a2a3a] leading-tight">
-                    Tailored <span class="text-[#B31312]">Solutions</span> for Every Need
+                    Tailored <span class="text-[#1A328D]">Solutions</span> for Every Need
                 </h2>
                 <p class="text-gray-500 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
                     Discover our comprehensive range of IT solutions designed to transform your business
@@ -992,9 +1014,9 @@
     <section class="py-12 sm:py-16 md:py-20 bg-white">
         <div class="container mx-auto px-4 sm:px-6">
             <div class="text-center mb-10 sm:mb-14 reveal">
-                <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3">Why Techno Eye</span>
+                <span class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3">Why CCTV</span>
                 <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#1a2a3a] leading-tight">
-                    Why Choose <span class="text-[#B31312]">Our Solutions</span>
+                    Why Choose <span class="text-[#234FAA]">Our Solutions</span>
                 </h2>
                 <p class="text-gray-500 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
                     We combine technical expertise with a commitment to excellence
@@ -1002,33 +1024,33 @@
             </div>
 
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
-                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F8F6F4] hover:bg-[#EEE2DE] transition-all duration-300 border border-[#B31312]" data-aos="fade-up" data-aos-duration="600">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#B31312]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <i class="fas fa-check-circle text-xl sm:text-2xl text-[#B31312]"></i>
+                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#EBECEE] hover:bg-[#EBECEE] transition-all duration-300 border border-[#1AA1E1]" data-aos="fade-up" data-aos-duration="600">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1A328D]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-check-circle text-xl sm:text-2xl text-[#1A328D]"></i>
                     </div>
                     <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1 sm:mb-2">Proven Expertise</h4>
                     <p class="text-xs sm:text-sm text-gray-600">10+ years of experience delivering IT solutions across industries</p>
                 </div>
 
-                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F8F6F4] hover:bg-[#EEE2DE] transition-all duration-300 border border-[#B31312]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#B31312]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <i class="fas fa-users text-xl sm:text-2xl text-[#B31312]"></i>
+                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#EBECEE] hover:bg-[#EBECEE] transition-all duration-300 border border-[#1AA1E1]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="100">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1A328D]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-users text-xl sm:text-2xl text-[#1A328D]"></i>
                     </div>
                     <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1 sm:mb-2">Dedicated Team</h4>
                     <p class="text-xs sm:text-sm text-gray-600">Certified professionals committed to your success</p>
                 </div>
 
-                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F8F6F4] hover:bg-[#EEE2DE] transition-all duration-300 border border-[#B31312]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#B31312]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <i class="fas fa-clock text-xl sm:text-2xl text-[#B31312]"></i>
+                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#EBECEE] hover:bg-[#EBECEE] transition-all duration-300 border border-[#1AA1E1]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="200">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1A328D]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-clock text-xl sm:text-2xl text-[#1A328D]"></i>
                     </div>
                     <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1 sm:mb-2">24/7 Support</h4>
                     <p class="text-xs sm:text-sm text-gray-600">Round-the-clock support for business-critical systems</p>
                 </div>
 
-                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#F8F6F4] hover:bg-[#EEE2DE] transition-all duration-300 border border-[#B31312]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
-                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#B31312]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
-                        <i class="fas fa-chart-line text-xl sm:text-2xl text-[#B31312]"></i>
+                <div class="text-center p-4 sm:p-6 rounded-xl bg-[#EBECEE] hover:bg-[#EBECEE] transition-all duration-300 border border-[#1AA1E1]" data-aos="fade-up" data-aos-duration="600" data-aos-delay="300">
+                    <div class="w-14 h-14 sm:w-16 sm:h-16 rounded-full bg-[#1A328D]/10 flex items-center justify-center mx-auto mb-3 sm:mb-4">
+                        <i class="fas fa-chart-line text-xl sm:text-2xl text-[#1A328D]"></i>
                     </div>
                     <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base mb-1 sm:mb-2">Scalable Solutions</h4>
                     <p class="text-xs sm:text-sm text-gray-600">Solutions that grow with your business needs</p>
@@ -1066,28 +1088,39 @@
     </div>
 
     <!-- ====== CTA ====== -->
-    <section class="relative py-12 sm:py-16 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
-        <img src="/assets/contactbanner.jpg" alt="Contact Banner" class="absolute inset-0 w-full h-full object-cover object-center" />
+    <section
+        class="relative py-12 sm:py-16 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
+        <img src="/assets/contactbanner.jpg" alt="Contact Banner"
+            class="absolute inset-0 w-full h-full object-cover object-center" />
         <div class="absolute inset-0 bg-black/60"></div>
-        <div class="absolute top-0 right-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-[#B31312]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-        <div class="absolute bottom-0 left-0 w-48 sm:w-56 md:w-72 lg:w-80 h-48 sm:h-56 md:h-72 lg:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
-        <div class="container mx-auto px-3 sm:px-4 relative z-10">
-            <div class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
-                <span class="inline-block px-3 sm:px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
-                    <i class="fas fa-rocket mr-1 sm:mr-2"></i> Let's Get Started
+        <div
+            class="absolute top-0 right-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-[#B31312]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-48 sm:w-64 md:w-80 h-48 sm:h-64 md:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4">
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div
+                class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
+                <span
+                    class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                    <i class="fas fa-rocket mr-2"></i> Let's Get Started
                 </span>
-                <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-3 sm:mb-4 leading-tight">
-                    Ready to Transform Your <span class="text-white">Business</span>?
+                <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-4 leading-tight">
+                    Ready to Transform Your <span class="text-white">IT Infrastructure</span>?
                 </h2>
-                <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-5 sm:mb-6 md:mb-8 leading-relaxed">
-                    Let's discuss your requirements and build a customized solution that drives growth and efficiency.
+                <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed">
+                    Let's build a secure, scalable technology environment that keeps your <span
+                        class="text-white font-semibold">business moving forward</span> with confidence and reliability.
                 </p>
-                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4">
-                    <a href="contact.html" class="bg-[#B31312] text-white px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-[#8a0f0e] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+                    <a href="contact.html"
+                        class="bg-[#284595] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2 rounded-lg font-semibold hover:bg-[#28AAE4] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-sm sm:text-base">
                         <i class="fas fa-paper-plane"></i> Get Started
                     </a>
-                    <a href="services.html" class="bg-[#EEE2DE] backdrop-blur-sm border border-white/30 text-[#2B2A4C] px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
-                        <i class="fas fa-arrow-right"></i> Our Services
+                    <a href="services.html"
+                        class="bg-[#E7EAEE] backdrop-blur-sm border border-white/30 text-[#28AAE4] px-5 sm:px-6 md:px-8 py-2 sm:py-2 rounded-lg font-semibold hover:bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-sm sm:text-base">
+                        <i class="fas fa-arrow-right"></i> Explore Services
                     </a>
                 </div>
             </div>
@@ -1098,96 +1131,120 @@
 <footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-        <img src="/assets/footerBG.jpg" alt="Footer Background" class="w-full h-full object-cover" />
-        <!-- <div class="absolute inset-0 bg-[#1a2a3a]/92"></div> -->
+        <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
     </div>
-    
+
     <div class="container mx-auto px-3 sm:px-4 relative z-10">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
             <!-- Brand Column -->
             <div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
-                    <span class="text-[#E01C08]">CCTV</span>
-                </h3>
-                <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
+                <div class="mb-3">
+                    <img src="/assets/cctv-logo-removebg.png" alt="TechnoEye Logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+                </div>
+                <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions
+                    provider delivering cutting-edge technology and infrastructure services to businesses across
+                    India.</p>
                 <div class="flex gap-2 sm:gap-3">
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-facebook-f text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-twitter text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-linkedin-in text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-instagram text-xs sm:text-sm"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-twitter text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-instagram text-xs sm:text-sm"></i>
+                    </a>
                 </div>
             </div>
 
             <!-- Quick Links -->
-            <div >
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
                     Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#2B2A4C] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </h4>
                 <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="index.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Home</a></li>
-                    <li><a href="about.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> About</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Services</a></li>
-                    <li><a href="solutions.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Solutions</a></li>
-                    <li><a href="contact.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Contact</a></li>
+                    <li><a href="index.html"
+                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
+                    <li><a href="about.html"
+                            class="text-[#234FAA]  text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
+                   
                 </ul>
             </div>
 
             <!-- Services -->
-            <div >
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
-                    Services
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#2B2A4C] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                    Quick Links
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </h4>
                 <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Data Center Solutions</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> CCTV Surveillance</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Structured Cabling</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Wi-Fi Solutions</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Server & Backup</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
+                    
                 </ul>
             </div>
 
             <!-- Contact Info -->
-            <div >
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
                     Contact Info
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#E01C08] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </h4>
                 <ul class="space-y-2 sm:space-y-3">
                     <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
                             <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
                         </div>
-                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">+91 98765 43210</span>
+                        <span class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91 9766491858 </span>
                     </li>
                     <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
                             <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
                         </div>
-                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">info@technoeyenet.com</span>
+                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
                     </li>
                     <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
                             <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
                         </div>
-                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">India</span>
+                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop No 206, KamalRaj Parijat, Walke Nagar,
+Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
                     </li>
                 </ul>
             </div>
         </div>
-        
+
         <!-- Bottom Bar -->
         <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p class="text-gray-600 text-[10px] sm:text-xs md:text-sm">
-                &copy; 2026 <span class="text-[#E01C08] font-semibold">CCTV</span>. All Rights Reserved.
+            <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
+                &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights Reserved.
             </p>
-            <div class="flex items-center gap-4 text-[10px] sm:text-xs text-gray-600">
-                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Privacy Policy</a>
+            <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
+                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
                 <span class="w-px h-3 bg-white/10"></span>
-                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Terms of Service</a>
-                <span class="w-px h-3 bg-white/10"></span>
-                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Sitemap</a>
+                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
+                
             </div>
         </div>
     </div>

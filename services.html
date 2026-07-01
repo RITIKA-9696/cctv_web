@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Services - Techno Eye</title>
+    <title>Services - CCTV</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
@@ -17,7 +17,6 @@
         #mainHeader {
             font-family: 'Inter', sans-serif;
         }
-
         .brand-name {
             font-family: 'Instrument Serif', serif;
             font-weight: 400;
@@ -25,42 +24,68 @@
             letter-spacing: 0.5px;
         }
         .brand-name .highlight {
-            color: #E01C08;
+            color: #284595;
         }
         .brand-name .light {
             color: #ffffff;
         }
+        .header-logo {
+            height: 40px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
 
+        /* Nav link with underline hover effect */
         .nav-link {
             font-family: 'Inter', sans-serif;
             font-weight: 500;
             font-size: 0.95rem;
             letter-spacing: 0.3px;
-            color: #ffffff;
-            transition: color 0.2s ease;
+            color: #191E32;
             text-decoration: none;
             padding: 0.4rem 0.8rem;
             border-radius: 9999px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: #284595;
+            border-radius: 2px;
+            transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .nav-link:hover::after {
+            width: 70%;
         }
         .nav-link:hover {
-            color: #E01C08;
+            color: #284595;
         }
         .nav-link.active {
-            background: #E01C08;
+            background: #284595;
             color: #fff;
             padding: 0.4rem 1.2rem;
         }
+        .nav-link.active::after {
+            display: none;
+        }
         .nav-link.active:hover {
             color: #fff;
-            background: #a51515;
+            background: #28AAE4;
         }
 
         .btn-contact {
             font-family: 'Inter', sans-serif;
             font-weight: 600;
             font-size: 0.85rem;
-            background: #37353e;
-            color: #fff;
+            background: #d1dcea;
+            color: #1A328D;
             padding: 0.5rem 1.25rem;
             border-radius: 8px;
             transition: all 0.25s ease;
@@ -68,11 +93,10 @@
             letter-spacing: 0.2px;
         }
         .btn-contact:hover {
-            background: #E01C08;
+            background: #bbcee7;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px rgba(224,28,8,0.3);
+            box-shadow: 0 8px 20px #c0c0c1;
         }
-
         .mobile-nav-link {
             font-family: 'Inter', sans-serif;
             font-weight: 500;
@@ -82,19 +106,19 @@
             display: block;
             transition: color 0.2s;
             text-decoration: none;
+            position: relative;
         }
         .mobile-nav-link:hover {
-            color: #E01C08;
+            color: #284595;
         }
         .mobile-nav-link.active-mobile {
-            background: #E01C08;
+            background: #284595;
             color: #fff;
             border-radius: 8px;
             padding: 0.6rem 1.2rem;
         }
-
         .header-inner {
-            background: rgba(43, 42, 42, 0.737);
+            background: white;
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
             border-radius: 9999px;
@@ -166,7 +190,7 @@
 
         .svc-icon {
             position: relative;
-            background: #CC1C1C;
+            background: #081350;
             border-radius: 50%;
             width: 70px;
             height: 70px;
@@ -176,7 +200,7 @@
             margin: 0 auto;
             margin-top: -35px;
             border: 4px solid #fff;
-            box-shadow: 0 6px 24px rgba(204,28,28,0.35);
+            box-shadow: 0 6px 24px #081350;
             transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1), 
                         box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1), 
                         background 0.4s ease;
@@ -189,8 +213,8 @@
 
         .svc-card:hover .svc-icon {
             transform: scale(1.15) rotate(4deg);
-            box-shadow: 0 12px 40px rgba(204,28,28,0.5);
-            background: #a51515;
+            box-shadow: 0 12px 40px #1A328D;
+            background: #1A328D;
         }
 
         .svc-card:hover .svc-icon svg {
@@ -212,7 +236,7 @@
         }
 
         .svc-card:hover .svc-title {
-            color: #CC1C1C;
+            color: #1A328D;
         }
 
         .svc-desc {
@@ -231,7 +255,7 @@
             display: inline-flex;
             align-items: center;
             gap: 10px;
-            color: #CC1C1C;
+            color: #1A328D;
             font-size: 14px;
             font-weight: 700;
             text-decoration: none;
@@ -242,7 +266,7 @@
 
         .svc-link:hover {
             gap: 18px;
-            color: #a51515;
+            color: #081350;
             transform: translateX(4px);
         }
 
@@ -250,7 +274,7 @@
             width: 32px;
             height: 32px;
             border-radius: 50%;
-            background: #CC1C1C;
+            background: #081350;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -258,13 +282,13 @@
             transition: background 0.4s ease, 
                         transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
                         box-shadow 0.4s ease;
-            box-shadow: 0 2px 8px rgba(204,28,28,0.3);
+            box-shadow: 0 2px 8px #081350;
         }
 
         .svc-link:hover .svc-arrow {
-            background: #a51515;
+            background: #081350;
             transform: scale(1.15) rotate(-8deg);
-            box-shadow: 0 4px 16px rgba(204,28,28,0.4);
+            box-shadow: 0 4px 16px #081350;
         }
 
         /* Image shine effect */
@@ -323,13 +347,13 @@
             right: 30px;
             width: 50px;
             height: 50px;
-            background: #B31312;
+            background: #1A328D;
             color: white;
             border: none;
             border-radius: 50%;
             font-size: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 15px rgba(179, 19, 18, 0.4);
+            box-shadow: 0 4px 15px #1A328D;
             transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
@@ -341,9 +365,9 @@
         }
 
         #scrollToTop:hover {
-            background: #8a0f0e;
+            background: #1A328D;
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px rgba(179, 19, 18, 0.5);
+            box-shadow: 0 8px 25px #1A328D;
         }
 
         #scrollToTop.show {
@@ -558,7 +582,7 @@
         }
 
         .overlay-close:hover {
-            background: #B31312;
+            background: #081350;
             color: #fff;
             transform: rotate(90deg);
         }
@@ -615,7 +639,7 @@
         }
 
         .overlay-details h2 span {
-            color: #B31312;
+            color: #081350;
         }
 
         .overlay-details p {
@@ -642,7 +666,7 @@
         }
 
         .overlay-features .feature i {
-            color: #B31312;
+            color: #081350;
             font-size: 0.8rem;
         }
 
@@ -650,7 +674,7 @@
             display: inline-flex;
             align-items: center;
             gap: 0.75rem;
-            background: #B31312;
+            background: #081350;
             color: #fff;
             padding: 0.8rem 2rem;
             border-radius: 40px;
@@ -664,9 +688,9 @@
         }
 
         .overlay-details .cta-btn:hover {
-            background: #8a0f0e;
+            background: #081350;
             transform: translateY(-2px);
-            box-shadow: 0 8px 24px rgba(179,19,18,0.3);
+            box-shadow: 0 8px 24px #081350;
         }
 
         /* Responsive Overlay */
@@ -729,68 +753,68 @@
         }
 
         .overlay-panel::-webkit-scrollbar-thumb {
-            background: #B31312;
+            background: #081350;
             border-radius: 10px;
         }
 
         .overlay-panel::-webkit-scrollbar-thumb:hover {
-            background: #8a0f0e;
+            background: #081350;
         }
     </style>
 </head>
 <body>
 
-<!-- ====== HEADER ====== -->
-<header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
-    <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
-        <div class="header-inner">
-            <div class="flex-shrink-0">
-                <a href="index.html" class="brand-name">
-                    <span class="highlight">Techno</span><span class="light">Eye</span>
-                </a>
+  <!-- ====== HEADER ====== -->
+    <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
+        <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
+            <div class="header-inner">
+                <div class="flex-shrink-0">
+                    <img src="/assets/cctv-logo.jpeg" alt="CCTV Logo" class="header-logo" />
+                </div>
+                <nav class="flex-1 flex justify-center">
+                    <ul class="hidden md:flex items-center gap-0.5 lg:gap-1.5">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="services.html" class="nav-link active">Services</a></li>
+                        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                        <li><a href="products.html" class="nav-link">Products</a></li>
+                    </ul>
+                </nav>
+                <div class="hidden md:block flex-shrink-0">
+                    <a href="contact.html" class="btn-contact">Contact Us</a>
+                </div>
+                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                </div>
             </div>
-            <nav class="flex-1 flex justify-center">
-                <ul class="hidden md:flex items-center gap-0.5 lg:gap-1.5">
-                    <li><a href="index.html" class="nav-link">Home</a></li>
-                    <li><a href="about.html" class="nav-link">About</a></li>
-                    <li><a href="services.html" class="nav-link active">Services</a></li>
-                    <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-                </ul>
-            </nav>
-            <div class="hidden md:block flex-shrink-0">
-                <a href="contact.html" class="btn-contact">Contact Us</a>
-            </div>
-            <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
-                <span class="w-5 h-0.5 bg-white transition-all"></span>
-                <span class="w-5 h-0.5 bg-white transition-all"></span>
-                <span class="w-5 h-0.5 bg-white transition-all"></span>
+            <div class="md:hidden hidden mt-2 px-2" id="mobileNav">
+                <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-5 py-4 border border-white/20">
+                    <ul class="flex flex-col gap-2 text-center">
+                        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                        <li><a href="services.html" class="mobile-nav-link active-mobile">Services</a></li>
+                        <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+                        <li><a href="products.html" class="mobile-nav-link ">Products</a></li>
+                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="border-radius:40px; padding:0.6rem;">Contact Us</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
-        <div class="md:hidden hidden mt-2 px-2" id="mobileNav">
-            <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-5 py-4 border border-white/20">
-                <ul class="flex flex-col gap-2 text-center">
-                    <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-                    <li><a href="about.html" class="mobile-nav-link">About</a></li>
-                    <li><a href="services.html" class="mobile-nav-link active-mobile">Services</a></li>
-                    <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
-                    <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="background:#E01C08; border-radius:40px; padding:0.6rem;">Contact Us</a></li>
-                </ul>
-            </div>
-        </div>
-    </div>
-</header>
+    </header>
 
 <!-- ====== HERO ====== -->
 <section class="relative text-white overflow-hidden">
     <div class="relative hero-container">
-        <img src="/assets/aboutBanner.jpg" alt="Our Services" class="absolute inset-0 w-full h-full object-cover" />
+        <img src="/assets/about-banner.png" alt="Our Services" class="absolute inset-0 w-full h-full object-cover" />
         <div class="absolute inset-0 bg-black/60"></div>
         <div class="absolute inset-0 flex flex-col items-center justify-center px-4 sm:px-6 text-center">
-            <span class="hero-badge inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
+            <span class="hero-badge inline-block px-4 py-1.5 bg-[#EBECEE] text-[#1aa1e1] rounded-full text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
                 What We Offer
             </span>
             <h1 class="hero-title instrument-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight max-w-3xl">
-                <span class="text-[#B31312]">Our Services</span>
+                <span class="text-[#EBECEE]">Our Services</span>
             </h1>
             <p class="hero-subtitle text-sm sm:text-base md:text-lg text-gray-300 max-w-xl mt-2 sm:mt-3 px-2">
                 From infrastructure to security — we deliver reliable, scalable, and future-ready technology services
@@ -807,7 +831,7 @@
                 <i class="fas fa-cogs mr-2"></i> Our Services
             </span>
             <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#1a2a3a] leading-tight">
-                Comprehensive <span class="text-[#B31312]">IT Solutions</span>
+                Comprehensive <span class="text-[#1A328D]">IT Solutions</span>
             </h2>
             <p class="text-gray-500 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
                 End-to-end technology services designed to secure, streamline, and scale your business.
@@ -816,7 +840,7 @@
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7 max-w-[1200px] mx-auto">
             <!-- Card 1 - IT Solutions -->
-            <div class="svc-card svc-reveal border border-[#B31312]" onclick="openOverlay('it-solutions')">
+            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('it-solutions')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="IT Solutions" />
                     <div class="svc-overlay"></div>
@@ -829,7 +853,7 @@
             </div>
 
             <!-- Card 2 - IT Health Checkup -->
-            <div class="svc-card svc-reveal border border-[#B31312]" onclick="openOverlay('it-health')">
+            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('it-health')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" alt="IT Health Checkup" />
                     <div class="svc-overlay"></div>
@@ -842,7 +866,7 @@
             </div>
 
             <!-- Card 3 - Software Licensing -->
-            <div class="svc-card svc-reveal border border-[#B31312]" onclick="openOverlay('software-licensing')">
+            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('software-licensing')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?q=80&w=2070&auto=format&fit=crop" alt="Software Licensing" />
                     <div class="svc-overlay"></div>
@@ -855,7 +879,7 @@
             </div>
 
             <!-- Card 4 - Project Management -->
-            <div class="svc-card svc-reveal border border-[#B31312]" onclick="openOverlay('project-management')">
+            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('project-management')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2069&auto=format&fit=crop" alt="Project Management" />
                     <div class="svc-overlay"></div>
@@ -868,7 +892,7 @@
             </div>
 
             <!-- Card 5 - Computer Sales & Support -->
-            <div class="svc-card svc-reveal border border-[#B31312]" onclick="openOverlay('computer-sales')">
+            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('computer-sales')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=2070&auto=format&fit=crop" alt="Computer Sales" />
                     <div class="svc-overlay"></div>
@@ -881,7 +905,7 @@
             </div>
 
             <!-- Card 6 - AMC -->
-            <div class="svc-card svc-reveal border border-[#B31312]" onclick="openOverlay('amc')">
+            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('amc')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="AMC" />
                     <div class="svc-overlay"></div>
@@ -894,7 +918,7 @@
             </div>
 
             <!-- Card 7 - Fire Alarm System -->
-            <div class="svc-card svc-reveal border border-[#B31312]" onclick="openOverlay('fire-alarm')">
+            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('fire-alarm')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop" alt="Fire Alarm" />
                     <div class="svc-overlay"></div>
@@ -907,7 +931,7 @@
             </div>
 
             <!-- Card 8 - Burglar Alarm System -->
-            <div class="svc-card svc-reveal border border-[#B31312]" onclick="openOverlay('burglar-alarm')">
+            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('burglar-alarm')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop" alt="Burglar Alarm" />
                     <div class="svc-overlay"></div>
@@ -920,7 +944,7 @@
             </div>
 
             <!-- Card 9 - Remote Assistant -->
-            <div class="svc-card svc-reveal border border-[#B31312]" onclick="openOverlay('remote-assistant')">
+            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('remote-assistant')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" alt="Remote Assistant" />
                     <div class="svc-overlay"></div>
@@ -963,129 +987,164 @@
     </div>
 </div>
 
-<!-- ====== CTA ====== -->
-<section class="relative py-12 sm:py-16 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
-    <img src="/assets/contactbanner.jpg" alt="Contact Banner" class="absolute inset-0 w-full h-full object-cover object-center" />
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="absolute top-0 right-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-[#B31312]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
-    <div class="absolute bottom-0 left-0 w-48 sm:w-56 md:w-72 lg:w-80 h-48 sm:h-56 md:h-72 lg:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
-    <div class="container mx-auto px-3 sm:px-4 relative z-10">
-        <div class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
-            <span class="inline-block px-3 sm:px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
-                <i class="fas fa-rocket mr-1 sm:mr-2"></i> Let's Get Started
-            </span>
-            <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-3 sm:mb-4 leading-tight">
-                Ready to Transform Your <span class="text-white">IT Infrastructure</span>?
-            </h2>
-            <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-5 sm:mb-6 md:mb-8 leading-relaxed">
-                Let's build a secure, scalable technology environment that keeps your <span class="text-white font-semibold">business moving forward</span> with confidence and reliability.
-            </p>
-            <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4">
-                <a href="contact.html" class="bg-[#B31312] text-white px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-[#8a0f0e] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
-                    <i class="fas fa-paper-plane"></i> Get Started
-                </a>
-                <a href="about.html" class="bg-[#EEE2DE] backdrop-blur-sm border border-white/30 text-[#2B2A4C] px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
-                    <i class="fas fa-arrow-right"></i> About Us
-                </a>
+ <!-- ====== CTA ====== -->
+    <section
+        class="relative py-10 sm:py-14 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
+        <img src="/assets/contactbanner.jpg" alt="Contact Banner"
+            class="absolute inset-0 w-full h-full object-cover object-center" />
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div
+            class="absolute top-0 right-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-[#954C2E]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3">
+        </div>
+        <div
+            class="absolute bottom-0 left-0 w-48 sm:w-56 md:w-72 lg:w-80 h-48 sm:h-56 md:h-72 lg:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4">
+        </div>
+        <div class="container mx-auto px-3 sm:px-4 relative z-10">
+            <div
+                class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
+                <span
+                    class="inline-block px-3 sm:px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
+                    <i class="fas fa-rocket mr-1 sm:mr-2"></i> Let's Get Started
+                </span>
+                <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-3 sm:mb-4 leading-tight">
+                    Ready to Transform Your <span class="text-white">IT Infrastructure</span>?
+                </h2>
+                <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-5 sm:mb-6 md:mb-8 leading-relaxed">
+                    Let's build a secure, scalable technology environment that keeps your <span
+                        class="text-white font-semibold">business moving forward</span> with confidence and reliability.
+                </p>
+                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4">
+                    <a href="contact.html"
+                        class="bg-[#284595] text-white px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-[#191E32] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                        <i class="fas fa-paper-plane"></i> Get Started
+                    </a>
+                    <a href="services.html"
+                        class="bg-[#EEE2DE] backdrop-blur-sm border border-white/30 text-[#2B2A4C] px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                        <i class="fas fa-arrow-right"></i> Explore Services
+                    </a>
+                </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- ====== FOOTER ====== -->
+  <!-- ====== FOOTER ====== -->
 <footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
     <!-- Background Image -->
     <div class="absolute inset-0 z-0">
-        <img src="/assets/footerBG.jpg" alt="Footer Background" class="w-full h-full object-cover" />
-        <!-- <div class="absolute inset-0 bg-[#1a2a3a]/92"></div> -->
+        <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
     </div>
-    
+
     <div class="container mx-auto px-3 sm:px-4 relative z-10">
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
             <!-- Brand Column -->
             <div>
-                <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4">
-                    <span class="text-[#E01C08]">CCTV</span>
-                </h3>
-                <p class="text-gray-600 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
+                <div class="mb-3">
+                    <img src="/assets/cctv-logo-removebg.png" alt="TechnoEye Logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+                </div>
+                <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions
+                    provider delivering cutting-edge technology and infrastructure services to businesses across
+                    India.</p>
                 <div class="flex gap-2 sm:gap-3">
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-facebook-f text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-twitter text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-linkedin-in text-xs sm:text-sm"></i></a>
-                    <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#2B2A4C] rounded-full flex items-center justify-center hover:bg-[#E01C08] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white"><i class="fab fa-instagram text-xs sm:text-sm"></i></a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-twitter text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-instagram text-xs sm:text-sm"></i>
+                    </a>
                 </div>
             </div>
 
             <!-- Quick Links -->
-            <div >
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
                     Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#2B2A4C] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </h4>
                 <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="index.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Home</a></li>
-                    <li><a href="about.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> About</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Services</a></li>
-                    <li><a href="solutions.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Solutions</a></li>
-                    <li><a href="contact.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Contact</a></li>
+                    <li><a href="index.html"
+                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
+                    <li><a href="about.html"
+                            class="text-[#234FAA]  text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
+                   
                 </ul>
             </div>
 
             <!-- Services -->
-            <div >
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
-                    Services
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#2B2A4C] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                    Quick Links
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </h4>
                 <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Data Center Solutions</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> CCTV Surveillance</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Structured Cabling</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Wi-Fi Solutions</a></li>
-                    <li><a href="services.html" class="text-[#2B2A4C] text-sm sm:text-base font-medium hover:text-[#E01C08] transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1"><i class="fas fa-chevron-right text-[10px] text-[#E01C08] opacity-0 group-hover:opacity-100 transition-opacity"></i> Server & Backup</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
+                    
                 </ul>
             </div>
 
             <!-- Contact Info -->
-            <div >
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#E01C08] relative inline-block">
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
                     Contact Info
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#E01C08] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
                 </h4>
                 <ul class="space-y-2 sm:space-y-3">
                     <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
                             <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
                         </div>
-                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">+91 98765 43210</span>
+                        <span class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91 9766491858 </span>
                     </li>
                     <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
                             <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
                         </div>
-                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">info@technoeyenet.com</span>
+                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
                     </li>
                     <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#2B2A4C] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#E01C08] group-hover:scale-110">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
                             <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
                         </div>
-                        <span class="text-[#2B2A4C] text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#E01C08]">India</span>
+                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop No 206, KamalRaj Parijat, Walke Nagar,
+Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
                     </li>
                 </ul>
             </div>
         </div>
-        
+
         <!-- Bottom Bar -->
         <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p class="text-gray-600 text-[10px] sm:text-xs md:text-sm">
-                &copy; 2026 <span class="text-[#E01C08] font-semibold">CCTV</span>. All Rights Reserved.
+            <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
+                &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights Reserved.
             </p>
-            <div class="flex items-center gap-4 text-[10px] sm:text-xs text-gray-600">
-                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Privacy Policy</a>
+            <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
+                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
                 <span class="w-px h-3 bg-white/10"></span>
-                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Terms of Service</a>
-                <span class="w-px h-3 bg-white/10"></span>
-                <a href="#" class="hover:text-[#E01C08] transition-colors duration-300">Sitemap</a>
+                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
+                
             </div>
         </div>
     </div>

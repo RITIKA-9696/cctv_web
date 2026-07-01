@@ -1,0 +1,931 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products · TechnoEye</title>
+    <script src="https://cdn.tailwindcss.com">
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet" />
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #faf9f7;
+            margin: 0;
+        }
+        .instrument-serif {
+            font-family: "Instrument Serif", serif;
+        }
+
+        /* ----- HEADER ----- */
+        #mainHeader {
+            font-family: 'Inter', sans-serif;
+        }
+        .brand-name {
+            font-family: 'Instrument Serif', serif;
+            font-weight: 400;
+            font-size: 1.5rem;
+            letter-spacing: 0.5px;
+        }
+        .brand-name .highlight {
+            color: #284595;
+        }
+        .brand-name .light {
+            color: #ffffff;
+        }
+        .header-logo {
+            height: 40px;
+            width: auto;
+            display: block;
+            object-fit: contain;
+        }
+
+        /* Nav link with underline hover effect */
+        .nav-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 0.95rem;
+            letter-spacing: 0.3px;
+            color: #191E32;
+            text-decoration: none;
+            padding: 0.4rem 0.8rem;
+            border-radius: 9999px;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 2px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 3px;
+            background: #284595;
+            border-radius: 2px;
+            transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+        }
+        .nav-link:hover::after {
+            width: 70%;
+        }
+        .nav-link:hover {
+            color: #284595;
+        }
+        .nav-link.active {
+            background: #284595;
+            color: #fff;
+            padding: 0.4rem 1.2rem;
+        }
+        .nav-link.active::after {
+            display: none;
+        }
+        .nav-link.active:hover {
+            color: #fff;
+            background: #28AAE4;
+        }
+
+        .btn-contact {
+            font-family: 'Inter', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            background: #d1dcea;
+            color: #1A328D;
+            padding: 0.5rem 1.25rem;
+            border-radius: 8px;
+            transition: all 0.25s ease;
+            text-decoration: none;
+            letter-spacing: 0.2px;
+        }
+        .btn-contact:hover {
+            background: #bbcee7;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px #c0c0c1;
+        }
+        .mobile-nav-link {
+            font-family: 'Inter', sans-serif;
+            font-weight: 500;
+            font-size: 1rem;
+            color: #1a2a3a;
+            padding: 0.6rem 0;
+            display: block;
+            transition: color 0.2s;
+            text-decoration: none;
+            position: relative;
+        }
+        .mobile-nav-link:hover {
+            color: #284595;
+        }
+        .mobile-nav-link.active-mobile {
+            background: #284595;
+            color: #fff;
+            border-radius: 8px;
+            padding: 0.6rem 1.2rem;
+        }
+        .header-inner {
+            background: white;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-radius: 9999px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            padding: 0.75rem 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        /* hero */
+        .hero-container {
+            height: 350px;
+            position: relative;
+            overflow: hidden;
+        }
+        @media (min-width: 640px) {
+            .hero-container {
+                height: 400px;
+            }
+        }
+        @media (min-width: 768px) {
+            .hero-container {
+                height: 500px;
+            }
+        }
+        @media (min-width: 1024px) {
+            .hero-container {
+                height: 600px;
+            }
+        }
+
+        @keyframes heroFadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(60px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        @keyframes heroFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+        .hero-badge {
+            opacity: 0;
+            animation: heroFadeIn 0.8s ease forwards;
+            animation-delay: 0.2s;
+        }
+        .hero-title {
+            opacity: 0;
+            animation: heroFadeUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            animation-delay: 0.5s;
+        }
+        .hero-subtitle {
+            opacity: 0;
+            animation: heroFadeUp 1s cubic-bezier(0.23, 1, 0.32, 1) forwards;
+            animation-delay: 0.8s;
+        }
+
+        /* ---- PRODUCT CARDS ---- */
+        .product-card {
+            background: #fff;
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #1AA1E1;
+            transition: transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s;
+            cursor: pointer;
+            position: relative;
+            aspect-ratio: 4 / 3;
+            width: 100%;
+        }
+        .product-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 24px 48px rgba(0, 0, 0, 0.08);
+        }
+        .product-img-wrap {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            background: #e8e6e3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px;
+        }
+        .product-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            display: block;
+            transition: transform 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+            max-width: 90%;
+            max-height: 90%;
+        }
+        .product-card:hover .product-img-wrap img {
+            transform: scale(1.04);
+        }
+
+        /* Product name - always visible at bottom */
+        .product-name-bar {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 0.7rem 0.8rem 0.9rem;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+            color: white;
+            display: flex;
+            align-items: flex-end;
+            justify-content: center;
+            text-align: center;
+            pointer-events: none;
+        }
+        .product-name-bar h3 {
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin: 0;
+            text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+            letter-spacing: 0.2px;
+            line-height: 1.3;
+        }
+        .product-card .product-body {
+            display: none;
+        }
+
+        /* filter chips - desktop */
+        .filter-chip {
+            background: #f1efed;
+            color: #2B2A4C;
+            padding: 0.4rem 1.2rem;
+            border-radius: 40px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 1px solid transparent;
+            transition: all 0.2s;
+            cursor: pointer;
+        }
+        .filter-chip:hover {
+            background: #e5e0db;
+        }
+        .filter-chip.active {
+            background: #234FAA;
+            color: #fff;
+            border-color: #1AA1E1;
+        }
+
+        /* Mobile category dropdown */
+        .category-select {
+            background: white;
+            border: 2px solid #234FAA;
+            border-radius: 40px;
+            padding: 0.5rem 1.5rem 0.5rem 1.5rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #1a2a3a;
+            width: 100%;
+            max-width: 300px;
+            appearance: none;
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23234FAA' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+            background-repeat: no-repeat;
+            background-position: right 1rem center;
+            cursor: pointer;
+        }
+        .category-select:focus {
+            outline: none;
+            border-color: #1AA1E1;
+            box-shadow: 0 0 0 3px rgba(26, 161, 225, 0.3);
+        }
+
+        /* scroll reveal */
+        .prod-reveal {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.7s cubic-bezier(0.23, 1, 0.32, 1) var(--delay, 0ms),
+                transform 0.7s cubic-bezier(0.23, 1, 0.32, 1) var(--delay, 0ms);
+            will-change: transform, opacity;
+        }
+        .prod-reveal.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .prod-reveal:nth-child(1) {
+            --delay: 0ms;
+        }
+        .prod-reveal:nth-child(2) {
+            --delay: 60ms;
+        }
+        .prod-reveal:nth-child(3) {
+            --delay: 120ms;
+        }
+        .prod-reveal:nth-child(4) {
+            --delay: 180ms;
+        }
+        .prod-reveal:nth-child(5) {
+            --delay: 240ms;
+        }
+        .prod-reveal:nth-child(6) {
+            --delay: 300ms;
+        }
+
+        /* pagination */
+        .pagination-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 0.5rem 1rem;
+            border-radius: 8px;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: all 0.2s;
+            cursor: pointer;
+            color: #1a2a3a;
+        }
+        .pagination-btn:hover:not(:disabled) {
+            background: #234FAA;
+            color: white;
+            border-color: #234FAA;
+        }
+        .pagination-btn.active-page {
+            background: #234FAA;
+            color: white;
+            border-color: #234FAA;
+        }
+        .pagination-btn:disabled {
+            opacity: 0.4;
+            cursor: not-allowed;
+        }
+
+        #scrollToTop {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: #1A328D;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            font-size: 20px;
+            cursor: pointer;
+            box-shadow: 0 4px 15px #1A328D;
+            transition: all 0.3s;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(20px);
+            z-index: 999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        #scrollToTop:hover {
+            background: #1A328D;
+            transform: translateY(-3px) scale(1.05);
+        }
+        #scrollToTop.show {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Desktop filter chips container */
+        .filter-chips-desktop {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0.5rem;
+        }
+
+        /* Mobile dropdown container */
+        .filter-dropdown-mobile {
+            display: none;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (max-width: 767px) {
+            .filter-chips-desktop {
+                display: none;
+            }
+            .filter-dropdown-mobile {
+                display: flex;
+            }
+            .product-name-bar h3 {
+                font-size: 0.75rem;
+            }
+            .product-img-wrap {
+                padding: 8px;
+            }
+            .product-img-wrap img {
+                max-width: 85%;
+                max-height: 85%;
+            }
+            .product-name-bar {
+                padding: 0.5rem 0.6rem 0.7rem;
+            }
+        }
+
+        @media (max-width: 640px) {
+            #scrollToTop {
+                width: 44px;
+                height: 44px;
+                font-size: 16px;
+                bottom: 20px;
+                right: 20px;
+            }
+            .product-card {
+                aspect-ratio: 4 / 3;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ====== HEADER ====== -->
+    <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
+        <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
+            <div class="header-inner">
+                <div class="flex-shrink-0">
+                    <img src="/assets/cctv-logo.jpeg" alt="CCTV Logo" class="header-logo" />
+                </div>
+                <nav class="flex-1 flex justify-center">
+                    <ul class="hidden md:flex items-center gap-0.5 lg:gap-1.5">
+                        <li><a href="index.html" class="nav-link">Home</a></li>
+                        <li><a href="about.html" class="nav-link">About</a></li>
+                        <li><a href="services.html" class="nav-link">Services</a></li>
+                        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
+                        <li><a href="products.html" class="nav-link active">Products</a></li>
+                    </ul>
+                </nav>
+                <div class="hidden md:block flex-shrink-0">
+                    <a href="contact.html" class="btn-contact">Contact Us</a>
+                </div>
+                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                </div>
+            </div>
+            <div class="md:hidden hidden mt-2 px-2" id="mobileNav">
+                <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-5 py-4 border border-white/20">
+                    <ul class="flex flex-col gap-2 text-center">
+                        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
+                        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+                        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
+                        <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
+                        <li><a href="products.html" class="mobile-nav-link active-mobile">Products</a></li>
+                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="border-radius:40px; padding:0.6rem;">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO -->
+    <section class="relative text-white overflow-hidden">
+        <div class="relative hero-container">
+            <img src="/assets/about-banner.png" alt="Products" class="absolute inset-0 w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-black/60"></div>
+            <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
+                
+               <h1 class="hero-title instrument-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight max-w-3xl">
+                <span class="text-[#EBECEE]">Our Products</span>
+            </h1>
+                <p class="hero-subtitle text-gray-300 max-w-2xl mt-3 text-sm md:text-base px-2">
+                    Curated selection of high-performance hardware, surveillance, and networking equipment.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FILTER + GRID + PAGINATION -->
+    <section class="py-12 sm:py-16 bg-[#F8F6F4]" id="listView">
+        <div class="container mx-auto px-4 sm:px-6">
+            <!-- Desktop filter chips -->
+            <div class="filter-chips-desktop mb-10" id="filterContainer">
+                <button class="filter-chip active" data-filter="all">All Products</button>
+                <button class="filter-chip" data-filter="network">Network</button>
+                <button class="filter-chip" data-filter="nvr">NVR</button>
+                <button class="filter-chip" data-filter="analog">Analog HD</button>
+                <button class="filter-chip" data-filter="dvr">DVR</button>
+                <button class="filter-chip" data-filter="switches">Switches</button>
+                <button class="filter-chip" data-filter="onlineproducts">Online</button>
+                <button class="filter-chip" data-filter="guard">Guard +</button>
+                <button class="filter-chip" data-filter="biometric">Biometric</button>
+            </div>
+
+            <!-- Mobile category dropdown -->
+            <div class="filter-dropdown-mobile">
+                <select class="category-select" id="mobileCategorySelect">
+                    <option value="all">All Products</option>
+                    <option value="network">Network</option>
+                    <option value="nvr">NVR</option>
+                    <option value="analog">Analog HD</option>
+                    <option value="dvr">DVR</option>
+                    <option value="switches">Switches</option>
+                    <option value="onlineproducts">Online</option>
+                    <option value="guard">Guard +</option>
+                    <option value="biometric">Biometric</option>
+                </select>
+            </div>
+
+            <!-- product grid -->
+            <div class="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-6 max-w-[1200px] mx-auto" id="productGrid"></div>
+            <!-- pagination controls -->
+            <div class="flex justify-center items-center gap-2 mt-10 flex-wrap" id="paginationControls"></div>
+        </div>
+    </section>
+
+    <!-- ====== FOOTER ====== -->
+<footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
+    <!-- Background Image -->
+    <div class="absolute inset-0 z-0">
+        <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+        <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
+    </div>
+
+    <div class="container mx-auto px-3 sm:px-4 relative z-10">
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
+            <!-- Brand Column -->
+            <div>
+                <div class="mb-3">
+                    <img src="/assets/cctv-logo-removebg.png" alt="TechnoEye Logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+                </div>
+                <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions
+                    provider delivering cutting-edge technology and infrastructure services to businesses across
+                    India.</p>
+                <div class="flex gap-2 sm:gap-3">
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-twitter text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
+                    </a>
+                    <a href="#"
+                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                        <i class="fab fa-instagram text-xs sm:text-sm"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- Quick Links -->
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                    Quick Links
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-1.5 sm:space-y-2">
+                    <li><a href="index.html"
+                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
+                    <li><a href="about.html"
+                            class="text-[#234FAA]  text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
+                   
+                </ul>
+            </div>
+
+            <!-- Services -->
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                    Quick Links
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-1.5 sm:space-y-2">
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
+                    <li><a href="services.html"
+                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
+                    
+                </ul>
+            </div>
+
+            <!-- Contact Info -->
+            <div>
+                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                    Contact Info
+                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                </h4>
+                <ul class="space-y-2 sm:space-y-3">
+                    <li class="flex items-start gap-3 group">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
+                            <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
+                        </div>
+                        <span class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91 9766491858 </span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
+                            <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
+                        </div>
+                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
+                    </li>
+                    <li class="flex items-start gap-3 group">
+                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
+                            <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
+                        </div>
+                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop No 206, KamalRaj Parijat, Walke Nagar,
+Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Bottom Bar -->
+        <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+            <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
+                &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights Reserved.
+            </p>
+            <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
+                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
+                <span class="w-px h-3 bg-white/10"></span>
+                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
+                
+            </div>
+        </div>
+    </div>
+</footer>
+
+    <!-- SCROLL TOP -->
+    <button id="scrollToTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+
+    <script>
+        // ===== PRODUCT DATA =====
+        const products = [
+            // network (8)
+            { id: 1, name: '2MP Network IR Dome Camera - 30Mtr.', category: 'network',
+                image: '/assets/products/network-2mp1.png' },
+            { id: 2, name: '2MP Network IR Bullet Camera - 30Mtr.', category: 'network',
+                image: '/assets/products/network-2mp2.png' },
+            { id: 3, name: '2MP Network IR Bullet Camera - 60Mtr.', category: 'network',
+                image: '/assets/products/network-2mp3.png' },
+            { id: 4, name: '2MP Network IR Wedge Camera - 30Mtr.', category: 'network',
+                image: '/assets/products/network-2mp4.jpg' },
+            { id: 5, name: '2MP Network IR Vandal Dome Camera - 40Mtr.', category: 'network',
+                image: '/assets/products/network-2mp5.png' },
+            { id: 6, name: '2MP Full HD WDR Network Box Camera', category: 'network',
+                image: '/assets/products/network-2mp6.png' },
+            { id: 7, name: '4MP Network IR Mobile Camera - 30 Mtr.', category: 'network',
+                image: '/assets/products/network-2mp7.png' },
+            { id: 8, name: '6MP Network IR Fisheye Camera', category: 'network',
+                image: '/assets/products/network-2mp1.png' },
+            // NVR (8)
+            { id: 9, name: '4Ch. Network Video Recorder with 4 PoE Port', category: 'nvr',
+                image: '/assets/products/nvr1.png' },
+            { id: 10, name: '4 Ch. 4G Network Video Recorder', category: 'nvr',
+                image: '/assets/products/nvr2.png' },
+            { id: 11, name: '4Ch. Network Video Recorder', category: 'nvr',
+                image: '/assets/products/nvr3.png' },
+            { id: 12, name: '8 Ch. 4K Network Video Recorder', category: 'nvr',
+                image: '/assets/products/nvr4.png' },
+            { id: 13, name: '8Ch. AI Network Video Recorder', category: 'nvr',
+                image: '/assets/products/nvr5.png' },
+            { id: 14, name: '16Ch. 4K AI Network Video Recorder', category: 'nvr',
+                image: '/assets/products/nvr6.png' },
+            { id: 15, name: '16Ch. 4K Network Video Recorder with 16 PoE Ports', category: 'nvr',
+                image: '/assets/products/nvr7.png' },
+            { id: 16, name: '16 Ch. 4K 2HDDs Network Video Recorder', category: 'nvr',
+                image: '/assets/products/nvr8.png' },
+            // analog (7)
+            { id: 17, name: '2.4MP IR Bullet Camera - 30Mtr.', category: 'analog',
+                image: '/assets/products/analog1.png' },
+            { id: 18, name: '2.4MP Dual Light Bullet Camera - 30Mtr.', category: 'analog',
+                image: '/assets/products/analog2.png' },
+            { id: 19, name: '2.4MP Dual Light Dome Camera - 30Mtr.', category: 'analog',
+                image: '/assets/products/analog3.png' },
+            { id: 20, name: '2.4MP IR Dome Camera - 30Mtr.', category: 'analog',
+                image: '/assets/products/analog4.png' },
+            { id: 21, name: '2.4MP Full HD HDCVI IR Bullet Camera - 60Mtr.', category: 'analog',
+                image: '/assets/products/analog5.png' },
+            { id: 22, name: '2.4MP Full HD HDCVI IR Vandal Dome Camera - 30Mtr.', category: 'analog',
+                image: '/assets/products/analog6.png' },
+            { id: 23, name: '5MP Full HD IR Dome Camera - 20Mtr.', category: 'analog',
+                image: '/assets/products/analog7.png' },
+            // DVR (6)
+            { id: 24, name: '4Ch. 1080P Digital Video Recorder', category: 'dvr',
+                image: '/assets/products/dvr1.png' },
+            { id: 25, name: '4Ch. 1080N Digital Video Recorder', category: 'dvr',
+                image: '/assets/products/dvr2.png' },
+            { id: 26, name: '4Ch. 5M-N Digital Video Recorder', category: 'dvr',
+                image: '/assets/products/dvr3.png' },
+            { id: 27, name: '4Ch. 4K-N/5MP Digital Video Recorder', category: 'dvr',
+                image: '/assets/products/dvr4.png' },
+            { id: 28, name: '8Ch. 5MP Digital Video Recorder', category: 'dvr',
+                image: '/assets/products/dvr5.png' },
+            { id: 29, name: '16Ch. 4K-N/5MP Digital Video Recorder', category: 'dvr',
+                image: '/assets/products/dvr6.png' },
+            // switches (3)
+            { id: 30, name: '10/100 PoE Switches', category: 'switches',
+                image: '/assets/products/switch1.png' },
+            { id: 31, name: '10/100/1000 PoE Switches', category: 'switches',
+                image: '/assets/products/switch2.png' },
+            { id: 32, name: '10/100/1000 Managed PoE Switches', category: 'switches',
+                image: '/assets/products/switch3.png' },
+            // onlineproducts (9)
+            { id: 33, name: '2.4MP 4 Bullet Cameras, 1 Dome Cameras & 8 Channel DVR Kit with Accessories',
+                category: 'onlineproducts', image: '/assets/products/online1.png' },
+            { id: 34, name: '2.4MP 6 Bullet Cameras, 2 Dome Cameras & 8 Channel DVR Kit with Accessories',
+                category: 'onlineproducts', image: '/assets/products/online2.png' },
+            { id: 35, name: '2.4MP 4 Bullet Cameras, 4 Dome Cameras & 8 Channel DVR Kit with Accessories',
+                category: 'onlineproducts', image: '/assets/products/online3.png' },
+            { id: 36, name: '2.4MP 2 Night Vision Outdoor Bullet Camera & 4 Channel DVR Kit with Accessories',
+                category: 'onlineproducts', image: '/assets/products/online4.png' },
+            { id: 37, name: '2.4MP 5 Night Vision Outdoor Bullet Camera & 8 Channel DVR Kit with Accessories',
+                category: 'onlineproducts', image: '/assets/products/online5.png' },
+            { id: 38, name: '2.4MP 2 Night Vision Outdoor Bullet Camera, 2 Indoor Dome Camera & 4 Channel DVR Kit with Accessories',
+                category: 'onlineproducts', image: '/assets/products/online6.png' },
+            { id: 39, name: '2.4MP 1 Night Vision Outdoor Bullet Camera, 1 Indoor Dome Camera & 4 Channel DVR Kit with Accessories',
+                category: 'onlineproducts', image: '/assets/products/online7.png' },
+            { id: 40, name: '5MP 4 Night Vision Dome Cameras, 4 Night Vision Outdoor Bullet Cameras & 8 Channel DVR Kit with Accessories',
+                category: 'onlineproducts', image: '/assets/products/online8.png' },
+            { id: 41, name: '2.4MP 4 Indoor Dome Cameras, 4 Outdoor Bullet Cameras & 8 Channel DVR Kit with Accessories',
+                category: 'onlineproducts', image: '/assets/products/online9.png' },
+            // guard (3)
+            { id: 42, name: '2.4MP Full Color Guard+ Bullet Camera', category: 'guard',
+                image: '/assets/products/guard1.png' },
+            { id: 43, name: '2.4MP Full Color Guard+ Dome Camera', category: 'guard',
+                image: '/assets/products/guard2.png' },
+            { id: 44, name: '5MP Full-Color Guard+ Bullet Camera - 20Mtr.', category: 'guard',
+                image: '/assets/products/guard3.png' },
+            // biometric (3)
+            { id: 45, name: 'Face Recognition Access Controller', category: 'biometric',
+                image: '/assets/products/bio1.png' },
+            { id: 46, name: 'Face & Fingerprint Based Time Attendance Terminal', category: 'biometric',
+                image: '/assets/products/bio2.png' },
+            { id: 47, name: 'Fingerprint Based Time Attendance Terminal', category: 'biometric',
+                image: '/assets/products/bio3.png' }
+        ];
+
+        const grid = document.getElementById('productGrid');
+        const paginationControls = document.getElementById('paginationControls');
+        const ITEMS_PER_PAGE = 12;
+        let currentFilter = 'all';
+        let currentPage = 1;
+
+        function getFilteredProducts() {
+            return currentFilter === 'all' ? products : products.filter(p => p.category === currentFilter);
+        }
+
+        function getTotalPages() {
+            const filtered = getFilteredProducts();
+            return Math.ceil(filtered.length / ITEMS_PER_PAGE);
+        }
+
+        function renderProducts(page = 1) {
+            const filtered = getFilteredProducts();
+            const totalPages = Math.ceil(filtered.length / ITEMS_PER_PAGE);
+            if (page > totalPages) page = totalPages || 1;
+            if (page < 1) page = 1;
+            currentPage = page;
+
+            const start = (page - 1) * ITEMS_PER_PAGE;
+            const end = start + ITEMS_PER_PAGE;
+            const pageItems = filtered.slice(start, end);
+
+            if (pageItems.length === 0) {
+                grid.innerHTML =
+                    `<div class="col-span-full text-center py-12 text-gray-500">No products found in this category.</div>`;
+            } else {
+                grid.innerHTML = pageItems.map((p) => `
+                        <div class="product-card prod-reveal" onclick="goToDetail(${p.id})">
+                            <div class="product-img-wrap">
+                                <img src="${p.image}" alt="${p.name}" loading="lazy" 
+                                     onerror="this.classList.add('img-error'); this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22400%22 height=%22300%22%3E%3Crect fill=%22%23f0eeeb%22 width=%22400%22 height=%22300%22/%3E%3Ctext x=%2250%25%22 y=%2250%25%22 font-family=%22Inter,sans-serif%22 font-size=%2216%22 fill=%22%23999%22 text-anchor=%22middle%22 dy=%22.3em%22%3E${p.name}%3C/text%3E%3C/svg%3E'" />
+                            </div>
+                            <div class="product-name-bar">
+                                <h3>${p.name}</h3>
+                            </div>
+                            <div class="product-body" style="display:none;"></div>
+                        </div>
+                    `).join('');
+            }
+
+            // trigger scroll reveal after render
+            setTimeout(() => {
+                document.querySelectorAll('.prod-reveal').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight * 0.9) {
+                        el.classList.add('is-visible');
+                    }
+                });
+            }, 80);
+
+            renderPagination(totalPages);
+        }
+
+        function renderPagination(totalPages) {
+            if (totalPages <= 1) {
+                paginationControls.innerHTML = '';
+                return;
+            }
+
+            let html = '';
+            html +=
+                `<button class="pagination-btn" onclick="changePage(${currentPage - 1})" ${currentPage === 1 ? 'disabled' : ''}><i class="fas fa-chevron-left"></i></button>`;
+
+            for (let i = 1; i <= totalPages; i++) {
+                html +=
+                    `<button class="pagination-btn ${i === currentPage ? 'active-page' : ''}" onclick="changePage(${i})">${i}</button>`;
+            }
+
+            html +=
+                `<button class="pagination-btn" onclick="changePage(${currentPage + 1})" ${currentPage === totalPages ? 'disabled' : ''}><i class="fas fa-chevron-right"></i></button>`;
+
+            paginationControls.innerHTML = html;
+        }
+
+        function changePage(page) {
+            const totalPages = getTotalPages();
+            if (page < 1 || page > totalPages) return;
+            renderProducts(page);
+            document.getElementById('listView').scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        // ===== NAVIGATE TO PRODUCT DETAILS PAGE =====
+        function goToDetail(productId) {
+            // Navigate to product-details.html with the product ID as URL parameter
+            window.location.href = `product-details.html?id=${productId}`;
+        }
+
+        // Desktop filter chips
+        document.querySelectorAll('.filter-chip').forEach(btn => {
+            btn.addEventListener('click', function() {
+                document.querySelectorAll('.filter-chip').forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                currentFilter = this.dataset.filter;
+                currentPage = 1;
+                // Update mobile dropdown to match
+                document.getElementById('mobileCategorySelect').value = currentFilter;
+                renderProducts(1);
+            });
+        });
+
+        // Mobile dropdown filter
+        document.getElementById('mobileCategorySelect').addEventListener('change', function() {
+            currentFilter = this.value;
+            currentPage = 1;
+            // Update desktop chips to match
+            document.querySelectorAll('.filter-chip').forEach(btn => {
+                btn.classList.toggle('active', btn.dataset.filter === currentFilter);
+            });
+            renderProducts(1);
+        });
+
+        // ===== SCROLL TO TOP & MOBILE =====
+        document.addEventListener('DOMContentLoaded', function() {
+            AOS.init({ once: true, offset: 20 });
+            renderProducts(1);
+
+            const scrollBtn = document.getElementById('scrollToTop');
+            window.addEventListener('scroll', function() {
+                scrollBtn.classList.toggle('show', window.scrollY > 300);
+            });
+            scrollBtn.addEventListener('click', function() {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            });
+
+            document.getElementById('hamburger').addEventListener('click', function(e) {
+                e.stopPropagation();
+                document.getElementById('mobileNav').classList.toggle('hidden');
+            });
+
+            const observer = new IntersectionObserver(entries => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.1 });
+            document.querySelectorAll('.prod-reveal').forEach(el => observer.observe(el));
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Product Details · TechnoEye</title>
+  <title>Product Details · Akanksha Enterprises</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
@@ -17,7 +17,6 @@
 
     .instrument-serif { font-family: "Instrument Serif", serif; }
 
-    /* ----- HEADER (matches products.html blue/purple palette) ----- */
     #mainHeader { font-family: 'Inter', sans-serif; }
     .brand-name { font-family: 'Instrument Serif', serif; font-weight: 400; font-size: 1.5rem; letter-spacing: 0.5px; }
     .brand-name .highlight { color: #284595; }
@@ -93,7 +92,6 @@
       gap: 1rem;
     }
 
-    /* hero */
     .hero-container { height: 250px; position: relative; overflow: hidden; }
     @media (min-width: 640px) { .hero-container { height: 300px; } }
     @media (min-width: 768px) { .hero-container { height: 350px; } }
@@ -104,7 +102,6 @@
     .hero-title { opacity: 0; animation: heroFadeUp 1s cubic-bezier(0.23,1,0.32,1) forwards; animation-delay: 0.5s; }
     .hero-subtitle { opacity: 0; animation: heroFadeUp 1s cubic-bezier(0.23,1,0.32,1) forwards; animation-delay: 0.8s; }
 
-    /* product cards (related) — matches products.html style */
     .product-card {
       background: #fff;
       border-radius: 20px;
@@ -142,7 +139,6 @@
       padding: 0.25rem 0.9rem; border-radius: 999px; text-transform: uppercase;
     }
 
-    /* detail page */
     .detail-gallery { position: sticky; top: 130px; }
     .detail-main-image-wrap {
       border-radius: 20px; overflow: hidden; width: 100%;
@@ -188,7 +184,6 @@
 </head>
 <body>
 
-  <!-- ====== HEADER ====== -->
   <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
     <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
       <div class="header-inner">
@@ -228,9 +223,7 @@
     </div>
   </header>
 
-  <!-- ====== PRODUCT DETAIL PAGE ====== -->
   <main>
-    <!-- Hero -->
     <section class="relative text-white overflow-hidden">
       <div class="relative hero-container">
         <img src="/assets/aboutBanner.jpg" alt="Product Details" class="absolute inset-0 w-full h-full object-cover object-center" />
@@ -247,36 +240,31 @@
       </div>
     </section>
 
-    <!-- Product Detail Content -->
     <section class="py-8 sm:py-12 bg-[#F8F6F4]">
       <div class="container mx-auto px-4 sm:px-6 max-w-6xl">
-        <!-- Back Button -->
         <a href="products.html" class="back-btn mb-6 inline-block">
           <i class="fas fa-arrow-left"></i> Back to Products
         </a>
 
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 bg-white rounded-3xl p-6 md:p-10 shadow-sm border border-gray-100">
-          <!-- Gallery -->
           <div class="detail-gallery">
             <div class="detail-main-image-wrap">
               <img id="detailMainImage" src="" alt="Product" />
             </div>
           </div>
 
-          <!-- Info -->
           <div>
             <span class="product-tag" id="detailTag">Category</span>
             <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#1a2a3a] mt-2" id="detailName">Product Name</h2>
+            <p class="text-gray-500 text-sm mt-1" id="detailModel">Model: CP-XXX</p>
 
             <p class="text-gray-600 leading-relaxed mt-4 text-sm md:text-base" id="detailDesc">Description goes here.</p>
 
-            <!-- Specs -->
             <div class="mt-6">
               <h4 class="font-semibold text-[#1a2a3a] mb-3">Key Specifications</h4>
               <ul class="specs-list" id="detailSpecs"></ul>
             </div>
 
-            <!-- Features -->
             <div class="mt-6">
               <h4 class="font-semibold text-[#1a2a3a] mb-3">Features</h4>
               <div class="grid grid-cols-1 sm:grid-cols-2 gap-2" id="detailFeatures"></div>
@@ -291,7 +279,6 @@
           </div>
         </div>
 
-        <!-- Related Products -->
         <div class="mt-16">
           <h3 class="instrument-serif text-2xl md:text-3xl text-[#1a2a3a] text-center mb-8">
             Related <span class="text-[#234FAA]">Products</span>
@@ -302,265 +289,477 @@
     </section>
   </main>
 
-    <!-- ====== FOOTER ====== -->
-<footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
-    <!-- Background Image -->
+  <footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
     <div class="absolute inset-0 z-0">
-        <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
+      <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+      <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
     </div>
 
     <div class="container mx-auto px-3 sm:px-4 relative z-10">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
-            <!-- Brand Column -->
-            <div>
-                <div class="mb-3">
-                    <img src="/assets/cctv-logo-removebg.png" alt="TechnoEye Logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
-                </div>
-                <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions
-                    provider delivering cutting-edge technology and infrastructure services to businesses across
-                    India.</p>
-                <div class="flex gap-2 sm:gap-3">
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-twitter text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-instagram text-xs sm:text-sm"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Quick Links -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="index.html"
-                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
-                    <li><a href="about.html"
-                            class="text-[#234FAA]  text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
-                   
-                </ul>
-            </div>
-
-            <!-- Services -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
-                    
-                </ul>
-            </div>
-
-            <!-- Contact Info -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Contact Info
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-2 sm:space-y-3">
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91 9766491858 </span>
-                    </li>
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
-                    </li>
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop No 206, KamalRaj Parijat, Walke Nagar,
-Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
-                    </li>
-                </ul>
-            </div>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
+        <div>
+          <div class="mb-3">
+            <img src="/assets/cctv-logo-removebg.png" alt="Akanksha Enterprises logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+          </div>
+          <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions provider delivering cutting-edge technology and infrastructure services to businesses across India.</p>
+          <div class="flex gap-2 sm:gap-3">
+            <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+              <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
+            </a>
+            <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+              <i class="fab fa-twitter text-xs sm:text-sm"></i>
+            </a>
+            <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+              <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
+            </a>
+            <a href="#" class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+              <i class="fab fa-instagram text-xs sm:text-sm"></i>
+            </a>
+          </div>
         </div>
 
-        <!-- Bottom Bar -->
-        <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
-                &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights Reserved.
-            </p>
-            <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
-                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
-                <span class="w-px h-3 bg-white/10"></span>
-                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
-                
-            </div>
+        <div>
+          <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+            Quick Links
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </h4>
+          <ul class="space-y-1.5 sm:space-y-2">
+            <li><a href="index.html" class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
+            <li><a href="about.html" class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
+            <li><a href="services.html" class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
+          </ul>
         </div>
+
+        <div>
+          <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+            Quick Links
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </h4>
+          <ul class="space-y-1.5 sm:space-y-2">
+            <li><a href="solutions.html" class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
+            <li><a href="products.html" class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
+            <li><a href="contact.html" class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+            Contact Info
+            <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+          </h4>
+          <ul class="space-y-2 sm:space-y-3">
+            <li class="flex items-start gap-3 group">
+              <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
+                <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
+              </div>
+              <span class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91 9766491858</span>
+            </li>
+            <li class="flex items-start gap-3 group">
+              <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
+                <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
+              </div>
+              <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
+            </li>
+            <li class="flex items-start gap-3 group">
+              <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
+                <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
+              </div>
+              <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop No 206, KamalRaj Parijat, Walke Nagar, Pune-Alandi Road, Dighi, Pune, MH 411015.</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+        <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
+          &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights Reserved.
+        </p>
+        <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
+          <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
+          <span class="w-px h-3 bg-white/10"></span>
+          <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
+        </div>
+      </div>
     </div>
-</footer>
+  </footer>
 
-  <!-- SCROLL TOP -->
   <button id="scrollToTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
 
   <script>
-    // ===== PRODUCT DATA (must stay identical to products.html) =====
+    // ===== PRODUCT DATA - Same as products.html =====
     const products = [
-        // network (8)
-        { id: 1, name: '2MP Network IR Dome Camera - 30Mtr.', category: 'network', image: '/assets/products/network-2mp1.png' },
-        { id: 2, name: '2MP Network IR Bullet Camera - 30Mtr.', category: 'network', image: '/assets/products/network-2mp2.png' },
-        { id: 3, name: '2MP Network IR Bullet Camera - 60Mtr.', category: 'network', image: '/assets/products/network-2mp3.png' },
-        { id: 4, name: '2MP Network IR Wedge Camera - 30Mtr.', category: 'network', image: '/assets/products/network-2mp4.jpg' },
-        { id: 5, name: '2MP Network IR Vandal Dome Camera - 40Mtr.', category: 'network', image: '/assets/products/network-2mp5.png' },
-        { id: 6, name: '2MP Full HD WDR Network Box Camera', category: 'network', image: '/assets/products/network-2mp6.png' },
-        { id: 7, name: '4MP Network IR Mobile Camera - 30 Mtr.', category: 'network', image: '/assets/products/network-2mp7.png' },
-        { id: 8, name: '6MP Network IR Fisheye Camera', category: 'network', image: '/assets/products/network-2mp1.png' },
-        // NVR (8)
-        { id: 9, name: '4Ch. Network Video Recorder with 4 PoE Port', category: 'nvr', image: '/assets/products/nvr1.png' },
-        { id: 10, name: '4 Ch. 4G Network Video Recorder', category: 'nvr', image: '/assets/products/nvr2.png' },
-        { id: 11, name: '4Ch. Network Video Recorder', category: 'nvr', image: '/assets/products/nvr3.png' },
-        { id: 12, name: '8 Ch. 4K Network Video Recorder', category: 'nvr', image: '/assets/products/nvr4.png' },
-        { id: 13, name: '8Ch. AI Network Video Recorder', category: 'nvr', image: '/assets/products/nvr5.png' },
-        { id: 14, name: '16Ch. 4K AI Network Video Recorder', category: 'nvr', image: '/assets/products/nvr6.png' },
-        { id: 15, name: '16Ch. 4K Network Video Recorder with 16 PoE Ports', category: 'nvr', image: '/assets/products/nvr7.png' },
-        { id: 16, name: '16 Ch. 4K 2HDDs Network Video Recorder', category: 'nvr', image: '/assets/products/nvr8.png' },
-        // analog (7)
-        { id: 17, name: '2.4MP IR Bullet Camera - 30Mtr.', category: 'analog', image: '/assets/products/analog1.png' },
-        { id: 18, name: '2.4MP Dual Light Bullet Camera - 30Mtr.', category: 'analog', image: '/assets/products/analog2.png' },
-        { id: 19, name: '2.4MP Dual Light Dome Camera - 30Mtr.', category: 'analog', image: '/assets/products/analog3.png' },
-        { id: 20, name: '2.4MP IR Dome Camera - 30Mtr.', category: 'analog', image: '/assets/products/analog4.png' },
-        { id: 21, name: '2.4MP Full HD HDCVI IR Bullet Camera - 60Mtr.', category: 'analog', image: '/assets/products/analog5.png' },
-        { id: 22, name: '2.4MP Full HD HDCVI IR Vandal Dome Camera - 30Mtr.', category: 'analog', image: '/assets/products/analog6.png' },
-        { id: 23, name: '5MP Full HD IR Dome Camera - 20Mtr.', category: 'analog', image: '/assets/products/analog7.png' },
-        // DVR (6)
-        { id: 24, name: '4Ch. 1080P Digital Video Recorder', category: 'dvr', image: '/assets/products/dvr1.png' },
-        { id: 25, name: '4Ch. 1080N Digital Video Recorder', category: 'dvr', image: '/assets/products/dvr2.png' },
-        { id: 26, name: '4Ch. 5M-N Digital Video Recorder', category: 'dvr', image: '/assets/products/dvr3.png' },
-        { id: 27, name: '4Ch. 4K-N/5MP Digital Video Recorder', category: 'dvr', image: '/assets/products/dvr4.png' },
-        { id: 28, name: '8Ch. 5MP Digital Video Recorder', category: 'dvr', image: '/assets/products/dvr5.png' },
-        { id: 29, name: '16Ch. 4K-N/5MP Digital Video Recorder', category: 'dvr', image: '/assets/products/dvr6.png' },
-        // switches (3)
-        { id: 30, name: '10/100 PoE Switches', category: 'switches', image: '/assets/products/switch1.png' },
-        { id: 31, name: '10/100/1000 PoE Switches', category: 'switches', image: '/assets/products/switch2.png' },
-        { id: 32, name: '10/100/1000 Managed PoE Switches', category: 'switches', image: '/assets/products/switch3.png' },
-        // onlineproducts (9)
-        { id: 33, name: '2.4MP 4 Bullet Cameras, 1 Dome Cameras & 8 Channel DVR Kit with Accessories', category: 'onlineproducts', image: '/assets/products/online1.png' },
-        { id: 34, name: '2.4MP 6 Bullet Cameras, 2 Dome Cameras & 8 Channel DVR Kit with Accessories', category: 'onlineproducts', image: '/assets/products/online2.png' },
-        { id: 35, name: '2.4MP 4 Bullet Cameras, 4 Dome Cameras & 8 Channel DVR Kit with Accessories', category: 'onlineproducts', image: '/assets/products/online3.png' },
-        { id: 36, name: '2.4MP 2 Night Vision Outdoor Bullet Camera & 4 Channel DVR Kit with Accessories', category: 'onlineproducts', image: '/assets/products/online4.png' },
-        { id: 37, name: '2.4MP 5 Night Vision Outdoor Bullet Camera & 8 Channel DVR Kit with Accessories', category: 'onlineproducts', image: '/assets/products/online5.png' },
-        { id: 38, name: '2.4MP 2 Night Vision Outdoor Bullet Camera, 2 Indoor Dome Camera & 4 Channel DVR Kit with Accessories', category: 'onlineproducts', image: '/assets/products/online6.png' },
-        { id: 39, name: '2.4MP 1 Night Vision Outdoor Bullet Camera, 1 Indoor Dome Camera & 4 Channel DVR Kit with Accessories', category: 'onlineproducts', image: '/assets/products/online7.png' },
-        { id: 40, name: '5MP 4 Night Vision Dome Cameras, 4 Night Vision Outdoor Bullet Cameras & 8 Channel DVR Kit with Accessories', category: 'onlineproducts', image: '/assets/products/online8.png' },
-        { id: 41, name: '2.4MP 4 Indoor Dome Cameras, 4 Outdoor Bullet Cameras & 8 Channel DVR Kit with Accessories', category: 'onlineproducts', image: '/assets/products/online9.png' },
-        // guard (3)
-        { id: 42, name: '2.4MP Full Color Guard+ Bullet Camera', category: 'guard', image: '/assets/products/guard1.png' },
-        { id: 43, name: '2.4MP Full Color Guard+ Dome Camera', category: 'guard', image: '/assets/products/guard2.png' },
-        { id: 44, name: '5MP Full-Color Guard+ Bullet Camera - 20Mtr.', category: 'guard', image: '/assets/products/guard3.png' },
-        // biometric (3)
-        { id: 45, name: 'Face Recognition Access Controller', category: 'biometric', image: '/assets/products/bio1.png' },
-        { id: 46, name: 'Face & Fingerprint Based Time Attendance Terminal', category: 'biometric', image: '/assets/products/bio2.png' },
-        { id: 47, name: 'Fingerprint Based Time Attendance Terminal', category: 'biometric', image: '/assets/products/bio3.png' }
+      // ===== Network Cameras & NVR (network-nvr) - Combined =====
+      {
+        id: 1, name: '2MP Network IR Dome Camera - 30Mtr.', model: 'CP-UNC-DA21L3C-Q', category: 'network-nvr',
+        image: '/assets/products/network-2mp1.png'
+      },
+      {
+        id: 2, name: '2MP Network IR Bullet Camera - 30Mtr.', model: 'CP-UNC-TA21L3C-Q', category: 'network-nvr',
+        image: '/assets/products/network-2mp2.png'
+      },
+      {
+        id: 3, name: '2MP Network IR Bullet Camera - 60Mtr.', model: 'CP-UNC-TA21L6C-Q', category: 'network-nvr',
+        image: '/assets/products/network-2mp3.png'
+      },
+      {
+        id: 4, name: '2MP Network IR Wedge Camera - 30Mtr.', model: 'CP-UNC-WE21L3C-MDS-Q', category: 'network-nvr',
+        image: '/assets/products/network-2mp4.jpg'
+      },
+      {
+        id: 5, name: '2MP Network IR Vandal Dome Camera - 40Mtr.', model: 'CP-UNC-VE21ZL4C-VMDS-Q',
+        category: 'network-nvr', image: '/assets/products/network-2mp5.png'
+      },
+      {
+        id: 6, name: '2MP Full HD WDR Network Box Camera', model: 'CP-UNC-BE21C-VMDS-Q', category: 'network-nvr',
+        image: '/assets/products/network-2mp6.png'
+      },
+      {
+        id: 7, name: '4MP Network IR Mobile Camera - 30 Mtr.', model: 'CP-UNC-ME41L3-MDJ-Q', category: 'network-nvr',
+        image: '/assets/products/network-2mp7.png'
+      },
+      {
+        id: 8, name: '6MP Network IR Fisheye Camera', model: 'CP-UNC-EE61L2C-VMD-Q', category: 'network-nvr',
+        image: '/assets/products/network-2mp1.png'
+      },
+      {
+        id: 9, name: '4Ch. Network Video Recorder with 4 PoE Port', model: 'CP-UNR-104F1-P4', category: 'network-nvr',
+        image: '/assets/products/nvr1.png'
+      },
+      {
+        id: 10, name: '4 Ch. 4G Network Video Recorder', model: 'CP-UNR-4K2041-4PG', category: 'network-nvr',
+        image: '/assets/products/nvr2.png'
+      },
+      {
+        id: 11, name: '4Ch. Network Video Recorder', model: 'CP-UNR-104F1', category: 'network-nvr',
+        image: '/assets/products/nvr3.png'
+      },
+      {
+        id: 12, name: '8 Ch. 4K Network Video Recorder', model: 'CP-UNR-4K2081-V4', category: 'network-nvr',
+        image: '/assets/products/nvr4.png'
+      },
+      {
+        id: 13, name: '8Ch. AI Network Video Recorder', model: 'CP-UNR-208F2-I2', category: 'network-nvr',
+        image: '/assets/products/nvr5.png'
+      },
+      {
+        id: 14, name: '16Ch. 4K AI Network Video Recorder', model: 'CP-UNR-4K4164-FI', category: 'network-nvr',
+        image: '/assets/products/16Ch. 4K Network Video Recorder with 16 PoE Ports.jpg'
+      },
+      {
+        id: 15, name: '16Ch. 4K Network Video Recorder with 16 PoE Ports', model: 'CP-UNR-4K4162-P16V4',
+        category: 'network-nvr', image: '/assets/products/16Ch. 4K AI Network Video Recorder.jpg'
+      },
+      {
+        id: 16, name: '16 Ch. 4K 2HDDs Network Video Recorder', model: 'CP-UNR-4K4162-V4', category: 'network-nvr',
+        image: '/assets/products/16 Ch. 4K 2HDDs Network Video Recorder.jpg'
+      },
+
+      // ===== Analog Cameras & DVR (analog-dvr) - Combined =====
+      {
+        id: 17, name: '2.4MP IR Bullet Camera - 30Mtr.', model: 'CP-URC-TC24PL3', category: 'analog-dvr',
+        image: '/assets/products/analog3.png'
+      },
+      {
+        id: 18, name: '2.4MP Dual Light Bullet Camera - 30Mtr.', model: 'CP-URC-TC24PL3C-L-V2',
+        category: 'analog-dvr', image: '/assets/products/analog3.png'
+      },
+      {
+        id: 19, name: '2.4MP Dual Light Dome Camera - 30Mtr.', model: 'CP-URC-DC24PL3C-L-V2', category: 'analog-dvr',
+        image: '/assets/products/analog2.png'
+      },
+      {
+        id: 20, name: '2.4MP IR Dome Camera - 30Mtr.', model: 'CP-URC-DC24PL3', category: 'analog-dvr',
+        image: '/assets/products/analog5.png'
+      },
+      {
+        id: 21, name: '2.4MP Full HD HDCVI IR Bullet Camera - 60Mtr.', model: 'CP-UVC-TB24FL6-B',
+        category: 'analog-dvr', image: '/assets/products/analog4.png'
+      },
+      {
+        id: 22, name: '2.4MP Full HD HDCVI IR Vandal Dome Camera - 30Mtr.', model: 'CP-UVC-VB24FL3-B',
+        category: 'analog-dvr', image: '/assets/products/2.4MP Full HD HDCVI IR Vandal Dome Camera - 30Mtr.jpg'
+      },
+      {
+        id: 23, name: '5MP Full HD IR Dome Camera - 20Mtr.', model: 'CP-USC-DC51PL2', category: 'analog-dvr',
+        image: '/assets/products/analog7.png'
+      },
+      {
+        id: 24, name: '4Ch. 1080P Digital Video Recorder', model: 'CP-UVR-0401F1V-I', category: 'analog-dvr',
+        image: '/assets/products/dvr/4Ch. 1080P Digital Video Recorder.png'
+      },
+      {
+        id: 25, name: '4Ch. 1080N Digital Video Recorder', model: 'CP-UVR-0401E1V-I', category: 'analog-dvr',
+        image: '/assets/products/dvr/4Ch. 1080N Digital Video Recorder.png'
+      },
+      {
+        id: 26, name: '4Ch. 5M-N Digital Video Recorder', model: 'CP-UVR-0401F1-IC2', category: 'analog-dvr',
+        image: '/assets/products/dvr/4Ch. 5M-N Digital Video Recorder.jpg'
+      },
+      {
+        id: 27, name: '4Ch. 4K-N/5MP Digital Video Recorder', model: 'CP-UVR-0401L1-4KI3', category: 'analog-dvr',
+        image: '/assets/products/dvr/4Ch4K-N5MP Digital Video Recorder.jpg'
+      },
+      {
+        id: 28, name: '8Ch. 5MP Digital Video Recorder', model: 'CP-UVR-0804K4-I3-V3', category: 'analog-dvr',
+        image: '/assets/products/dvr/8Ch. 5MP Digital Video Recorder.jpg'
+      },
+      {
+        id: 29, name: '16Ch. 4K-N/5MP Digital Video Recorder', model: 'CP-UVR-1601L1B-4KI3', category: 'analog-dvr',
+        image: '/assets/products/dvr/16Ch 4KN5MP Digital Video Recorder.jpg'
+      },
+
+      // ===== Illumax (illumax) =====
+      {
+        id: 30, name: '6MP Dual Light Vandal Dome Camera - 50Mtr.', model: 'CP-UNC-VC61L5C-VMD-LQ',
+        category: 'illumax', image: '/assets/products/illumax/6MP Dual Light Vandal Dome Camera - 50Mtr..png'
+      },
+      {
+        id: 31, name: '8MP Dual Light Bullet Camera - 50Mtr.', model: 'CP-UNC-TC81L5C-VMD-LQ', category: 'illumax',
+        image: '/assets/products/illumax/8MP Dual Light Bullet Camera - 50Mtr.png'
+      },
+      {
+        id: 32, name: '6MP Dual Light Bullet Camera - 50Mtr.', model: 'CP-UNC-TC61L5C-VMD-LQ', category: 'illumax',
+        image: '/assets/products/illumax/6MP Dual Light Bullet Camera - 50Mtr..png'
+      },
+      {
+        id: 33, name: '5MP Dual Light Bullet Camera - 30Mtr.', model: 'CP-URC-TC51PL3C-L-V2', category: 'illumax',
+        image: '/assets/products/illumax/5MP Dual Light Bullet Camera - 30Mtr..jpg'
+      },
+      {
+        id: 34, name: '5MP Dual Light Dome Camera - 30Mtr.', model: 'CP-URC-DC51PL3C-L', category: 'illumax',
+        image: '/assets/products/illumax/5MP Dual Light Dome Camera - 30Mtr.jpg'
+      },
+
+      // ===== Carkam (carkam) =====
+      {
+        id: 35, name: 'CarKam GPS with Cabin & Rear Camera, Hardwire Kit', model: 'CP-KF86C', category: 'carkam',
+        image: '/assets/products/Carcam/CarKam GPS with Cabin & Rear Camera, Hardwire Kit.png'
+      },
+      {
+        id: 36, name: 'CarKam 4G 2MP with Rear Camera, Hardwire Kit', model: 'CP-KH27B', category: 'carkam',
+        image: '/assets/products/Carcam/CarKam 4G 2MP with Rear Camera, Hardwire Kit.png'
+      },
+      {
+        id: 37, name: 'CarKam 3MP', model: 'CP-W310', category: 'carkam',
+        image: '/assets/products/Carcam/CarKam 3MP.png'
+      },
+      {
+        id: 38, name: 'CarKam 3MP with Hardwire kit', model: 'CP-KW310', category: 'carkam',
+        image: '/assets/products/Carcam/CarKam 3MP with Hardwire kit.png'
+      },
+      {
+        id: 39, name: 'CarKam 5MP with Rear Camera, Hardwire Kit', model: 'CP-KF59B', category: 'carkam',
+        image: '/assets/products/Carcam/CarKam 3MP with Hardwire kit.png'
+      },
+      {
+        id: 40, name: 'CarKam 4K Ultra HD with Rear Camera, Hardwire Kit', model: 'CP-KF89B', category: 'carkam',
+        image: '/assets/products/Carcam/CarKam 4K Ultra HD with Rear Camera, Hardwire Kit.png'
+      },
+
+      // ===== Speed Dome PTZ (speed-dome) =====
+      {
+        id: 41, name: '5MP WDR 45x IR Network PTZ Camera- 300 Mtr.', model: 'CP-UNP-F4551L30-DPQ',
+        category: 'speed-dome', image: '/assets/products/ptz/5MP WDR 45x IR Network PTZ Camera- 300 Mtr..png'
+      },
+      {
+        id: 42, name: '2MP WDR 32x IR Network PTZ Camera- 180 Mtr.', model: 'CP-UNP-E3221L18-DAQ',
+        category: 'speed-dome', image: '/assets/products/ptz/2MP WDR 32x IR Network PTZ Camera- 180 Mtr..jpg'
+      },
+      {
+        id: 43, name: '2MP WDR 45x IR Network PTZ Camera- 500 Mtr.', model: 'CP-UNP-H4521L50-DPQ',
+        category: 'speed-dome', image: '/assets/products/ptz/2MP WDR 45x IR Network PTZ Camera- 500 Mtr..png'
+      },
+      {
+        id: 44, name: '4MP WDR 32x IR Network PTZ Camera- 180 Mtr.', model: 'CP-UNP-E3241L18-DAQ',
+        category: 'speed-dome', image: '/assets/products/ptz/4MP WDR 32x IR Network PTZ Camera- 180 Mtr..jpg'
+      },
+      {
+        id: 45, name: '2MP WDR 25x IR Network PTZ Camera- 100 Mtr.', model: 'CP-UNP-D2521L10-DAQ',
+        category: 'speed-dome', image: '/assets/products/ptz/2MP WDR 25x IR Network PTZ Camera- 100 Mtr..jpg'
+      },
+      {
+        id: 46, name: '2MP 45x Full HD Network IR PTZ Camera– 300 Mtr.', model: 'CP-UNP-F4521L30-DPQ',
+        category: 'speed-dome', image: '/assets/products/ptz/2MP 45x Full HD Network IR PTZ Camera– 300 Mtr..png'
+      },
+
+      // ===== EzyHome (ezyhome) =====
+      {
+        id: 47, name: '4MP Wi-Fi Full Color PT Camera', model: 'CP-Z45Q', category: 'ezyhome',
+        image: '/assets/products/ezyhome/4MP Wi-Fi Full Color PT Camera.png'
+      },
+      {
+        id: 48, name: '4MP Wi-Fi Full Color PT Camera', model: 'CP-Z43Q', category: 'ezyhome',
+        image: '/assets/products/ezyhome/4MP Wi-Fi Full Color PT Camera.jpg'
+      },
+      {
+        id: 49, name: '3MP Wi-Fi PT Camera', model: 'EZ-P34Q', category: 'ezyhome',
+        image: '/assets/products/ezyhome/3MP Wi-Fi PT Camera.jpg'
+      },
+      {
+        id: 50, name: '3MP 4G PT Camera', model: 'EZ-S35T', category: 'ezyhome',
+        image: '/assets/products/ezyhome/3MP 4G PT Camera.png'
+      },
+      {
+        id: 51, name: '3MP 4G Camera', model: 'EZ-R33T', category: 'ezyhome',
+        image: '/assets/products/ezyhome/3MP 4G Camera.jpg'
+      },
+      {
+        id: 52, name: 'Smart Motion Sensor', model: 'CP-HAS-M99-W', category: 'ezyhome',
+        image: '/assets/products/ezyhome/Smart Motion Sensor.jpg'
+      },
+      {
+        id: 53, name: 'Smart Wi-Fi Smoke Sensor', model: 'CP-HAS-S1-W', category: 'ezyhome',
+        image: '/assets/products/ezyhome/Smart Wi-Fi Smoke Sensor.jpg'
+      },
+      {
+        id: 54, name: 'Smart Wi-Fi Gas Detector', model: 'CP-HAS-GM03-W', category: 'ezyhome',
+        image: '/assets/products/ezyhome/Smart Wi-Fi Gas Detector.jpg'
+      },
+
+      // ===== Storage (storage) =====
+      {
+        id: 55, name: '48-HDD Embedded Video Storage', model: 'CP-UVS-6487R-V3', category: 'storage',
+        image: '/assets/products/storage/48-HDD Embedded Video Storage.jpg'
+      },
+      {
+        id: 56, name: 'Embedded Video Storage', model: 'CP-UVS-G48R-V2', category: 'storage',
+        image: '/assets/products/storage/Embedded Video Storage.png'
+      },
+      {
+        id: 57, name: '48-HDD Embedded Video Storage', model: 'CP-UVS-6487R-V2', category: 'storage',
+        image: '/assets/products/storage/48-HDD Embedded Video Storage2.jpg'
+      },
+      {
+        id: 58, name: '24-HDD Embedded Video Storage', model: 'CP-UVS-6247R-V2', category: 'storage',
+        image: '/assets/products/storage/24HDD Embedded Video Storage.jpg'
+      },
+      {
+        id: 59, name: '24HDD Embedded Video Storage', model: 'CP-UVS-G24R-J', category: 'storage',
+        image: '/assets/products/storage/24HDD Embedded Video Storage.jpg'
+      },
+      {
+        id: 60, name: '16-HDD Embedded Video Storage', model: 'CP-UVS-6167R-V2', category: 'storage',
+        image: '/assets/products/storage/16-HDD Embedded Video Storage.png'
+      },
+
+      // ===== Switches (switches) =====
+      {
+        id: 61, name: '10 Ports Switch with 8 PoE Ports & 2 Uplink Ports', model: 'CP-UNW-HPU8H2-96',
+        category: 'switches', image: '/assets/products/switches/10 Ports Switch with 8 PoE Ports & 2 Uplink Ports.png'
+      },
+      {
+        id: 62, name: '6 Ports Switch with 4 PoE Ports & 2 Uplink Ports', model: 'CP-UNW-HPU4H2-48',
+        category: 'switches', image: '/assets/products/switches/6 Ports Switch with 4 PoE Ports & 2 Uplink Ports.jpg'
+      },
+      {
+        id: 63, name: '19 Ports Switch with 16 PoE Ports & 2 Gigabit + 1 SFP Port', model: 'CP-DNW-HPU16G2F1-20',
+        category: 'switches', image: '/assets/products/switches/19 Ports Switch with 16 PoE Ports & 2 Gigabit + 1 SFP Port.jpg'
+      },
+
+      // ===== HDD & SD Card Memory (memory) =====
+      {
+        id: 64, name: 'Micro SD Card 64/128/256GB', model: 'CP-UM64C-UM128C-UM256C', category: 'memory',
+        image: '/assets/products/memo1.jpg'
+      },
+      {
+        id: 65, name: 'Micro SD Card 256GB', model: 'CP-UM256W', category: 'memory',
+        image: '/assets/products/memo2.jpg'
+      },
+      {
+        id: 66, name: 'Micro SD Card 64/128/256/512GB', model: 'CP-NM64-NM128-NM256-NM512', category: 'memory',
+        image: '/assets/products/memo3.jpg'
+      }
     ];
 
     const CATEGORY_LABELS = {
-      network: 'Network Camera',
-      nvr: 'Network Video Recorder',
-      analog: 'Analog HD Camera',
-      dvr: 'Digital Video Recorder',
-      switches: 'PoE Switch',
-      onlineproducts: 'Complete CCTV Kit',
-      guard: 'Guard+ Camera',
-      biometric: 'Biometric Device'
+      'network-nvr': 'Network Cameras with NVR',
+      'analog-dvr': 'Analog HD Cameras with DVR',
+      'illumax': 'Illumax',
+      'carkam': 'Carkam (Dash cam)',
+      'speed-dome': 'Speed Dome PTZ',
+      'ezyhome': 'EzyHome',
+      'storage': 'Storage',
+      'switches': 'Switches',
+      'memory': 'HDD & SD Card Memory'
     };
 
-    // Category-level description templates
     const CATEGORY_DESC = {
-      network: 'A high-performance IP network camera engineered for clear, reliable surveillance footage over your network infrastructure, with remote viewing support and robust night vision.',
-      nvr: 'A dedicated Network Video Recorder that centralizes, records, and manages footage from your IP cameras, with support for remote playback and mobile monitoring.',
-      analog: 'An HD analog camera delivering sharp, dependable footage over standard coaxial cabling, suited for both indoor and outdoor installations.',
-      dvr: 'A Digital Video Recorder built for analog camera systems, offering efficient compression, multi-channel recording, and remote access via mobile app.',
-      switches: 'A PoE network switch that powers and connects your IP cameras and devices over a single cable, simplifying installation and cabling.',
-      onlineproducts: 'A complete, ready-to-install CCTV surveillance kit including cameras, DVR, and all necessary accessories for quick deployment.',
-      guard: 'A Guard+ series camera with full-color night vision and active deterrence features, designed for enhanced perimeter and entry-point security.',
-      biometric: 'A biometric access and attendance device offering fast, accurate identification for secure entry control and workforce time tracking.'
+      'network-nvr': 'High-performance IP network cameras paired with advanced NVRs for professional surveillance solutions with remote access and AI capabilities.',
+      'analog-dvr': 'Reliable HD analog cameras and DVR systems offering cost-effective security with excellent image quality and easy integration.',
+      'illumax': 'Advanced dual-light surveillance cameras delivering exceptional night vision with full-color imaging and active deterrence features.',
+      'carkam': 'Premium dash cams for vehicles with high-resolution recording, GPS tracking, parking monitoring, and connectivity options.',
+      'speed-dome': 'High-speed PTZ cameras with powerful optical zoom for comprehensive monitoring of large areas with precision control.',
+      'ezyhome': 'Smart home security solutions including Wi-Fi/4G cameras, motion sensors, smoke detectors, and gas detectors for complete protection.',
+      'storage': 'Enterprise-grade embedded video storage systems with high-capacity HDD arrays for reliable surveillance data retention.',
+      'switches': 'PoE network switches designed for easy camera installation with power and data over a single cable.',
+      'memory': 'High-performance memory solutions including Micro SD cards for reliable data storage in surveillance devices.'
     };
 
-    // Category-level feature templates
     const CATEGORY_FEATURES = {
-      network: ['IP Network Connectivity', 'Infrared Night Vision', 'Weatherproof (Outdoor Models)', 'Remote Viewing via App', 'ONVIF Compliant', 'Motion Detection'],
-      nvr: ['Multi-Channel Recording', 'PoE Ports (Select Models)', 'Remote Playback via App', 'H.265+ Compression', 'HDMI/VGA Output', 'Motion-Based Alerts'],
-      analog: ['HD Resolution over Coax', 'Smart IR Night Vision', 'Day/Night Auto Switching', 'Weatherproof Housing', 'BNC Connector', 'Wide Dynamic Range'],
-      dvr: ['Multi-Channel Recording', 'H.265+ Compression', 'Mobile App Access', 'HDMI/VGA Output', 'Multi-Channel Playback', 'Motion Detection Alerts'],
-      switches: ['Plug & Play Setup', 'PoE Power Budget', 'Surge Protection', 'Compact Metal Housing', 'Wide Compatibility', 'Stable Data Transmission'],
-      onlineproducts: ['Complete Installation Kit', 'Cameras + DVR Included', 'All Cabling & Accessories', 'Easy DIY Setup', 'Mobile App Access', 'Night Vision Enabled'],
-      guard: ['Full-Color Night Vision', 'Two-Way Audio (Select Models)', 'Active Visual/Audio Deterrence', 'Weatherproof Design', 'Motion-Activated Alerts', 'Remote Viewing via App'],
-      biometric: ['Fast Face/Fingerprint Recognition', 'Time Attendance Software Support', 'Large User Capacity', 'Access Control Integration', 'Anti-Spoofing Detection', 'Data Export & Reporting']
+      'network-nvr': ['IP Network Connectivity', 'Infrared Night Vision', 'Remote Viewing via App', 'ONVIF Compliant',
+        'AI Detection', 'PoE Support'
+      ],
+      'analog-dvr': ['HD Resolution over Coax', 'Smart IR Night Vision', 'Mobile App Access', 'H.265+ Compression',
+        'Multi-Channel Recording', 'Weatherproof Housing'
+      ],
+      'illumax': ['Full-Color Night Vision', 'Dual Light Technology', 'Active Deterrence', 'Weatherproof Design',
+        'Starlight Technology', 'AI-Based Alerts'
+      ],
+      'carkam': ['High Resolution Recording', 'G-Sensor Emergency Recording', 'Parking Mode', 'Built-in GPS',
+        'SD Card Support', '24/7 Monitoring'
+      ],
+      'speed-dome': ['High Optical Zoom', 'Starlight Technology', '300+ Presets', 'WDR Support', 'IP67/IK10 Protection',
+        'PoE+ Support'
+      ],
+      'ezyhome': ['Wi-Fi/4G Connectivity', 'Full Color Night Vision', 'Two-Way Audio', 'Google Home Compatible',
+        'Motion Detection', 'Remote Access'
+      ],
+      'storage': ['High Capacity Storage', 'RAID Support', 'Hot-Swap HDD Bays', 'N+M Cluster Support', 'ANR Support',
+        'Platinum Power Supply'
+      ],
+      'switches': ['PoE Power Budget', 'Plug & Play Setup', 'Extended Transmission Distance', 'Wall-Mountable',
+        'Surge Protection', 'Multiple Uplink Ports'
+      ],
+      'memory': ['High-Speed Data Transfer', 'Video Speed Class V30', 'Four Types of Protection',
+        'Compatible with Various Devices', 'Long Service Life', 'UHS Speed Class'
+      ]
     };
 
-    // Parse extra spec hints straight out of the product name
-    function extractSpecsFromName(name) {
+    function getProductSpecs(product) {
       const specs = [];
+      if (product.model) specs.push(['Model', product.model]);
+      specs.push(['Category', CATEGORY_LABELS[product.category] || product.category]);
+      specs.push(['Warranty', '1 Year Standard']);
+      specs.push(['Certification', 'CE / RoHS Compliant']);
+
+      // Extract additional specs from product name
+      const name = product.name;
       const resMatch = name.match(/(\d+(\.\d+)?MP)/i);
       if (resMatch) specs.push(['Resolution', resMatch[1]]);
       const rangeMatch = name.match(/(\d+)\s?Mtr/i);
       if (rangeMatch) specs.push(['IR Range', `${rangeMatch[1]} Meters`]);
       const chMatch = name.match(/(\d+)\s?Ch\.?/i);
       if (chMatch) specs.push(['Channels', chMatch[1]]);
-      const poeMatch = name.match(/(\d+)\s?PoE Port/i);
-      if (poeMatch) specs.push(['PoE Ports', poeMatch[1]]);
       if (/4K/i.test(name)) specs.push(['Video Quality', '4K Ultra HD']);
       if (/AI/i.test(name)) specs.push(['AI Features', 'AI-Based Detection']);
-      if (/PoE/i.test(name) && !poeMatch) specs.push(['Power', 'PoE Supported']);
-      if (/HDD/i.test(name)) {
-        const hddMatch = name.match(/(\d+)\s?HDDs?/i);
-        specs.push(['HDD Bays', hddMatch ? hddMatch[1] : '1']);
-      }
+      if (/PoE/i.test(name)) specs.push(['Power', 'PoE Supported']);
+      if (/Wi-Fi/i.test(name)) specs.push(['Connectivity', 'Wi-Fi']);
+      if (/4G/i.test(name)) specs.push(['Connectivity', '4G']);
+
       return specs;
     }
 
-    function buildSpecs(product) {
-      const specs = extractSpecsFromName(product.name);
-      specs.push(['Category', CATEGORY_LABELS[product.category] || product.category]);
-      specs.push(['Warranty', '1 Year Standard']);
-      specs.push(['Certification', 'CE / RoHS Compliant']);
-      return specs;
-    }
-
-    const grid = document.getElementById('relatedProducts');
-
-    // ===== GET PRODUCT ID FROM URL =====
     function getProductIdFromURL() {
       const params = new URLSearchParams(window.location.search);
       return parseInt(params.get('id'));
     }
 
-    // ===== LOAD PRODUCT DETAIL =====
     function loadProductDetail() {
       const id = getProductIdFromURL();
       const product = products.find(p => p.id === id);
@@ -570,34 +769,35 @@ Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
         return;
       }
 
-      document.title = `${product.name} · TechnoEye`;
+      document.title = `${product.name} · Akanksha Enterprises`;
 
-      // Populate detail
       document.getElementById('detailMainImage').src = product.image;
       document.getElementById('detailMainImage').alt = product.name;
       document.getElementById('detailTag').textContent = CATEGORY_LABELS[product.category] || product.category;
       document.getElementById('detailName').textContent = product.name;
+      if (product.model) {
+        document.getElementById('detailModel').textContent = `Model: ${product.model}`;
+      }
       document.getElementById('detailDesc').textContent = CATEGORY_DESC[product.category] || '';
 
-      // Specs
       const specsList = document.getElementById('detailSpecs');
-      const specs = buildSpecs(product);
+      const specs = getProductSpecs(product);
       specsList.innerHTML = specs.map(([label, value]) =>
         `<li><span class="label">${label}</span><span class="value">${value}</span></li>`
       ).join('');
 
-      // Features
       const featuresContainer = document.getElementById('detailFeatures');
       const features = CATEGORY_FEATURES[product.category] || [];
       featuresContainer.innerHTML = features.map(f =>
         `<div class="flex items-center gap-2 text-sm"><i class="fas fa-check-circle text-[#234FAA]"></i> ${f}</div>`
       ).join('');
 
-      // Related products — same category, excluding current, up to 8
       let related = products.filter(p => p.id !== id && p.category === product.category).slice(0, 8);
       if (related.length === 0) {
         related = products.filter(p => p.id !== id).slice(0, 8);
       }
+
+      const grid = document.getElementById('relatedProducts');
       grid.innerHTML = related.map(r => `
         <div class="product-card" onclick="window.location.href='product-details.html?id=${r.id}'">
           <div class="product-img-wrap">
@@ -611,10 +811,8 @@ Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
       `).join('');
     }
 
-    // ===== SCROLL TO TOP + INIT =====
     document.addEventListener('DOMContentLoaded', function() {
       AOS.init({ once: true, offset: 20 });
-
       loadProductDetail();
 
       const scrollBtn = document.getElementById('scrollToTop');

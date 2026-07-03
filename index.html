@@ -271,18 +271,22 @@
         #mainHeader {
             font-family: 'Inter', sans-serif;
         }
+
         .brand-name {
             font-family: 'Instrument Serif', serif;
             font-weight: 400;
             font-size: 1.5rem;
             letter-spacing: 0.5px;
         }
+
         .brand-name .highlight {
             color: #284595;
         }
+
         .brand-name .light {
             color: #ffffff;
         }
+
         .header-logo {
             height: 40px;
             width: auto;
@@ -303,6 +307,7 @@
             position: relative;
             transition: color 0.3s ease;
         }
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -315,20 +320,25 @@
             border-radius: 2px;
             transition: width 0.3s cubic-bezier(0.23, 1, 0.32, 1);
         }
+
         .nav-link:hover::after {
             width: 70%;
         }
+
         .nav-link:hover {
             color: #284595;
         }
+
         .nav-link.active {
             background: #284595;
             color: #fff;
             padding: 0.4rem 1.2rem;
         }
+
         .nav-link.active::after {
             display: none;
         }
+
         .nav-link.active:hover {
             color: #fff;
             background: #28AAE4;
@@ -346,11 +356,13 @@
             text-decoration: none;
             letter-spacing: 0.2px;
         }
+
         .btn-contact:hover {
             background: #bbcee7;
             transform: translateY(-2px);
             box-shadow: 0 8px 20px #c0c0c1;
         }
+
         .mobile-nav-link {
             font-family: 'Inter', sans-serif;
             font-weight: 500;
@@ -362,15 +374,18 @@
             text-decoration: none;
             position: relative;
         }
+
         .mobile-nav-link:hover {
             color: #284595;
         }
+
         .mobile-nav-link.active-mobile {
             background: #284595;
             color: #fff;
             border-radius: 8px;
             padding: 0.6rem 1.2rem;
         }
+
         .header-inner {
             background: white;
             backdrop-filter: blur(12px);
@@ -1072,6 +1087,97 @@
                 height: 250px !important;
             }
         }
+
+          /* STQC Specific Styles - Bigger Badge */
+    .stqc-item {
+        flex: 0 0 calc(33.333% - 17px);
+        max-width: calc(33.333% - 17px);
+    }
+    
+    .stqc-icon-wrap {
+        width: 85px !important;
+        height: 85px !important;
+        border-radius: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+        background: #ffffff;
+        padding: 8px;
+        border: 1px solid #e5e7eb;
+    }
+    
+    .stqc-logo {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        max-width: 70px;
+        max-height: 70px;
+    }
+    
+    .stqc-title {
+        font-size: 1.05rem !important;
+        color: #1a2a3a;
+    }
+    
+    .stqc-subtitle {
+        font-size: 0.82rem !important;
+        color: #6b7280;
+    }
+    
+    /* Remove divider after STQC item */
+    .stqc-item::after {
+        display: none !important;
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+        .stqc-item {
+            flex: 0 0 calc(50% - 9px) !important;
+            max-width: calc(50% - 9px) !important;
+        }
+        .stqc-icon-wrap {
+            width: 75px !important;
+            height: 75px !important;
+        }
+        .stqc-logo {
+            max-width: 60px;
+            max-height: 60px;
+        }
+    }
+    
+    @media (max-width: 820px) {
+        .stqc-item {
+            flex: 0 0 calc(50% - 7px) !important;
+            max-width: calc(50% - 7px) !important;
+        }
+        .stqc-icon-wrap {
+            width: 65px !important;
+            height: 65px !important;
+        }
+        .stqc-logo {
+            max-width: 50px;
+            max-height: 50px;
+        }
+        .stqc-title {
+            font-size: 0.9rem !important;
+        }
+    }
+    
+    @media (max-width: 640px) {
+        .stqc-item {
+            flex: 0 0 100% !important;
+            max-width: 100% !important;
+        }
+        .stqc-icon-wrap {
+            width: 60px !important;
+            height: 60px !important;
+        }
+        .stqc-logo {
+            max-width: 45px;
+            max-height: 45px;
+        }
+    }
     </style>
 </head>
 
@@ -1110,7 +1216,8 @@
                         <li><a href="services.html" class="mobile-nav-link">Services</a></li>
                         <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
                         <li><a href="products.html" class="mobile-nav-link ">Products</a></li>
-                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="border-radius:40px; padding:0.6rem;">Contact Us</a></li>
+                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center"
+                                style="border-radius:40px; padding:0.6rem;">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -1153,117 +1260,154 @@
     </section>
 
     <!-- ====== BEST SERVICES BOX ====== -->
-    <div class="best-services-wrapper">
-        <div class="best-services-box">
-            <div class="service-item">
-                <div class="icon-wrap"><img src="/assets/bestservices1.png" alt="AI Detection"></div>
-                <div class="info">
-                    <h4>AI Detection</h4>
-                    <p>Smart alerts &amp; analytics</p>
-                </div>
+<div class="best-services-wrapper">
+    <div class="best-services-box">
+        <!-- STQC Badge - Made bigger -->
+        <div class="service-item stqc-item">
+            <div class="icon-wrap stqc-icon-wrap">
+                <img src="/assets/stqc.jpg" alt="STQC Certified" class="stqc-logo" />
             </div>
-            <div class="service-item">
-                <div class="icon-wrap"><img src="/assets/best-services2.png" alt="Cloud Backup"></div>
-                <div class="info">
-                    <h4>Cloud Backup</h4>
-                    <p>Secure off-site storage</p>
-                </div>
+            <div class="info">
+                <h4 class="stqc-title">STQC Certified</h4>
+                <p class="stqc-subtitle">Govt. of India approved</p>
             </div>
-            <div class="service-item">
-                <div class="icon-wrap"><img src="/assets/best-services3.png" alt="Managed Wi-Fi"></div>
-                <div class="info">
-                    <h4>Managed Wi-Fi</h4>
-                    <p>Enterprise-grade wireless</p>
-                </div>
+        </div>
+        
+        <div class="service-item">
+            <div class="icon-wrap"><img src="/assets/bestservices1.png" alt="AI Detection"></div>
+            <div class="info">
+                <h4>AI Detection</h4>
+                <p>Smart alerts &amp; analytics</p>
+            </div>
+        </div>
+        
+        <div class="service-item">
+            <div class="icon-wrap"><img src="/assets/best-services2.png" alt="Cloud Backup"></div>
+            <div class="info">
+                <h4>Cloud Backup</h4>
+                <p>Secure off-site storage</p>
             </div>
         </div>
     </div>
+</div>
+   <!-- ====== ABOUT US ====== -->
+<section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-white overflow-hidden" id="about">
+    <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
+            <div class="relative h-[350px] sm:h-[400px] md:h-[450px] about-img-wrap" data-reveal="left">
+                <div class="top-0 left-3 sm:left-5 md:left-8 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-10">
+                    <img src="/assets/about1.png" alt="CCTV Installation" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
+                </div>
+                <div class="absolute top-14 sm:top-18 md:top-24 lg:top-28 left-20 sm:left-24 md:left-32 lg:left-36 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-[1]">
+                    <img src="/assets/about2.png" alt="Security Monitoring" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
+                </div>
+                <div class="absolute bottom-3 sm:bottom-5 md:bottom-8 lg:bottom-10 left-3 sm:left-5 md:left-8 z-20 w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] md:w-[95px] md:h-[95px]">
+                    <div class="absolute inset-0 badge-ring-spin">
+                        <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                            <defs>
+                                <path id="circleTextPath" d="M 55,55 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
+                            </defs>
+                            <circle cx="55" cy="55" r="52" fill="white" stroke="#e5e5e5" stroke-width="1" />
+                            <text font-size="8.2" fill="#1a1a2e" font-weight="600" letter-spacing="2.3" font-family="Segoe UI, sans-serif">
+                                <textPath href="#circleTextPath">25+ Years of Experience • 25+ Years of Experience •</textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[42px] md:h-[42px] rounded-full flex items-center justify-center text-white text-[12px] sm:text-[14px] md:text-[16px]" style="background:#284595;">
+                            <i class="fas fa-video"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div data-reveal="right" class="mt-6 sm:mt-0">
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a2e] leading-tight mb-3 sm:mb-4">
+                    Protecting homes,<br>
+                    businesses and <span class="text-[#284595]">peace</span>
+                </h2>
+                <p class="text-gray-500 text-sm sm:text-base leading-relaxed mb-5 sm:mb-7 max-w-full lg:max-w-[440px]">
+                    We specialize in providing top-quality security and CCTV solutions to safeguard
+                    your home and business. Our mission is to ensure peace of mind with reliable,
+                    innovative, and tailored protection systems.
+                </p>
+                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 bg-gray-50 rounded-xl p-3 sm:p-4 mb-4 sm:mb-5 about-row-reveal" data-reveal-delay="300">
+                    <img src="/assets/about3.png" alt="CCTV technician" class="w-full sm:w-[110px] md:w-[140px] h-[70px] sm:h-[85px] md:h-[95px] rounded-xl object-cover flex-shrink-0">
+                    <div class="flex items-center gap-3 sm:gap-4 w-full sm:w-auto">
+                        <div class="w-[35px] h-[35px] sm:w-[42px] sm:h-[42px] md:w-[48px] md:h-[48px] rounded-full flex items-center justify-center flex-shrink-0" style="background:#284595;">
+                            <img src="/assets/icon-about-experience.svg" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
+                        </div>
+                        <p class="text-[#1a1a2e] font-bold text-[12px] sm:text-[13px] md:text-[15px] leading-snug">
+                            We Have More Than 25+ Years<br>of CCTV Services Experience
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- STQC Badge - Fixed Position -->
+                <div class="flex items-center gap-4 mb-5 sm:mb-6 md:mb-7 about-row-reveal" data-reveal-delay="450">
+                    <img src="/assets/stqc.jpg" alt="STQC Certified" class="h-14 sm:h-16 w-auto" />
+                    <div>
+                        <p class="text-[#1a2a3a] font-bold text-sm">Government Approved</p>
+                        <p class="text-gray-500 text-xs">STQC Quality Certified</p>
+                    </div>
+                </div>
+                
+                <a href="about.html" class="inline-flex items-center gap-2 sm:gap-3 text-white font-bold text-sm sm:text-base px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 hover:-translate-y-1 about-row-reveal cta-about" style="background:#284595;" data-reveal-delay="600">
+                    More About <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
 
-    <!-- ====== ABOUT US ====== -->
-    <section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-white overflow-hidden" id="about">
+    <!-- ====== BRAND LOGOS SECTION ====== -->
+    <section class="py-8 sm:py-10 md:py-12 bg-white border-y border-gray-100">
         <div class="container mx-auto px-4 sm:px-6">
-            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-                <div class="relative h-[350px] sm:h-[400px] md:h-[450px] about-img-wrap" data-reveal="left">
-                    <div
-                        class=" top-0 left-3 sm:left-5 md:left-8 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-10">
-                        <img src="/assets/about1.png" alt="CCTV Installation"
-                            class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
-                    </div>
-                    <div
-                        class="absolute top-14 sm:top-18 md:top-24 lg:top-28 left-20 sm:left-24 md:left-32 lg:left-36 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-[1]">
-                        <img src="/assets/about2.png" alt="Security Monitoring"
-                            class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
-                    </div>
-                    <div
-                        class="absolute bottom-3 sm:bottom-5 md:bottom-8 lg:bottom-10 left-3 sm:left-5 md:left-8 z-20 w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] md:w-[95px] md:h-[95px]">
-                        <div class="absolute inset-0 badge-ring-spin">
-                            <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                                <defs>
-                                    <path id="circleTextPath"
-                                        d="M 55,55 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
-                                </defs>
-                                <circle cx="55" cy="55" r="52" fill="white" stroke="#e5e5e5" stroke-width="1" />
-                                <text font-size="8.2" fill="#1a1a2e" font-weight="600" letter-spacing="2.3"
-                                    font-family="Segoe UI, sans-serif">
-                                    <textPath href="#circleTextPath">25+ Years of Experience • 25+ Years of Experience •
-                                    </textPath>
-                                </text>
-                            </svg>
-                        </div>
-                        <div class="absolute inset-0 flex items-center justify-center">
-                            <div class="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[42px] md:h-[42px] rounded-full flex items-center justify-center text-white text-[12px] sm:text-[14px] md:text-[16px]"
-                                style="background:#284595;">
-                                <i class="fas fa-video"></i>
-                            </div>
-                        </div>
+            <!-- heading (optional, keeps it clean) -->
+            <div class="text-center mb-6 sm:mb-8">
+                <span
+                    class="inline-block text-[#2B2A4C] text-[10px] sm:text-xs font-bold tracking-[3px] uppercase bg-[#EEE2DE] py-1.5 px-4 rounded-full">
+                    Trusted Partners
+                </span>
+                <h3 class="text-sm sm:text-base md:text-lg font-semibold text-[#1a2a3a] mt-2">
+                    Brands we work with
+                </h3>
+            </div>
+
+            <!-- 4 brand logos in a row -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 md:gap-12 max-w-4xl mx-auto">
+
+                <!-- Brand 1 -->
+                <div
+                    class="flex items-center justify-center p-3 sm:p-4 bg-gray-50 rounded-xl duration-300">
+                    <img src="/assets/brand-logo (1).png" alt="Brand 1"
+                        class="h-12 sm:h-14 md:h-16 w-auto object-contain hover:grayscale-0 transition-all duration-300" />
+                </div>
+
+                <!-- Brand 2 -->
+                <div
+                    class="flex items-center justify-center p-3 sm:p-4 bg-gray-50 rounded-xl  duration-300">
+                    <div class="flex items-center gap-0.5 font-bold tracking-tight">
+                        <span class="text-2xl sm:text-3xl md:text-4xl text-red-600 italic"
+                            style="font-family: 'Arial Black', sans-serif; font-style: italic;">HIK</span>
+                        <span class="text-2xl sm:text-3xl md:text-4xl text-gray-800 italic"
+                            style="font-family: 'Arial Black', sans-serif; font-style: italic;">VISION</span>
                     </div>
                 </div>
-                <div data-reveal="right" class="mt-6 sm:mt-0">
-                    <h2
-                        class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a2e] leading-tight mb-3 sm:mb-4">
-                        Protecting homes,<br>
-                        businesses and <span class="text-[#284595]">peace</span>
-                    </h2>
-                    <p
-                        class="text-gray-500 text-sm sm:text-base leading-relaxed mb-5 sm:mb-7 max-w-full lg:max-w-[440px]">
-                        We specialize in providing top-quality security and CCTV solutions to safeguard
-                        your home and business. Our mission is to ensure peace of mind with reliable,
-                        innovative, and tailored protection systems.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 bg-gray-50 rounded-xl p-3 sm:p-4 mb-4 sm:mb-5 about-row-reveal"
-                        data-reveal-delay="300">
-                        <img src="/assets/about3.png" alt="CCTV technician"
-                            class="w-full sm:w-[110px] md:w-[140px] h-[70px] sm:h-[85px] md:h-[95px] rounded-xl object-cover flex-shrink-0">
-                        <div class="flex items-center gap-3 sm:gap-4 w-full sm:w-auto">
-                            <div class="w-[35px] h-[35px] sm:w-[42px] sm:h-[42px] md:w-[48px] md:h-[48px] rounded-full flex items-center justify-center flex-shrink-0"
-                                style="background:#284595;">
-                                <img src="/assets/icon-about-experience.svg"
-                                    class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                            </div>
-                            <p class="text-[#1a1a2e] font-bold text-[12px] sm:text-[13px] md:text-[15px] leading-snug">
-                                We Have More Than 25+ Years<br>of CCTV Services Experience
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="border-gray-200 mb-4 sm:mb-5">
-                    <div class="flex items-center gap-3 sm:gap-4 mb-5 sm:mb-6 md:mb-7 about-row-reveal"
-                        data-reveal-delay="450">
-                        <div class="w-[35px] h-[35px] sm:w-[42px] sm:h-[42px] md:w-[48px] md:h-[48px] rounded-full flex items-center justify-center flex-shrink-0 phone-pulse"
-                            style="background:#284595;">
-                            <img src="/assets/icon-about-contact.svg" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                        </div>
-                        <div>
-                            <p class="text-gray-400 text-[9px] sm:text-xs md:text-sm mb-0.5">Call Directly 24/7</p>
-                            <p class="text-[#1a1a2e] font-extrabold text-sm sm:text-base md:text-xl tracking-wide">+(1)
-                                456 789 254</p>
-                        </div>
-                    </div>
-                    <a href="about.html"
-                        class="inline-flex items-center gap-2 sm:gap-3 text-white font-bold text-sm sm:text-base px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 hover:-translate-y-1 about-row-reveal cta-about"
-                        style="background:#284595;" data-reveal-delay="600">
-                        More About <i class="fas fa-arrow-right"></i>
-                    </a>
+
+                <!-- Brand 3 -->
+                <div
+                    class="flex items-center justify-center p-3 sm:p-4 bg-black rounded-xl duration-300">
+                    <img src="/assets/brand-logo3.png" alt="SECUREYE"
+                        class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
                 </div>
+
+                <!-- Brand 4 -->
+                <div
+                    class="flex items-center justify-center p-3 sm:p-4 bg-gray-50 rounded-xl duration-300">
+                    <img src="/assets/brand-logo4.png" alt="Brand 4"
+                        class="h-12 sm:h-14 md:h-16 w-auto object-contain  hover:grayscale-0 transition-all duration-300" />
+                </div>
+
             </div>
         </div>
     </section>
@@ -1282,7 +1426,7 @@
                 <!-- Card 1 -->
                 <div class="svc-card svc-reveal border border-[#284595]">
                     <div class="svc-img-wrap">
-                        <img src="/assets/service-image-1.jpg" alt="CCTV Installation">
+                        <img src="/assets/service-image-1.png" alt="CCTV Installation">
                         <div class="svc-overlay"></div>
                     </div>
                     <div class="svc-body">
@@ -1300,7 +1444,7 @@
                 <!-- Card 2 -->
                 <div class="svc-card svc-reveal border border-[#284595]">
                     <div class="svc-img-wrap">
-                        <img src="/assets/service-image-2.jpg" alt="24/7 Monitoring">
+                        <img src="/assets/service-image-3.png" alt="24/7 Monitoring">
                         <div class="svc-overlay"></div>
                     </div>
                     <div class="svc-body">
@@ -1375,7 +1519,7 @@
                 <!-- Card 6 -->
                 <div class="svc-card svc-reveal border border-[#284595]">
                     <div class="svc-img-wrap">
-                        <img src="/assets/service-image-6.jpg" alt="IT Infrastructure">
+                        <img src="/assets/service-image6.png" alt="IT Infrastructure">
                         <div class="svc-overlay"></div>
 
                     </div>
@@ -1636,128 +1780,144 @@
         </div>
     </section>
 
-     <!-- ====== FOOTER ====== -->
-<footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
-    <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
-        <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
-    </div>
-
-    <div class="container mx-auto px-3 sm:px-4 relative z-10">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
-            <!-- Brand Column -->
-            <div>
-                <div class="mb-3">
-                    <img src="/assets/cctv-logo-removebg.png" alt="Akanksha Enterprises logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
-                </div>
-                <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions
-                    provider delivering cutting-edge technology and infrastructure services to businesses across
-                    India.</p>
-                <div class="flex gap-2 sm:gap-3">
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-twitter text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-instagram text-xs sm:text-sm"></i>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Quick Links -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="index.html"
-                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
-                    <li><a href="about.html"
-                            class="text-[#234FAA]  text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
-                   
-                </ul>
-            </div>
-
-            <!-- Services -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
-                    
-                </ul>
-            </div>
-
-            <!-- Contact Info -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Contact Info
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-2 sm:space-y-3">
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91 9766491858 </span>
-                    </li>
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
-                    </li>
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop No 206, KamalRaj Parijat, Walke Nagar,
-Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
-                    </li>
-                </ul>
-            </div>
+    <!-- ====== FOOTER ====== -->
+    <footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
+        <!-- Background Image -->
+        <div class="absolute inset-0 z-0">
+            <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
         </div>
 
-        <!-- Bottom Bar -->
-        <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
-                &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights Reserved.
-            </p>
-            <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
-                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
-                <span class="w-px h-3 bg-white/10"></span>
-                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
-                
+        <div class="container mx-auto px-3 sm:px-4 relative z-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
+                <!-- Brand Column -->
+                <div>
+                    <div class="mb-3">
+                        <img src="/assets/cctv-logo-removebg.png" alt="Akanksha Enterprises logo"
+                            class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+                    </div>
+                    <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions
+                        provider delivering cutting-edge technology and infrastructure services to businesses across
+                        India.</p>
+                    <div class="flex gap-2 sm:gap-3">
+                        <a href="#"
+                            class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                            <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                            <i class="fab fa-twitter text-xs sm:text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                            <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
+                        </a>
+                        <a href="#"
+                            class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
+                            <i class="fab fa-instagram text-xs sm:text-sm"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                        Quick Links
+                        <span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </h4>
+                    <ul class="space-y-1.5 sm:space-y-2">
+                        <li><a href="index.html"
+                                class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
+                        <li><a href="about.html"
+                                class="text-[#234FAA]  text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
+                        <li><a href="services.html"
+                                class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
+
+                    </ul>
+                </div>
+
+
+
+                <!-- Services -->
+                <div>
+                    <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                        Quick Links
+                        <span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </h4>
+                    <ul class="space-y-1.5 sm:space-y-2">
+                        <li><a href="services.html"
+                                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
+                        <li><a href="services.html"
+                                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
+                        <li><a href="services.html"
+                                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
+                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
+
+                    </ul>
+                </div>
+
+                <!-- Contact Info -->
+                <div>
+                    <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                        Contact Info
+                        <span
+                            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    </h4>
+                    <ul class="space-y-2 sm:space-y-3">
+                        <li class="flex items-start gap-3 group">
+                            <div
+                                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
+                                <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
+                            </div>
+                            <span
+                                class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91
+                                9766491858 </span>
+                        </li>
+                        <li class="flex items-start gap-3 group">
+                            <div
+                                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
+                                <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
+                            </div>
+                            <span
+                                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
+                        </li>
+                        <li class="flex items-start gap-3 group">
+                            <div
+                                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
+                                <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
+                            </div>
+                            <span
+                                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop
+                                No 206, KamalRaj Parijat, Walke Nagar,
+                                Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Bottom Bar -->
+            <div
+                class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
+                <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
+                    &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights
+                    Reserved.
+                </p>
+                <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
+                    <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
+                    <span class="w-px h-3 bg-white/10"></span>
+                    <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
+
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
     <!-- ====== SCROLL TO TOP ====== -->
     <button id="scrollToTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>

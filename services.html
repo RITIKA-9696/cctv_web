@@ -766,38 +766,53 @@
 
   <!-- ====== HEADER ====== -->
     <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
-        <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
-            <div class="header-inner">
+        <div class="container mx-auto px-3 sm:px-4 max-w-6xl">
+            <div class="bg-white backdrop-blur-md rounded-full shadow-lg border border-white/40 px-4 md:px-6 py-3 flex items-center justify-between transition-all duration-300">
+                <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <img src="/assets/cctv-logo.jpeg" alt="CCTV Logo" class="header-logo" />
+                    <img src="/assets/cctv-logo.jpeg" alt="Akanksha CCTV" class="h-12 md:h-14 object-contain" />
                 </div>
-                <nav class="flex-1 flex justify-center">
-                    <ul class="hidden md:flex items-center gap-0.5 lg:gap-1.5">
-                        <li><a href="index.html" class="nav-link">Home</a></li>
-                        <li><a href="about.html" class="nav-link">About</a></li>
-                        <li><a href="services.html" class="nav-link active">Services</a></li>
-                        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-                        <li><a href="products.html" class="nav-link">Products</a></li>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex flex-1 justify-center">
+                    <ul class="flex items-center gap-1.5 xl:gap-4">
+                        <li><a href="index.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">Home</a></li>
+                        <li><a href="about.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">About</a></li>
+                        <li><a href="services.html" class="nav-link active bg-[#1A328D] text-white px-5 py-2 rounded-full">Services</a></li>
+                        <li><a href="solutions.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">Solutions</a></li>
+                        <li><a href="products.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">Products</a></li>
                     </ul>
                 </nav>
-                <div class="hidden md:block flex-shrink-0">
-                    <a href="contact.html" class="btn-contact">Contact Us</a>
+
+                <!-- Divider -->
+                <div class="hidden lg:block w-px h-6 bg-gray-400 mx-4 flex-shrink-0"></div>
+
+                <!-- Right Side -->
+                <div class="hidden lg:flex items-center gap-4 xl:gap-6 flex-shrink-0">
+                    <a href="tel:+918983039090" class="flex items-center gap-2 text-[#1A328D] font-semibold text-sm xl:text-base whitespace-nowrap">
+                        <i class="fas fa-phone-alt text-[#1A328D]"></i> +91 89830 39090
+                    </a>
+                    <a href="contact.html" class="btn-contact bg-[#1A328D] text-white px-5 xl:px-6 py-2.5 rounded-full font-medium hover:bg-[#152770] transition shadow-md whitespace-nowrap">Contact Us</a>
                 </div>
-                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+
+                <!-- Mobile Hamburger -->
+                <div class="lg:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
                     <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
                     <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
                     <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
                 </div>
             </div>
-            <div class="md:hidden hidden mt-2 px-2" id="mobileNav">
+            
+            <!-- Mobile Menu -->
+            <div class="lg:hidden hidden mt-2 px-2" id="mobileNav">
                 <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-5 py-4 border border-white/20">
                     <ul class="flex flex-col gap-2 text-center">
-                        <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-                        <li><a href="about.html" class="mobile-nav-link">About</a></li>
-                        <li><a href="services.html" class="mobile-nav-link active-mobile">Services</a></li>
-                        <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
-                        <li><a href="products.html" class="mobile-nav-link ">Products</a></li>
-                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center" style="border-radius:40px; padding:0.6rem;">Contact Us</a></li>
+                        <li><a href="index.html" class="mobile-nav-link text-gray-700">Home</a></li>
+                        <li><a href="about.html" class="mobile-nav-link text-gray-700">About</a></li>
+                        <li><a href="services.html" class="mobile-nav-link text-[#1A328D] font-bold">Services</a></li>
+                        <li><a href="solutions.html" class="mobile-nav-link text-gray-700">Solutions</a></li>
+                        <li><a href="products.html" class="mobile-nav-link text-gray-700">Products</a></li>
+                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center text-white bg-[#1A328D] rounded-full py-2">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -831,7 +846,7 @@
                 <i class="fas fa-cogs mr-2"></i> Our Services
             </span>
             <h2 class="instrument-serif text-2xl sm:text-3xl md:text-4xl text-[#1a2a3a] leading-tight">
-                Comprehensive <span class="text-[#1A328D]">IT Solutions</span>
+                Comprehensive <span class="text-[#1A328D]">CCTV Security Solutions</span>
             </h2>
             <p class="text-gray-500 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
                 End-to-end technology services designed to secure, streamline, and scale your business.
@@ -839,21 +854,21 @@
         </div>
 
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6 md:gap-7 max-w-[1200px] mx-auto">
-            <!-- Card 1 - IT Solutions -->
-            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('it-solutions')">
+            <!-- Card 1 - CCTV Security Solutions -->
+            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('cctv-security')">
                 <div class="svc-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="IT Solutions" />
+                    <img src="/assets/service-image-1.png" alt="CCTV Security Solutions" />
                     <div class="svc-overlay"></div>
                 </div>
                 <div class="svc-body">
-                    <h3 class="svc-title">IT Solutions</h3>
-                    <p class="svc-desc">Reliable IT support services including helpdesk, system maintenance, and proactive monitoring for business continuity.</p>
-                    <a href="#" class="svc-link" onclick="event.stopPropagation(); openOverlay('it-solutions')">Learn More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+                    <h3 class="svc-title">CCTV Security Solutions</h3>
+                    <p class="svc-desc">Reliable CCTV security services including installation, monitoring, and maintenance for comprehensive protection.</p>
+                    <a href="#" class="svc-link" onclick="event.stopPropagation(); openOverlay('cctv-security')">Learn More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
                 </div>
             </div>
 
             <!-- Card 2 - IT Health Checkup -->
-            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('it-health')">
+            <!-- <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('it-health')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" alt="IT Health Checkup" />
                     <div class="svc-overlay"></div>
@@ -863,12 +878,12 @@
                     <p class="svc-desc">Comprehensive IT assessments to identify vulnerabilities, optimize performance, and ensure your systems are running efficiently.</p>
                     <a href="#" class="svc-link" onclick="event.stopPropagation(); openOverlay('it-health')">Learn More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Card 3 - Software Licensing -->
             <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('software-licensing')">
                 <div class="svc-img-wrap">
-                    <img src="/assets/service-image-1.png" alt="Software Licensing" />
+                    <img src="/assets/about_us.jpg" alt="Software Licensing" />
                     <div class="svc-overlay"></div>
                 </div>
                 <div class="svc-body">
@@ -881,18 +896,18 @@
             <!-- Card 4 - Project Management -->
             <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('project-management')">
                 <div class="svc-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2069&auto=format&fit=crop" alt="Project Management" />
+                    <img src="/assets/service-image-3.png" alt="Project Management" />
                     <div class="svc-overlay"></div>
                 </div>
                 <div class="svc-body">
                     <h3 class="svc-title">Project Management</h3>
-                    <p class="svc-desc">Expert project management ensuring your IT initiatives are delivered on time, within budget, and with measurable results.</p>
+                    <p class="svc-desc">Expert project management ensuring your CCTV Security Solutions initiatives are delivered on time, within budget, and with measurable results.</p>
                     <a href="#" class="svc-link" onclick="event.stopPropagation(); openOverlay('project-management')">Learn More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
                 </div>
             </div>
 
             <!-- Card 5 - Computer Sales & Support -->
-            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('computer-sales')">
+            <!-- <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('computer-sales')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1535378917042-10a22c95931a?q=80&w=2070&auto=format&fit=crop" alt="Computer Sales" />
                     <div class="svc-overlay"></div>
@@ -902,12 +917,12 @@
                     <p class="svc-desc">High-performance computers, laptops, and peripherals with comprehensive warranty and after-sales support.</p>
                     <a href="#" class="svc-link" onclick="event.stopPropagation(); openOverlay('computer-sales')">Learn More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Card 6 - AMC -->
             <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('amc')">
                 <div class="svc-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop" alt="AMC" />
+                    <img src="/assets/service-image-3.jpg" alt="AMC" />
                     <div class="svc-overlay"></div>
                 </div>
                 <div class="svc-body">
@@ -918,7 +933,7 @@
             </div>
 
             <!-- Card 7 - Fire Alarm System -->
-            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('fire-alarm')">
+            <!-- <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('fire-alarm')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop" alt="Fire Alarm" />
                     <div class="svc-overlay"></div>
@@ -928,10 +943,10 @@
                     <p class="svc-desc">Safeguard your premises with advanced fire detection systems, smoke detectors, and emergency alert integration.</p>
                     <a href="#" class="svc-link" onclick="event.stopPropagation(); openOverlay('fire-alarm')">Learn More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Card 8 - Burglar Alarm System -->
-            <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('burglar-alarm')">
+            <!-- <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('burglar-alarm')">
                 <div class="svc-img-wrap">
                     <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop" alt="Burglar Alarm" />
                     <div class="svc-overlay"></div>
@@ -941,17 +956,17 @@
                     <p class="svc-desc">Prevent unauthorized access with motion sensors, door/window contacts, and 24/7 monitoring for complete security.</p>
                     <a href="#" class="svc-link" onclick="event.stopPropagation(); openOverlay('burglar-alarm')">Learn More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
                 </div>
-            </div>
+            </div> -->
 
             <!-- Card 9 - Remote Assistant -->
             <div class="svc-card svc-reveal border border-[#1AA1E1]" onclick="openOverlay('remote-assistant')">
                 <div class="svc-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop" alt="Remote Assistant" />
+                    <img src="/assets/service-image-4.jpg" alt="Remote Assistant" />
                     <div class="svc-overlay"></div>
                 </div>
                 <div class="svc-body">
                     <h3 class="svc-title">Remote Assistant</h3>
-                    <p class="svc-desc">Fast remote IT support with screen sharing, real-time troubleshooting, and quick resolution for your technical issues.</p>
+                    <p class="svc-desc">Fast remote CCTV Security Solutions support with screen sharing, real-time troubleshooting, and quick resolution for your technical issues.</p>
                     <a href="#" class="svc-link" onclick="event.stopPropagation(); openOverlay('remote-assistant')">Learn More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
                 </div>
             </div>
@@ -989,37 +1004,37 @@
 
  <!-- ====== CTA ====== -->
     <section
-        class="relative py-10 sm:py-14 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
+        class="relative py-12 sm:py-16 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
         <img src="/assets/contactbanner.jpg" alt="Contact Banner"
             class="absolute inset-0 w-full h-full object-cover object-center" />
         <div class="absolute inset-0 bg-black/60"></div>
         <div
-            class="absolute top-0 right-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-[#954C2E]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3">
+            class="absolute top-0 right-0 w-48 sm:w-64 md:w-96 h-48 sm:h-64 md:h-96 bg-[#B31312]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3">
         </div>
         <div
-            class="absolute bottom-0 left-0 w-48 sm:w-56 md:w-72 lg:w-80 h-48 sm:h-56 md:h-72 lg:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4">
+            class="absolute bottom-0 left-0 w-48 sm:w-64 md:w-80 h-48 sm:h-64 md:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4">
         </div>
-        <div class="container mx-auto px-3 sm:px-4 relative z-10">
+        <div class="container mx-auto px-4 relative z-10">
             <div
                 class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
                 <span
-                    class="inline-block px-3 sm:px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
-                    <i class="fas fa-rocket mr-1 sm:mr-2"></i> Let's Get Started
+                    class="inline-block px-4 py-1.5 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-4">
+                    <i class="fas fa-rocket mr-2"></i> Let's Get Started
                 </span>
-                <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-3 sm:mb-4 leading-tight">
-                    Ready to Transform Your <span class="text-white">IT Infrastructure</span>?
+                <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-4 leading-tight">
+                    Ready to Transform Your <span class="text-white">CCTV Security Infrastructure</span>?
                 </h2>
-                <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-5 sm:mb-6 md:mb-8 leading-relaxed">
+                <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-6 sm:mb-8 leading-relaxed">
                     Let's build a secure, scalable technology environment that keeps your <span
                         class="text-white font-semibold">business moving forward</span> with confidence and reliability.
                 </p>
-                <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4">
+                <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-4">
                     <a href="contact.html"
-                        class="bg-[#284595] text-white px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-[#191E32] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                        class="bg-[#284595] text-white px-5 sm:px-6 md:px-8 py-2 sm:py-2 rounded-lg font-semibold hover:bg-[#28AAE4] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-sm sm:text-base">
                         <i class="fas fa-paper-plane"></i> Get Started
                     </a>
                     <a href="services.html"
-                        class="bg-[#EEE2DE] backdrop-blur-sm border border-white/30 text-[#2B2A4C] px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                        class="bg-[#E7EAEE] backdrop-blur-sm border border-white/30 text-[#28AAE4] px-5 sm:px-6 md:px-8 py-2 sm:py-2 rounded-lg font-semibold hover:bg-white transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-sm sm:text-base">
                         <i class="fas fa-arrow-right"></i> Explore Services
                     </a>
                 </div>
@@ -1027,128 +1042,92 @@
         </div>
     </section>
 
-  <!-- ====== FOOTER ====== -->
-<footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
-    <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
-        <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
-    </div>
-
-    <div class="container mx-auto px-3 sm:px-4 relative z-10">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
-            <!-- Brand Column -->
-            <div>
-                <div class="mb-3">
-                    <img src="/assets/cctv-logo-removebg.png" alt="Akanksha Enterprises logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+<!-- ====== FOOTER ====== -->
+    <footer class="relative text-white pt-4 pb-1 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
+        </div>
+        <div class="container mx-auto px-3 sm:px-4 relative z-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-2">
+                <!-- Column 1 -->
+                <div>
+                    <div class="mb-1.5">
+                        <img src="/assets/cctv-logo-removebg.png" alt="Akanksha Enterprises logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+                    </div>
+                    <p class="text-blue-800/80 text-[10px] sm:text-xs mb-1.5 leading-snug font-light">Leading CCTV Security solutions provider across India.</p>
+                    <div class="flex gap-1.5">
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-facebook-f text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-twitter text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-linkedin-in text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-instagram text-[9px] sm:text-[10px]"></i></a>
+                    </div>
                 </div>
-                <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions
-                    provider delivering cutting-edge technology and infrastructure services to businesses across
-                    India.</p>
-                <div class="flex gap-2 sm:gap-3">
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-twitter text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-instagram text-xs sm:text-sm"></i>
-                    </a>
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
+                        Quick Links
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
+                    </h4>
+                    <ul class="space-y-0.5">
+                        <li><a href="index.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Home</a></li>
+                        <li><a href="about.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> About</a></li>
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Services</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
+                        Our Offerings
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
+                    </h4>
+                    <ul class="space-y-0.5">
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Solutions</a></li>
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Products</a></li>
+                        <li><a href="contact.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
+                        Contact Info
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
+                    </h4>
+                    <ul class="space-y-1">
+                        <li class="flex items-center gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-phone text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="tel:+919766491858" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">+91 9766491858</a>
+                            <span class="text-[#234FAA] text-[10px] sm:text-[11px]">/</span>
+                            <a href="tel:+918983039090" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">+91 8983039090</a>
+                        </li>
+                        <li class="flex items-center gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-envelope text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="mailto:info@akankshaent.com" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">info@akankshaent.com</a>
+                        </li>
+                        <li class="flex items-start gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 mt-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-map-marker-alt text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="https://maps.google.com/?q=Shop+No+206+KamalRaj+Parijat+Walke+Nagar+Pune+Alandi+Road+Dighi+Pune+MH+411015" target="_blank" rel="noopener noreferrer" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium leading-tight transition-all duration-300 hover:text-[#1AA1E1] hover:underline">Shop 206, KamalRaj Parijat, Dighi, Pune - 411015</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Quick Links -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="index.html"
-                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
-                    <li><a href="about.html"
-                            class="text-[#234FAA]  text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
-                   
-                </ul>
-            </div>
-
-            <!-- Services -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
-                    
-                </ul>
-            </div>
-
-            <!-- Contact Info -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Contact Info
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-2 sm:space-y-3">
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91 9766491858 </span>
-                    </li>
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
-                    </li>
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop No 206, KamalRaj Parijat, Walke Nagar,
-Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
-                    </li>
-                </ul>
+            <!-- Copyright Bar -->
+            <div class="border-t border-black/20 pt-1.5">
+                <div class="flex flex-wrap items-center justify-between gap-1">
+                    <p class="text-blue-800 text-[8px] sm:text-[9px] md:text-[10px] whitespace-nowrap">
+                        &copy; 2026 <span class="text-white font-semibold">Akanksha Enterprises</span>. All Rights Reserved.
+                    </p>
+                    <div class="flex items-center gap-1.5 sm:gap-2 text-[8px] sm:text-[9px]">
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Privacy Policy</a>
+                        <span class="w-px h-2.5 bg-white/10"></span>
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Terms of Service</a>
+                        <span class="w-px h-2.5 bg-white/10"></span>
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Sitemap</a>
+                    </div>
+                </div>
             </div>
         </div>
-
-        <!-- Bottom Bar -->
-        <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
-                &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights Reserved.
-            </p>
-            <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
-                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
-                <span class="w-px h-3 bg-white/10"></span>
-                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
-                
-            </div>
-        </div>
-    </div>
-</footer>
+    </footer>
 
 <!-- ====== SCROLL TO TOP ====== -->
 <button id="scrollToTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
@@ -1156,32 +1135,32 @@ Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
 <script>
     // ===== SERVICE DATA =====
     const serviceData = {
-        'it-solutions': {
-            title: 'IT Solutions',
-            badge: 'Infrastructure',
-            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop',
-            desc: 'End-to-end IT solutions including helpdesk support, system maintenance, network monitoring, and proactive issue resolution to ensure your business runs smoothly without interruptions.',
-            features: ['24/7 Helpdesk Support', 'System Maintenance', 'Network Monitoring', 'Proactive Issue Resolution']
+        'cctv-security': {
+            title: 'CCTV Security Solutions',
+            badge: 'Security',
+            image: '/assets/service-image-1.png',
+            desc: 'Comprehensive CCTV security solutions including installation, monitoring, and maintenance for complete protection.',
+            features: ['24/7 Monitoring', 'System Maintenance', 'Remote Access', 'Proactive Issue Resolution']
         },
-        'it-health': {
-            title: 'IT Health Checkup',
-            badge: 'Assessment',
-            image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop',
-            desc: 'Comprehensive IT assessments that identify system vulnerabilities, performance bottlenecks, and security gaps. Get actionable recommendations to optimize your IT infrastructure.',
-            features: ['Vulnerability Assessment', 'Performance Audit', 'Security Gap Analysis', 'Actionable Recommendations']
-        },
+        // 'it-health': {
+        //     title: 'IT Health Checkup',
+        //     badge: 'Assessment',
+        //     image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop',
+        //     desc: 'Comprehensive IT assessments that identify system vulnerabilities, performance bottlenecks, and security gaps. Get actionable recommendations to optimize your IT infrastructure.',
+        //     features: ['Vulnerability Assessment', 'Performance Audit', 'Security Gap Analysis', 'Actionable Recommendations']
+        // },
         'software-licensing': {
             title: 'Software Licensing',
             badge: 'Compliance',
-            image: '/assets/service-image-1.png',
+            image: '/assets/about_us.jpg',
             desc: 'Genuine software licensing solutions with volume discounts, compliance management, and automated renewal tracking. Stay compliant and save costs with expert licensing guidance.',
             features: ['Volume Discounts', 'Compliance Management', 'Renewal Tracking', 'Licensing Audits']
         },
         'project-management': {
             title: 'Project Management',
             badge: 'Delivery',
-            image: 'https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?q=80&w=2069&auto=format&fit=crop',
-            desc: 'Expert project management services ensuring your IT initiatives are delivered on time, within budget, and with measurable results. From planning to execution, we handle it all.',
+            image: '/assets/service-image-3.png',
+            desc: 'Expert project management services ensuring your CCTV Security Solutions initiatives are delivered on time, within budget, and with measurable results. From planning to execution, we handle it all.',
             features: ['On-Time Delivery', 'Budget Management', 'Risk Mitigation', 'Stakeholder Communication']
         },
         'computer-sales': {
@@ -1194,29 +1173,29 @@ Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
         'amc': {
             title: 'AMC - Annual Maintenance Contract',
             badge: 'Maintenance',
-            image: 'https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2034&auto=format&fit=crop',
-            desc: 'Proactive maintenance contracts with scheduled visits, priority support, discounted repair services, and guaranteed response times. Protect your IT assets with reliable AMC plans.',
+            image: '/assets/service-image-3.jpg',
+            desc: 'Proactive maintenance contracts with scheduled visits, priority support, discounted repair services, and guaranteed response times. Protect your CCTV Security Solutions with reliable AMC plans.',
             features: ['Scheduled Maintenance', 'Priority Support', 'Discounted Repairs', 'Guaranteed Response Times']
         },
-        'fire-alarm': {
-            title: 'Fire Alarm System',
-            badge: 'Safety',
-            image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop',
-            desc: 'Advanced fire detection and alarm systems with smoke detectors, heat sensors, and emergency alert integration. Safeguard your premises with reliable, code-compliant solutions.',
-            features: ['Smoke Detectors', 'Heat Sensors', 'Emergency Alerts', 'Code Compliance']
-        },
-        'burglar-alarm': {
-            title: 'Burglar Alarm System',
-            badge: 'Security',
-            image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop',
-            desc: 'Comprehensive security systems with motion sensors, door/window contacts, and 24/7 monitoring. Prevent unauthorized access and protect your property with advanced alarm solutions.',
-            features: ['Motion Sensors', 'Door/Window Contacts', '24/7 Monitoring', 'Remote Access Control']
-        },
+        // 'fire-alarm': {
+        //     title: 'Fire Alarm System',
+        //     badge: 'Safety',
+        //     image: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=2070&auto=format&fit=crop',
+        //     desc: 'Advanced fire detection and alarm systems with smoke detectors, heat sensors, and emergency alert integration. Safeguard your premises with reliable, code-compliant solutions.',
+        //     features: ['Smoke Detectors', 'Heat Sensors', 'Emergency Alerts', 'Code Compliance']
+        // },
+        // 'burglar-alarm': {
+        //     title: 'Burglar Alarm System',
+        //     badge: 'Security',
+        //     image: 'https://images.unsplash.com/photo-1544197150-b99a580bb7a8?q=80&w=2070&auto=format&fit=crop',
+        //     desc: 'Comprehensive security systems with motion sensors, door/window contacts, and 24/7 monitoring. Prevent unauthorized access and protect your property with advanced alarm solutions.',
+        //     features: ['Motion Sensors', 'Door/Window Contacts', '24/7 Monitoring', 'Remote Access Control']
+        // },
         'remote-assistant': {
             title: 'Remote Assistant',
             badge: 'Support',
-            image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop',
-            desc: 'Fast remote IT support with screen sharing, real-time troubleshooting, and quick resolution for all your technical issues. Get expert assistance without waiting for on-site visits.',
+            image: '/assets/service-image-4.jpg',
+            desc: 'Fast remote CCTV Security Solutions support with screen sharing, real-time troubleshooting, and quick resolution for all your technical issues. Get expert assistance without waiting for on-site visits.',
             features: ['Screen Sharing', 'Real-Time Troubleshooting', 'Quick Resolution', 'Expert Assistance']
         }
     };

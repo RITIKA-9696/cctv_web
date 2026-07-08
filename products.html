@@ -521,46 +521,60 @@
 
 <body>
 
-  <!-- ====== HEADER ====== -->
-  <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
-    <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
-      <div class="header-inner">
-        <div class="flex-shrink-0">
-          <img src="/assets/cctv-logo.jpeg" alt="CCTV Logo" class="header-logo" />
+   <!-- ====== HEADER ====== -->
+    <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
+        <div class="container mx-auto px-3 sm:px-4 max-w-6xl">
+            <div class="bg-white backdrop-blur-md rounded-full shadow-lg border border-white/40 px-4 md:px-6 py-3 flex items-center justify-between transition-all duration-300">
+                <!-- Logo -->
+                <div class="flex-shrink-0">
+                    <img src="/assets/cctv-logo.jpeg" alt="Akanksha CCTV" class="h-12 md:h-14 object-contain" />
+                </div>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex flex-1 justify-center">
+                    <ul class="flex items-center gap-1.5 xl:gap-4">
+                        <li><a href="index.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">Home</a></li>
+                        <li><a href="about.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">About</a></li>
+                        <li><a href="services.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">Services</a></li>
+                        <li><a href="solutions.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">Solutions</a></li>
+                        <li><a href="products.html" class="nav-link active bg-[#1A328D] text-white px-5 py-2 rounded-full">Products</a></li>
+                    </ul>
+                </nav>
+
+                <!-- Divider -->
+                <div class="hidden lg:block w-px h-6 bg-gray-400 mx-4 flex-shrink-0"></div>
+
+                <!-- Right Side -->
+                <div class="hidden lg:flex items-center gap-4 xl:gap-6 flex-shrink-0">
+                    <a href="tel:+918983039090" class="flex items-center gap-2 text-[#1A328D] font-semibold text-sm xl:text-base whitespace-nowrap">
+                        <i class="fas fa-phone-alt text-[#1A328D]"></i> +91 89830 39090
+                    </a>
+                    <a href="contact.html" class="btn-contact bg-[#1A328D] text-white px-5 xl:px-6 py-2.5 rounded-full font-medium hover:bg-[#152770] transition shadow-md whitespace-nowrap">Contact Us</a>
+                </div>
+
+                <!-- Mobile Hamburger -->
+                <div class="lg:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                    <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div class="lg:hidden hidden mt-2 px-2" id="mobileNav">
+                <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-5 py-4 border border-white/20">
+                    <ul class="flex flex-col gap-2 text-center">
+                        <li><a href="index.html" class="mobile-nav-link text-gray-700">Home</a></li>
+                        <li><a href="about.html" class="mobile-nav-link text-gray-700">About</a></li>
+                        <li><a href="services.html" class="mobile-nav-link text-gray-700">Services</a></li>
+                        <li><a href="solutions.html" class="mobile-nav-link text-gray-700">Solutions</a></li>
+                        <li><a href="products.html" class="mobile-nav-link text-[#1A328D] font-bold">Products</a></li>
+                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center text-white bg-[#1A328D] rounded-full py-2">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <nav class="flex-1 flex justify-center">
-          <ul class="hidden md:flex items-center gap-0.5 lg:gap-1.5">
-            <li><a href="index.html" class="nav-link">Home</a></li>
-            <li><a href="about.html" class="nav-link">About</a></li>
-            <li><a href="services.html" class="nav-link">Services</a></li>
-            <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-            <li><a href="products.html" class="nav-link active">Products</a></li>
-          </ul>
-        </nav>
-        <div class="hidden md:block flex-shrink-0">
-          <a href="contact.html" class="btn-contact">Contact Us</a>
-        </div>
-        <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
-          <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
-          <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
-          <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
-        </div>
-      </div>
-      <div class="md:hidden hidden mt-2 px-2" id="mobileNav">
-        <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-5 py-4 border border-white/20">
-          <ul class="flex flex-col gap-2 text-center">
-            <li><a href="index.html" class="mobile-nav-link">Home</a></li>
-            <li><a href="about.html" class="mobile-nav-link">About</a></li>
-            <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-            <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
-            <li><a href="products.html" class="mobile-nav-link active-mobile">Products</a></li>
-            <li class="mt-2"><a href="contact.html" class="btn-contact block text-center"
-                style="border-radius:40px; padding:0.6rem;">Contact Us</a></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </header>
+    </header>
 
   <!-- HERO -->
   <section class="relative text-white overflow-hidden">
@@ -621,129 +635,92 @@
     </div>
   </section>
 
-  <!-- ====== FOOTER ====== -->
-  <footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
-    <div class="absolute inset-0 z-0">
-      <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
-      <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
-    </div>
-
-    <div class="container mx-auto px-3 sm:px-4 relative z-10">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
-        <div>
-          <div class="mb-3">
-            <img src="/assets/cctv-logo-removebg.png" alt="akanksha logo"
-              class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
-          </div>
-          <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions provider
-            delivering cutting-edge technology and infrastructure services to businesses across India.</p>
-          <div class="flex gap-2 sm:gap-3">
-            <a href="#"
-              class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-              <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
-            </a>
-            <a href="#"
-              class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-              <i class="fab fa-twitter text-xs sm:text-sm"></i>
-            </a>
-            <a href="#"
-              class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-              <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
-            </a>
-            <a href="#"
-              class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-              <i class="fab fa-instagram text-xs sm:text-sm"></i>
-            </a>
-          </div>
+<!-- ====== FOOTER ====== -->
+    <footer class="relative text-white pt-4 pb-1 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
         </div>
-
-        <div>
-          <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-            Quick Links
-            <span
-              class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-          </h4>
-          <ul class="space-y-1.5 sm:space-y-2">
-            <li><a href="index.html"
-                class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
-            <li><a href="about.html"
-                class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
-            <li><a href="services.html"
-                class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
-          </ul>
+        <div class="container mx-auto px-3 sm:px-4 relative z-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-2">
+                <!-- Column 1 -->
+                <div>
+                    <div class="mb-1.5">
+                        <img src="/assets/cctv-logo-removebg.png" alt="Akanksha Enterprises logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+                    </div>
+                    <p class="text-blue-800/80 text-[10px] sm:text-xs mb-1.5 leading-snug font-light">Leading CCTV Security solutions provider across India.</p>
+                    <div class="flex gap-1.5">
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-facebook-f text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-twitter text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-linkedin-in text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-instagram text-[9px] sm:text-[10px]"></i></a>
+                    </div>
+                </div>
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
+                        Quick Links
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
+                    </h4>
+                    <ul class="space-y-0.5">
+                        <li><a href="index.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Home</a></li>
+                        <li><a href="about.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> About</a></li>
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Services</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
+                        Our Offerings
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
+                    </h4>
+                    <ul class="space-y-0.5">
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Solutions</a></li>
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Products</a></li>
+                        <li><a href="contact.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
+                        Contact Info
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
+                    </h4>
+                    <ul class="space-y-1">
+                        <li class="flex items-center gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-phone text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="tel:+919766491858" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">+91 9766491858</a>
+                            <span class="text-[#234FAA] text-[10px] sm:text-[11px]">/</span>
+                            <a href="tel:+918983039090" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">+91 8983039090</a>
+                        </li>
+                        <li class="flex items-center gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-envelope text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="mailto:info@akankshaent.com" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">info@akankshaent.com</a>
+                        </li>
+                        <li class="flex items-start gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 mt-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-map-marker-alt text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="https://maps.google.com/?q=Shop+No+206+KamalRaj+Parijat+Walke+Nagar+Pune+Alandi+Road+Dighi+Pune+MH+411015" target="_blank" rel="noopener noreferrer" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium leading-tight transition-all duration-300 hover:text-[#1AA1E1] hover:underline">Shop 206, KamalRaj Parijat, Dighi, Pune - 411015</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Copyright Bar -->
+            <div class="border-t border-black/20 pt-1.5">
+                <div class="flex flex-wrap items-center justify-between gap-1">
+                    <p class="text-blue-800 text-[8px] sm:text-[9px] md:text-[10px] whitespace-nowrap">
+                        &copy; 2026 <span class="text-white font-semibold">Akanksha Enterprises</span>. All Rights Reserved.
+                    </p>
+                    <div class="flex items-center gap-1.5 sm:gap-2 text-[8px] sm:text-[9px]">
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Privacy Policy</a>
+                        <span class="w-px h-2.5 bg-white/10"></span>
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Terms of Service</a>
+                        <span class="w-px h-2.5 bg-white/10"></span>
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Sitemap</a>
+                    </div>
+                </div>
+            </div>
         </div>
-
-        <div>
-          <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-            Quick Links
-            <span
-              class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-          </h4>
-          <ul class="space-y-1.5 sm:space-y-2">
-            <li><a href="solutions.html"
-                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
-            <li><a href="products.html"
-                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
-            <li><a href="contact.html"
-                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
-          </ul>
-        </div>
-
-        <div>
-          <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-            Contact Info
-            <span
-              class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-          </h4>
-          <ul class="space-y-2 sm:space-y-3">
-            <li class="flex items-start gap-3 group">
-              <div
-                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
-              </div>
-              <span
-                class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91
-                9766491858</span>
-            </li>
-            <li class="flex items-start gap-3 group">
-              <div
-                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
-              </div>
-              <span
-                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
-            </li>
-            <li class="flex items-start gap-3 group">
-              <div
-                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
-              </div>
-              <span
-                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop
-                No 206, KamalRaj Parijat, Walke Nagar, Pune-Alandi Road, Dighi, Pune, MH 411015.</span>
-            </li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-        <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
-          &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights Reserved.
-        </p>
-        <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
-          <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
-          <span class="w-px h-3 bg-white/10"></span>
-          <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
-        </div>
-      </div>
-    </div>
-  </footer>
+    </footer>
 
   <!-- SCROLL TOP -->
   <button id="scrollToTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>

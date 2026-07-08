@@ -23,9 +23,10 @@
         body {
             font-family: 'Inter', sans-serif;
             background: #0b0f1a;
+            overflow-x: hidden;
         }
 
-        /* ----- Hero Section ----- */
+        /* ----- Hero Section (Video) ----- */
         .hero-parallax {
             position: relative;
             width: 100%;
@@ -34,12 +35,12 @@
             background: #0b0f1a;
         }
 
-        /* Video Background */
         .hero-video-bg {
             position: absolute;
             inset: 0;
             z-index: 0;
             overflow: hidden;
+            will-change: transform;
         }
 
         .hero-video-bg video {
@@ -58,7 +59,6 @@
             z-index: 1;
         }
 
-        /* Content */
         .hero-content {
             position: relative;
             z-index: 2;
@@ -66,27 +66,24 @@
             min-height: 100vh;
             display: flex;
             align-items: center;
-            padding: 2rem 1.5rem;
+            padding: 6rem 1.5rem 4rem;
             will-change: transform;
-            transform: translateY(0px);
         }
 
         .hero-grid {
             width: 100%;
             max-width: 1280px;
             margin: 0 auto;
-            margin-top: 2rem;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 2rem;
+            gap: 3rem;
             align-items: center;
         }
 
-        /* Left Text */
         .hero-text h1 {
             font-family: 'Instrument Serif', serif;
             font-weight: 400;
-            font-size: clamp(2rem, 6vw, 5.5rem);
+            font-size: clamp(2.2rem, 5vw, 5.5rem);
             line-height: 1.1;
             color: #fff;
         }
@@ -98,11 +95,11 @@
 
         .hero-text p {
             font-family: 'Inter', sans-serif;
-            font-size: clamp(0.85rem, 1.3vw, 1.4rem);
+            font-size: clamp(0.9rem, 1.2vw, 1.4rem);
             color: rgba(255, 255, 255, 0.85);
-            margin-top: 1rem;
-            max-width: 500px;
-            line-height: 1.6;
+            margin-top: 1.2rem;
+            max-width: 520px;
+            line-height: 1.7;
             font-weight: 300;
             letter-spacing: 0.3px;
         }
@@ -113,31 +110,31 @@
         }
 
         .btn-group {
-            margin-top: 1.5rem;
+            margin-top: 1.8rem;
             display: flex;
             flex-wrap: wrap;
-            gap: 0.8rem;
+            gap: 1rem;
         }
 
         .btn-primary {
             background: #284595;
             color: #fff;
-            padding: 0.7rem 1.5rem;
+            padding: 0.8rem 1.8rem;
             border-radius: 40px;
             font-weight: 600;
             text-decoration: none;
             transition: 0.25s ease;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             font-family: 'Inter', sans-serif;
             font-size: clamp(0.8rem, 0.9vw, 1rem);
         }
 
         .btn-primary:hover {
-            background: #284595;
-            transform: scale(1.02);
-            box-shadow: 0 12px 28px #284595;
+            background: #1d3570;
+            transform: scale(1.03);
+            box-shadow: 0 12px 28px rgba(40, 69, 149, 0.4);
         }
 
         .btn-outline {
@@ -145,14 +142,14 @@
             backdrop-filter: blur(6px);
             border: 1px solid rgba(255, 255, 255, 0.2);
             color: #fff;
-            padding: 0.7rem 1.5rem;
+            padding: 0.8rem 1.8rem;
             border-radius: 40px;
             font-weight: 600;
             text-decoration: none;
             transition: 0.25s ease;
             display: inline-flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.6rem;
             font-family: 'Inter', sans-serif;
             font-size: clamp(0.8rem, 0.9vw, 1rem);
         }
@@ -160,10 +157,9 @@
         .btn-outline:hover {
             background: rgba(255, 255, 255, 0.18);
             border-color: rgba(255, 255, 255, 0.5);
-            transform: scale(1.02);
+            transform: scale(1.03);
         }
 
-        /* Right Image */
         .hero-image-card {
             display: flex;
             justify-content: center;
@@ -173,75 +169,60 @@
 
         .hero-image-card img {
             width: 100%;
-            max-width: 480px;
+            max-width: 500px;
             height: auto;
             border-radius: 28px;
             transition: transform 0.4s ease;
             display: block;
-            position: relative;
-            z-index: 2;
         }
 
         .hero-image-card img:hover {
-            transform: scale(1.01) translateY(-6px);
+            transform: scale(1.02) translateY(-6px);
         }
 
         /* ===== BEST SERVICES BOX ===== */
         .best-services-wrapper {
             position: relative;
             z-index: 5;
-            margin-top: -90px;
-            margin-bottom: -40px;
+            margin-top: -80px;
+            margin-bottom: -30px;
             padding: 0 1.5rem;
         }
 
         .best-services-box {
-            max-width: 900px;
-            margin: 0;
-            margin-left: 0;
+            max-width: 950px;
+            margin: 0 auto;
             background: #ffffff;
             border: 1px solid #284595;
-            box-shadow: 0px 5px 50px 2px #00000012;
+            box-shadow: 0px 5px 50px 2px rgba(0, 0, 0, 0.07);
             border-radius: 30px;
             display: flex;
             flex-wrap: wrap;
-            gap: 25px;
-            padding: 30px 40px;
+            gap: 20px;
+            padding: 28px 40px;
             position: relative;
             z-index: 5;
         }
 
         .service-item {
-            flex: 0 0 calc(33.333% - 17px);
-            min-width: 0;
-            max-width: calc(33.333% - 17px);
+            flex: 1 1 calc(33.333% - 14px);
+            min-width: 180px;
             display: flex;
             align-items: center;
-            gap: 12px;
+            gap: 14px;
             position: relative;
         }
 
-        /* Vertical divider between columns */
-        .service-item:not(:last-child)::after {
-            content: '';
-            position: absolute;
-            right: -12px;
-            top: 10%;
-            height: 80%;
-            width: 1px;
-            background: #e5e7eb;
-        }
-
         .service-item .icon-wrap {
-            width: 70px;
-            height: 70px;
+            width: 65px;
+            height: 65px;
             border-radius: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
             flex-shrink: 0;
-            color: #284595;
-            font-size: 1.2rem;
+            background: #f8f6f4;
+            padding: 10px;
         }
 
         .service-item .icon-wrap img {
@@ -267,34 +248,18 @@
             line-height: 1.3;
         }
 
-        /* ----- HEADER ----- */
+        /* ===== HEADER ===== */
         #mainHeader {
             font-family: 'Inter', sans-serif;
         }
 
-        .brand-name {
-            font-family: 'Instrument Serif', serif;
-            font-weight: 400;
-            font-size: 1.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .brand-name .highlight {
-            color: #284595;
-        }
-
-        .brand-name .light {
-            color: #ffffff;
-        }
-
         .header-logo {
-            height: 40px;
+            height: 50px;
             width: auto;
             display: block;
             object-fit: contain;
         }
 
-        /* Nav link with underline hover effect */
         .nav-link {
             font-family: 'Inter', sans-serif;
             font-weight: 500;
@@ -360,7 +325,7 @@
         .btn-contact:hover {
             background: #bbcee7;
             transform: translateY(-2px);
-            box-shadow: 0 8px 20px #c0c0c1;
+            box-shadow: 0 8px 20px rgba(192, 192, 193, 0.5);
         }
 
         .mobile-nav-link {
@@ -372,7 +337,6 @@
             display: block;
             transition: color 0.2s;
             text-decoration: none;
-            position: relative;
         }
 
         .mobile-nav-link:hover {
@@ -402,40 +366,21 @@
 
         /* About Section */
         .badge-ring-spin {
-            animation: badgeSpin 8s linear infinite;
+            animation: badgeSpin 10s linear infinite;
         }
 
         @keyframes badgeSpin {
             from {
                 transform: rotate(0deg);
             }
-
             to {
                 transform: rotate(360deg);
             }
         }
 
-        .phone-pulse {
-            animation: phonePulse 2.2s ease-in-out infinite;
-        }
-
-        @keyframes phonePulse {
-
-            0%,
-            100% {
-                transform: scale(1);
-                box-shadow: 0 0 0 0 rgba(204, 28, 28, 0.45);
-            }
-
-            50% {
-                transform: scale(1.06);
-                box-shadow: 0 0 0 10px rgba(204, 28, 28, 0);
-            }
-        }
-
         .cta-about:hover {
-            background: #284595 !important;
-            box-shadow: 0 8px 24px #284595;
+            background: #1d3570 !important;
+            box-shadow: 0 8px 24px rgba(40, 69, 149, 0.4);
         }
 
         [data-reveal="left"] {
@@ -471,27 +416,23 @@
         .svc-card {
             background: #fff;
             border-radius: 20px;
-            overflow: visible;
+            overflow: hidden;
             position: relative;
-            padding-bottom: 30px;
             cursor: pointer;
-
             transition: transform 0.5s cubic-bezier(0.23, 1, 0.32, 1),
                 box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             will-change: transform;
-            transform: translateY(0);
         }
 
         .svc-card:hover {
             transform: translateY(-12px);
-
+            box-shadow: 0 24px 56px rgba(0, 0, 0, 0.12);
         }
 
         .svc-img-wrap {
             position: relative;
-            border-radius: 16px 16px 0 0;
             overflow: hidden;
-            height: 230px;
+            height: 220px;
         }
 
         .svc-img-wrap img {
@@ -512,54 +453,16 @@
             background: rgba(10, 10, 30, 0);
             transition: background 0.5s cubic-bezier(0.23, 1, 0.32, 1);
             pointer-events: none;
-            z-index: 1;
         }
 
         .svc-card:hover .svc-overlay {
             background: rgba(10, 10, 30, 0.25);
         }
 
-        .svc-icon {
-            position: relative;
-            background: #284595;
-            border-radius: 50%;
-            width: 70px;
-            height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto;
-            margin-top: -35px;
-            margin-bottom: 20px;
-            border: 4px solid #fff;
-            box-shadow: 0 6px 24px #284595;
-            transition: transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-                box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1),
-                background 0.4s ease;
-            z-index: 5;
-        }
-
-        .svc-icon svg {
-            transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-
-        .svc-card:hover .svc-icon {
-            transform: scale(1.15) rotate(4deg);
-            box-shadow: 0 12px 40px #284595;
-            background: #284595;
-        }
-
-        .svc-card:hover .svc-icon svg {
-            transform: scale(1.1);
-        }
-
         .svc-body {
-            padding: 10px 20px 20px;
+            padding: 20px 24px 28px;
             text-align: center;
-            position: relative;
-            z-index: 1;
             background: #fff;
-            border-radius: 0 0 20px 20px;
         }
 
         .svc-title {
@@ -575,7 +478,7 @@
         }
 
         .svc-desc {
-            font-size: 13px;
+            font-size: 13.5px;
             color: #777;
             line-height: 1.7;
             margin-bottom: 18px;
@@ -595,15 +498,12 @@
             font-weight: 700;
             text-decoration: none;
             transition: gap 0.4s cubic-bezier(0.23, 1, 0.32, 1),
-                color 0.3s ease,
-                transform 0.4s cubic-bezier(0.23, 1, 0.32, 1);
-            transform: translateX(0);
+                color 0.3s ease;
         }
 
         .svc-link:hover {
             gap: 18px;
-            color: #284595;
-            transform: translateX(4px);
+            color: #1d3570;
         }
 
         .svc-arrow {
@@ -616,18 +516,15 @@
             justify-content: center;
             flex-shrink: 0;
             transition: background 0.4s ease,
-                transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1),
-                box-shadow 0.4s ease;
-            box-shadow: 0 2px 8px #284595;
+                transform 0.5s cubic-bezier(0.34, 1.56, 0.64, 1);
+            box-shadow: 0 2px 8px rgba(40, 69, 149, 0.3);
         }
 
         .svc-link:hover .svc-arrow {
-            background: #284595;
+            background: #1d3570;
             transform: scale(1.15) rotate(-8deg);
-            box-shadow: 0 4px 16px #284595;
         }
 
-        /* Image shine effect on hover */
         .svc-img-wrap::after {
             content: '';
             position: absolute;
@@ -649,7 +546,6 @@
             transform: translateX(100%) rotate(45deg);
         }
 
-        /* Smooth Scroll Reveal */
         .svc-reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -663,30 +559,12 @@
             transform: translateY(0);
         }
 
-        /* Staggered reveal delays */
-        .svc-reveal:nth-child(1) {
-            --delay: 0ms;
-        }
-
-        .svc-reveal:nth-child(2) {
-            --delay: 100ms;
-        }
-
-        .svc-reveal:nth-child(3) {
-            --delay: 200ms;
-        }
-
-        .svc-reveal:nth-child(4) {
-            --delay: 300ms;
-        }
-
-        .svc-reveal:nth-child(5) {
-            --delay: 400ms;
-        }
-
-        .svc-reveal:nth-child(6) {
-            --delay: 500ms;
-        }
+        .svc-reveal:nth-child(1) { --delay: 0ms; }
+        .svc-reveal:nth-child(2) { --delay: 100ms; }
+        .svc-reveal:nth-child(3) { --delay: 200ms; }
+        .svc-reveal:nth-child(4) { --delay: 300ms; }
+        .svc-reveal:nth-child(5) { --delay: 400ms; }
+        .svc-reveal:nth-child(6) { --delay: 500ms; }
 
         /* Scroll to Top */
         #scrollToTop {
@@ -701,7 +579,7 @@
             border-radius: 50%;
             font-size: 20px;
             cursor: pointer;
-            box-shadow: 0 4px 15px #284595;
+            box-shadow: 0 4px 15px rgba(40, 69, 149, 0.4);
             transition: all 0.3s ease;
             opacity: 0;
             visibility: hidden;
@@ -713,9 +591,9 @@
         }
 
         #scrollToTop:hover {
-            background: #284595;
+            background: #1d3570;
             transform: translateY(-3px) scale(1.05);
-            box-shadow: 0 8px 25px #284595;
+            box-shadow: 0 8px 25px rgba(40, 69, 149, 0.5);
         }
 
         #scrollToTop.show {
@@ -729,455 +607,98 @@
         }
 
         @keyframes bounceUp {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-4px); }
+        }
 
-            0%,
-            100% {
-                transform: translateY(0);
-            }
+        /* STQC Specific */
+        .stqc-icon-wrap {
+            width: 75px !important;
+            height: 75px !important;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: #ffffff;
+            padding: 8px;
+            border: 1px solid #e5e7eb;
+        }
 
-            50% {
-                transform: translateY(-4px);
-            }
+        .stqc-logo {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            max-width: 60px;
+            max-height: 60px;
         }
 
         /* ===== RESPONSIVE BREAKPOINTS ===== */
 
-        /* Large screens */
+        /* Ultra-wide */
+        @media (min-width: 1920px) {
+            .hero-grid { max-width: 1400px; }
+            .hero-image-card img { max-width: 620px; }
+            .service-item .icon-wrap { width: 72px; height: 72px; }
+            .container { max-width: 1400px; }
+        }
+
+        /* Large laptop/desktop */
+        @media (max-width: 1400px) {
+            .best-services-box { padding: 24px 32px; gap: 16px; }
+        }
+
+        /* Desktop */
+        @media (max-width: 1200px) {
+            .hero-grid { gap: 2.5rem; }
+            .hero-image-card img { max-width: 420px; }
+            .service-item .icon-wrap { width: 55px; height: 55px; }
+            .service-item { flex: 1 1 calc(50% - 8px); }
+            .service-item:nth-child(2)::after { display: none; }
+        }
+
+        /* Laptop */
         @media (max-width: 1024px) {
-            .best-services-box {
-                padding: 25px 30px;
-                gap: 18px;
-            }
-
-            .service-item {
-                flex: 0 0 calc(50% - 9px);
-                max-width: calc(50% - 9px);
-            }
-
-            .service-item:nth-child(2)::after {
-                display: none;
-            }
-
-            .service-item:nth-child(1)::after {
-                content: '';
-                position: absolute;
-                right: -9px;
-                top: 10%;
-                height: 80%;
-                width: 1px;
-                background: #e5e7eb;
-            }
-
-            .svc-img-wrap {
-                height: 200px;
-            }
+            .hero-grid { grid-template-columns: 1fr 1fr; gap: 2rem; }
+            .hero-text h1 { font-size: clamp(2rem, 4vw, 3.5rem); }
+            .hero-image-card img { max-width: 380px; }
+            .best-services-box { padding: 20px 28px; }
         }
 
         /* Tablet */
         @media (max-width: 820px) {
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-                gap: 1.5rem;
-                margin-top: 1rem;
-            }
-
-            .hero-text p {
-                max-width: 100%;
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .btn-group {
-                justify-content: center;
-            }
-
-            .hero-image-card img {
-                max-width: 380px;
-            }
-
-            .best-services-wrapper {
-                margin-top: -40px;
-                margin-bottom: -20px;
-                padding: 0 1rem;
-            }
-
-            .best-services-box {
-                padding: 20px 24px;
-                gap: 14px;
-                border-radius: 20px;
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
-
-            .service-item {
-                flex: 0 0 calc(50% - 7px);
-                max-width: calc(50% - 7px);
-                justify-content: flex-start;
-            }
-
-            .service-item::after {
-                display: none !important;
-            }
-
-            .header-inner {
-                border-radius: 2rem;
-                padding: 0.6rem 1rem;
-            }
-
-            .brand-name {
-                font-size: 1.2rem;
-            }
-
-            /* About section responsive */
-            .about-img-wrap {
-                height: 380px !important;
-            }
-
-            .about-img-wrap .top-0 {
-                width: 55% !important;
-            }
-
-            .about-img-wrap .top-28 {
-                top: 55px !important;
-                left: 90px !important;
-                width: 55% !important;
-            }
-
-            .about-img-wrap .bottom-14 {
-                bottom: 10px !important;
-                left: 10px !important;
-                width: 75px !important;
-                height: 75px !important;
-            }
-
-            .about-img-wrap .bottom-14 .w-\[50px\] {
-                width: 32px !important;
-                height: 32px !important;
-                font-size: 13px !important;
-            }
-
-            .svc-img-wrap {
-                height: 180px;
-            }
-
-            .svc-icon {
-                width: 60px;
-                height: 60px;
-                margin-top: -30px;
-            }
-
-            .svc-icon svg {
-                width: 28px;
-                height: 28px;
-            }
-
-            .svc-body {
-                padding: 10px 16px 16px;
-            }
-
-            .svc-title {
-                font-size: 16px;
-            }
-
-            .svc-desc {
-                font-size: 12.5px;
-            }
+            .hero-grid { grid-template-columns: 1fr; text-align: center; gap: 2rem; }
+            .hero-text p { max-width: 100%; margin: 1.2rem auto 0; }
+            .btn-group { justify-content: center; }
+            .hero-image-card img { max-width: 380px; }
+            .best-services-wrapper { margin-top: -40px; padding: 0 1rem; }
+            .best-services-box { padding: 18px 20px; gap: 12px; border-radius: 20px; flex-direction: column; }
+            .service-item { flex: 1 1 100%; min-width: 100%; gap: 10px; }
+            .service-item::after { display: none !important; }
+            .service-item .icon-wrap { width: 48px; height: 48px; }
+            .header-logo { height: 42px; }
+            .about-img-wrap { height: 350px !important; }
+            #scrollToTop { bottom: 20px; right: 20px; width: 44px; height: 44px; font-size: 16px; }
         }
 
-        /* Mobile */
+        /* Mobile Large */
         @media (max-width: 640px) {
-            .hero-content {
-                padding: 1.5rem 1rem;
-            }
-
-            .hero-image-card img {
-                max-width: 100%;
-            }
-
-            .hero-text h1 {
-                font-size: clamp(1.8rem, 10vw, 2.8rem);
-            }
-
-            .hero-text p {
-                font-size: 0.9rem;
-            }
-
-            .best-services-wrapper {
-                margin-top: -20px;
-                padding: 0 0.75rem;
-            }
-
-            .best-services-box {
-                padding: 16px 14px;
-                gap: 10px;
-                border-radius: 16px;
-                flex-direction: column;
-            }
-
-            .service-item {
-                flex: 0 0 100%;
-                max-width: 100%;
-                justify-content: flex-start;
-            }
-
-            .service-item::after {
-                display: none !important;
-            }
-
-            .service-item .icon-wrap {
-                width: 36px;
-                height: 36px;
-                font-size: 0.9rem;
-            }
-
-            .service-item .info h4 {
-                font-size: 0.82rem;
-            }
-
-            .service-item .info p {
-                font-size: 0.7rem;
-            }
-
-            /* About section mobile */
-            .about-img-wrap {
-                height: 300px !important;
-            }
-
-            .about-img-wrap .top-0 {
-                width: 50% !important;
-                left: 4px !important;
-            }
-
-            .about-img-wrap .top-28 {
-                top: 35px !important;
-                left: 55px !important;
-                width: 50% !important;
-            }
-
-            .about-img-wrap .bottom-14 {
-                bottom: 0px !important;
-                left: 4px !important;
-                width: 60px !important;
-                height: 60px !important;
-            }
-
-            .about-img-wrap .bottom-14 .w-\[50px\] {
-                width: 25px !important;
-                height: 25px !important;
-                font-size: 10px !important;
-            }
-
-            .about-img-wrap .bottom-14 svg {
-                width: 60px !important;
-                height: 60px !important;
-            }
-
-            .svc-img-wrap {
-                height: 160px;
-            }
-
-            .svc-icon {
-                width: 50px;
-                height: 50px;
-                margin-top: -25px;
-            }
-
-            .svc-icon svg {
-                width: 22px;
-                height: 22px;
-            }
-
-            .svc-body {
-                padding: 10px 14px 14px;
-            }
-
-            .svc-title {
-                font-size: 15px;
-            }
-
-            .svc-desc {
-                font-size: 12px;
-            }
-
-            .svc-link {
-                font-size: 12px;
-            }
-
-            .svc-arrow {
-                width: 28px;
-                height: 28px;
-            }
-
-            .svc-arrow svg {
-                width: 12px;
-                height: 12px;
-            }
-
-            #scrollToTop {
-                bottom: 20px;
-                right: 20px;
-                width: 44px;
-                height: 44px;
-                font-size: 16px;
-            }
+            .hero-content { padding: 5rem 1rem 3rem; }
+            .hero-text h1 { font-size: clamp(1.8rem, 8vw, 2.8rem); }
+            .hero-text p { font-size: 0.9rem; margin-top: 0.8rem; }
+            .btn-primary, .btn-outline { padding: 0.6rem 1.2rem; font-size: 0.8rem; }
+            .hero-image-card img { max-width: 100%; }
+            .best-services-wrapper { margin-top: -20px; padding: 0 0.75rem; }
+            .best-services-box { padding: 14px 16px; gap: 10px; border-radius: 16px; }
+            .service-item .icon-wrap { width: 42px; height: 42px; }
+            .service-item .info h4 { font-size: 0.82rem; }
+            .header-logo { height: 36px; }
+            .about-img-wrap { height: 280px !important; }
+            .about-img-wrap .top-0 { width: 50% !important; left: 4px !important; }
+            .about-img-wrap .top-12 { top: 35px !important; left: 55px !important; width: 50% !important; }
+            .about-img-wrap .bottom-2 { bottom: 0px !important; left: 4px !important; width: 55px !important; height: 55px !important; }
+            #scrollToTop { bottom: 16px; right: 16px; width: 40px; height: 40px; font-size: 14px; }
         }
-
-        @media (max-width: 480px) {
-            .best-services-box {
-                padding: 12px 10px;
-                gap: 8px;
-            }
-
-            .service-item {
-                gap: 8px;
-            }
-
-            .service-item .icon-wrap {
-                width: 30px;
-                height: 30px;
-            }
-
-            .service-item .info h4 {
-                font-size: 0.75rem;
-            }
-
-            .service-item .info p {
-                font-size: 0.65rem;
-            }
-
-            .hero-text h1 {
-                font-size: clamp(1.5rem, 8vw, 2.2rem);
-            }
-
-            .btn-primary,
-            .btn-outline {
-                padding: 0.5rem 1.2rem;
-                font-size: 0.75rem;
-            }
-
-            .svc-img-wrap {
-                height: 140px;
-            }
-
-            .svc-icon {
-                width: 44px;
-                height: 44px;
-                margin-top: -22px;
-            }
-
-            .svc-icon svg {
-                width: 18px;
-                height: 18px;
-            }
-
-            .svc-body {
-                padding: 8px 10px 12px;
-            }
-
-            .svc-title {
-                font-size: 14px;
-            }
-
-            .svc-desc {
-                font-size: 11px;
-            }
-
-            .about-img-wrap {
-                height: 250px !important;
-            }
-        }
-
-          /* STQC Specific Styles - Bigger Badge */
-    .stqc-item {
-        flex: 0 0 calc(33.333% - 17px);
-        max-width: calc(33.333% - 17px);
-    }
-    
-    .stqc-icon-wrap {
-        width: 85px !important;
-        height: 85px !important;
-        border-radius: 14px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-shrink: 0;
-        background: #ffffff;
-        padding: 8px;
-        border: 1px solid #e5e7eb;
-    }
-    
-    .stqc-logo {
-        width: 100%;
-        height: 100%;
-        object-fit: contain;
-        max-width: 70px;
-        max-height: 70px;
-    }
-    
-    .stqc-title {
-        font-size: 1.05rem !important;
-        color: #1a2a3a;
-    }
-    
-    .stqc-subtitle {
-        font-size: 0.82rem !important;
-        color: #6b7280;
-    }
-    
-    /* Remove divider after STQC item */
-    .stqc-item::after {
-        display: none !important;
-    }
-    
-    /* Responsive */
-    @media (max-width: 1024px) {
-        .stqc-item {
-            flex: 0 0 calc(50% - 9px) !important;
-            max-width: calc(50% - 9px) !important;
-        }
-        .stqc-icon-wrap {
-            width: 75px !important;
-            height: 75px !important;
-        }
-        .stqc-logo {
-            max-width: 60px;
-            max-height: 60px;
-        }
-    }
-    
-    @media (max-width: 820px) {
-        .stqc-item {
-            flex: 0 0 calc(50% - 7px) !important;
-            max-width: calc(50% - 7px) !important;
-        }
-        .stqc-icon-wrap {
-            width: 65px !important;
-            height: 65px !important;
-        }
-        .stqc-logo {
-            max-width: 50px;
-            max-height: 50px;
-        }
-        .stqc-title {
-            font-size: 0.9rem !important;
-        }
-    }
-    
-    @media (max-width: 640px) {
-        .stqc-item {
-            flex: 0 0 100% !important;
-            max-width: 100% !important;
-        }
-        .stqc-icon-wrap {
-            width: 60px !important;
-            height: 60px !important;
-        }
-        .stqc-logo {
-            max-width: 45px;
-            max-height: 45px;
-        }
-    }
     </style>
 </head>
 
@@ -1185,39 +706,53 @@
 
     <!-- ====== HEADER ====== -->
     <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
-        <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
-            <div class="header-inner">
+        <div class="container mx-auto px-3 sm:px-4 max-w-6xl">
+            <div class="bg-white backdrop-blur-md rounded-full shadow-lg border border-white/40 px-4 md:px-6 py-3 flex items-center justify-between transition-all duration-300">
+                <!-- Logo -->
                 <div class="flex-shrink-0">
-                    <img src="/assets/cctv-logo.jpeg" alt="CCTV Logo" class="header-logo" />
+                    <img src="/assets/cctv-logo.jpeg" alt="Akanksha CCTV" class="h-12 md:h-14 object-contain" />
                 </div>
-                <nav class="flex-1 flex justify-center">
-                    <ul class="hidden md:flex items-center gap-0.5 lg:gap-1.5">
-                        <li><a href="index.html" class="nav-link active">Home</a></li>
-                        <li><a href="about.html" class="nav-link">About</a></li>
-                        <li><a href="services.html" class="nav-link">Services</a></li>
-                        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-                        <li><a href="products.html" class="nav-link ">Products</a></li>
+
+                <!-- Desktop Nav -->
+                <nav class="hidden lg:flex flex-1 justify-center">
+                    <ul class="flex items-center gap-1.5 xl:gap-4">
+                        <li><a href="index.html" class="nav-link active bg-[#1A328D] text-white px-5 py-2 rounded-full">Home</a></li>
+                        <li><a href="about.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">About</a></li>
+                        <li><a href="services.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">Services</a></li>
+                        <li><a href="solutions.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">Solutions</a></li>
+                        <li><a href="products.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-4 py-2 font-medium transition">Products</a></li>
                     </ul>
                 </nav>
-                <div class="hidden md:block flex-shrink-0">
-                    <a href="contact.html" class="btn-contact">Contact Us</a>
+
+                <!-- Divider -->
+                <div class="hidden lg:block w-px h-6 bg-gray-400 mx-4 flex-shrink-0"></div>
+
+                <!-- Right Side -->
+                <div class="hidden lg:flex items-center gap-4 xl:gap-6 flex-shrink-0">
+                    <a href="tel:+918983039090" class="flex items-center gap-2 text-[#1A328D] font-semibold text-sm xl:text-base whitespace-nowrap">
+                        <i class="fas fa-phone-alt text-[#1A328D]"></i> +91 89830 39090
+                    </a>
+                    <a href="contact.html" class="btn-contact bg-[#1A328D] text-white px-5 xl:px-6 py-2.5 rounded-full font-medium hover:bg-[#152770] transition shadow-md whitespace-nowrap">Contact Us</a>
                 </div>
-                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
+
+                <!-- Mobile Hamburger -->
+                <div class="lg:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
                     <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
                     <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
                     <span class="w-5 h-0.5 bg-[#1A328D] transition-all"></span>
                 </div>
             </div>
-            <div class="md:hidden hidden mt-2 px-2" id="mobileNav">
+            
+            <!-- Mobile Menu -->
+            <div class="lg:hidden hidden mt-2 px-2" id="mobileNav">
                 <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-5 py-4 border border-white/20">
                     <ul class="flex flex-col gap-2 text-center">
-                        <li><a href="index.html" class="mobile-nav-link active-mobile">Home</a></li>
-                        <li><a href="about.html" class="mobile-nav-link">About</a></li>
-                        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-                        <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
-                        <li><a href="products.html" class="mobile-nav-link ">Products</a></li>
-                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center"
-                                style="border-radius:40px; padding:0.6rem;">Contact Us</a></li>
+                        <li><a href="index.html" class="mobile-nav-link text-[#1A328D] font-bold">Home</a></li>
+                        <li><a href="about.html" class="mobile-nav-link text-gray-700">About</a></li>
+                        <li><a href="services.html" class="mobile-nav-link text-gray-700">Services</a></li>
+                        <li><a href="solutions.html" class="mobile-nav-link text-gray-700">Solutions</a></li>
+                        <li><a href="products.html" class="mobile-nav-link text-gray-700">Products</a></li>
+                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center text-white bg-[#1A328D] rounded-full py-2">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -1229,185 +764,215 @@
         <div class="hero-video-bg" id="heroVideoBg">
             <video autoplay loop muted playsinline>
                 <source src="assets/vdo.mp4" type="video/mp4">
-                <img src="assets/ul" alt="background" style="width:100%;height:100%;object-fit:cover;">
+                <img src="assets/ul" alt="Professional CCTV Security Solutions" style="width:100%;height:100%;object-fit:cover;">
             </video>
         </div>
         <div class="hero-content" id="heroContent">
             <div class="hero-grid">
                 <div class="hero-text">
                     <h1>
-                        <span class="accent">Advanced</span> CCTV<br />
-                        <span style="color:white;">Surveillance</span>
+                        <span class="accent">Professional</span> CCTV &amp; <br />
+                        <span style="color:white;">Security Solutions</span>
                     </h1>
                     <p>
-                        Protect your business with <strong>24/7</strong> AI-powered security monitoring.
-                        Real-time alerts &amp; smart analytics for proactive protection.
+                        Advanced surveillance systems with <strong>24/7 monitoring</strong>, <strong>AI-powered analytics</strong>, and <strong>expert installation</strong> services delivering complete protection for your business and what matters most.
                     </p>
-                    <div class="btn-group">
-                        <a href="/solutions.html" class="btn-primary">
-                            <i class="fas fa-shield-alt"></i> Explore Solutions
+                     <!-- Feature Pills -->
+                    <div class="flex flex-wrap gap-3 mt-4">
+                        <div class="bg-white border border-gray-200 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+                            <i class="far fa-clock text-[#4382DF]"></i> <span class="text-sm font-medium text-gray-700">24/7 Monitoring</span>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+                            <i class="fas fa-microchip text-[#4382DF]"></i> <span class="text-sm font-medium text-gray-700">AI-Powered Analytics</span>
+                        </div>
+                        <div class="bg-white border border-gray-200 rounded-full px-4 py-2 flex items-center gap-2 shadow-sm">
+                            <i class="fas fa-tools text-[#4382DF]"></i> <span class="text-sm font-medium text-gray-700">Expert Installation</span>
+                        </div>
+                    </div>
+                    <!-- Buttons -->
+                    <div class="flex flex-wrap items-center gap-4 mt-4">
+                        <a href="/solutions.html" class="bg-[#1A328D] text-white px-7 py-3.5 rounded-full font-semibold hover:bg-[#13276d] transition shadow-lg shadow-[#1A328D]/30 flex items-center gap-2">
+                            Explore Our Services <i class="fas fa-arrow-right"></i>
                         </a>
-                        <a href="/contact.html" class="btn-outline">
-                            <i class="fas fa-play-circle"></i> Contact Us
+                        <a href="/contact.html" class="bg-white border-2 border-[#1A328D] text-[#1A328D] px-7 py-3.5 rounded-full font-semibold hover:bg-[#F0F6FF] transition flex items-center gap-2">
+                            <i class="fas fa-phone-alt"></i> Get a Free Quote
                         </a>
                     </div>
                 </div>
-                <div class="hero-image-card">
-                    <img src="/assets/hero-image.png" alt="CCTV surveillance camera" loading="lazy" />
+                <div class="flex justify-center lg:justify-end items-center relative">
+                    <!-- Light blue radial gradient behind the camera -->
+                    <div class="absolute inset-0 bg-[#EAF2FF] rounded-full blur-3xl opacity-60 -z-10 w-3/4 h-3/4 mx-auto"></div>
+                    <img src="/assets/hero-image.png" alt="Professional CCTV security camera installation" class="w-full max-w-[500px] lg:max-w-full h-auto object-contain drop-shadow-xl" />
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ====== BEST SERVICES BOX ====== -->
-<div class="best-services-wrapper">
-    <div class="best-services-box">
-        <!-- STQC Badge - Made bigger -->
-        <div class="service-item stqc-item">
-            <div class="icon-wrap stqc-icon-wrap">
-                <img src="/assets/stqc.jpg" alt="STQC Certified" class="stqc-logo" />
+    <div class="best-services-wrapper">
+        <div class="best-services-box">
+            <div class="service-item stqc-item border-r border-gray-200 pr-4">
+                <div class="icon-wrap stqc-icon-wrap">
+                    <img src="/assets/stqc.jpg" alt="STQC Certified" class="stqc-logo" />
+                </div>
+                <div class="info">
+                    <h4>STQC Certified</h4>
+                    <p>Govt. of India approved</p>
+                </div>
             </div>
-            <div class="info">
-                <h4 class="stqc-title">STQC Certified</h4>
-                <p class="stqc-subtitle">Govt. of India approved</p>
+            <div class="service-item border-r border-gray-200 pr-4">
+                <div class="icon-wrap"><img src="/assets/bestservices1.png" alt="AI Detection"></div>
+                <div class="info">
+                    <h4>AI Detection</h4>
+                    <p>Smart alerts &amp; analytics</p>
+                </div>
             </div>
-        </div>
-        
-        <div class="service-item">
-            <div class="icon-wrap"><img src="/assets/bestservices1.png" alt="AI Detection"></div>
-            <div class="info">
-                <h4>AI Detection</h4>
-                <p>Smart alerts &amp; analytics</p>
-            </div>
-        </div>
-        
-        <div class="service-item">
-            <div class="icon-wrap"><img src="/assets/best-services2.png" alt="Cloud Backup"></div>
-            <div class="info">
-                <h4>Cloud Backup</h4>
-                <p>Secure off-site storage</p>
+            <div class="service-item">
+                <div class="icon-wrap"><img src="/assets/best-services2.png" alt="Cloud Backup"></div>
+                <div class="info">
+                    <h4>Cloud Backup</h4>
+                    <p>Secure off-site storage</p>
+                </div>
             </div>
         </div>
     </div>
-</div>
-   <!-- ====== ABOUT US ====== -->
-<section class="py-12 sm:py-16 md:py-20 lg:py-24 bg-white overflow-hidden" id="about">
-    <div class="container mx-auto px-4 sm:px-6">
-        <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-center">
-            <div class="relative h-[350px] sm:h-[400px] md:h-[450px] about-img-wrap" data-reveal="left">
-                <div class="top-0 left-3 sm:left-5 md:left-8 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-10">
-                    <img src="/assets/about1.png" alt="CCTV Installation" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
-                </div>
-                <div class="absolute top-14 sm:top-18 md:top-24 lg:top-28 left-20 sm:left-24 md:left-32 lg:left-36 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-[1]">
-                    <img src="/assets/about2.png" alt="Security Monitoring" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
-                </div>
-                <div class="absolute bottom-3 sm:bottom-5 md:bottom-8 lg:bottom-10 left-3 sm:left-5 md:left-8 z-20 w-[70px] h-[70px] sm:w-[80px] sm:h-[80px] md:w-[95px] md:h-[95px]">
-                    <div class="absolute inset-0 badge-ring-spin">
-                        <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
-                            <defs>
-                                <path id="circleTextPath" d="M 55,55 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
-                            </defs>
-                            <circle cx="55" cy="55" r="52" fill="white" stroke="#e5e5e5" stroke-width="1" />
-                            <text font-size="8.2" fill="#1a1a2e" font-weight="600" letter-spacing="2.3" font-family="Segoe UI, sans-serif">
-                                <textPath href="#circleTextPath">25+ Years of Experience • 25+ Years of Experience •</textPath>
-                            </text>
-                        </svg>
-                    </div>
-                    <div class="absolute inset-0 flex items-center justify-center">
-                        <div class="w-[30px] h-[30px] sm:w-[35px] sm:h-[35px] md:w-[42px] md:h-[42px] rounded-full flex items-center justify-center text-white text-[12px] sm:text-[14px] md:text-[16px]" style="background:#284595;">
-                            <i class="fas fa-video"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div data-reveal="right" class="mt-6 sm:mt-0">
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a2e] leading-tight mb-3 sm:mb-4">
-                    Protecting homes,<br>
-                    businesses and <span class="text-[#284595]">peace</span>
-                </h2>
-                <p class="text-gray-500 text-sm sm:text-base leading-relaxed mb-5 sm:mb-7 max-w-full lg:max-w-[440px]">
-                    We specialize in providing top-quality security and CCTV solutions to safeguard
-                    your home and business. Our mission is to ensure peace of mind with reliable,
-                    innovative, and tailored protection systems.
-                </p>
-                <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 bg-gray-50 rounded-xl p-3 sm:p-4 mb-4 sm:mb-5 about-row-reveal" data-reveal-delay="300">
-                    <img src="/assets/about3.png" alt="CCTV technician" class="w-full sm:w-[110px] md:w-[140px] h-[70px] sm:h-[85px] md:h-[95px] rounded-xl object-cover flex-shrink-0">
-                    <div class="flex items-center gap-3 sm:gap-4 w-full sm:w-auto">
-                        <div class="w-[35px] h-[35px] sm:w-[42px] sm:h-[42px] md:w-[48px] md:h-[48px] rounded-full flex items-center justify-center flex-shrink-0" style="background:#284595;">
-                            <img src="/assets/icon-about-experience.svg" class="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
-                        </div>
-                        <p class="text-[#1a1a2e] font-bold text-[12px] sm:text-[13px] md:text-[15px] leading-snug">
-                            We Have More Than 25+ Years<br>of CCTV Services Experience
-                        </p>
-                    </div>
-                </div>
-                
-                <!-- STQC Badge - Fixed Position -->
-                <div class="flex items-center gap-4 mb-5 sm:mb-6 md:mb-7 about-row-reveal" data-reveal-delay="450">
-                    <img src="/assets/stqc.jpg" alt="STQC Certified" class="h-14 sm:h-16 w-auto" />
-                    <div>
-                        <p class="text-[#1a2a3a] font-bold text-sm">Government Approved</p>
-                        <p class="text-gray-500 text-xs">STQC Quality Certified</p>
-                    </div>
-                </div>
-                
-                <a href="about.html" class="inline-flex items-center gap-2 sm:gap-3 text-white font-bold text-sm sm:text-base px-5 sm:px-6 md:px-8 py-2.5 sm:py-3 rounded-full transition-all duration-300 hover:-translate-y-1 about-row-reveal cta-about" style="background:#284595;" data-reveal-delay="600">
-                    More About <i class="fas fa-arrow-right"></i>
-                </a>
-            </div>
-        </div>
-    </div>
-</section>
 
-    <!-- ====== BRAND LOGOS SECTION ====== -->
-    <section class="py-8 sm:py-10 md:py-12 bg-white border-y border-gray-100">
+    <!-- ====== ABOUT US ====== -->
+    <section class="py-8 sm:py-10 md:py-12 bg-white overflow-hidden" id="about">
         <div class="container mx-auto px-4 sm:px-6">
-            <!-- heading (optional, keeps it clean) -->
-            <div class="text-center mb-6 sm:mb-8">
-                <span
-                    class="inline-block text-[#2B2A4C] text-[10px] sm:text-xs font-bold tracking-[3px] uppercase bg-[#EEE2DE] py-1.5 px-4 rounded-full">
+            <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start lg:items-center">
+                <div class="relative h-[300px] sm:h-[350px] md:h-[400px] about-img-wrap" data-reveal="left">
+                    <div class="top-0 left-3 sm:left-5 md:left-8 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-10">
+                        <img src="/assets/about1.png" alt="CCTV Installation" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
+                    </div>
+                    <div class="absolute top-12 sm:top-14 md:top-16 lg:top-20 left-20 sm:left-24 md:left-32 lg:left-36 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-[1]">
+                        <img src="/assets/about2.png" alt="Security Monitoring" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
+                    </div>
+                    <div class="absolute bottom-2 sm:bottom-3 md:bottom-4 left-3 sm:left-5 md:left-8 z-20 w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
+                        <div class="absolute inset-0 badge-ring-spin">
+                            <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                                <defs>
+                                    <path id="circleTextPath" d="M 55,55 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
+                                </defs>
+                                <circle cx="55" cy="55" r="52" fill="white" stroke="#e5e5e5" stroke-width="1" />
+                                <text font-size="8.2" fill="#1a1a2e" font-weight="600" letter-spacing="2.3" font-family="Segoe UI, sans-serif">
+                                    <textPath href="#circleTextPath">• 15+ Years of Exp.  15+ Yr of Experience </textPath>
+                                </text>
+                            </svg>
+                        </div>
+                        <div class="absolute inset-0 flex items-center justify-center">
+                            <div class="w-[26px] h-[26px] sm:w-[30px] sm:h-[30px] md:w-[36px] md:h-[36px] rounded-full flex items-center justify-center text-white text-[10px] sm:text-[12px] md:text-[14px]" style="background:#284595;">
+                                <i class="fas fa-video"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div data-reveal="right" class="mt-0">
+                    <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a2e] leading-tight mb-3">
+                        Protecting homes,<br>
+                        businesses and <span class="text-[#284595]">peace</span>
+                    </h2>
+                    <p class="text-gray-500 text-sm sm:text-base leading-relaxed mb-4 max-w-full lg:max-w-[440px]">
+                        We specialize in providing top-quality security and CCTV solutions to safeguard
+                        your home and business. Our mission is to ensure peace of mind with reliable,
+                        innovative, and tailored protection systems.
+                    </p>
+                    <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 bg-gray-50 rounded-xl p-3 sm:p-4 mb-3 about-row-reveal" data-reveal-delay="300">
+                        <div class="w-full sm:w-[100px] md:w-[120px] h-[65px] sm:h-[75px] md:h-[85px] rounded-xl overflow-hidden flex-shrink-0">
+                            <img src="/assets/about3.png" alt="CCTV technician" class="w-full h-full object-cover">
+                        </div>
+                        <div class="flex items-center gap-3 sm:gap-4 w-full sm:w-auto">
+                            <div class="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px] md:w-[44px] md:h-[44px] rounded-full flex items-center justify-center flex-shrink-0" style="background:#284595;">
+                                <img src="/assets/icon-about-experience.svg" class="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5">
+                            </div>
+                            <p class="text-[#1a1a2e] font-bold text-[11px] sm:text-[12px] md:text-[14px] leading-snug">
+                                We Have More Than 15+ Years<br>of CCTV Services Experience
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex items-center gap-4 mb-3 about-row-reveal" data-reveal-delay="450">
+                        <img src="/assets/stqc.jpg" alt="STQC Certified" class="h-12 sm:h-14 w-auto" />
+                        <div>
+                            <p class="text-[#1a2a3a] font-bold text-sm">Government Approved</p>
+                            <p class="text-gray-500 text-xs">STQC Quality Certified</p>
+                        </div>
+                    </div>
+                    <a href="about.html" class="inline-flex items-center gap-2 sm:gap-3 text-white font-bold text-sm sm:text-base px-5 sm:px-6 md:px-7 py-2.5 sm:py-3 rounded-full transition-all duration-300 hover:-translate-y-1 about-row-reveal cta-about" style="background:#284595;" data-reveal-delay="600">
+                        More About <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ====== TRUSTED PARTNERS ====== -->
+    <section class="py-13 md:py-16 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
+        <div class="container mx-auto px-6 max-w-7xl">
+            <!-- Heading -->
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <span class="inline-flex items-center gap-2 px-6 py-2 rounded-full border border-[#C9A86A] text-[#C9A86A] text-[11px] font-bold uppercase tracking-[0.15em] bg-white">
                     Trusted Partners
                 </span>
-                <h3 class="text-sm sm:text-base md:text-lg font-semibold text-[#1a2a3a] mt-2">
+                <h2 class="mt-6 text-3xl md:text-4xl font-bold text-[#1C2D4A]">
                     Brands we work with
-                </h3>
+                </h2>
+                <div class="flex items-center justify-center gap-3 mt-6">
+                    <span class="w-16 h-[1px] bg-[#C9A86A]"></span>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-[#C9A86A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                    </svg>
+                    <span class="w-16 h-[1px] bg-[#C9A86A]"></span>
+                </div>
+                <p class="mt-6 text-gray-500 text-[15px] md:text-base leading-relaxed">
+                    We collaborate with industry-leading brands to deliver <br class="hidden md:block">
+                    reliable and innovative security solutions.
+                </p>
             </div>
 
-            <!-- 4 brand logos in a row -->
-            <div class="grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 md:gap-12 max-w-4xl mx-auto">
-
-                <!-- Brand 1 -->
-                <div
-                    class="flex items-center justify-center p-3 sm:p-4 bg-gray-50 rounded-xl duration-300">
-                    <img src="/assets/brand-logo (1).png" alt="Brand 1"
-                        class="h-12 sm:h-14 md:h-16 w-auto object-contain hover:grayscale-0 transition-all duration-300" />
-                </div>
-
-                <!-- Brand 2 -->
-                <div
-                    class="flex items-center justify-center p-3 sm:p-4 bg-gray-50 rounded-xl  duration-300">
-                    <div class="flex items-center gap-0.5 font-bold tracking-tight">
-                        <span class="text-2xl sm:text-3xl md:text-4xl text-red-600 italic"
-                            style="font-family: 'Arial Black', sans-serif; font-style: italic;">HIK</span>
-                        <span class="text-2xl sm:text-3xl md:text-4xl text-gray-800 italic"
-                            style="font-family: 'Arial Black', sans-serif; font-style: italic;">VISION</span>
+            <!-- Brand Logos Grid -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
+                <!-- Card 1 -->
+                <div class="relative group bg-white rounded-[20px] h-[116px] flex items-center justify-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl transition duration-300">
+                    <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C9A86A] rounded-b-[20px]"></div>
+                    <img src="/assets/brand-logo (1).png" alt="CP Plus" class="h-12 object-contain p-2">
+                    <div class="absolute -bottom-5 w-10 h-10 bg-white rounded-full border-[1.5px] border-[#C9A86A] flex items-center justify-center shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C9A86A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
                     </div>
                 </div>
-
-                <!-- Brand 3 -->
-                <div
-                    class="flex items-center justify-center p-3 sm:p-4 bg-black rounded-xl duration-300">
-                    <img src="/assets/brand-logo3.png" alt="SECUREYE"
-                        class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+                <!-- Card 2 -->
+                <div class="relative group bg-white rounded-[20px] h-[116px] flex items-center justify-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl transition duration-300">
+                    <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C9A86A] rounded-b-[20px]"></div>
+                    <h1 class="text-[32px] font-black italic tracking-tight leading-none">
+                        <span style="color: #D8262C;">HIK</span><span style="color: #172B4D;">VISION</span>
+                    </h1>
+                    <div class="absolute -bottom-5 w-10 h-10 bg-white rounded-full border-[1.5px] border-[#C9A86A] flex items-center justify-center shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C9A86A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
                 </div>
-
-                <!-- Brand 4 -->
-                <div
-                    class="flex items-center justify-center p-3 sm:p-4 bg-gray-50 rounded-xl duration-300">
-                    <img src="/assets/brand-logo4.png" alt="Brand 4"
-                        class="h-12 sm:h-14 md:h-16 w-auto object-contain  hover:grayscale-0 transition-all duration-300" />
+                <!-- Card 3 -->
+                <div class="relative group bg-white rounded-[20px] h-[116px] flex items-center justify-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl transition duration-300">
+                    <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C9A86A] rounded-b-[20px]"></div>
+                    <img src="/assets/brand3-removebg-preview.png" alt="Secureye" class="h-10 object-contain">
+                    <div class="absolute -bottom-5 w-10 h-10 bg-white rounded-full border-[1.5px] border-[#C9A86A] flex items-center justify-center shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C9A86A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
                 </div>
-
+                <!-- Card 4 -->
+                <div class="relative group bg-white rounded-[20px] h-[116px] flex items-center justify-center shadow-[0_4px_20px_-4px_rgba(0,0,0,0.05)] hover:shadow-xl transition duration-300">
+                    <div class="absolute bottom-0 left-0 right-0 h-[2px] bg-[#C9A86A] rounded-b-[20px]"></div>
+                    <img src="/assets/brand-logo4.png" alt="Trueview" class="h-12 object-contain">
+                    <div class="absolute -bottom-5 w-10 h-10 bg-white rounded-full border-[1.5px] border-[#C9A86A] flex items-center justify-center shadow-sm">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-[#C9A86A]" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                        </svg>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -1416,363 +981,200 @@
     <section class="py-12 sm:py-16 md:py-20 bg-[#f0f0f0] overflow-hidden" id="services">
         <div class="container mx-auto px-3 sm:px-4">
             <div class="text-center mb-8 sm:mb-10 md:mb-12 svc-reveal">
-                <span
-                    class="inline-block text-[#2B2A4C] text-xs font-bold tracking-[3px] uppercase mb-3 bg-[#EEE2DE] py-1.5 px-4 rounded-full">What
-                    We Offer</span>
-                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a2e]">Our <span
-                        class="text-[#284595]">Security Services</span></h2>
-            </div>
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-[1100px] mx-auto">
-                <!-- Card 1 -->
-                <div class="svc-card svc-reveal border border-[#284595]">
-                    <div class="svc-img-wrap">
-                        <img src="/assets/service-image-1.png" alt="CCTV Installation">
-                        <div class="svc-overlay"></div>
-                    </div>
-                    <div class="svc-body">
-                        <h3 class="svc-title">CCTV Installation</h3>
-                        <p class="svc-desc">We provide professional CCTV installation services offering high-quality
-                            cameras with expert mounting and configuration.</p>
-                        <a href="services.html" class="svc-link">Discover More <span class="svc-arrow"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <polyline points="12 5 19 12 12 19" />
-                                </svg></span></a>
-                    </div>
-                </div>
-                <!-- Card 2 -->
-                <div class="svc-card svc-reveal border border-[#284595]">
-                    <div class="svc-img-wrap">
-                        <img src="/assets/service-image-3.png" alt="24/7 Monitoring">
-                        <div class="svc-overlay"></div>
-                    </div>
-                    <div class="svc-body">
-                        <h3 class="svc-title">24/7 Monitoring Services</h3>
-                        <p class="svc-desc">Round-the-clock surveillance monitoring with instant alerts and live feed
-                            access to keep your premises safe always.</p>
-                        <a href="services.html" class="svc-link">Discover More <span class="svc-arrow"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <polyline points="12 5 19 12 12 19" />
-                                </svg></span></a>
-                    </div>
-                </div>
-                <!-- Card 3 -->
-                <div class="svc-card svc-reveal border border-[#284595]">
-                    <div class="svc-img-wrap">
-                        <img src="/assets/service-image-3.jpg" alt="Home Security">
-                        <div class="svc-overlay"></div>
-
-                    </div>
-                    <div class="svc-body">
-                        <h3 class="svc-title">Home Security Systems</h3>
-                        <p class="svc-desc">Complete smart home security solutions with motion detection, alarm
-                            integration, and mobile-controlled access.</p>
-                        <a href="services.html" class="svc-link">Discover More <span class="svc-arrow"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <polyline points="12 5 19 12 12 19" />
-                                </svg></span></a>
-                    </div>
-                </div>
-                <!-- Card 4 -->
-                <div class="svc-card svc-reveal border border-[#284595]">
-                    <div class="svc-img-wrap">
-                        <img src="/assets/service-image-4.jpg" alt="Access Control">
-                        <div class="svc-overlay"></div>
-
-                    </div>
-                    <div class="svc-body">
-                        <h3 class="svc-title">Access Control Systems</h3>
-                        <p class="svc-desc">Biometric and card-based entry systems that restrict unauthorized access and
-                            log every entry with timestamps.</p>
-                        <a href="services.html" class="svc-link">Discover More <span class="svc-arrow"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <polyline points="12 5 19 12 12 19" />
-                                </svg></span></a>
-                    </div>
-                </div>
-                <!-- Card 5 -->
-                <div class="svc-card svc-reveal border border-[#284595]">
-                    <div class="svc-img-wrap">
-                        <img src="assets/service-image-5.jpg" alt="Networking">
-                        <div class="svc-overlay"></div>
-
-                    </div>
-                    <div class="svc-body">
-                        <h3 class="svc-title">Networking & Cabling</h3>
-                        <p class="svc-desc">Enterprise-grade LAN, Wi-Fi, and structured cabling solutions designed for
-                            scalable and high-performance connectivity.</p>
-                        <a href="services.html" class="svc-link">Discover More <span class="svc-arrow"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <polyline points="12 5 19 12 12 19" />
-                                </svg></span></a>
-                    </div>
-                </div>
-                <!-- Card 6 -->
-                <div class="svc-card svc-reveal border border-[#284595]">
-                    <div class="svc-img-wrap">
-                        <img src="/assets/service-image6.png" alt="IT Infrastructure">
-                        <div class="svc-overlay"></div>
-
-                    </div>
-                    <div class="svc-body">
-                        <h3 class="svc-title">Server & IT Infrastructure</h3>
-                        <p class="svc-desc">End-to-end data center builds, server rack setups, and backup solutions
-                            ensuring high availability and disaster recovery.</p>
-                        <a href="services.html" class="svc-link">Discover More <span class="svc-arrow"><svg
-                                    viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5"
-                                    stroke-linecap="round" stroke-linejoin="round" width="14" height="14">
-                                    <line x1="5" y1="12" x2="19" y2="12" />
-                                    <polyline points="12 5 19 12 12 19" />
-                                </svg></span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== BANNER SECTION ====== -->
-    <section class="relative w-full overflow-hidden">
-        <div
-            class="relative w-full min-h-[300px] xs:min-h-[350px] sm:min-h-[400px] md:min-h-[450px] lg:min-h-[550px] xl:min-h-[650px]">
-            <img src="assets/download.png" alt="Banner"
-                class="absolute inset-0 w-full h-full object-cover object-center" />
-            <div class="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
-            <div class="absolute inset-0 flex items-center">
-                <div class="container mx-auto px-4 sm:px-6 md:px-8 lg:px-12 xl:px-20">
-                    <div class="max-w-full sm:max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl">
-                        <h2
-                            class="text-white text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold leading-tight mb-2 sm:mb-3 md:mb-4 lg:mb-5">
-                            360° View, <span class="text-[#284595]">zero blind spots</span></h2>
-                        <div class="flex items-start gap-2 xs:gap-3 sm:gap-4 mb-2 sm:mb-3 md:mb-4">
-                            <div
-                                class="w-6 h-6 xs:w-7 xs:h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-[#83B4FF]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i
-                                    class="fas fa-camera text-[#EEE2DE] text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-white font-semibold text-xs xs:text-sm sm:text-base md:text-lg">3K 5MP
-                                    camera view</h3>
-                                <p
-                                    class="text-gray-300 text-[10px] xs:text-xs sm:text-sm md:text-base leading-relaxed max-w-md lg:max-w-lg">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-2 xs:gap-3 sm:gap-4 mb-2 sm:mb-3 md:mb-4">
-                            <div
-                                class="w-6 h-6 xs:w-7 xs:h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-[#83B4FF]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i
-                                    class="fas fa-robot text-[#EEE2DE] text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-white font-semibold text-xs xs:text-sm sm:text-base md:text-lg">Smart AI
-                                    detections</h3>
-                                <p
-                                    class="text-gray-300 text-[10px] xs:text-xs sm:text-sm md:text-base leading-relaxed max-w-md lg:max-w-lg">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            </div>
-                        </div>
-                        <div class="flex items-start gap-2 xs:gap-3 sm:gap-4 mb-3 sm:mb-4 md:mb-5">
-                            <div
-                                class="w-6 h-6 xs:w-7 xs:h-7 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full bg-[#83B4FF]/20 flex items-center justify-center flex-shrink-0 mt-0.5">
-                                <i
-                                    class="fas fa-database text-[#EEE2DE] text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg"></i>
-                            </div>
-                            <div>
-                                <h3 class="text-white font-semibold text-xs xs:text-sm sm:text-base md:text-lg">Flexible
-                                    storage choices</h3>
-                                <p
-                                    class="text-gray-300 text-[10px] xs:text-xs sm:text-sm md:text-base leading-relaxed max-w-md lg:max-w-lg">
-                                    Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ====== TESTIMONIALS ====== -->
-    <section class="py-10 sm:py-14 md:py-20 bg-[#F8F6F4] overflow-hidden">
-        <div class="container mx-auto px-3 sm:px-4">
-            <div class="text-center mb-6 sm:mb-8 md:mb-12">
-                <span
-                    class="inline-block px-3 sm:px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-2 sm:mb-3">
-                    <i class="fas fa-quote-left mr-1 sm:mr-2"></i> Testimonials
+                <span class="inline-block text-[#2B2A4C] text-xs font-bold tracking-[3px] uppercase mb-3 bg-[#EEE2DE] py-1.5 px-4 rounded-full">
+                    <i class="fas fa-cogs mr-2"></i> What We Offer
                 </span>
-                <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-[#1a2a3a]">What Our <span
-                        class="text-[#284595]">Clients Say</span></h2>
-                <p class="text-gray-500 text-sm sm:text-base mt-2">Real feedback from businesses we've helped transform.
+                <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a2e]">
+                    Our <span class="text-[#284595]">Security Services</span>
+                </h2>
+                <p class="text-gray-500 text-sm sm:text-base mt-3 max-w-2xl mx-auto">
+                    End-to-end security and technology services designed to secure, streamline, and scale your business.
                 </p>
             </div>
-            <div class="relative">
-                <button id="testimonialPrev"
-                    class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-2 sm:-translate-x-3 md:-translate-x-4 z-10 shadow-xl bg-white/90 backdrop-blur-sm w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-white transition border-none cursor-pointer text-[#1a2a3a] text-sm sm:text-lg md:text-xl hover:shadow-2xl">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <div id="testimonialTrack"
-                    class="flex gap-3 sm:gap-5 md:gap-6 overflow-x-auto scroll-smooth snap-x snap-mandatory pb-3 sm:pb-4"
-                    style="scrollbar-width: none; -ms-overflow-style: none; cursor: grab;">
-                    <!-- Testimonial 1 -->
-                    <div
-                        class="flex-shrink-0 w-[calc(50%-6px)] sm:w-[calc(50%-10px)] md:w-[calc(50%-12px)] snap-start bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-4 sm:p-6 md:p-8 border border-gray-100">
-                        <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                            <div
-                                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#E7EAEE] flex items-center justify-center text-[#284595] text-base sm:text-lg md:text-xl font-bold flex-shrink-0">
-                                RK</div>
-                            <div class="flex-1">
-                                <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base">Rajesh Kumar</h4>
-                                <p class="text-[10px] sm:text-xs md:text-sm text-gray-500">CEO, TechCorp Solutions</p>
-                            </div>
-                            <img src="/assets/double-quotes.png"
-                                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex-shrink-0" alt="quote">
-                        </div>
-                        <div class="flex text-[#284595] mb-2 sm:mb-3 text-sm sm:text-base"><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i></div>
-                        <p class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">"CCTV transformed our
-                            entire IT infrastructure. Their CCTV and networking solutions are top-notch. Highly
-                            recommended!"</p>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6 max-w-[1100px] mx-auto">
+                <a href="services.html" class="svc-card svc-reveal border border-[#284595] block no-underline">
+                    <div class="svc-img-wrap">
+                        <img src="/assets/service-image-1.png" alt="CCTV Security Solutions" />
+                        <div class="svc-overlay"></div>
                     </div>
-
-                    <!-- Testimonial 2 -->
-                    <div
-                        class="flex-shrink-0 w-[calc(50%-6px)] sm:w-[calc(50%-10px)] md:w-[calc(50%-12px)] snap-start bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-4 sm:p-6 md:p-8 border border-gray-100">
-                        <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                            <div
-                                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#E7EAEE] flex items-center justify-center text-[#284595] text-base sm:text-lg md:text-xl font-bold flex-shrink-0">
-                                SM</div>
-                            <div class="flex-1">
-                                <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base">Sneha Mehta</h4>
-                                <p class="text-[10px] sm:text-xs md:text-sm text-gray-500">Operations Director,
-                                    SecureBiz</p>
-                            </div>
-                            <img src="/assets/double-quotes.png"
-                                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex-shrink-0" alt="quote">
-                        </div>
-                        <div class="flex text-[#284595] mb-2 sm:mb-3 text-sm sm:text-base"><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i></div>
-                        <p class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">"The AI-powered
-                            surveillance system installed by CCTV has significantly improved our security. Their team is
-                            professional and reliable."</p>
+                    <div class="svc-body">
+                        <h3 class="svc-title">CCTV Security Solutions</h3>
+                        <p class="svc-desc">Reliable CCTV security services including installation, monitoring, and maintenance for comprehensive protection.</p>
+                        <span class="svc-link">Discover More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
                     </div>
-
-                    <!-- Testimonial 3 -->
-                    <div
-                        class="flex-shrink-0 w-[calc(50%-6px)] sm:w-[calc(50%-10px)] md:w-[calc(50%-12px)] snap-start bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-4 sm:p-6 md:p-8 border border-gray-100">
-                        <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                            <div
-                                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#E7EAEE] flex items-center justify-center text-[#284595] text-base sm:text-lg md:text-xl font-bold flex-shrink-0">
-                                AP</div>
-                            <div class="flex-1">
-                                <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base">Amit Patel</h4>
-                                <p class="text-[10px] sm:text-xs md:text-sm text-gray-500">CTO, GlobalConnect</p>
-                            </div>
-                            <img src="/assets/double-quotes.png"
-                                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex-shrink-0" alt="quote">
-                        </div>
-                        <div class="flex text-[#284595] mb-2 sm:mb-3 text-sm sm:text-base"><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star-half-alt"></i></div>
-                        <p class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">"Excellent data center
-                            solutions and structured cabling services. CCTV delivered on time and within budget. Very
-                            impressed!"</p>
+                </a>
+                <a href="services.html" class="svc-card svc-reveal border border-[#284595] block no-underline">
+                    <div class="svc-img-wrap">
+                        <img src="/assets/about_us.jpg" alt="Software Licensing" />
+                        <div class="svc-overlay"></div>
                     </div>
-
-                    <!-- Testimonial 4 -->
-                    <div
-                        class="flex-shrink-0 w-[calc(50%-6px)] sm:w-[calc(50%-10px)] md:w-[calc(50%-12px)] snap-start bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-4 sm:p-6 md:p-8 border border-gray-100">
-                        <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                            <div
-                                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#E7EAEE] flex items-center justify-center text-[#284595] text-base sm:text-lg md:text-xl font-bold flex-shrink-0">
-                                NR</div>
-                            <div class="flex-1">
-                                <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base">Neha Reddy</h4>
-                                <p class="text-[10px] sm:text-xs md:text-sm text-gray-500">IT Manager, DataVault</p>
-                            </div>
-                            <img src="/assets/double-quotes.png"
-                                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex-shrink-0" alt="quote">
-                        </div>
-                        <div class="flex text-[#284595] mb-2 sm:mb-3 text-sm sm:text-base"><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i></div>
-                        <p class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">"Their Wi-Fi solutions
-                            and EPBX systems have streamlined our communication. CCTV is our go-to IT partner for all
-                            infrastructure needs."</p>
+                    <div class="svc-body">
+                        <h3 class="svc-title">Software Licensing</h3>
+                        <p class="svc-desc">Genuine & secure software licenses with volume discounts, compliance management, and renewal tracking for your business.</p>
+                        <span class="svc-link">Discover More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
                     </div>
+                </a>
+                <a href="services.html" class="svc-card svc-reveal border border-[#284595] block no-underline">
+                    <div class="svc-img-wrap">
+                        <img src="/assets/service-image-3.png" alt="Project Management" />
+                        <div class="svc-overlay"></div>
+                    </div>
+                    <div class="svc-body">
+                        <h3 class="svc-title">Project Management</h3>
+                        <p class="svc-desc">Expert project management ensuring your security initiatives are delivered on time, within budget, and with measurable results.</p>
+                        <span class="svc-link">Discover More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+                    </div>
+                </a>
+                <a href="services.html" class="svc-card svc-reveal border border-[#284595] block no-underline">
+                    <div class="svc-img-wrap">
+                        <img src="/assets/service-image-3.jpg" alt="AMC Services" />
+                        <div class="svc-overlay"></div>
+                    </div>
+                    <div class="svc-body">
+                        <h3 class="svc-title">AMC Services</h3>
+                        <p class="svc-desc">Proactive maintenance contracts with scheduled visits, priority support, and discounted repair services for peace of mind.</p>
+                        <span class="svc-link">Discover More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+                    </div>
+                </a>
+                <a href="services.html" class="svc-card svc-reveal border border-[#284595] block no-underline">
+                    <div class="svc-img-wrap">
+                        <img src="/assets/service-image-4.jpg" alt="Remote Assistant" />
+                        <div class="svc-overlay"></div>
+                    </div>
+                    <div class="svc-body">
+                        <h3 class="svc-title">Remote Assistant</h3>
+                        <p class="svc-desc">Fast remote support with screen sharing, real-time troubleshooting, and quick resolution for your technical issues.</p>
+                        <span class="svc-link">Discover More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+                    </div>
+                </a>
+                <a href="services.html" class="svc-card svc-reveal border border-[#284595] block no-underline">
+                    <div class="svc-img-wrap">
+                        <img src="/assets/service-image6.png" alt="Server & IT Infrastructure" />
+                        <div class="svc-overlay"></div>
+                    </div>
+                    <div class="svc-body">
+                        <h3 class="svc-title">Server & CCTV Security Infrastructure</h3>
+                        <p class="svc-desc">End-to-end data center builds, server rack setups, and backup solutions ensuring high availability and disaster recovery.</p>
+                        <span class="svc-link">Discover More <span class="svc-arrow"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
 
-                    <!-- Testimonial 5 -->
-                    <div
-                        class="flex-shrink-0 w-[calc(50%-6px)] sm:w-[calc(50%-10px)] md:w-[calc(50%-12px)] snap-start bg-white rounded-2xl shadow-lg hover:shadow-xl transition-shadow p-4 sm:p-6 md:p-8 border border-gray-100">
-                        <div class="flex items-center gap-3 sm:gap-4 mb-3 sm:mb-4">
-                            <div
-                                class="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-full bg-[#E7EAEE] flex items-center justify-center text-[#284595] text-base sm:text-lg md:text-xl font-bold flex-shrink-0">
-                                VS</div>
-                            <div class="flex-1">
-                                <h4 class="font-bold text-[#1a2a3a] text-sm sm:text-base">Vikram Singh</h4>
-                                <p class="text-[10px] sm:text-xs md:text-sm text-gray-500">Founder, NetSecure</p>
+    <!-- ====== HERO / BANNER SECTION (360° Surveillance) ====== -->
+    <section class="relative w-full min-h-screen flex items-center overflow-hidden bg-[#050a18]">
+        <div class="absolute inset-0 w-full h-full z-0">
+            <img src="assets/download.png" alt="Security Banner" class="absolute inset-0 w-full h-full object-cover object-center" />
+            <div class="absolute inset-0 bg-gradient-to-r from-[#040814] via-[#040814]/90 to-transparent"></div>
+            <div class="absolute inset-0 bg-[#0a1128]/40"></div>
+        </div>
+        <div class="container mx-auto px-4 md:px-8 relative z-10 py-20">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+                <!-- LEFT COLUMN -->
+                <div class="flex flex-col gap-6">
+                    <span class="inline-flex items-center gap-2 bg-[#1a2744]/80 border border-[#2a4b8d]/50 text-[#28aae4] text-[11px] font-bold uppercase tracking-[0.15em] px-4 py-1.5 rounded-full w-fit backdrop-blur-sm">
+                        <i class="fas fa-shield-alt text-[10px]"></i> Premium Security Solutions
+                    </span>
+                    <h1 class="text-3xl sm:text-5xl lg:text-[48px] font-bold leading-[1.1] tracking-tight text-white">
+                        360° Surveillance,<br>
+                        <span class="text-[#28aae4]">Zero Blind Spots</span>
+                    </h1>
+                    <p class="text-gray-400 text-base md:text-lg leading-relaxed max-w-lg">
+                        Advanced security systems that deliver crystal-clear monitoring, intelligent detection, and complete protection — day and night.
+                    </p>
+                    <div class="flex flex-col gap-5 mt-2 border-l-[1px] border-[#1a2d4e] pl-5">
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#1a2744]/80 border border-[#2a4b8d]/50 flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                                <i class="fas fa-video text-[#28aae4] text-sm"></i>
                             </div>
-                            <img src="/assets/double-quotes.png"
-                                class="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 flex-shrink-0" alt="quote">
+                            <div>
+                                <h4 class="text-white font-semibold text-base">4K Ultra HD & 5MP Security Cameras</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed mt-0.5">Crystal-clear day and night vision with wide dynamic range for superior image quality in all lighting conditions.</p>
+                            </div>
                         </div>
-                        <div class="flex text-[#284595] mb-2 sm:mb-3 text-sm sm:text-base"><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i
-                                class="fas fa-star"></i></div>
-                        <p class="text-gray-600 text-xs sm:text-sm md:text-base leading-relaxed">"Outstanding server and
-                            backup solutions. CCTV's team provided excellent support and ensured zero downtime during
-                            migration."</p>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#1a2744]/80 border border-[#2a4b8d]/50 flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                                <i class="fas fa-brain text-[#28aae4] text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-base">AI-Powered Smart Detection</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed mt-0.5">Real-time facial recognition, motion tracking, and intelligent alerts to identify threats before they escalate.</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start gap-4">
+                            <div class="w-10 h-10 rounded-full bg-[#1a2744]/80 border border-[#2a4b8d]/50 flex items-center justify-center flex-shrink-0 backdrop-blur-sm">
+                                <i class="fas fa-cloud-upload-alt text-[#28aae4] text-sm"></i>
+                            </div>
+                            <div>
+                                <h4 class="text-white font-semibold text-base">Secure Cloud & Local Storage</h4>
+                                <p class="text-gray-400 text-sm leading-relaxed mt-0.5">Flexible storage options with encrypted cloud backup, NVR/DVR solutions, and remote access from anywhere.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flex flex-wrap items-center gap-4 mt-2">
+                        <a href="/solutions.html" class="inline-flex items-center gap-2 bg-[#1a4cb3] hover:bg-[#143b8a] text-white font-semibold px-7 py-3.5 rounded-lg transition duration-300 shadow-lg shadow-[#1a4cb3]/30">
+                            <i class="fas fa-shield-alt"></i> Explore Solutions
+                        </a>
+                        <a href="/contact.html" class="inline-flex items-center gap-2 bg-transparent hover:bg-white/5 text-white font-semibold px-7 py-3.5 rounded-lg border border-white/20 transition duration-300">
+                            <i class="fas fa-phone-alt"></i> Request a Quote
+                        </a>
                     </div>
                 </div>
-                <button id="testimonialNext"
-                    class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-2 sm:translate-x-3 md:translate-x-4 z-10 shadow-xl bg-white/90 backdrop-blur-sm w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full flex items-center justify-center hover:bg-white transition border-none cursor-pointer text-[#1a2a3a] text-sm sm:text-lg md:text-xl hover:shadow-2xl">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+                <!-- RIGHT COLUMN -->
+                <div class="relative flex flex-col items-center lg:items-end justify-end h-full gap-0">
+                    
+                    <div class="relative z-10 w-full max-w-[550px] bg-[#10172e]/80 backdrop-blur-md border border-white/10 rounded-2xl p-6 shadow-2xl">
+                        <div class="grid grid-cols-4 divide-x divide-white/10">
+                            <div class="flex flex-col items-center px-2">
+                                <i class="fas fa-shield-alt text-[#28aae4] text-xl mb-1.5"></i>
+                                <span class="text-white font-bold text-lg">500+</span>
+                                <span class="text-gray-400 text-[10px] text-center leading-tight">Happy<br>Clients</span>
+                            </div>
+                            <div class="flex flex-col items-center px-2">
+                                <i class="fas fa-clock text-[#28aae4] text-xl mb-1.5"></i>
+                                <span class="text-white font-bold text-lg">24/7</span>
+                                <span class="text-gray-400 text-[10px] text-center leading-tight">Monitoring</span>
+                            </div>
+                            <div class="flex flex-col items-center px-2">
+                                <i class="fas fa-check-circle text-[#28aae4] text-xl mb-1.5"></i>
+                                <span class="text-white font-bold text-lg">99.9%</span>
+                                <span class="text-gray-400 text-[10px] text-center leading-tight">Uptime</span>
+                            </div>
+                            <div class="flex flex-col items-center px-2">
+                                <i class="fas fa-users text-[#28aae4] text-xl mb-1.5"></i>
+                                <span class="text-white font-bold text-lg">15+</span>
+                                <span class="text-gray-400 text-[10px] text-center leading-tight">Years<br>Experience</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ====== CTA ====== -->
-    <section
-        class="relative py-10 sm:py-14 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
-        <img src="/assets/contactbanner.jpg" alt="Contact Banner"
-            class="absolute inset-0 w-full h-full object-cover object-center" />
+    <section class="relative py-10 sm:py-14 md:py-20 overflow-hidden min-h-[350px] sm:min-h-[400px] md:min-h-[450px] flex items-center">
+        <img src="/assets/contactbanner.jpg" alt="Contact Banner" class="absolute inset-0 w-full h-full object-cover object-center" />
         <div class="absolute inset-0 bg-black/60"></div>
-        <div
-            class="absolute top-0 right-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-[#954C2E]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3">
-        </div>
-        <div
-            class="absolute bottom-0 left-0 w-48 sm:w-56 md:w-72 lg:w-80 h-48 sm:h-56 md:h-72 lg:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4">
-        </div>
+        <div class="absolute top-0 right-0 w-48 sm:w-64 md:w-80 lg:w-96 h-48 sm:h-64 md:h-80 lg:h-96 bg-[#954C2E]/20 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+        <div class="absolute bottom-0 left-0 w-48 sm:w-56 md:w-72 lg:w-80 h-48 sm:h-56 md:h-72 lg:h-80 bg-[#83B4FF]/20 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
         <div class="container mx-auto px-3 sm:px-4 relative z-10">
-            <div
-                class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
-                <span
-                    class="inline-block px-3 sm:px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
+            <div class="max-w-2xl mx-auto bg-white/30 backdrop-blur-md rounded-2xl shadow-2xl border border-white/20 p-5 sm:p-6 md:p-10 lg:p-12 text-center">
+                <span class="inline-block px-3 sm:px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-[10px] sm:text-xs font-bold tracking-widest uppercase mb-3 sm:mb-4">
                     <i class="fas fa-rocket mr-1 sm:mr-2"></i> Let's Get Started
                 </span>
                 <h2 class="text-base sm:text-lg md:text-xl font-bold text-[#DDDDDD] mb-3 sm:mb-4 leading-tight">
-                    Ready to Transform Your <span class="text-white">IT Infrastructure</span>?
+                    Ready to Transform Your <span class="text-white">CCTV Security Infrastructure</span>?
                 </h2>
                 <p class="text-sm sm:text-base text-gray-300 max-w-2xl mx-auto mb-5 sm:mb-6 md:mb-8 leading-relaxed">
-                    Let's build a secure, scalable technology environment that keeps your <span
-                        class="text-white font-semibold">business moving forward</span> with confidence and reliability.
+                    Let's build a secure, scalable technology environment that keeps your <span class="text-white font-semibold">business moving forward</span> with confidence and reliability.
                 </p>
                 <div class="flex flex-wrap items-center justify-center gap-2 sm:gap-3 md:gap-4">
-                    <a href="contact.html"
-                        class="bg-[#284595] text-white px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-[#191E32] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                    <a href="contact.html" class="bg-[#284595] text-white px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-[#191E32] transition-all duration-300 hover:-translate-y-1 hover:shadow-xl inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
                         <i class="fas fa-paper-plane"></i> Get Started
                     </a>
-                    <a href="services.html"
-                        class="bg-[#EEE2DE] backdrop-blur-sm border border-white/30 text-[#2B2A4C] px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
+                    <a href="services.html" class="bg-[#EEE2DE] backdrop-blur-sm border border-white/30 text-[#2B2A4C] px-4 sm:px-5 md:px-8 py-1.5 sm:py-2 rounded-lg font-semibold hover:bg-white/40 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg inline-flex items-center gap-2 text-xs sm:text-sm md:text-base">
                         <i class="fas fa-arrow-right"></i> Explore Services
                     </a>
                 </div>
@@ -1781,139 +1183,87 @@
     </section>
 
     <!-- ====== FOOTER ====== -->
-    <footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
-        <!-- Background Image -->
+    <footer class="relative text-white pt-4 pb-1 overflow-hidden">
         <div class="absolute inset-0 z-0">
             <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
             <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
         </div>
-
         <div class="container mx-auto px-3 sm:px-4 relative z-10">
-            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
-                <!-- Brand Column -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-2">
+                <!-- Column 1 -->
                 <div>
-                    <div class="mb-3">
-                        <img src="/assets/cctv-logo-removebg.png" alt="Akanksha Enterprises logo"
-                            class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+                    <div class="mb-1.5">
+                        <img src="/assets/cctv-logo-removebg.png" alt="Akanksha Enterprises logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
                     </div>
-                    <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions
-                        provider delivering cutting-edge technology and infrastructure services to businesses across
-                        India.</p>
-                    <div class="flex gap-2 sm:gap-3">
-                        <a href="#"
-                            class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                            <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                            <i class="fab fa-twitter text-xs sm:text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                            <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
-                        </a>
-                        <a href="#"
-                            class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                            <i class="fab fa-instagram text-xs sm:text-sm"></i>
-                        </a>
+                    <p class="text-blue-800/80 text-[10px] sm:text-xs mb-1.5 leading-snug font-light">Leading CCTV Security solutions provider across India.</p>
+                    <div class="flex gap-1.5">
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-facebook-f text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-twitter text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-linkedin-in text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-instagram text-[9px] sm:text-[10px]"></i></a>
                     </div>
                 </div>
-
-                <!-- Quick Links -->
+                <!-- Column 2 -->
                 <div>
-                    <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
                         Quick Links
-                        <span
-                            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
                     </h4>
-                    <ul class="space-y-1.5 sm:space-y-2">
-                        <li><a href="index.html"
-                                class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
-                        <li><a href="about.html"
-                                class="text-[#234FAA]  text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
-                        <li><a href="services.html"
-                                class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
-
+                    <ul class="space-y-0.5">
+                        <li><a href="index.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Home</a></li>
+                        <li><a href="about.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> About</a></li>
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Services</a></li>
                     </ul>
                 </div>
-
-
-
-                <!-- Services -->
+                <!-- Column 3 -->
                 <div>
-                    <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                        Quick Links
-                        <span
-                            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
+                        Our Offerings
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
                     </h4>
-                    <ul class="space-y-1.5 sm:space-y-2">
-                        <li><a href="services.html"
-                                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
-                        <li><a href="services.html"
-                                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
-                        <li><a href="services.html"
-                                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                                <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
-
+                    <ul class="space-y-0.5">
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Solutions</a></li>
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Products</a></li>
+                        <li><a href="contact.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Contact</a></li>
                     </ul>
                 </div>
-
-                <!-- Contact Info -->
+                <!-- Column 4 -->
                 <div>
-                    <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
                         Contact Info
-                        <span
-                            class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
                     </h4>
-                    <ul class="space-y-2 sm:space-y-3">
-                        <li class="flex items-start gap-3 group">
-                            <div
-                                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                                <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
-                            </div>
-                            <span
-                                class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91
-                                9766491858 </span>
+                    <ul class="space-y-1">
+                        <li class="flex items-center gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-phone text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="tel:+919766491858" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">+91 9766491858</a>
+                            <span class="text-[#234FAA] text-[10px] sm:text-[11px]">/</span>
+                            <a href="tel:+918983039090" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">+91 8983039090</a>
                         </li>
-                        <li class="flex items-start gap-3 group">
-                            <div
-                                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                                <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
-                            </div>
-                            <span
-                                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
+                        <li class="flex items-center gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-envelope text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="mailto:info@akankshaent.com" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">info@akankshaent.com</a>
                         </li>
-                        <li class="flex items-start gap-3 group">
-                            <div
-                                class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                                <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
-                            </div>
-                            <span
-                                class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop
-                                No 206, KamalRaj Parijat, Walke Nagar,
-                                Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
+                        <li class="flex items-start gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 mt-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-map-marker-alt text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="https://maps.google.com/?q=Shop+No+206+KamalRaj+Parijat+Walke+Nagar+Pune+Alandi+Road+Dighi+Pune+MH+411015" target="_blank" rel="noopener noreferrer" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium leading-tight transition-all duration-300 hover:text-[#1AA1E1] hover:underline">Shop 206, KamalRaj Parijat, Dighi, Pune - 411015</a>
                         </li>
                     </ul>
                 </div>
             </div>
-
-            <!-- Bottom Bar -->
-            <div
-                class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-                <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
-                    &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights
-                    Reserved.
-                </p>
-                <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
-                    <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
-                    <span class="w-px h-3 bg-white/10"></span>
-                    <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
-
+            <!-- Copyright Bar -->
+            <div class="border-t border-black/20 pt-1.5">
+                <div class="flex flex-wrap items-center justify-between gap-1">
+                    <p class="text-blue-800 text-[8px] sm:text-[9px] md:text-[10px] whitespace-nowrap">
+                        &copy; 2026 <span class="text-white font-semibold">Akanksha Enterprises</span>. All Rights Reserved.
+                    </p>
+                    <div class="flex items-center gap-1.5 sm:gap-2 text-[8px] sm:text-[9px]">
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Privacy Policy</a>
+                        <span class="w-px h-2.5 bg-white/10"></span>
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Terms of Service</a>
+                        <span class="w-px h-2.5 bg-white/10"></span>
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Sitemap</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -1924,83 +1274,59 @@
 
     <!-- ====== SCRIPTS ====== -->
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
-
-            // ✅ YEH ADD KARO — sabse pehle
+        document.addEventListener('DOMContentLoaded', function() {
             AOS.init({
                 duration: 600,
                 once: true,
                 offset: 80
             });
 
-
             // Mobile nav
             const hamburger = document.getElementById('hamburger');
             const mobileNav = document.getElementById('mobileNav');
             if (hamburger && mobileNav) {
-                hamburger.addEventListener('click', function () { mobileNav.classList.toggle('hidden'); });
+                hamburger.addEventListener('click', function() { mobileNav.classList.toggle('hidden'); });
             }
 
             // Scroll to top
             const scrollBtn = document.getElementById('scrollToTop');
-            window.addEventListener('scroll', () => {
+            window.addEventListener('scroll', function() {
                 if (window.scrollY > 300) scrollBtn.classList.add('show');
                 else scrollBtn.classList.remove('show');
             });
-            scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+            scrollBtn.addEventListener('click', function() { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-            // Testimonials Carousel
-            const testimonialTrack = document.getElementById('testimonialTrack');
-            const prevBtn = document.getElementById('testimonialPrev');
-            const nextBtn = document.getElementById('testimonialNext');
+            // About section scroll reveal
+            const revealItems = document.querySelectorAll('[data-reveal], .about-row-reveal');
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const el = entry.target;
+                        const delay = el.dataset.revealDelay || 0;
+                        setTimeout(function() {
+                            el.classList.add('is-visible');
+                        }, parseInt(delay));
+                        observer.unobserve(el);
+                    }
+                });
+            }, { threshold: 0.15 });
+            revealItems.forEach(function(el) { observer.observe(el); });
 
-            if (testimonialTrack && prevBtn && nextBtn) {
-                function getScrollAmount() {
-                    const card = testimonialTrack.querySelector('.flex-shrink-0');
-                    if (!card) return 320;
-                    const gap = 24;
-                    return (card.offsetWidth + gap) * 2;
-                }
-
-                function scrollTestimonialLeft() {
-                    testimonialTrack.scrollBy({ left: -getScrollAmount(), behavior: 'smooth' });
-                }
-
-                function scrollTestimonialRight() {
-                    testimonialTrack.scrollBy({ left: getScrollAmount(), behavior: 'smooth' });
-                }
-
-                prevBtn.addEventListener('click', scrollTestimonialLeft);
-                nextBtn.addEventListener('click', scrollTestimonialRight);
-
-                let autoInterval = setInterval(scrollTestimonialRight, 5000);
-
-                function pauseAuto() { clearInterval(autoInterval); }
-                function resumeAuto() {
-                    clearInterval(autoInterval);
-                    autoInterval = setInterval(scrollTestimonialRight, 5000);
-                }
-
-                testimonialTrack.addEventListener('mouseenter', pauseAuto);
-                testimonialTrack.addEventListener('mouseleave', resumeAuto);
-                prevBtn.addEventListener('mouseenter', pauseAuto);
-                prevBtn.addEventListener('mouseleave', resumeAuto);
-                nextBtn.addEventListener('mouseenter', pauseAuto);
-                nextBtn.addEventListener('mouseleave', resumeAuto);
-
-                function updateArrows() {
-                    const maxScroll = testimonialTrack.scrollWidth - testimonialTrack.clientWidth;
-                    prevBtn.style.opacity = testimonialTrack.scrollLeft <= 2 ? '0.3' : '1';
-                    nextBtn.style.opacity = testimonialTrack.scrollLeft >= maxScroll - 2 ? '0.3' : '1';
-                }
-                testimonialTrack.addEventListener('scroll', updateArrows);
-                window.addEventListener('resize', updateArrows);
-                setTimeout(updateArrows, 100);
-            }
+            // Services section scroll reveal
+            const revealEls = document.querySelectorAll('.svc-reveal');
+            const revealObs = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        revealObs.unobserve(entry.target);
+                    }
+                });
+            }, { threshold: 0.12 });
+            revealEls.forEach(function(el) { revealObs.observe(el); });
         });
 
-        // Parallax effect
-        (function () {
+        // Parallax effect (Fixed for Desktop stability)
+        (function() {
             const videoBg = document.getElementById('heroVideoBg');
             const content = document.getElementById('heroContent');
             const hero = document.getElementById('heroParallax');
@@ -2013,177 +1339,28 @@
                 const heroHeight = hero.offsetHeight;
                 const progress = Math.min(1, scrollY / heroHeight);
 
-                const bgShift = progress * 0.15 * heroHeight;
-                videoBg.style.transform = `translateY(${bgShift * 0.5}px)`;
-
-                const contentShift = progress * 0.12 * heroHeight;
-                content.style.transform = `translateY(${contentShift * 1.3}px)`;
+                videoBg.style.transform = 'translateY(' + (progress * 0.15 * heroHeight * 0.5) + 'px)';
+                content.style.transform = 'translateY(' + (progress * 0.12 * heroHeight * 1.3) + 'px)';
 
                 const img = document.querySelector('.hero-image-card img');
                 if (img) {
                     const scale = 1 + (progress * 0.02);
-                    img.style.transform = `scale(${scale})`;
+                    img.style.transform = 'scale(' + scale + ')';
                 }
                 ticking = false;
             }
 
-            function onScroll() {
+            window.addEventListener('scroll', function() {
                 if (!ticking) {
-                    window.requestAnimationFrame(() => {
+                    window.requestAnimationFrame(function() {
                         updateParallax();
                         ticking = false;
                     });
                     ticking = true;
                 }
-            }
-
-            window.addEventListener('scroll', onScroll, { passive: true });
+            }, { passive: true });
             window.addEventListener('resize', updateParallax);
             updateParallax();
-        })();
-
-        // About section scroll reveal
-        (function () {
-            const revealItems = document.querySelectorAll('[data-reveal], .about-row-reveal');
-            const observer = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        const el = entry.target;
-                        const delay = el.dataset.revealDelay || 0;
-                        setTimeout(function () {
-                            el.classList.add('is-visible');
-                        }, parseInt(delay));
-                        observer.unobserve(el);
-                    }
-                });
-            }, { threshold: 0.15 });
-            revealItems.forEach(function (el) {
-                observer.observe(el);
-            });
-        })();
-
-        // Services section scroll reveal
-        (function () {
-            const revealEls = document.querySelectorAll('.svc-reveal');
-            const revealObs = new IntersectionObserver(function (entries) {
-                entries.forEach(function (entry) {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('is-visible');
-                        revealObs.unobserve(entry.target);
-                    }
-                });
-            }, { threshold: 0.12 });
-            revealEls.forEach(function (el) { revealObs.observe(el); });
-
-            // 3D tilt effect
-            const cards = document.querySelectorAll('.svc-card');
-            cards.forEach(function (card) {
-                let isHovering = false;
-
-                card.addEventListener('mouseenter', function () {
-                    isHovering = true;
-                    card.style.transition = 'transform 0.4s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1)';
-                });
-
-                card.addEventListener('mousemove', function (e) {
-                    if (!isHovering) return;
-                    const r = card.getBoundingClientRect();
-                    const x = e.clientX - r.left - r.width / 2;
-                    const y = e.clientY - r.top - r.height / 2;
-                    const tiltX = (y / r.height * 2) * 6;
-                    const tiltY = (x / r.width * 2) * -6;
-
-                    card.style.transition = 'transform 0.15s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.4s cubic-bezier(0.23, 1, 0.32, 1)';
-                    card.style.transform = 'translateY(-10px) perspective(900px) rotateX(' + tiltX + 'deg) rotateY(' + tiltY + 'deg)';
-                });
-
-                card.addEventListener('mouseleave', function () {
-                    isHovering = false;
-                    card.style.transition = 'transform 0.6s cubic-bezier(0.23, 1, 0.32, 1), box-shadow 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
-                    card.style.transform = '';
-
-                    setTimeout(function () {
-                        card.style.transition = '';
-                    }, 600);
-                });
-            });
-        })();
-
-        // Testimonials Carousel with drag-to-scroll
-        (function () {
-            const testimonialTrack = document.getElementById('testimonialTrack');
-            const prevBtn = document.getElementById('testimonialPrev');
-            const nextBtn = document.getElementById('testimonialNext');
-
-            if (testimonialTrack && prevBtn && nextBtn) {
-                let isDragging = false;
-                let startX = 0;
-                let scrollLeft = 0;
-
-                testimonialTrack.addEventListener('mousedown', function (e) {
-                    isDragging = true;
-                    startX = e.pageX - testimonialTrack.offsetLeft;
-                    scrollLeft = testimonialTrack.scrollLeft;
-                    testimonialTrack.style.cursor = 'grabbing';
-                    testimonialTrack.style.scrollBehavior = 'auto';
-                });
-
-                testimonialTrack.addEventListener('mouseleave', function () {
-                    if (isDragging) {
-                        isDragging = false;
-                        testimonialTrack.style.cursor = 'grab';
-                        testimonialTrack.style.scrollBehavior = 'smooth';
-                    }
-                });
-
-                testimonialTrack.addEventListener('mouseup', function () {
-                    if (isDragging) {
-                        isDragging = false;
-                        testimonialTrack.style.cursor = 'grab';
-                        testimonialTrack.style.scrollBehavior = 'smooth';
-                    }
-                });
-
-                testimonialTrack.addEventListener('mousemove', function (e) {
-                    if (!isDragging) return;
-                    e.preventDefault();
-                    const x = e.pageX - testimonialTrack.offsetLeft;
-                    const walk = (x - startX) * 1.5;
-                    testimonialTrack.scrollLeft = scrollLeft - walk;
-                });
-
-                let touchStartX = 0;
-                let touchScrollLeft = 0;
-                let isTouching = false;
-
-                testimonialTrack.addEventListener('touchstart', function (e) {
-                    isTouching = true;
-                    touchStartX = e.touches[0].pageX - testimonialTrack.offsetLeft;
-                    touchScrollLeft = testimonialTrack.scrollLeft;
-                    testimonialTrack.style.scrollBehavior = 'auto';
-                }, { passive: true });
-
-                testimonialTrack.addEventListener('touchmove', function (e) {
-                    if (!isTouching) return;
-                    const x = e.touches[0].pageX - testimonialTrack.offsetLeft;
-                    const walk = (x - touchStartX) * 1.2;
-                    testimonialTrack.scrollLeft = touchScrollLeft - walk;
-                }, { passive: true });
-
-                testimonialTrack.addEventListener('touchend', function () {
-                    isTouching = false;
-                    testimonialTrack.style.scrollBehavior = 'smooth';
-                }, { passive: true });
-
-                function updateArrows() {
-                    const maxScroll = testimonialTrack.scrollWidth - testimonialTrack.clientWidth;
-                    prevBtn.style.opacity = testimonialTrack.scrollLeft <= 2 ? '0.3' : '1';
-                    nextBtn.style.opacity = testimonialTrack.scrollLeft >= maxScroll - 2 ? '0.3' : '1';
-                }
-                testimonialTrack.addEventListener('scroll', updateArrows);
-                window.addEventListener('resize', updateArrows);
-                setTimeout(updateArrows, 100);
-            }
         })();
     </script>
 </body>

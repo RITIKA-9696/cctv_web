@@ -2,165 +2,149 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes" />
   <title>Contact Us - Akanksha Enterprises</title>
-  <!-- Tailwind + Font Awesome (CDN) -->
+
+  <!-- Tailwind + Font Awesome -->
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- EmailJS Library -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js">
+  </script>
+
   <style>
-    /* ----- global reset / helpers ----- */
-    * { box-sizing: border-box; }
-    body { margin: 0; font-family: system-ui, -apple-system, 'Inter', sans-serif; background: #F5F2F0; }
-
-    /* ----- HEADER ----- */
-        #mainHeader {
-            font-family: 'Inter', sans-serif;
-        }
-
-        .brand-name {
-            font-family: 'Instrument Serif', serif;
-            font-weight: 400;
-            font-size: 1.5rem;
-            letter-spacing: 0.5px;
-        }
-
-        .brand-name .highlight {
-            color: #284595;
-        }
-
-        .brand-name .light {
-            color: #ffffff;
-        }
-
-        /* Logo styling */
-        .header-logo {
-            height: 40px;
-            width: auto;
-            display: block;
-            object-fit: contain;
-        }
-
-        .nav-link {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 0.95rem;
-            letter-spacing: 0.3px;
-            color: #191E32;
-            transition: color 0.2s ease;
-            text-decoration: none;
-            padding: 0.4rem 0.8rem;
-            border-radius: 9999px;
-        }
-
-        .nav-link:hover {
-            color: #284595;
-        }
-
-        .nav-link.active {
-            background: #284595;
-            color: #fff;
-            padding: 0.4rem 1.2rem;
-        }
-
-        .nav-link.active:hover {
-            color: #fff;
-            background: #28AAE4;
-        }
-
-        .btn-contact {
-            font-family: 'Inter', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            background: #191E32;
-            color: #fff;
-            padding: 0.5rem 1.25rem;
-            border-radius: 8px;
-            transition: all 0.25s ease;
-            text-decoration: none;
-            letter-spacing: 0.2px;
-        }
-
-        .btn-contact.active {
-          background-color: #1c3474;
-          color: #fff;
-            padding: 0.4rem 1.2rem;
-        }
-
-        .btn-contact:hover {
-            background: #284595;
-            transform: translateY(-2px);
-            box-shadow: 0 8px 20px #1c3474;
-        }
-
-        .mobile-nav-link {
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-            font-size: 1rem;
-            color: #1a2a3a;
-            padding: 0.6rem 0;
-            display: block;
-            transition: color 0.2s;
-            text-decoration: none;
-        }
-
-        .mobile-nav-link:hover {
-            color: #284595;
-        }
-
-        .mobile-nav-link.active-mobile {
-            background: #284595;
-            color: #fff;
-            border-radius: 8px;
-            padding: 0.6rem 1.2rem;
-        }
-
-        .header-inner {
-            background: white;
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            border-radius: 9999px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-            border: 1px solid rgba(255, 255, 255, 0.06);
-            padding: 0.75rem 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            gap: 1rem;
-        }
-
-    /* Scroll to top */
-    #scrollToTop {
-      position: fixed;
-      bottom: 100px;
-      right: 30px;
-      width: 50px;
-      height: 50px;
-      background: #1A328D;
-      color: white;
-      border: none;
-      border-radius: 50%;
-      font-size: 20px;
-      cursor: pointer;
-      box-shadow: 0 4px 15px #1A328D;
-      transition: all 0.3s ease;
-      opacity: 0;
-      visibility: hidden;
-      transform: translateY(20px);
-      z-index: 999;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    /* ----- reset & base ----- */
+    * {
+      box-sizing: border-box;
+      margin: 0;
     }
-    #scrollToTop:hover { background: #1A328D; transform: translateY(-3px) scale(1.05); }
-    #scrollToTop.show { opacity: 1; visibility: visible; transform: translateY(0); }
-    #scrollToTop i { animation: bounceUp 2s ease-in-out infinite; }
-    @keyframes bounceUp { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-4px);} }
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, 'Inter', sans-serif;
+      background: #F5F2F0;
+      -webkit-font-smoothing: antialiased;
+    }
 
-    /* WhatsApp */
+    /* ----- toast notification ----- */
+    .toast {
+      visibility: hidden;
+      min-width: 280px;
+      max-width: 90vw;
+      background: #1e293b;
+      color: #fff;
+      text-align: center;
+      border-radius: 12px;
+      padding: 14px 20px;
+      position: fixed;
+      z-index: 9999;
+      left: 50%;
+      bottom: 100px;
+      transform: translateX(-50%) translateY(24px);
+      opacity: 0;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.35);
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.3px;
+      backdrop-filter: blur(4px);
+      border: 1px solid rgba(255, 255, 255, 0.06);
+    }
+    .toast.show {
+      visibility: visible;
+      transform: translateX(-50%) translateY(0);
+      opacity: 1;
+    }
+    .toast.success {
+      background: #0b8a4a;
+      box-shadow: 0 8px 28px rgba(11, 138, 74, 0.4);
+    }
+    .toast.error {
+      background: #b91c1c;
+      box-shadow: 0 8px 28px rgba(185, 28, 28, 0.4);
+    }
+
+    /* ----- loading spinner (button) ----- */
+    .btn-loading {
+      opacity: 0.8;
+      pointer-events: none;
+      cursor: default;
+    }
+    .spinner {
+      display: none;
+      width: 22px;
+      height: 22px;
+      border: 3px solid rgba(255, 255, 255, 0.25);
+      border-radius: 50%;
+      border-top-color: #ffffff;
+      animation: spin 0.7s linear infinite;
+    }
+    .btn-loading .spinner {
+      display: inline-block;
+    }
+    .btn-loading .btn-text {
+      visibility: hidden;
+      display: inline-block;
+      width: 0;
+      overflow: hidden;
+    }
+    @keyframes spin {
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    /* ----- header / nav helpers ----- */
+    #mainHeader {
+      font-family: 'Inter', sans-serif;
+    }
+    .nav-link {
+      font-weight: 500;
+      font-size: 0.95rem;
+      color: #191E32;
+      transition: color 0.2s ease;
+      text-decoration: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 9999px;
+      white-space: nowrap;
+    }
+    .nav-link:hover {
+      color: #284595;
+    }
+    .btn-contact {
+      font-weight: 600;
+      font-size: 0.85rem;
+      background: #191E32;
+      color: #fff;
+      padding: 0.5rem 1.25rem;
+      border-radius: 8px;
+      transition: all 0.25s ease;
+      text-decoration: none;
+      white-space: nowrap;
+    }
+    .btn-contact:hover {
+      background: #284595;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(28, 52, 116, 0.35);
+    }
+    .mobile-nav-link {
+      font-weight: 500;
+      font-size: 1rem;
+      color: #1a2a3a;
+      padding: 0.6rem 0;
+      display: block;
+      transition: color 0.2s;
+      text-decoration: none;
+    }
+    .mobile-nav-link:hover {
+      color: #284595;
+    }
+
+    /* ----- fixed elements: WhatsApp & scroll top ----- */
     #whatsappBtn {
       position: fixed;
-      bottom: 30px;
-      right: 30px;
+      bottom: 24px;
+      right: 24px;
       width: 60px;
       height: 60px;
       background: #25D366;
@@ -169,36 +153,119 @@
       border-radius: 50%;
       font-size: 32px;
       cursor: pointer;
-      box-shadow: 0 4px 20px rgba(37,211,102,0.5);
+      box-shadow: 0 6px 24px rgba(37, 211, 102, 0.5);
       transition: all 0.3s ease;
       z-index: 999;
       display: flex;
       align-items: center;
       justify-content: center;
       text-decoration: none;
-      animation: pulse 2s ease-in-out infinite;
+      animation: pulse 2.2s ease-in-out infinite;
     }
-    #whatsappBtn:hover { transform: scale(1.1) translateY(-3px); box-shadow: 0 8px 30px rgba(37,211,102,0.6); }
-    @keyframes pulse { 0%,100%{transform:scale(1);} 50%{transform:scale(1.05);} }
+    #whatsappBtn:hover {
+      transform: scale(1.08) translateY(-3px);
+      box-shadow: 0 10px 32px rgba(37, 211, 102, 0.6);
+    }
+    @keyframes pulse {
+      0%,
+      100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.06);
+      }
+    }
 
-    /* responsive tweaks for fixed buttons */
-    @media (max-width: 640px) {
-      #scrollToTop { bottom: 90px; right: 20px; width: 44px; height: 44px; font-size: 16px; }
-      #whatsappBtn { bottom: 20px; right: 20px; width: 54px; height: 54px; font-size: 28px; }
+    #scrollToTop {
+      position: fixed;
+      bottom: 100px;
+      right: 24px;
+      width: 48px;
+      height: 48px;
+      background: #1A328D;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-size: 18px;
+      cursor: pointer;
+      box-shadow: 0 4px 18px rgba(26, 50, 141, 0.4);
+      transition: all 0.3s ease;
+      opacity: 0;
+      visibility: hidden;
+      transform: translateY(16px);
+      z-index: 999;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-    @media (min-width:641px) and (max-width:1024px) {
-      #scrollToTop { bottom: 100px; right: 25px; }
-      #whatsappBtn { bottom: 25px; right: 25px; }
+    #scrollToTop:hover {
+      background: #0f256b;
+      transform: translateY(-3px) scale(1.04);
+    }
+    #scrollToTop.show {
+      opacity: 1;
+      visibility: visible;
+      transform: translateY(0);
     }
 
-    /* footer background overlay */
+    /* ----- responsive tweaks for fixed buttons ----- */
+    @media (max-width: 480px) {
+      #whatsappBtn {
+        bottom: 18px;
+        right: 18px;
+        width: 54px;
+        height: 54px;
+        font-size: 28px;
+      }
+      #scrollToTop {
+        bottom: 84px;
+        right: 18px;
+        width: 42px;
+        height: 42px;
+        font-size: 16px;
+      }
+      .toast {
+        bottom: 80px;
+        min-width: 240px;
+        font-size: 0.85rem;
+        padding: 12px 16px;
+      }
+    }
+    @media (min-width: 481px) and (max-width: 768px) {
+      #whatsappBtn {
+        bottom: 22px;
+        right: 22px;
+        width: 58px;
+        height: 58px;
+        font-size: 30px;
+      }
+      #scrollToTop {
+        bottom: 92px;
+        right: 22px;
+        width: 46px;
+        height: 46px;
+      }
+    }
+
+    /* ----- container & helpers ----- */
+    .container {
+      max-width: 1280px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* banner overlay fix for small devices */
+    .banner-overlay {
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0.40) 80%);
+    }
+
+    /* footer bg */
     .footer-bg-overlay {
       position: absolute;
       inset: 0;
-      background: rgba(26, 42, 58, 0.88);
+      background: rgba(26, 42, 58, 0.92);
       z-index: 1;
     }
-    /* image inside footer */
     .footer-img {
       position: absolute;
       inset: 0;
@@ -207,338 +274,462 @@
       object-fit: cover;
       z-index: 0;
     }
-    .footer-content { position: relative; z-index: 2; }
-
-    /* form fields */
-    input, select, textarea {
-      background: #fff;
+    .footer-content {
+      position: relative;
+      z-index: 2;
     }
-    .container { max-width: 1280px; margin-left: auto; margin-right: auto; }
+
+    /* form elements */
+    input,
+    select,
+    textarea {
+      background: #fff;
+      transition: border-color 0.2s;
+    }
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #284595;
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(40, 69, 149, 0.15);
+    }
+
+    /* smoother images */
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* utility for better touch targets */
+    .tap-highlight {
+      -webkit-tap-highlight-color: transparent;
+    }
   </style>
 </head>
 <body>
 
-<!-- ====== HEADER ====== -->
-    <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
-        <div class="container mx-auto px-3 sm:px-4 max-w-5xl">
-            <div class="header-inner">
-                <div class="flex-shrink-0">
-                    <!-- Logo fixed -->
-                    <img src="/assets/cctv-logo.jpeg" alt="CCTV Logo" class="header-logo" />
-                </div>
-                <nav class="flex-1 flex justify-center">
-                    <ul class="hidden md:flex items-center gap-0.5 lg:gap-1.5">
-                        <li><a href="index.html" class="nav-link ">Home</a></li>
-                        <li><a href="about.html" class="nav-link">About</a></li>
-                        <li><a href="services.html" class="nav-link">Services</a></li>
-                        <li><a href="solutions.html" class="nav-link">Solutions</a></li>
-                        <li><a href="products.html" class="nav-link">Products</a></li>
-                    </ul>
-                </nav>
-                <div class="hidden md:block flex-shrink-0">
-                    <a href="contact.html" class="btn-contact active">Contact Us</a>
-                </div>
-                <div class="md:hidden flex flex-col gap-1.5 cursor-pointer" id="hamburger">
-                    <span class="w-5 h-0.5 bg-white transition-all"></span>
-                    <span class="w-5 h-0.5 bg-white transition-all"></span>
-                    <span class="w-5 h-0.5 bg-white transition-all"></span>
-                </div>
-            </div>
-            <div class="md:hidden hidden mt-2 px-2" id="mobileNav">
-                <div class="bg-white/90 backdrop-blur-md rounded-2xl shadow-2xl px-5 py-4 border border-white/20">
-                    <ul class="flex flex-col gap-2 text-center">
-                        <li><a href="index.html" class="mobile-nav-link ">Home</a></li>
-                        <li><a href="about.html" class="mobile-nav-link">About</a></li>
-                        <li><a href="services.html" class="mobile-nav-link">Services</a></li>
-                        <li><a href="solutions.html" class="mobile-nav-link">Solutions</a></li>
-                        <li><a href="products.html" class="mobile-nav-link">Products</a></li>
-                        <li class="mt-2"><a href="contact.html" class="btn-contact block text-center"
-                                style="background:#191E32; border-radius:40px; padding:0.6rem;">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
+  <!-- Toast Notification -->
+  <div id="toast" class="toast"></div>
+
+  <!-- ====== HEADER ====== -->
+  <header class="fixed top-3 md:top-5 left-0 right-0 z-50" id="mainHeader">
+    <div class="container mx-auto px-3 sm:px-4 max-w-6xl">
+      <div class="bg-white/90 backdrop-blur-lg rounded-full shadow-lg border border-white/50 px-3 sm:px-5 py-2.5 flex items-center justify-between transition-all duration-300">
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <img src="/assets/cctv-logo.jpeg" alt="Akanksha CCTV" class="h-10 sm:h-12 md:h-14 w-auto object-contain" />
         </div>
-    </header>
 
-<!-- ===== PAGE BANNER ===== -->
-<section class="relative text-white overflow-hidden">
-  <div class="relative h-[300px] md:h-[350px] lg:h-[300px]">
-    <img src="/assets/about-banner.png" alt="Contact Us" class="absolute inset-0 w-full h-full object-cover" />
-    <div class="absolute inset-0 bg-black/60"></div>
-    <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4">
-      <span class="inline-block px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3 mt-12">
-        <i class="fas fa-envelope mr-2"></i> Get in Touch
-      </span>
-      <h1 class="hero-title instrument-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl leading-tight max-w-3xl">
-                <span class="text-[#EBECEE]">Contact Us</span>
-            </h1>
-      <p class="text-base md:text-lg text-gray-300 max-w-2xl">Get in touch with our team for all your IT needs</p>
+        <!-- Desktop Nav -->
+        <nav class="hidden lg:flex flex-1 justify-center">
+          <ul class="flex items-center gap-1 xl:gap-3">
+            <li><a href="index.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-3 py-1.5">Home</a></li>
+            <li><a href="about.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-3 py-1.5">About</a></li>
+            <li><a href="services.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-3 py-1.5">Services</a></li>
+            <li><a href="solutions.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-3 py-1.5">Solutions</a></li>
+            <li><a href="products.html" class="nav-link text-gray-700 hover:text-[#1A328D] px-3 py-1.5">Products</a></li>
+          </ul>
+        </nav>
+
+        <!-- Divider -->
+        <div class="hidden lg:block w-px h-7 bg-gray-300 mx-3 flex-shrink-0"></div>
+
+        <!-- Right Side (desktop) -->
+        <div class="hidden lg:flex items-center gap-3 xl:gap-5 flex-shrink-0">
+          <a href="tel:+918983039090" class="flex items-center gap-2 text-[#1A328D] font-semibold text-sm xl:text-base whitespace-nowrap">
+            <i class="fas fa-phone-alt text-[#1A328D]"></i> +91 89830 39090
+          </a>
+          <a href="contact.html" class="btn-contact bg-[#1A328D] text-white px-5 xl:px-6 py-2 rounded-full hover:bg-[#152770] shadow-md">Contact Us</a>
+        </div>
+
+        <!-- Mobile Hamburger -->
+        <div class="lg:hidden flex flex-col gap-1.5 cursor-pointer p-1 tap-highlight" id="hamburger">
+          <span class="w-6 h-0.5 bg-[#1A328D] transition-all rounded-full"></span>
+          <span class="w-6 h-0.5 bg-[#1A328D] transition-all rounded-full"></span>
+          <span class="w-6 h-0.5 bg-[#1A328D] transition-all rounded-full"></span>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div class="lg:hidden hidden mt-2 px-2" id="mobileNav">
+        <div class="bg-white/95 backdrop-blur-lg rounded-2xl shadow-2xl px-5 py-4 border border-white/30">
+          <ul class="flex flex-col gap-2 text-center">
+            <li><a href="index.html" class="mobile-nav-link text-gray-700">Home</a></li>
+            <li><a href="about.html" class="mobile-nav-link text-gray-700">About</a></li>
+            <li><a href="services.html" class="mobile-nav-link text-gray-700">Services</a></li>
+            <li><a href="solutions.html" class="mobile-nav-link text-gray-700">Solutions</a></li>
+            <li><a href="products.html" class="mobile-nav-link text-gray-700">Products</a></li>
+            <li class="mt-2"><a href="contact.html" class="btn-contact block text-center text-white bg-[#1A328D] rounded-full py-2.5">Contact Us</a></li>
+          </ul>
+        </div>
+      </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ===== CONTACT SECTION ===== -->
-<section class="py-16 md:py-20 bg-[#F5F2F0]">
-  <div class="container mx-auto px-4">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
-      <!-- left info -->
-      <div>
-        <span class="inline-block px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3">
-          <i class="fas fa-phone mr-2"></i> Get in Touch
+  <!-- ===== PAGE BANNER ===== -->
+  <section class="relative text-white overflow-hidden">
+    <div class="relative h-[240px] xs:h-[280px] sm:h-[340px] md:h-[400px] lg:h-[450px]">
+      <img src="/assets/about-banner.png" alt="Contact Us - Akanksha Enterprises" class="absolute inset-0 w-full h-full object-cover object-center" />
+      <div class="absolute inset-0 banner-overlay"></div>
+
+      <!-- decorative blur -->
+      <div class="absolute top-0 right-0 w-48 h-48 sm:w-64 sm:h-64 bg-[#284595]/10 rounded-full blur-3xl -translate-y-1/2 translate-x-1/3"></div>
+      <div class="absolute bottom-0 left-0 w-56 h-56 sm:w-80 sm:h-80 bg-[#28AAE4]/10 rounded-full blur-3xl translate-y-1/2 -translate-x-1/4"></div>
+
+      <div class="absolute inset-0 flex flex-col items-center justify-center text-center px-4 sm:px-6">
+        <!-- Breadcrumb -->
+        <nav class="flex items-center gap-2 text-xs sm:text-sm text-gray-300 mb-3 sm:mb-4" aria-label="Breadcrumb">
+          <a href="index.html" class="hover:text-[#28AAE4] transition-colors duration-300">
+            <i class="fas fa-home"></i> Home
+          </a>
+          <span class="text-gray-400">/</span>
+          <span class="text-[#28AAE4] font-medium">Contact Us</span>
+        </nav>
+
+        <!-- Badge -->
+        <span class="inline-block px-4 py-1.5 bg-[#284595]/20 backdrop-blur-sm text-[#28AAE4] rounded-full text-[11px] sm:text-xs font-bold tracking-widest uppercase mb-2 sm:mb-3 border border-[#28AAE4]/30">
+          <i class="fas fa-envelope mr-2"></i> Get in Touch
         </span>
-        <h2 class="text-2xl md:text-3xl font-bold text-[#1A328D] mb-4">Let's Connect</h2>
-        <p class="text-gray-600 mb-8">Have questions or ready to transform your business with our solutions or Services? Reach out to us and our team will get back to you promptly.</p>
-        <div class="space-y-4">
-          <div class="flex gap-4 items-start">
-            <i class="fas fa-phone text-xl text-[#1A328D] w-8 text-center mt-1"></i>
-            <div><h4 class="font-semibold text-[#1a2a3a]">Phone</h4><p class="text-gray-600">+91 9766491858 | +91 8983039090</p></div>
+
+        <!-- Heading -->
+        <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl lg:text-6xl leading-tight max-w-3xl">
+          <span class="text-white">Contact</span>
+          <span class="text-[#28AAE4]">Us</span>
+        </h1>
+
+        <!-- Subtitle -->
+        <p class="text-sm sm:text-base md:text-lg text-gray-200 max-w-2xl mt-2 sm:mt-3 px-2">
+          We're here to help! Reach out for all your security &amp; CCTV needs.
+        </p>
+
+        <!-- Contact Stats -->
+        <div class="flex flex-wrap items-center justify-center gap-3 sm:gap-5 md:gap-7 mt-3 sm:mt-4">
+          <div class="flex items-center gap-2 text-gray-200 text-[11px] sm:text-sm">
+            <i class="fas fa-phone text-[#28AAE4]"></i>
+            <span>+91 9766491858</span>
           </div>
-          <div class="flex gap-4 items-start">
-            <i class="fas fa-envelope text-xl text-[#1A328D] w-8 text-center mt-1"></i>
-            <div><h4 class="font-semibold text-[#1a2a3a]">Email</h4><p class="text-gray-600">akanksha.ent1997@gmail.com</p></div>
+          <span class="w-px h-4 bg-white/20 hidden xs:block"></span>
+          <div class="flex items-center gap-2 text-gray-200 text-[11px] sm:text-sm">
+            <i class="fas fa-envelope text-[#28AAE4]"></i>
+            <span class="truncate max-w-[130px] sm:max-w-none">akanksha.ent1997@gmail.com</span>
           </div>
-          <div class="flex gap-4 items-start">
-            <i class="fas fa-map-marker-alt text-xl text-[#1A328D] w-8 text-center mt-1"></i>
-            <div><h4 class="font-semibold text-[#1a2a3a]">Location</h4><p class="text-gray-600">Shop No 206, KamalRaj Parijat, Walke Nagar,
-              <br>
-Pune-Alandi Road, Dighi, Pune, MH — 411015.</p></div>
+          <span class="w-px h-4 bg-white/20 hidden xs:block"></span>
+          <div class="flex items-center gap-2 text-gray-200 text-[11px] sm:text-sm">
+            <i class="fas fa-clock text-[#28AAE4]"></i>
+            <span>Mon-Sat 9AM-6PM</span>
           </div>
-          <div class="flex gap-4 items-start">
-            <i class="fas fa-clock text-xl text-[#1A328D] w-8 text-center mt-1"></i>
-            <div><h4 class="font-semibold text-[#1a2a3a]">Working Hours</h4><p class="text-gray-600">Monday to Saturday • 9:00 AM to 6:00 PM</p></div>
-          </div>
-        </div>
-        <div class="flex gap-3 mt-8 flex-wrap">
-          <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition"><i class="fab fa-facebook-f"></i></a>
-          <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition"><i class="fab fa-twitter"></i></a>
-          <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition"><i class="fab fa-linkedin-in"></i></a>
-          <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition"><i class="fab fa-instagram"></i></a>
-          <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition"><i class="fab fa-whatsapp"></i></a>
         </div>
       </div>
+    </div>
+  </section>
 
-      <!-- right form -->
-      <div class="bg-white p-6 md:p-8 rounded-2xl shadow-lg border border-[#EAE5E2]">
-        <h2 class="text-2xl font-bold text-[#1A328D] mb-6">Send a Message</h2>
-        <form id="contactForm">
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            <div>
-              <label class="block font-semibold text-[#1a2a3a] text-sm mb-1">Full Name <span class="text-red-500">*</span></label>
-              <input type="text" id="name" placeholder="Your name" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#954C2E] transition text-sm" required />
+  <!-- ===== CONTACT SECTION ===== -->
+  <section class="py-12 sm:py-16 md:py-20 bg-[#F5F2F0]">
+    <div class="container mx-auto px-4 sm:px-6">
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12">
+
+        <!-- left info -->
+        <div>
+          <span class="inline-block px-4 py-1 bg-[#EEE2DE] text-[#2B2A4C] rounded-full text-xs font-bold tracking-widest uppercase mb-3">
+            <i class="fas fa-phone mr-2"></i> Get in Touch
+          </span>
+          <h2 class="text-2xl md:text-3xl font-bold text-[#1A328D] mb-3">Let's Connect</h2>
+          <p class="text-gray-600 mb-6 md:mb-8 text-sm sm:text-base">Have questions or ready to transform your business with our solutions? Reach out and our team will get back to you promptly.</p>
+
+          <div class="space-y-4">
+            <div class="flex gap-4 items-start">
+              <i class="fas fa-phone text-xl text-[#1A328D] w-7 text-center mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-[#1a2a3a] text-sm sm:text-base">Phone</h4>
+                <p class="text-gray-600 text-sm sm:text-base">+91 9766491858 | +91 8983039090</p>
+              </div>
             </div>
-            <div>
-              <label class="block font-semibold text-[#1a2a3a] text-sm mb-1">Email <span class="text-red-500">*</span></label>
-              <input type="email" id="email" placeholder="your@email.com" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#954C2E] transition text-sm" required />
+            <div class="flex gap-4 items-start">
+              <i class="fas fa-envelope text-xl text-[#1A328D] w-7 text-center mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-[#1a2a3a] text-sm sm:text-base">Email</h4>
+                <p class="text-gray-600 text-sm sm:text-base break-words">akanksha.ent1997@gmail.com</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <i class="fas fa-map-marker-alt text-xl text-[#1A328D] w-7 text-center mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-[#1a2a3a] text-sm sm:text-base">Location</h4>
+                <p class="text-gray-600 text-sm sm:text-base leading-relaxed">Shop No 206, KamalRaj Parijat, Walke Nagar,<br />Pune-Alandi Road, Dighi, Pune, MH — 411015.</p>
+              </div>
+            </div>
+            <div class="flex gap-4 items-start">
+              <i class="fas fa-clock text-xl text-[#1A328D] w-7 text-center mt-1"></i>
+              <div>
+                <h4 class="font-semibold text-[#1a2a3a] text-sm sm:text-base">Working Hours</h4>
+                <p class="text-gray-600 text-sm sm:text-base">Monday to Saturday • 9:00 AM – 6:00 PM</p>
+              </div>
             </div>
           </div>
-          <div class="mt-4">
-            <label class="block font-semibold text-[#1a2a3a] text-sm mb-1">Phone</label>
-            <input type="tel" id="phone" placeholder="+91 98765 43210" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#954C2E] transition text-sm" />
+
+          <!-- social -->
+          <div class="flex gap-3 mt-8 flex-wrap">
+            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition duration-200"><i class="fab fa-facebook-f"></i></a>
+            <!-- <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition duration-200"><i class="fab fa-twitter"></i></a> -->
+            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition duration-200"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition duration-200"><i class="fab fa-instagram"></i></a>
+            <!-- <a href="#" class="w-10 h-10 bg-gray-200 rounded-full flex items-center justify-center text-[#1a2a3a] hover:bg-[#2B2A4C] hover:text-white transition duration-200"><i class="fab fa-whatsapp"></i></a> -->
           </div>
-          <div class="mt-4">
-            <label class="block font-semibold text-[#1a2a3a] text-sm mb-1">Service Interested In</label>
-            <select id="service" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#954C2E] transition text-sm">
-              <option value="">Select a service</option>
-              <option value="data-center">Data Center Solutions</option>
-              <option value="cctv">CCTV Surveillance</option>
-              <option value="cabling">Structured Cabling</option>
-              <option value="epbx">EPBX Solutions</option>
-              <option value="wifi">Wi-Fi Solutions</option>
-              <option value="server">Server & Backup</option>
-              <option value="security">IT Security Solutions</option>
-              <option value="cloud">Cloud Solutions</option>
-              <option value="health">IT Health Checkup</option>
-            </select>
-          </div>
-          <div class="mt-4">
-            <label class="block font-semibold text-[#1a2a3a] text-sm mb-1">Message <span class="text-red-500">*</span></label>
-            <textarea id="message" rows="3" placeholder="Tell us about your project..." class="w-full px-4 py-2.5 border border-gray-300 rounded-lg focus:outline-none focus:border-[#954C2E] transition resize-y text-sm" required></textarea>
-          </div>
-          <button type="submit" class="w-full mt-6 bg-[#081350] text-white px-6 py-2 rounded-lg font-semibold hover:bg-[#151929] transition hover:-translate-y-1 hover:shadow-lg">
-            <i class="fas fa-paper-plane mr-2"></i> Send Message
-          </button>
-        </form>
+        </div>
+
+        <!-- right form -->
+        <div class="bg-white p-5 sm:p-6 md:p-8 rounded-2xl shadow-xl border border-[#EAE5E2]">
+          <h2 class="text-xl sm:text-2xl font-bold text-[#1A328D] mb-5">Send a Message</h2>
+          <form id="contactForm" novalidate>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label class="block font-semibold text-[#1a2a3a] text-sm mb-1">Full Name <span class="text-red-500">*</span></label>
+                <input type="text" id="name" name="name" placeholder="Your name" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm" required />
+              </div>
+              <div>
+                <label class="block font-semibold text-[#1a2a3a] text-sm mb-1">Email <span class="text-red-500">*</span></label>
+                <input type="email" id="email" name="email" placeholder="your@email.com" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm" required />
+              </div>
+            </div>
+            <div class="mt-4">
+              <label class="block font-semibold text-[#1a2a3a] text-sm mb-1">Phone</label>
+              <input type="tel" id="phone" name="phone" placeholder="+91 98765 43210" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm" />
+            </div>
+            <div class="mt-4">
+              <label class="block font-semibold text-[#1a2a3a] text-sm mb-1">Service Interested In</label>
+              <select id="service" name="service" class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm appearance-none bg-white">
+                <option value="">Select a service</option>
+                <option value="CCTV Security Solutions">CCTV Security Solutions</option>
+                <option value="Software Licensing">Software Licensing</option>
+                <option value="Project Management">Project Management</option>
+                <option value="AMC Services">AMC Services</option>
+                <option value="Remote Assistant">Remote Assistant</option>
+              </select>
+            </div>
+            <div class="mt-4">
+              <label class="block font-semibold text-[#1a2a3a] text-sm mb-1">Message <span class="text-red-500">*</span></label>
+              <textarea id="message" name="message" rows="3" placeholder="Tell us about your project..." class="w-full px-4 py-2.5 border border-gray-300 rounded-lg text-sm resize-y" required></textarea>
+            </div>
+            <button type="submit" id="submitBtn" class="w-full mt-6 bg-[#284595] text-white px-6 py-2.5 rounded-lg font-semibold hover:bg-[#1d3570] transition duration-300 hover:-translate-y-1 hover:shadow-lg flex items-center justify-center gap-3">
+              <span class="btn-text"><i class="fas fa-paper-plane mr-2"></i> Send Message</span>
+              <span class="spinner"></span>
+            </button>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-  <!-- ====== FOOTER ====== -->
-<footer class="relative text-white pt-8 sm:pt-10 md:pt-12 pb-3 sm:pb-4 overflow-hidden">
-    <!-- Background Image -->
-    <div class="absolute inset-0 z-0">
-        <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
-        <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
-    </div>
-
-    <div class="container mx-auto px-3 sm:px-4 relative z-10">
-        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 sm:gap-6 md:gap-8 mb-5 sm:mb-6 md:mb-8">
-            <!-- Brand Column -->
-            <div>
-                <div class="mb-3">
-                    <img src="/assets/cctv-logo-removebg.png" alt="Akanksha Enterprises logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+   <!-- ====== FOOTER ====== -->
+    <footer class="relative text-white pt-4 pb-1 overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="/assets/v915-techi-006-k.jpg" alt="Footer Background" class="w-full h-full object-cover" />
+            <div class="absolute inset-0 bg-[#1a2a3a]/92"></div>
+        </div>
+        <div class="container mx-auto px-3 sm:px-4 relative z-10">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4 mb-2">
+                <!-- Column 1 -->
+                <div>
+                    <div class="mb-1.5">
+                        <img src="/assets/cctv-logo-removebg.png" alt="Akanksha Enterprises logo" class="h-12 sm:h-14 md:h-16 w-auto object-contain" />
+                    </div>
+                    <p class="text-blue-800/80 text-[10px] sm:text-xs mb-1.5 leading-snug font-light">Leading CCTV Security solutions provider across India.</p>
+                    <div class="flex gap-1.5">
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-facebook-f text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-twitter text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-linkedin-in text-[9px] sm:text-[10px]"></i></a>
+                        <a href="#" class="w-6 h-6 sm:w-7 sm:h-7 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 text-white"><i class="fab fa-instagram text-[9px] sm:text-[10px]"></i></a>
+                    </div>
                 </div>
-                <p class="text-white/80 text-xs sm:text-sm mb-3 sm:mb-4 leading-relaxed">Leading IT solutions
-                    provider delivering cutting-edge technology and infrastructure services to businesses across
-                    India.</p>
-                <div class="flex gap-2 sm:gap-3">
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-facebook-f text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-twitter text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-linkedin-in text-xs sm:text-sm"></i>
-                    </a>
-                    <a href="#"
-                        class="w-8 h-8 sm:w-10 sm:h-10 bg-[#1A328D] rounded-full flex items-center justify-center hover:bg-[#081350] transition-all duration-300 hover:scale-110 hover:rotate-12 text-white hover:text-white">
-                        <i class="fab fa-instagram text-xs sm:text-sm"></i>
-                    </a>
+                <!-- Column 2 -->
+                <div>
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
+                        Quick Links
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
+                    </h4>
+                    <ul class="space-y-0.5">
+                        <li><a href="index.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Home</a></li>
+                        <li><a href="about.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> About</a></li>
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Services</a></li>
+                    </ul>
+                </div>
+                <!-- Column 3 -->
+                <div>
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
+                        Our Offerings
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
+                    </h4>
+                    <ul class="space-y-0.5">
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Solutions</a></li>
+                        <li><a href="services.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Products</a></li>
+                        <li><a href="contact.html" class="text-[#234FAA] text-[11px] sm:text-xs font-medium transition-all duration-300 hover:translate-x-1 inline-flex items-center gap-1 hover:text-[#1AA1E1]"><i class="fas fa-chevron-right text-[7px] text-[#1AA1E1]"></i> Contact</a></li>
+                    </ul>
+                </div>
+                <!-- Column 4 -->
+                <div>
+                    <h4 class="font-['Montserrat'] font-semibold text-[11px] sm:text-xs mb-1.5 text-[#1AA1E1] relative inline-block">
+                        Contact Info
+                        <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1]"></span>
+                    </h4>
+                    <ul class="space-y-1">
+                        <li class="flex items-center gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-phone text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="tel:+919766491858" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">+91 9766491858</a>
+                            <span class="text-[#234FAA] text-[10px] sm:text-[11px]">/</span>
+                            <a href="tel:+918983039090" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">+91 8983039090</a>
+                        </li>
+                        <li class="flex items-center gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-envelope text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="mailto:info@akankshaent.com" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium transition-all duration-300 hover:text-[#1AA1E1] hover:underline">info@akankshaent.com</a>
+                        </li>
+                        <li class="flex items-start gap-1.5 group">
+                            <div class="w-5 h-5 sm:w-6 sm:h-6 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 mt-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110"><i class="fas fa-map-marker-alt text-white text-[7px] sm:text-[8px]"></i></div>
+                            <a href="https://maps.google.com/?q=Shop+No+206+KamalRaj+Parijat+Walke+Nagar+Pune+Alandi+Road+Dighi+Pune+MH+411015" target="_blank" rel="noopener noreferrer" class="font-['Open_Sans'] text-[#234FAA] text-[10px] sm:text-[11px] font-medium leading-tight transition-all duration-300 hover:text-[#1AA1E1] hover:underline">Shop 206, KamalRaj Parijat, Dighi, Pune - 411015</a>
+                        </li>
+                    </ul>
                 </div>
             </div>
-
-            <!-- Quick Links -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="index.html"
-                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Home</a></li>
-                    <li><a href="about.html"
-                            class="text-[#234FAA]  text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> About</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Services</a></li>
-                   
-                </ul>
-            </div>
-
-            <!-- Services -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Quick Links
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-1.5 sm:space-y-2">
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Solutions</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Products</a></li>
-                    <li><a href="services.html"
-                            class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 hover:translate-x-2 inline-flex items-center gap-1 hover:text-[#1AA1E1]">
-                            <i class="fas fa-chevron-right text-[10px] text-[#1AA1E1]"></i> Contact</a></li>
-                    
-                </ul>
-            </div>
-
-            <!-- Contact Info -->
-            <div>
-                <h4 class="font-semibold text-sm sm:text-base mb-3 sm:mb-4 text-[#1AA1E1] relative inline-block">
-                    Contact Info
-                    <span class="absolute bottom-0 left-0 w-full h-0.5 bg-[#1AA1E1] transform scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></span>
-                </h4>
-                <ul class="space-y-2 sm:space-y-3">
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-phone text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-xs sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">+91 9766491858 </span>
-                    </li>
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-envelope text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">akanksha.ent1997@gmail.com</span>
-                    </li>
-                    <li class="flex items-start gap-3 group">
-                        <div class="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#1AA1E1] flex items-center justify-center flex-shrink-0 transition-all duration-300 group-hover:bg-[#081350] group-hover:scale-110">
-                            <i class="fas fa-map-marker-alt text-white text-xs sm:text-sm"></i>
-                        </div>
-                        <span class="text-[#234FAA] hover:text-white text-sm sm:text-base font-medium transition-all duration-300 group-hover:text-[#081350]">Shop No 206, KamalRaj Parijat, Walke Nagar,
-Pune-Alandi <br>Road, Dighi, Pune, MH 411015.</span>
-                    </li>
-                </ul>
+            <!-- Copyright Bar -->
+            <div class="border-t border-black/20 pt-1.5">
+                <div class="flex flex-wrap items-center justify-between gap-1">
+                    <p class="text-blue-800 text-[8px] sm:text-[9px] md:text-[10px] whitespace-nowrap">
+                        &copy; 2026 <span class="text-white font-semibold">Akanksha Enterprises</span>. All Rights Reserved.
+                    </p>
+                    <div class="flex items-center gap-1.5 sm:gap-2 text-[8px] sm:text-[9px]">
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Privacy Policy</a>
+                        <span class="w-px h-2.5 bg-white/10"></span>
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Terms of Service</a>
+                        <span class="w-px h-2.5 bg-white/10"></span>
+                        <a href="#" class="text-blue-800 hover:text-[#1AA1E1] transition-colors duration-300 hover:underline">Sitemap</a>
+                    </div>
+                </div>
             </div>
         </div>
+    </footer>
 
-        <!-- Bottom Bar -->
-        <div class="border-t border-white/10 pt-3 sm:pt-4 flex flex-col sm:flex-row items-center justify-between gap-2">
-            <p class="text-white/60 text-[10px] sm:text-xs md:text-sm">
-                &copy; 2026 <span class="text-[#1AA1E1] font-semibold">akankshaenterprises</span>. All Rights Reserved.
-            </p>
-            <div class="flex items-center gap-4 text-[16px] sm:text-xs text-gray-600">
-                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Privacy Policy</a>
-                <span class="w-px h-3 bg-white/10"></span>
-                <a href="#" class="hover:text-[#1AA1E1] transition-colors duration-300">Terms of Service</a>
-                
-            </div>
-        </div>
-    </div>
-</footer>
+  <!-- WhatsApp & ScrollTop -->
+  <a href="https://wa.me/919766491858?text=Hi%20Akanksha%20Enterprises%2C%20I%20have%20a%20query%20about%20your%20CCTV%20and%20security%20solutions." id="whatsappBtn" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
+  <button id="scrollToTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
 
-<!-- WhatsApp & ScrollTop -->
-<a href="https://wa.me/919876543210?text=Hi%20Techno%20Eye%2C%20I%20have%20a%20query%20about%20your%20IT%20solutions." id="whatsappBtn" target="_blank" aria-label="Chat on WhatsApp"><i class="fab fa-whatsapp"></i></a>
-<button id="scrollToTop" aria-label="Scroll to top"><i class="fas fa-chevron-up"></i></button>
+  <!-- ====== EMAILJS SCRIPT ====== -->
+  <script>
+    (function() {
+      // ---------- EMAILJS CREDENTIALS (already filled) ----------
+      const EMAILJS_PUBLIC_KEY = 'RBmakZOTerFMipFY_';
+      const EMAILJS_SERVICE_ID = 'service_sicdztx';
+      const EMAILJS_TEMPLATE_ID = 'template_alf4spd';
+      // ------------------------------------------------------------
 
-<script>
-  (function() {
-    // Mobile toggle
-    const hamburger = document.getElementById('hamburger');
-    const mobileNav = document.getElementById('mobileNav');
-    if (hamburger && mobileNav) {
-      hamburger.addEventListener('click', function(e) {
-        e.stopPropagation();
-        mobileNav.classList.toggle('hidden');
-      });
-      // close on link click (optional)
-      mobileNav.querySelectorAll('a').forEach(link => {
-        link.addEventListener('click', () => mobileNav.classList.add('hidden'));
-      });
-    }
+      // init EmailJS
+      if (typeof emailjs !== 'undefined') {
+        emailjs.init(EMAILJS_PUBLIC_KEY);
+      } else {
+        console.warn('EmailJS library not loaded.');
+      }
 
-    // Contact form
-    const form = document.getElementById('contactForm');
-    if (form) {
-      form.addEventListener('submit', function(e) {
-        e.preventDefault();
-        const name = document.getElementById('name')?.value.trim();
-        const email = document.getElementById('email')?.value.trim();
-        const message = document.getElementById('message')?.value.trim();
-        if (!name || !email || !message) {
-          alert('Please fill in all required fields.');
-          return;
-        }
-        if (!email.includes('@') || !email.includes('.')) {
-          alert('Please enter a valid email address.');
-          return;
-        }
-        alert('Thank you for your message! Our team will get back to you soon.');
-        form.reset();
-      });
-    }
+      const form = document.getElementById('contactForm');
+      const submitBtn = document.getElementById('submitBtn');
+      const toast = document.getElementById('toast');
 
-    // Scroll to top
-    const scrollBtn = document.getElementById('scrollToTop');
-    if (scrollBtn) {
-      window.addEventListener('scroll', function() {
-        if (window.scrollY > 300) scrollBtn.classList.add('show');
-        else scrollBtn.classList.remove('show');
-      });
-      scrollBtn.addEventListener('click', function() {
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      });
-    }
-  })();
-</script>
+      function showToast(message, type = 'success') {
+        toast.textContent = message;
+        toast.className = `toast ${type}`;
+        // force reflow
+        void toast.offsetWidth;
+        toast.classList.add('show');
+        clearTimeout(toast._hideTimer);
+        toast._hideTimer = setTimeout(() => {
+          toast.classList.remove('show');
+        }, 5000);
+      }
+
+      if (form) {
+        form.addEventListener('submit', function(e) {
+          e.preventDefault();
+
+          const name = document.getElementById('name').value.trim();
+          const email = document.getElementById('email').value.trim();
+          const phone = document.getElementById('phone').value.trim();
+          const service = document.getElementById('service').value;
+          const message = document.getElementById('message').value.trim();
+
+          // validation
+          if (!name || !email || !message) {
+            showToast('Please fill in all required fields.', 'error');
+            return;
+          }
+          if (!email.includes('@') || !email.includes('.')) {
+            showToast('Please enter a valid email address.', 'error');
+            return;
+          }
+
+          // loading state
+          submitBtn.classList.add('btn-loading');
+          submitBtn.disabled = true;
+
+          const templateParams = {
+            name: name,
+            email: email,
+            phone: phone || 'Not provided',
+            service: service || 'Not specified',
+            message: message
+          };
+
+          emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams)
+            .then(function(response) {
+              console.log('✅ Email sent:', response.status, response.text);
+              showToast('✅ Thank you! Your message has been sent.', 'success');
+              form.reset();
+            })
+            .catch(function(error) {
+              console.error('❌ EmailJS error:', error);
+              showToast('❌ Failed to send. Please try again or call us.', 'error');
+            })
+            .finally(function() {
+              submitBtn.classList.remove('btn-loading');
+              submitBtn.disabled = false;
+            });
+        });
+      }
+
+      // ----- mobile toggle -----
+      const hamburger = document.getElementById('hamburger');
+      const mobileNav = document.getElementById('mobileNav');
+      if (hamburger && mobileNav) {
+        hamburger.addEventListener('click', function(e) {
+          e.stopPropagation();
+          mobileNav.classList.toggle('hidden');
+        });
+        mobileNav.querySelectorAll('a').forEach(function(link) {
+          link.addEventListener('click', function() {
+            mobileNav.classList.add('hidden');
+          });
+        });
+        // close on outside click (optional)
+        document.addEventListener('click', function(e) {
+          if (!mobileNav.classList.contains('hidden') && !hamburger.contains(e.target) && !mobileNav.contains(e.target)) {
+            mobileNav.classList.add('hidden');
+          }
+        });
+      }
+
+      // ----- scroll to top -----
+      const scrollBtn = document.getElementById('scrollToTop');
+      if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+          if (window.scrollY > 320) {
+            scrollBtn.classList.add('show');
+          } else {
+            scrollBtn.classList.remove('show');
+          }
+        });
+        scrollBtn.addEventListener('click', function() {
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+
 </body>
 </html>

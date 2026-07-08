@@ -728,98 +728,6 @@
     }
 }
 
-/* Mobile: Images in a row */
-@media (max-width: 1023px) {
-    .about-img-wrap {
-        display: flex !important;
-        flex-direction: row !important;
-        gap: 12px !important;
-        height: auto !important;
-        min-height: 180px !important;
-        padding: 0 10px !important;
-        justify-content: center !important;
-        align-items: center !important;
-    }
-    
-    .about-img-wrap .about-img-1,
-    .about-img-wrap .about-img-2 {
-        position: relative !important;
-        top: auto !important;
-        left: auto !important;
-        right: auto !important;
-        bottom: auto !important;
-        width: 48% !important;
-        max-width: 48% !important;
-        margin: 0 !important;
-        flex: 0 0 48% !important;
-    }
-    
-    .about-img-wrap .about-img-1 {
-        z-index: 2 !important;
-    }
-    
-    .about-img-wrap .about-img-2 {
-        z-index: 1 !important;
-    }
-    
-    .about-img-wrap .absolute.bottom-2 {
-        position: absolute !important;
-        bottom: -15px !important;
-        left: 50% !important;
-        transform: translateX(-50%) !important;
-        width: 60px !important;
-        height: 60px !important;
-        z-index: 10 !important;
-    }
-}
-
-/* For extra small mobile screens */
-@media (max-width: 480px) {
-    .about-img-wrap {
-        gap: 8px !important;
-        min-height: 150px !important;
-        padding: 0 5px !important;
-    }
-    
-    .about-img-wrap .about-img-1,
-    .about-img-wrap .about-img-2 {
-        width: 48% !important;
-        max-width: 48% !important;
-        flex: 0 0 48% !important;
-    }
-    
-    .about-img-wrap .about-img-1 img,
-    .about-img-wrap .about-img-2 img {
-        border-radius: 12px !important;
-    }
-    
-    .about-img-wrap .absolute.bottom-2 {
-        width: 50px !important;
-        height: 50px !important;
-        bottom: -10px !important;
-    }
-    
-    .about-img-wrap .absolute.bottom-2 .w-\[26px\] {
-        width: 22px !important;
-        height: 22px !important;
-        font-size: 8px !important;
-    }
-}
-
-/* For tablets (768px - 1023px) */
-@media (min-width: 768px) and (max-width: 1023px) {
-    .about-img-wrap {
-        gap: 16px !important;
-        min-height: 220px !important;
-    }
-    
-    .about-img-wrap .about-img-1,
-    .about-img-wrap .about-img-2 {
-        width: 46% !important;
-        max-width: 46% !important;
-        flex: 0 0 46% !important;
-    }
-}
     </style>
 </head>
 
@@ -958,18 +866,18 @@
         </div>
     </div>
 
-   <!-- ====== ABOUT US ====== -->
+    <!-- ====== ABOUT US ====== -->
 <section class="py-8 sm:py-10 md:py-12 bg-white overflow-hidden" id="about">
     <div class="container mx-auto px-4 sm:px-6">
         <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start lg:items-center">
-            <!-- Mobile: Images displayed in a row -->
-            <div class="about-img-wrap relative lg:relative" data-reveal="left">
-                <!-- First Image -->
-                <div class="about-img-1 top-0 left-3 sm:left-5 md:left-8 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-10 lg:absolute">
+            <!-- Mobile: Images displayed separately -->
+            <div class="relative lg:relative h-[300px] sm:h-[350px] md:h-[400px] about-img-wrap" data-reveal="left">
+                <!-- First Image - Visible on all devices -->
+                <div class="top-0 left-3 sm:left-5 md:left-8 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-10 lg:absolute">
                     <img src="/assets/about1.png" alt="CCTV Installation" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
                 </div>
-                <!-- Second Image -->
-                <div class="about-img-2 top-12 sm:top-14 md:top-16 lg:top-20 left-20 sm:left-24 md:left-32 lg:left-36 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-[1] lg:absolute">
+                <!-- Second Image - Stacked below on mobile, overlapping on desktop -->
+                <div class="top-12 sm:top-14 md:top-16 lg:top-20 left-20 sm:left-24 md:left-32 lg:left-36 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-[1] lg:absolute">
                     <img src="/assets/about2.png" alt="Security Monitoring" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
                 </div>
                 <!-- Badge -->

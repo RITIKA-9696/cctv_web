@@ -866,21 +866,49 @@
         </div>
     </div>
 
-    <!-- ====== ABOUT US ====== -->
+ <!-- ====== ABOUT US ====== -->
 <section class="py-8 sm:py-10 md:py-12 bg-white overflow-hidden" id="about">
     <div class="container mx-auto px-4 sm:px-6">
         <div class="grid lg:grid-cols-2 gap-8 md:gap-12 lg:gap-16 items-start lg:items-center">
-            <!-- Mobile: Images displayed separately -->
-            <div class="relative lg:relative h-[300px] sm:h-[350px] md:h-[400px] about-img-wrap" data-reveal="left">
-                <!-- First Image - Visible on all devices -->
-                <div class="top-0 left-3 sm:left-5 md:left-8 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-10 lg:absolute">
+
+            <!-- ===== MOBILE-ONLY: separated row layout ===== -->
+            <div class="sm:hidden relative" data-reveal="left">
+                <div class="flex gap-3">
+                    <div class="w-1/2 rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="/assets/about1.png" alt="CCTV Installation" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
+                    </div>
+                    <div class="w-1/2 rounded-2xl overflow-hidden shadow-2xl">
+                        <img src="/assets/about2.png" alt="Security Monitoring" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
+                    </div>
+                </div>
+                <div class="absolute -bottom-3 left-36 z-20 w-[60px] h-[60px]">
+                    <div class="absolute inset-0 badge-ring-spin">
+                        <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
+                            <defs>
+                                <path id="circleTextPathMobile" d="M 55,55 m -38,0 a 38,38 0 1,1 76,0 a 38,38 0 1,1 -76,0" />
+                            </defs>
+                            <circle cx="55" cy="55" r="52" fill="white" stroke="#e5e5e5" stroke-width="1" />
+                            <text font-size="8.2" fill="#1a1a2e" font-weight="600" letter-spacing="2.3" font-family="Segoe UI, sans-serif">
+                                <textPath href="#circleTextPathMobile">• 15+ Years of Exp.  15+ Yr of Experience </textPath>
+                            </text>
+                        </svg>
+                    </div>
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <div class="w-[26px] h-[26px] rounded-full flex items-center justify-center text-white text-[10px]" style="background:#284595;">
+                            <i class="fas fa-video"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ===== DESKTOP/TABLET: original overlapping collage (unchanged) ===== -->
+            <div class="hidden sm:block relative h-[300px] sm:h-[350px] md:h-[400px] about-img-wrap" data-reveal="left">
+                <div class="absolute top-0 left-3 sm:left-5 md:left-8 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-10">
                     <img src="/assets/about1.png" alt="CCTV Installation" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
                 </div>
-                <!-- Second Image - Stacked below on mobile, overlapping on desktop -->
-                <div class="top-12 sm:top-14 md:top-16 lg:top-20 left-20 sm:left-24 md:left-32 lg:left-36 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-[1] lg:absolute">
+                <div class="absolute top-12 sm:top-14 md:top-16 lg:top-20 left-20 sm:left-24 md:left-32 lg:left-36 w-[55%] sm:w-[58%] md:w-[60%] rounded-2xl overflow-hidden shadow-2xl z-[1]">
                     <img src="/assets/about2.png" alt="Security Monitoring" class="w-full h-full object-cover rounded-2xl" style="aspect-ratio:4/3;">
                 </div>
-                <!-- Badge -->
                 <div class="absolute bottom-2 sm:bottom-3 md:bottom-4 left-3 sm:left-5 md:left-8 z-20 w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] md:w-[80px] md:h-[80px]">
                     <div class="absolute inset-0 badge-ring-spin">
                         <svg viewBox="0 0 110 110" xmlns="http://www.w3.org/2000/svg" class="w-full h-full">
@@ -900,6 +928,7 @@
                     </div>
                 </div>
             </div>
+
             <div data-reveal="right" class="mt-0">
                 <h2 class="text-2xl sm:text-3xl md:text-4xl font-extrabold text-[#1a1a2e] leading-tight mb-3">
                     Protecting homes,<br>
@@ -911,9 +940,9 @@
                     innovative, and tailored protection systems.
                 </p>
                 <div class="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4 bg-gray-50 rounded-xl p-3 sm:p-4 mb-3 about-row-reveal" data-reveal-delay="300">
-                    <div class="w-full sm:w-[100px] md:w-[120px] h-[65px] sm:h-[75px] md:h-[85px] rounded-xl overflow-hidden flex-shrink-0">
-                        <img src="/assets/about3.png" alt="CCTV technician" class="w-full h-full object-cover">
-                    </div>
+                    <div class="w-full sm:w-[100px] md:w-[120px] h-[110px] sm:h-[75px] md:h-[85px] rounded-xl overflow-hidden flex-shrink-0">
+    <img src="/assets/about3.png" alt="CCTV technician" class="w-full h-full object-cover">
+</div>
                     <div class="flex items-center gap-3 sm:gap-4 w-full sm:w-auto">
                         <div class="w-[32px] h-[32px] sm:w-[38px] sm:h-[38px] md:w-[44px] md:h-[44px] rounded-full flex items-center justify-center flex-shrink-0" style="background:#284595;">
                             <img src="/assets/icon-about-experience.svg" class="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5">
@@ -937,6 +966,9 @@
         </div>
     </div>
 </section>
+
+
+
 
     <!-- ====== TRUSTED PARTNERS ====== -->
     <section class="py-13 md:py-16 bg-gradient-to-b from-white to-gray-50 overflow-hidden">
